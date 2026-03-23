@@ -1,0 +1,109 @@
+site_name: COBOL Reference
+site_description: A comprehensive reference for the COBOL programming language
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: blue grey
+  features:
+    - navigation.expand
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Standards: standards.md
+  - Language:
+    - language/index.md
+    - Source Format: language/source-format.md
+    - Character Set: language/character-set.md
+    - Figurative Constants: language/figurative-constants.md
+    - Scope Terminators: language/scope-terminators.md
+  - Identification Division:
+    - identification-division/index.md
+    - Program Attributes: identification-division/program-attributes.md
+  - Environment Division:
+    - environment-division/index.md
+    - SPECIAL-NAMES: environment-division/special-names.md
+    - SELECT: environment-division/select.md
+  - Data Division:
+    - data-division/index.md
+    - Level Numbers: data-division/level-numbers.md
+    - PICTURE Clause: data-division/picture.md
+    - USAGE Clause: data-division/usage.md
+    - OCCURS Clause (Arrays): data-division/occurs.md
+    - Condition Names: data-division/condition-names.md
+    - REDEFINES Clause: data-division/redefines.md
+    - VALUE Clause: data-division/value.md
+    - User-Defined Types (TYPEDEF): data-division/typedef.md
+    - Report Section: data-division/report-section.md
+    - Screen Section: data-division/screen-section.md
+  - Procedure Division:
+    - procedure-division/index.md
+    - Arithmetic:
+      - ADD: procedure-division/arithmetic/add.md
+      - SUBTRACT: procedure-division/arithmetic/subtract.md
+      - MULTIPLY: procedure-division/arithmetic/multiply.md
+      - DIVIDE: procedure-division/arithmetic/divide.md
+      - COMPUTE: procedure-division/arithmetic/compute.md
+    - Data Movement:
+      - MOVE: procedure-division/data-movement/move.md
+    - Control Flow:
+      - IF: procedure-division/control-flow/if.md
+      - EVALUATE: procedure-division/control-flow/evaluate.md
+      - PERFORM: procedure-division/control-flow/perform.md
+      - GO TO: procedure-division/control-flow/go-to.md
+      - STOP: procedure-division/control-flow/stop.md
+      - EXIT: procedure-division/control-flow/exit.md
+      - CONTINUE: procedure-division/control-flow/continue.md
+    - Input/Output:
+      - OPEN: procedure-division/io/open.md
+      - READ: procedure-division/io/read.md
+      - WRITE: procedure-division/io/write.md
+      - CLOSE: procedure-division/io/close.md
+    - String Handling:
+      - STRING: procedure-division/string-handling/string.md
+      - UNSTRING: procedure-division/string-handling/unstring.md
+      - INSPECT: procedure-division/string-handling/inspect.md
+    - Program Linkage:
+      - CALL: procedure-division/program-linkage/call.md
+      - CANCEL: procedure-division/program-linkage/cancel.md
+    - Sort/Merge:
+      - SORT: procedure-division/sort-merge/sort.md
+      - MERGE: procedure-division/sort-merge/merge.md
+  - Intrinsic Functions:
+    - intrinsic-functions/index.md
+    - Numeric Functions: intrinsic-functions/numeric.md
+    - String Functions: intrinsic-functions/string.md
+    - Date and Time Functions: intrinsic-functions/date-time.md
+    - Financial Functions: intrinsic-functions/financial.md
+    - Numeric Conversion Functions: intrinsic-functions/numeric-conversion.md
+    - User-Defined Functions: intrinsic-functions/user-defined.md
+  - Preprocessor:
+    - copy-replace/copy.md
+    - copy-replace/replace.md
+  - Extensions:
+    - Embedded SQL: extensions/embedded-sql.md
+    - XML Processing: extensions/xml.md
+    - JSON Processing: extensions/json.md
+    - Compiler Directives: extensions/compiler-directives.md
+    - Vendor Extensions: extensions/vendor-extensions.md
+  - Appendices:
+    - Arithmetic Precision: appendices/arithmetic-precision.md
+    - Collating Sequence: appendices/collating-sequence.md
+    - Reserved Words: appendices/reserved-words.md
