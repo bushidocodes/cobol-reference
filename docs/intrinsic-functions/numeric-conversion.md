@@ -221,6 +221,98 @@ COMPUTE WS-VALUE = FUNCTION NUMVAL-F("  6.022E+23  ")
 
 ---
 
+## Validation Functions (TEST-NUMVAL)
+
+COBOL 2014 introduced validation functions that test whether a string is valid input for the corresponding NUMVAL function, eliminating the need for manual inspection.
+
+### TEST-NUMVAL
+
+Tests whether a string is valid input for the NUMVAL function.
+
+!!! note "COBOL 2014"
+    The TEST-NUMVAL function was introduced in COBOL 2014.
+
+```cobol
+FUNCTION TEST-NUMVAL ( argument-1 )
+```
+
+- **argument-1** -- alphanumeric. The string to validate.
+- **Return category** -- integer.
+- **Behavior** -- returns 0 if argument-1 is a valid input for FUNCTION NUMVAL. If argument-1 is invalid, returns a nonzero value indicating the character position of the first error.
+
+```cobol
+IF FUNCTION TEST-NUMVAL(WS-INPUT) = 0
+    COMPUTE WS-VALUE = FUNCTION NUMVAL(WS-INPUT)
+ELSE
+    DISPLAY "Invalid numeric string"
+END-IF
+```
+
+### TEST-NUMVAL-C
+
+Tests whether a string is valid input for the NUMVAL-C function.
+
+!!! note "COBOL 2014"
+    The TEST-NUMVAL-C function was introduced in COBOL 2014.
+
+```cobol
+FUNCTION TEST-NUMVAL-C ( argument-1  argument-2 )
+```
+
+- **argument-1** -- alphanumeric. The string to validate.
+- **argument-2** -- alphanumeric. The currency sign string.
+- **Return category** -- integer.
+- **Behavior** -- returns 0 if argument-1 is a valid input for FUNCTION NUMVAL-C with the specified currency sign. Returns nonzero on failure.
+
+```cobol
+IF FUNCTION TEST-NUMVAL-C(WS-INPUT "$") = 0
+    COMPUTE WS-VALUE = FUNCTION NUMVAL-C(WS-INPUT "$")
+ELSE
+    DISPLAY "Invalid currency string"
+END-IF
+```
+
+### TEST-NUMVAL-F
+
+Tests whether a string is valid input for the NUMVAL-F function.
+
+!!! note "COBOL 2014"
+    The TEST-NUMVAL-F function was introduced in COBOL 2014.
+
+```cobol
+FUNCTION TEST-NUMVAL-F ( argument-1 )
+```
+
+- **argument-1** -- alphanumeric. The string to validate.
+- **Return category** -- integer.
+- **Behavior** -- returns 0 if argument-1 is a valid floating-point string for FUNCTION NUMVAL-F. Returns nonzero on failure.
+
+```cobol
+IF FUNCTION TEST-NUMVAL-F(WS-INPUT) = 0
+    COMPUTE WS-VALUE = FUNCTION NUMVAL-F(WS-INPUT)
+ELSE
+    DISPLAY "Invalid scientific notation"
+END-IF
+```
+
+### Validation Pattern
+
+The TEST-NUMVAL functions replace the error-prone manual validation that was previously required:
+
+```cobol
+*> COBOL 2014+ recommended approach: validate then convert
+IF FUNCTION TEST-NUMVAL-C(WS-AMOUNT-STR "$") = 0
+    COMPUTE WS-AMOUNT =
+        FUNCTION NUMVAL-C(WS-AMOUNT-STR "$")
+    PERFORM PROCESS-AMOUNT
+ELSE
+    DISPLAY "Invalid amount: " WS-AMOUNT-STR
+    ADD 1 TO WS-ERROR-COUNT
+END-IF
+```
+
+---
+
 ## Error Conditions
 
 All NUMVAL functions have undefined behavior when argument-1 does not contain a valid numeric string for the expected format. Common causes of errors include:
@@ -232,13 +324,13 @@ All NUMVAL functions have undefined behavior when argument-1 does not contain a 
 - For NUMVAL-F: missing exponent indicator
 
 !!! warning "No Runtime Validation"
-    Most compilers do not validate the input string at runtime. Passing an
-    invalid string may produce incorrect results or cause an abend rather than
-    raising a clean error. Always validate input strings before passing them
-    to NUMVAL functions.
+    Prior to COBOL 2014, most compilers did not validate the input string at
+    runtime. Passing an invalid string may produce incorrect results or cause
+    an abend. Use the TEST-NUMVAL functions (COBOL 2014+) to validate input
+    strings before passing them to NUMVAL functions.
 
 ```cobol
-*> Validate before converting
+*> Pre-2014 approach: manual validation (error-prone)
 INSPECT WS-INPUT TALLYING WS-NON-NUM
     FOR ALL "A" THRU "Z"
 IF WS-NON-NUM > 0

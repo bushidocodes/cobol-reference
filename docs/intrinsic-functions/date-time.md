@@ -28,6 +28,37 @@ This representation enables date arithmetic by converting dates to integers, per
 
 ---
 
+## COMBINED-DATETIME
+
+Combines an integer date and seconds past midnight into a single numeric value.
+
+!!! note "COBOL 2002"
+    The COMBINED-DATETIME function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION COMBINED-DATETIME ( argument-1  argument-2 )
+```
+
+- **argument-1** -- integer. A Lilian day number representing the date.
+- **argument-2** -- numeric. The number of seconds past midnight (0 through 86400).
+- **Return category** -- numeric.
+- **Behavior** -- returns a single numeric value that encodes both the date and time components. The result is suitable for comparison and arithmetic, allowing two date-time values to be compared directly or subtracted to find the difference.
+
+```cobol
+COMPUTE WS-DATE-INT =
+    FUNCTION INTEGER-OF-DATE(20250322)
+COMPUTE WS-COMBINED =
+    FUNCTION COMBINED-DATETIME(WS-DATE-INT 52245)
+*> Encodes March 22, 2025 at 14:30:45
+
+*> Compare two date-time values
+IF WS-COMBINED-1 > WS-COMBINED-2
+    DISPLAY "Event 1 is later"
+END-IF
+```
+
+---
+
 ## CURRENT-DATE
 
 Returns the current date, time, and UTC offset as a 21-character alphanumeric value.
@@ -181,6 +212,134 @@ COMPUTE WS-JULIAN =
 
 ---
 
+## FORMATTED-CURRENT-DATE
+
+Returns the current date and time formatted according to a specified format string.
+
+!!! note "COBOL 2014"
+    The FORMATTED-CURRENT-DATE function was introduced in COBOL 2014 as part of the formatted date/time family.
+
+```cobol
+FUNCTION FORMATTED-CURRENT-DATE ( argument-1 )
+```
+
+- **argument-1** -- alphanumeric. A format string using patterns such as "YYYY-MM-DDThh:mm:ss" to describe the desired output layout.
+- **Return category** -- alphanumeric.
+- **Behavior** -- returns the current date and time formatted according to the format string specified in argument-1. Supports ISO 8601 formats. The format string determines which date and time components are included and how they are separated.
+
+```cobol
+MOVE FUNCTION FORMATTED-CURRENT-DATE(
+    "YYYY-MM-DDThh:mm:ss") TO WS-ISO-DATETIME
+*> e.g. "2025-03-22T14:30:45"
+
+MOVE FUNCTION FORMATTED-CURRENT-DATE(
+    "YYYYMMDD") TO WS-DATE-ONLY
+*> e.g. "20250322"
+
+MOVE FUNCTION FORMATTED-CURRENT-DATE(
+    "YYYY-MM-DDThh:mm:ss+hh:mm") TO WS-WITH-OFFSET
+*> e.g. "2025-03-22T14:30:45-05:00"
+```
+
+---
+
+## FORMATTED-DATE
+
+Formats an integer date according to a format string.
+
+!!! note "COBOL 2014"
+    The FORMATTED-DATE function was introduced in COBOL 2014 as part of the formatted date/time family.
+
+```cobol
+FUNCTION FORMATTED-DATE ( argument-1  argument-2 )
+```
+
+- **argument-1** -- alphanumeric. A format string describing the desired output layout (e.g., "YYYY-MM-DD").
+- **argument-2** -- integer. A Lilian day number.
+- **Return category** -- alphanumeric.
+- **Behavior** -- returns a string containing the date corresponding to the Lilian day number in argument-2, formatted according to the format string in argument-1.
+
+```cobol
+COMPUTE WS-LILIAN =
+    FUNCTION INTEGER-OF-DATE(20250322)
+MOVE FUNCTION FORMATTED-DATE(
+    "YYYY-MM-DD" WS-LILIAN) TO WS-DISPLAY
+*> WS-DISPLAY = "2025-03-22"
+
+MOVE FUNCTION FORMATTED-DATE(
+    "DD/MM/YYYY" WS-LILIAN) TO WS-DISPLAY
+*> WS-DISPLAY = "22/03/2025"
+```
+
+---
+
+## FORMATTED-DATETIME
+
+Formats a combined date-time value according to a format string.
+
+!!! note "COBOL 2014"
+    The FORMATTED-DATETIME function was introduced in COBOL 2014 as part of the formatted date/time family.
+
+```cobol
+FUNCTION FORMATTED-DATETIME ( argument-1  argument-2
+    argument-3  [ argument-4 ] )
+```
+
+- **argument-1** -- alphanumeric. A format string describing the desired output layout.
+- **argument-2** -- integer. A Lilian day number.
+- **argument-3** -- numeric. The number of seconds past midnight (0 through 86400).
+- **argument-4** -- optional, integer. The UTC offset in minutes. When provided, the offset is included in the formatted output.
+- **Return category** -- alphanumeric.
+- **Behavior** -- returns a string containing the date and time formatted according to the format string in argument-1. The date is specified by the Lilian day number in argument-2 and the time by seconds past midnight in argument-3. If argument-4 is supplied, the UTC offset is appended.
+
+```cobol
+COMPUTE WS-LILIAN =
+    FUNCTION INTEGER-OF-DATE(20250322)
+MOVE FUNCTION FORMATTED-DATETIME(
+    "YYYY-MM-DDThh:mm:ss" WS-LILIAN 52245)
+    TO WS-DISPLAY
+*> WS-DISPLAY = "2025-03-22T14:30:45"
+
+*> With UTC offset (-5 hours = -300 minutes)
+MOVE FUNCTION FORMATTED-DATETIME(
+    "YYYY-MM-DDThh:mm:ss+hh:mm"
+    WS-LILIAN 52245 -300)
+    TO WS-DISPLAY
+*> WS-DISPLAY = "2025-03-22T14:30:45-05:00"
+```
+
+---
+
+## FORMATTED-TIME
+
+Formats a time value according to a format string.
+
+!!! note "COBOL 2014"
+    The FORMATTED-TIME function was introduced in COBOL 2014 as part of the formatted date/time family.
+
+```cobol
+FUNCTION FORMATTED-TIME ( argument-1  argument-2
+    [ argument-3 ] )
+```
+
+- **argument-1** -- alphanumeric. A format string describing the desired output layout (e.g., "hh:mm:ss").
+- **argument-2** -- numeric. The number of seconds past midnight (0 through 86400).
+- **argument-3** -- optional, integer. The UTC offset in minutes.
+- **Return category** -- alphanumeric.
+- **Behavior** -- returns a string containing the time formatted according to the format string in argument-1. The time is specified by seconds past midnight in argument-2. If argument-3 is supplied, the UTC offset is included in the output.
+
+```cobol
+MOVE FUNCTION FORMATTED-TIME(
+    "hh:mm:ss" 52245) TO WS-DISPLAY
+*> WS-DISPLAY = "14:30:45"
+
+MOVE FUNCTION FORMATTED-TIME(
+    "hh:mm:ss+hh:mm" 52245 -300) TO WS-DISPLAY
+*> WS-DISPLAY = "14:30:45-05:00"
+```
+
+---
+
 ## INTEGER-OF-DATE
 
 Returns the Lilian day number corresponding to a standard date (YYYYMMDD).
@@ -226,6 +385,39 @@ COMPUTE WS-LILIAN =
 COMPUTE WS-LILIAN =
     FUNCTION INTEGER-OF-DAY(2025365)
 *> Lilian day number for December 31, 2025
+```
+
+---
+
+## INTEGER-OF-FORMATTED-DATE
+
+Returns the Lilian day number from a formatted date string.
+
+!!! note "COBOL 2014"
+    The INTEGER-OF-FORMATTED-DATE function was introduced in COBOL 2014 as part of the formatted date/time family.
+
+```cobol
+FUNCTION INTEGER-OF-FORMATTED-DATE ( argument-1  argument-2 )
+```
+
+- **argument-1** -- alphanumeric. A format string describing the layout of argument-2 (e.g., "YYYY-MM-DD").
+- **argument-2** -- alphanumeric. The formatted date string to parse.
+- **Return category** -- integer.
+- **Behavior** -- parses the formatted date string in argument-2 according to the format specified in argument-1 and returns the corresponding Lilian day number. This function is the inverse of FORMATTED-DATE.
+
+```cobol
+COMPUTE WS-LILIAN =
+    FUNCTION INTEGER-OF-FORMATTED-DATE(
+        "YYYY-MM-DD" "2025-03-22")
+*> Returns the Lilian day number for March 22, 2025
+
+*> Round-trip: format then parse
+COMPUTE WS-LILIAN-2 =
+    FUNCTION INTEGER-OF-FORMATTED-DATE(
+        "DD/MM/YYYY"
+        FUNCTION FORMATTED-DATE(
+            "DD/MM/YYYY" WS-LILIAN))
+*> WS-LILIAN-2 = WS-LILIAN
 ```
 
 ---
@@ -286,6 +478,105 @@ DISPLAY "Elapsed: " WS-ELAPSED " seconds"
 
 ---
 
+## TEST-DATE-YYYYMMDD
+
+Tests whether a value is a valid YYYYMMDD date.
+
+!!! note "COBOL 2002"
+    The TEST-DATE-YYYYMMDD function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION TEST-DATE-YYYYMMDD ( argument-1 )
+```
+
+- **argument-1** -- integer. A value to be tested as a YYYYMMDD date.
+- **Return category** -- integer.
+- **Behavior** -- tests whether argument-1 represents a valid standard date in YYYYMMDD format. Returns 0 if the date is valid. If the date is invalid, returns a nonzero value indicating the position of the first invalid component (e.g., invalid month, invalid day for the given month, invalid leap year day).
+
+```cobol
+COMPUTE WS-RESULT =
+    FUNCTION TEST-DATE-YYYYMMDD(20250322)
+*> WS-RESULT = 0 (valid date)
+
+COMPUTE WS-RESULT =
+    FUNCTION TEST-DATE-YYYYMMDD(20251301)
+*> WS-RESULT is nonzero (month 13 is invalid)
+
+COMPUTE WS-RESULT =
+    FUNCTION TEST-DATE-YYYYMMDD(20250229)
+*> WS-RESULT is nonzero (2025 is not a leap year)
+```
+
+---
+
+## TEST-DAY-YYYYDDD
+
+Tests whether a value is a valid YYYYDDD Julian date.
+
+!!! note "COBOL 2002"
+    The TEST-DAY-YYYYDDD function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION TEST-DAY-YYYYDDD ( argument-1 )
+```
+
+- **argument-1** -- integer. A value to be tested as a YYYYDDD Julian date.
+- **Return category** -- integer.
+- **Behavior** -- tests whether argument-1 represents a valid Julian date in YYYYDDD format. Returns 0 if the date is valid. If the date is invalid, returns a nonzero value.
+
+```cobol
+COMPUTE WS-RESULT =
+    FUNCTION TEST-DAY-YYYYDDD(2025180)
+*> WS-RESULT = 0 (valid Julian date: day 180 of 2025)
+
+COMPUTE WS-RESULT =
+    FUNCTION TEST-DAY-YYYYDDD(2025366)
+*> WS-RESULT is nonzero (2025 is not a leap year,
+*> so day 366 is invalid)
+```
+
+---
+
+## TEST-FORMATTED-DATETIME
+
+Tests whether a string is a valid formatted date/time according to a format string.
+
+!!! note "COBOL 2014"
+    The TEST-FORMATTED-DATETIME function was introduced in COBOL 2014 as part of the formatted date/time family.
+
+```cobol
+FUNCTION TEST-FORMATTED-DATETIME ( argument-1  argument-2 )
+```
+
+- **argument-1** -- alphanumeric. A format string describing the expected layout (e.g., "YYYY-MM-DDThh:mm:ss").
+- **argument-2** -- alphanumeric. The string to be tested.
+- **Return category** -- integer.
+- **Behavior** -- tests whether argument-2 is a valid date, time, or date-time string according to the format specified in argument-1. Returns 0 if the string is valid. If the string is invalid, returns a nonzero value indicating the position of the first error.
+
+```cobol
+COMPUTE WS-RESULT =
+    FUNCTION TEST-FORMATTED-DATETIME(
+        "YYYY-MM-DD" "2025-03-22")
+*> WS-RESULT = 0 (valid)
+
+COMPUTE WS-RESULT =
+    FUNCTION TEST-FORMATTED-DATETIME(
+        "YYYY-MM-DD" "2025-13-01")
+*> WS-RESULT is nonzero (month 13 is invalid)
+
+*> Validate before parsing
+IF FUNCTION TEST-FORMATTED-DATETIME(
+    "YYYY-MM-DD" WS-INPUT-DATE) = 0
+    COMPUTE WS-LILIAN =
+        FUNCTION INTEGER-OF-FORMATTED-DATE(
+            "YYYY-MM-DD" WS-INPUT-DATE)
+ELSE
+    DISPLAY "Invalid date format"
+END-IF
+```
+
+---
+
 ## WHEN-COMPILED
 
 Returns the date and time the program was compiled.
@@ -342,6 +633,143 @@ COMPUTE WS-YEAR = FUNCTION YEAR-TO-YYYY(99)
 COMPUTE WS-YEAR = FUNCTION YEAR-TO-YYYY(50 20)
 *> Window 1946-2045: WS-YEAR = 1950
 ```
+
+---
+
+## LOCALE-DATE
+
+Returns a date formatted according to the conventions of a specified locale.
+
+!!! note "COBOL 2002"
+    The LOCALE-DATE function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION LOCALE-DATE ( argument-1 [ argument-2 ] )
+```
+
+- **argument-1** -- integer, a standard date in YYYYMMDD format.
+- **argument-2** -- optional, alphanumeric. The locale identifier. If omitted, the system default locale is used.
+- **Return category** -- alphanumeric.
+- **Behavior** -- returns a string containing the date formatted according to the date conventions of the specified locale. The format and length of the returned string are locale-dependent (e.g., "03/22/2025" for en_US, "22.03.2025" for de_DE, "22/03/2025" for en_GB).
+
+```cobol
+MOVE FUNCTION LOCALE-DATE(20250322) TO WS-DISPLAY-DATE
+*> Result depends on system locale, e.g. "03/22/2025"
+
+MOVE FUNCTION LOCALE-DATE(20250322 "de_DE")
+    TO WS-DISPLAY-DATE
+*> Result: "22.03.2025" (German locale)
+
+MOVE FUNCTION LOCALE-DATE(20250322 "ja_JP")
+    TO WS-DISPLAY-DATE
+*> Result: "2025/03/22" (Japanese locale)
+```
+
+### Practical Example
+
+```cobol
+       WORKING-STORAGE SECTION.
+       01  WS-TODAY         PIC 9(8).
+       01  WS-FORMATTED     PIC X(30).
+
+       PROCEDURE DIVISION.
+           MOVE FUNCTION CURRENT-DATE(1:8) TO WS-TODAY
+           MOVE FUNCTION LOCALE-DATE(WS-TODAY)
+               TO WS-FORMATTED
+           DISPLAY "Today: " WS-FORMATTED
+           STOP RUN.
+```
+
+---
+
+## LOCALE-TIME
+
+Returns a time formatted according to the conventions of a specified locale.
+
+!!! note "COBOL 2002"
+    The LOCALE-TIME function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION LOCALE-TIME ( argument-1 [ argument-2 ] )
+```
+
+- **argument-1** -- numeric. The number of seconds past midnight (0 through 86399).
+- **argument-2** -- optional, alphanumeric. The locale identifier. If omitted, the system default locale is used.
+- **Return category** -- alphanumeric.
+- **Behavior** -- returns a string containing the time formatted according to the time conventions of the specified locale. The format and length of the returned string are locale-dependent (e.g., "2:30:45 PM" for en_US, "14:30:45" for de_DE).
+
+```cobol
+MOVE FUNCTION LOCALE-TIME(52245) TO WS-DISPLAY-TIME
+*> 52245 = 14:30:45
+*> Result depends on system locale, e.g. "2:30:45 PM"
+
+MOVE FUNCTION LOCALE-TIME(52245 "en_GB")
+    TO WS-DISPLAY-TIME
+*> Result: "14:30:45" (British locale, 24-hour)
+
+MOVE FUNCTION LOCALE-TIME(0) TO WS-DISPLAY-TIME
+*> Result: "12:00:00 AM" or "00:00:00" depending on locale
+```
+
+### Practical Example
+
+```cobol
+       WORKING-STORAGE SECTION.
+       01  WS-SECS          PIC 9(5).
+       01  WS-DATE-INT      PIC 9(8).
+       01  WS-FMT-DATE      PIC X(30).
+       01  WS-FMT-TIME      PIC X(30).
+
+       PROCEDURE DIVISION.
+           MOVE FUNCTION CURRENT-DATE(1:8) TO WS-DATE-INT
+           COMPUTE WS-SECS = FUNCTION SECONDS-PAST-MIDNIGHT
+           MOVE FUNCTION LOCALE-DATE(WS-DATE-INT)
+               TO WS-FMT-DATE
+           MOVE FUNCTION LOCALE-TIME(WS-SECS)
+               TO WS-FMT-TIME
+           DISPLAY "Date: " WS-FMT-DATE
+           DISPLAY "Time: " WS-FMT-TIME
+           STOP RUN.
+```
+
+---
+
+## LOCALE-TIME-FROM-SECONDS
+
+Returns a locale-formatted time from a number of seconds past midnight.
+
+!!! note "COBOL 2002"
+    The LOCALE-TIME-FROM-SECONDS function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION LOCALE-TIME-FROM-SECONDS ( argument-1
+    [ argument-2 ] )
+```
+
+- **argument-1** -- numeric. The number of seconds past midnight (0 through 86399).
+- **argument-2** -- optional, alphanumeric. The locale identifier. If omitted, the system default locale is used.
+- **Return category** -- alphanumeric.
+- **Behavior** -- similar to LOCALE-TIME but takes the number of seconds past midnight directly as its argument rather than a formatted time value. Returns a string containing the time formatted according to the conventions of the specified locale.
+
+```cobol
+MOVE FUNCTION LOCALE-TIME-FROM-SECONDS(52245)
+    TO WS-DISPLAY-TIME
+*> 52245 = 14:30:45
+*> Result depends on locale, e.g. "2:30:45 PM"
+
+MOVE FUNCTION LOCALE-TIME-FROM-SECONDS(
+    52245 "de_DE") TO WS-DISPLAY-TIME
+*> Result: "14:30:45" (German locale)
+
+COMPUTE WS-SECS = FUNCTION SECONDS-PAST-MIDNIGHT
+MOVE FUNCTION LOCALE-TIME-FROM-SECONDS(WS-SECS)
+    TO WS-DISPLAY-TIME
+```
+
+---
+
+!!! info "COBOL 2014 Formatted Date/Time Family"
+    COBOL 2014 introduced a major addition to the date/time intrinsic functions: the **formatted date/time family**. This family -- comprising FORMATTED-CURRENT-DATE, FORMATTED-DATE, FORMATTED-DATETIME, FORMATTED-TIME, INTEGER-OF-FORMATTED-DATE, and TEST-FORMATTED-DATETIME -- provides a unified, format-string-driven approach to date and time formatting, parsing, and validation. These functions support ISO 8601 formats and replace many ad hoc formatting techniques that were previously necessary in COBOL programs.
 
 ---
 

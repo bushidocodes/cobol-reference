@@ -159,6 +159,32 @@ COMPUTE WS-INT = FUNCTION INTEGER-PART(5.0)
 *> WS-INT = 5
 ```
 
+### FRACTION-PART
+
+Returns the fractional portion of the argument.
+
+!!! note "COBOL 2014"
+    The FRACTION-PART function was introduced in COBOL 2014.
+
+```cobol
+FUNCTION FRACTION-PART ( argument-1 )
+```
+
+- **argument-1** -- numeric.
+- **Return category** -- numeric.
+- **Behavior** -- returns the fractional portion of argument-1, defined as: `argument-1 - FUNCTION INTEGER-PART(argument-1)`. For positive values, the result is non-negative. For negative values, the result is non-positive. FRACTION-PART is the complement of INTEGER-PART: `FUNCTION INTEGER-PART(x) + FUNCTION FRACTION-PART(x) = x` for all x.
+
+```cobol
+COMPUTE WS-FRAC = FUNCTION FRACTION-PART(3.75)
+*> WS-FRAC = 0.75
+
+COMPUTE WS-FRAC = FUNCTION FRACTION-PART(-3.75)
+*> WS-FRAC = -0.75
+
+COMPUTE WS-FRAC = FUNCTION FRACTION-PART(5.0)
+*> WS-FRAC = 0
+```
+
 ---
 
 ## Trigonometric Functions
@@ -665,6 +691,121 @@ COMPUTE WS-ROOT = FUNCTION SQRT(144)
 
 COMPUTE WS-HYPOTENUSE =
     FUNCTION SQRT(WS-SIDE-A ** 2 + WS-SIDE-B ** 2)
+```
+
+---
+
+## Data Item Bounds
+
+### HIGHEST-ALGEBRAIC
+
+Returns the highest value that can be stored in a specified data item.
+
+!!! note "COBOL 2014"
+    The HIGHEST-ALGEBRAIC function was introduced in COBOL 2014.
+
+```cobol
+FUNCTION HIGHEST-ALGEBRAIC ( argument-1 )
+```
+
+- **argument-1** -- a numeric data-name. Must not be a literal.
+- **Return category** -- numeric.
+- **Behavior** -- returns the highest value that can be stored in argument-1, based on its PICTURE and USAGE. Useful for bounds checking and initialization.
+
+```cobol
+01  WS-UNSIGNED   PIC 9(3).
+01  WS-SIGNED     PIC S9(3).
+01  WS-DECIMAL    PIC S9(3)V99.
+
+COMPUTE WS-RESULT = FUNCTION HIGHEST-ALGEBRAIC(WS-UNSIGNED)
+*> WS-RESULT = 999
+
+COMPUTE WS-RESULT = FUNCTION HIGHEST-ALGEBRAIC(WS-SIGNED)
+*> WS-RESULT = 999
+
+COMPUTE WS-RESULT = FUNCTION HIGHEST-ALGEBRAIC(WS-DECIMAL)
+*> WS-RESULT = 999.99
+```
+
+### LOWEST-ALGEBRAIC
+
+Returns the lowest (most negative) value that can be stored in a specified data item.
+
+!!! note "COBOL 2014"
+    The LOWEST-ALGEBRAIC function was introduced in COBOL 2014.
+
+```cobol
+FUNCTION LOWEST-ALGEBRAIC ( argument-1 )
+```
+
+- **argument-1** -- a numeric data-name. Must not be a literal.
+- **Return category** -- numeric.
+- **Behavior** -- returns the lowest value that can be stored in argument-1, based on its PICTURE and USAGE. For unsigned data items, the result is zero. For signed data items, the result is the most negative value representable.
+
+```cobol
+01  WS-UNSIGNED   PIC 9(3).
+01  WS-SIGNED     PIC S9(3).
+01  WS-DECIMAL    PIC S9(3)V99.
+
+COMPUTE WS-RESULT = FUNCTION LOWEST-ALGEBRAIC(WS-UNSIGNED)
+*> WS-RESULT = 0
+
+COMPUTE WS-RESULT = FUNCTION LOWEST-ALGEBRAIC(WS-SIGNED)
+*> WS-RESULT = -999
+
+COMPUTE WS-RESULT = FUNCTION LOWEST-ALGEBRAIC(WS-DECIMAL)
+*> WS-RESULT = -999.99
+```
+
+---
+
+## Boolean Conversion Functions
+
+### BOOLEAN-OF-INTEGER
+
+Converts an integer to a boolean value.
+
+!!! note "COBOL 2002"
+    The BOOLEAN-OF-INTEGER function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION BOOLEAN-OF-INTEGER ( argument-1  argument-2 )
+```
+
+- **argument-1** -- integer. The value to convert to boolean.
+- **argument-2** -- integer. The length of the result in boolean positions.
+- **Return category** -- boolean.
+- **Behavior** -- converts argument-1 to its boolean (bit-string) representation with a length of argument-2 boolean positions. The result is the binary representation of argument-1, padded on the left with zero bits if necessary to fill argument-2 positions.
+
+```cobol
+MOVE FUNCTION BOOLEAN-OF-INTEGER(5 8) TO WS-BOOL
+*> WS-BOOL = "00000101"
+
+MOVE FUNCTION BOOLEAN-OF-INTEGER(255 8) TO WS-BOOL
+*> WS-BOOL = "11111111"
+```
+
+### INTEGER-OF-BOOLEAN
+
+Converts a boolean value to its integer representation.
+
+!!! note "COBOL 2002"
+    The INTEGER-OF-BOOLEAN function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION INTEGER-OF-BOOLEAN ( argument-1 )
+```
+
+- **argument-1** -- boolean.
+- **Return category** -- integer.
+- **Behavior** -- converts argument-1 from its boolean (bit-string) representation to the corresponding integer value. The result is the integer equivalent of the binary value represented by argument-1.
+
+```cobol
+COMPUTE WS-INT = FUNCTION INTEGER-OF-BOOLEAN(WS-BOOL)
+*> If WS-BOOL = "00000101", WS-INT = 5
+
+COMPUTE WS-INT = FUNCTION INTEGER-OF-BOOLEAN(WS-FLAGS)
+*> Converts boolean flags to their integer equivalent
 ```
 
 ---

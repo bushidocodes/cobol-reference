@@ -16,6 +16,51 @@ String intrinsic functions return a value of category **alphanumeric**, **nation
 
 ---
 
+## BYTE-LENGTH
+
+Returns the length of a data item in bytes.
+
+!!! note "COBOL 2002"
+    The BYTE-LENGTH function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION BYTE-LENGTH ( argument-1 )
+```
+
+- **argument-1** -- any category. May be a literal, data-name, or another function reference.
+- **Return category** -- integer.
+- **Behavior** -- returns the number of bytes occupied by argument-1. For alphanumeric items, BYTE-LENGTH and LENGTH return the same value. For national (UTF-16) items, BYTE-LENGTH returns twice the value of LENGTH because each national character occupies 2 bytes. For items with `USAGE COMP` or other non-display usages, BYTE-LENGTH returns the actual storage size in bytes.
+
+```cobol
+01  WS-ALPHA   PIC X(10).
+01  WS-NATIONAL PIC N(10).
+01  WS-COMP    PIC 9(8) USAGE COMP.
+
+COMPUTE WS-LEN = FUNCTION BYTE-LENGTH(WS-ALPHA)
+*> WS-LEN = 10
+
+COMPUTE WS-LEN = FUNCTION BYTE-LENGTH(WS-NATIONAL)
+*> WS-LEN = 20 (10 national chars * 2 bytes each)
+
+COMPUTE WS-LEN = FUNCTION BYTE-LENGTH(WS-COMP)
+*> WS-LEN = 4 (binary storage for 9(8))
+
+COMPUTE WS-LEN = FUNCTION LENGTH(WS-NATIONAL)
+*> WS-LEN = 10 (character positions, not bytes)
+```
+
+### BYTE-LENGTH vs LENGTH
+
+| Data Item | LENGTH | BYTE-LENGTH |
+|-----------|--------|-------------|
+| `PIC X(20)` | 20 | 20 |
+| `PIC N(10)` (national/UTF-16) | 10 | 20 |
+| `PIC 9(8) COMP` | 8 | 4 |
+| `PIC 9(8) COMP-3` | 8 | 5 |
+| `"HELLO"` (literal) | 5 | 5 |
+
+---
+
 ## CHAR
 
 Returns the character at a specified position in the program collating sequence.
@@ -35,6 +80,57 @@ MOVE FUNCTION CHAR(66) TO WS-CH
 
 MOVE FUNCTION CHAR(1) TO WS-FIRST
 *> Returns the first character in the collating sequence
+```
+
+---
+
+## CHAR-NATIONAL
+
+Returns the national character at a specified ordinal position.
+
+!!! note "COBOL 2002"
+    The CHAR-NATIONAL function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION CHAR-NATIONAL ( argument-1 )
+```
+
+- **argument-1** -- integer, in the range 1 through the number of positions in the national character set.
+- **Return category** -- national, length 1.
+- **Behavior** -- returns the national character that occupies ordinal position argument-1 in the national character set. CHAR-NATIONAL is the national character equivalent of CHAR; where CHAR returns an alphanumeric character from the program collating sequence, CHAR-NATIONAL returns a national character from the national character set.
+
+```cobol
+MOVE FUNCTION CHAR-NATIONAL(66) TO WS-NCHAR
+*> Returns the national character at ordinal position 66
+
+MOVE FUNCTION CHAR-NATIONAL(1) TO WS-FIRST-NCHAR
+*> Returns the first character in the national character set
+```
+
+---
+
+## CONCAT
+
+Returns the concatenation of the argument strings.
+
+!!! note "COBOL 2014"
+    The CONCAT function was introduced in COBOL 2014 as the revised shorter name for CONCATENATE. Both names may be used interchangeably; CONCATENATE remains available as a synonym for backward compatibility.
+
+```cobol
+FUNCTION CONCAT ( argument-1 ... )
+```
+
+- **argument-1 ...** -- one or more arguments of category alphanumeric or national. All arguments must be of the same category.
+- **Return category** -- same as the argument category. The length of the result is the sum of the lengths of all arguments.
+- **Behavior** -- returns a character string that is the concatenation of the arguments in the order specified. No padding or trimming is performed; trailing spaces in each argument are preserved in the result. The behavior is identical to CONCATENATE.
+
+```cobol
+MOVE FUNCTION CONCAT(WS-FIRST " " WS-LAST)
+    TO WS-FULL-NAME
+
+MOVE FUNCTION CONCAT("Hello" ", " "World" "!")
+    TO WS-GREETING
+*> WS-GREETING = "Hello, World!"
 ```
 
 ---
@@ -77,6 +173,37 @@ MOVE FUNCTION CONCATENATE(
 
 ---
 
+## DISPLAY-OF
+
+Converts a national character string to alphanumeric representation.
+
+!!! note "COBOL 2002"
+    The DISPLAY-OF function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION DISPLAY-OF ( argument-1 [ argument-2 ] )
+```
+
+- **argument-1** -- national. The national character string to convert.
+- **argument-2** -- optional, alphanumeric. The code page to use for the conversion. If omitted, the system default code page is used.
+- **Return category** -- alphanumeric.
+- **Behavior** -- converts a national (Unicode/UTF-16) character string to its alphanumeric representation. DISPLAY-OF is the inverse of NATIONAL-OF. The result length depends on the national characters and the target code page, as some national characters may require multiple alphanumeric positions.
+
+```cobol
+01  WS-NATIONAL   PIC N(10).
+01  WS-ALPHA      PIC X(20).
+
+MOVE FUNCTION DISPLAY-OF(WS-NATIONAL) TO WS-ALPHA
+*> Converts national string to alphanumeric using default
+*> code page
+
+MOVE FUNCTION DISPLAY-OF(WS-NATIONAL "UTF-8")
+    TO WS-ALPHA
+*> Converts national string to alphanumeric using UTF-8
+```
+
+---
+
 ## LENGTH
 
 Returns the length of the argument in character positions.
@@ -105,6 +232,36 @@ END-IF
 
 ---
 
+## LENGTH-AN
+
+Returns the length of an argument in alphanumeric character positions.
+
+!!! note "COBOL 2002"
+    The LENGTH-AN function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION LENGTH-AN ( argument-1 )
+```
+
+- **argument-1** -- any category. May be a literal, data-name, or another function reference.
+- **Return category** -- integer.
+- **Behavior** -- returns the length of argument-1 measured in alphanumeric character positions, regardless of the argument's actual category. For alphanumeric items, LENGTH-AN returns the same value as LENGTH. For national items, LENGTH-AN returns the number of alphanumeric character positions that would be needed to represent the item, which may differ from the number of national character positions returned by LENGTH.
+
+```cobol
+01  WS-ALPHA     PIC X(10).
+01  WS-NATIONAL  PIC N(10).
+
+COMPUTE WS-LEN = FUNCTION LENGTH-AN(WS-ALPHA)
+*> WS-LEN = 10 (same as LENGTH for alphanumeric)
+
+COMPUTE WS-LEN = FUNCTION LENGTH-AN(WS-NATIONAL)
+*> Returns the number of alphanumeric positions needed
+*> (may differ from FUNCTION LENGTH(WS-NATIONAL) which
+*>  returns 10 national character positions)
+```
+
+---
+
 ## LOWER-CASE
 
 Returns the argument with all uppercase letters converted to lowercase.
@@ -123,6 +280,37 @@ MOVE FUNCTION LOWER-CASE("HELLO WORLD")
 *> WS-RESULT = "hello world"
 
 MOVE FUNCTION LOWER-CASE(WS-INPUT) TO WS-OUTPUT
+```
+
+---
+
+## NATIONAL-OF
+
+Converts an alphanumeric string to national (Unicode/UTF-16) representation.
+
+!!! note "COBOL 2002"
+    The NATIONAL-OF function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION NATIONAL-OF ( argument-1 [ argument-2 ] )
+```
+
+- **argument-1** -- alphanumeric. The alphanumeric string to convert.
+- **argument-2** -- optional, alphanumeric. The code page of argument-1. If omitted, the system default code page is assumed.
+- **Return category** -- national.
+- **Behavior** -- converts an alphanumeric character string to its national (Unicode/UTF-16) representation. NATIONAL-OF is the inverse of DISPLAY-OF. The result length in national character positions depends on the source characters and the source code page.
+
+```cobol
+01  WS-ALPHA     PIC X(20).
+01  WS-NATIONAL  PIC N(20).
+
+MOVE FUNCTION NATIONAL-OF(WS-ALPHA) TO WS-NATIONAL
+*> Converts alphanumeric string to national using default
+*> code page
+
+MOVE FUNCTION NATIONAL-OF(WS-ALPHA "IBM-1047")
+    TO WS-NATIONAL
+*> Converts from EBCDIC code page IBM-1047 to national
 ```
 
 ---
@@ -215,6 +403,48 @@ MOVE FUNCTION REVERSE(WS-INPUT) TO WS-OUTPUT
 
 ---
 
+## STANDARD-COMPARE
+
+Compares two strings using standardized comparison rules.
+
+!!! note "COBOL 2002"
+    The STANDARD-COMPARE function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION STANDARD-COMPARE ( argument-1  argument-2
+    [ argument-3 [ argument-4 ] ] )
+```
+
+- **argument-1** -- alphanumeric or national. The first string to compare.
+- **argument-2** -- alphanumeric or national. The second string to compare.
+- **argument-3** -- optional, alphanumeric. The comparison method to use for alphanumeric arguments.
+- **argument-4** -- optional, alphanumeric. The comparison method to use for national arguments.
+- **Return category** -- alphanumeric, length 1.
+- **Behavior** -- compares argument-1 and argument-2 using standardized comparison rules (as opposed to the program collating sequence used by normal comparison or the locale-specific rules used by LOCALE-COMPARE) and returns:
+    - `"<"` if argument-1 is less than argument-2
+    - `"="` if argument-1 equals argument-2
+    - `">"` if argument-1 is greater than argument-2
+
+The optional argument-3 and argument-4 parameters allow specification of the comparison method for alphanumeric and national arguments respectively.
+
+```cobol
+MOVE FUNCTION STANDARD-COMPARE("apple" "banana")
+    TO WS-RESULT
+*> WS-RESULT = "<"
+
+MOVE FUNCTION STANDARD-COMPARE("ABC" "ABC")
+    TO WS-RESULT
+*> WS-RESULT = "="
+
+MOVE FUNCTION STANDARD-COMPARE(WS-STR-1 WS-STR-2)
+    TO WS-RESULT
+IF WS-RESULT = ">"
+    DISPLAY "First string is greater"
+END-IF
+```
+
+---
+
 ## SUBSTITUTE
 
 Returns the argument with specified substitutions applied.
@@ -300,6 +530,70 @@ MOVE FUNCTION UPPER-CASE("hello world")
 *> WS-RESULT = "HELLO WORLD"
 
 MOVE FUNCTION UPPER-CASE(WS-NAME) TO WS-NAME-UPPER
+```
+
+---
+
+## LOCALE-COMPARE
+
+Returns a value indicating the result of comparing two strings according to the rules of a specified locale.
+
+!!! note "COBOL 2002"
+    The LOCALE-COMPARE function was introduced in COBOL 2002.
+
+```cobol
+FUNCTION LOCALE-COMPARE ( argument-1  argument-2 [ argument-3 ] )
+```
+
+- **argument-1** -- alphanumeric or national. The first string.
+- **argument-2** -- alphanumeric or national. The second string. Must be the same category as argument-1.
+- **argument-3** -- optional, alphanumeric. The locale identifier. If omitted, the system default locale is used.
+- **Return category** -- alphanumeric, length 1.
+- **Behavior** -- compares argument-1 and argument-2 according to the cultural sorting rules of the specified locale and returns:
+    - `"<"` if argument-1 is less than argument-2
+    - `"="` if argument-1 equals argument-2
+    - `">"` if argument-1 is greater than argument-2
+
+Locale-aware comparison differs from standard collating sequence comparison in that it accounts for language-specific rules such as accent ordering, case folding, and multi-character collation elements (e.g., in German, "ä" sorts near "a"; in Swedish, "ä" sorts after "z").
+
+```cobol
+MOVE FUNCTION LOCALE-COMPARE("apple" "banana")
+    TO WS-RESULT
+*> WS-RESULT = "<"
+
+MOVE FUNCTION LOCALE-COMPARE("straße" "strasse" "de_DE")
+    TO WS-RESULT
+*> Result depends on German locale collation rules
+
+MOVE FUNCTION LOCALE-COMPARE("résumé" "resume" "fr_FR")
+    TO WS-RESULT
+*> French locale determines how accented characters compare
+```
+
+### Practical Example
+
+```cobol
+       WORKING-STORAGE SECTION.
+       01  WS-NAME-1       PIC X(30) VALUE "Müller".
+       01  WS-NAME-2       PIC X(30) VALUE "Mueller".
+       01  WS-CMP          PIC X(1).
+
+       PROCEDURE DIVISION.
+           MOVE FUNCTION LOCALE-COMPARE(
+               WS-NAME-1 WS-NAME-2 "de_DE")
+               TO WS-CMP
+           EVALUATE WS-CMP
+               WHEN "<"
+                   DISPLAY WS-NAME-1 " sorts before "
+                           WS-NAME-2
+               WHEN "="
+                   DISPLAY WS-NAME-1 " equals "
+                           WS-NAME-2
+               WHEN ">"
+                   DISPLAY WS-NAME-1 " sorts after "
+                           WS-NAME-2
+           END-EVALUATE
+           STOP RUN.
 ```
 
 ---

@@ -73,10 +73,13 @@ The following tables list all standard intrinsic functions grouped by category. 
 | EXP | *e* raised to the power of the argument | COBOL-85 Amdt. 1 |
 | EXP10 | 10 raised to the power of the argument | COBOL-85 Amdt. 1 |
 | FACTORIAL | Factorial of an argument | COBOL-85 Amdt. 1 |
+| FRACTION-PART | Fractional portion of the argument | COBOL 2014 |
+| HIGHEST-ALGEBRAIC | Highest value storable in a data item | COBOL 2014 |
 | INTEGER | Greatest integer not exceeding the argument value | COBOL-85 Amdt. 1 |
 | INTEGER-PART | Integer portion of the argument | COBOL-85 Amdt. 1 |
 | LOG | Natural logarithm of an argument | COBOL-85 Amdt. 1 |
 | LOG10 | Common (base-10) logarithm of an argument | COBOL-85 Amdt. 1 |
+| LOWEST-ALGEBRAIC | Lowest value storable in a data item | COBOL 2014 |
 | MAX | Maximum value among arguments | COBOL-85 Amdt. 1 |
 | MEAN | Arithmetic mean of the arguments | COBOL-85 Amdt. 1 |
 | MEDIAN | Median value of the arguments | COBOL-85 Amdt. 1 |
@@ -96,6 +99,9 @@ The following tables list all standard intrinsic functions grouped by category. 
 | TAN | Tangent of an argument | COBOL-85 Amdt. 1 |
 | VARIANCE | Variance of the arguments | COBOL-85 Amdt. 1 |
 
+!!! note "COBOL 2014"
+    The functions FRACTION-PART, HIGHEST-ALGEBRAIC, and LOWEST-ALGEBRAIC were introduced in COBOL 2014.
+
 !!! note "COBOL 2023"
     The functions E, PI, and SIGN were introduced in COBOL 2023.
 
@@ -103,20 +109,31 @@ The following tables list all standard intrinsic functions grouped by category. 
 
 | Function | Description | Since |
 |---|---|---|
+| BYTE-LENGTH | Length of an argument in bytes | COBOL 2002 |
 | CHAR | Character at a specified position in the program collating sequence | COBOL-85 Amdt. 1 |
+| CHAR-NATIONAL | National character at a specified ordinal position | COBOL 2002 |
+| CONCAT | Concatenation of the argument strings (revised name) | COBOL 2014 |
 | CONCATENATE | Concatenation of the argument strings | COBOL 2002 |
+| DISPLAY-OF | National string converted to alphanumeric | COBOL 2002 |
 | LENGTH | Length of an argument in character positions | COBOL-85 Amdt. 1 |
+| LENGTH-AN | Length in alphanumeric character positions | COBOL 2002 |
+| LOCALE-COMPARE | Locale-aware comparison of two strings | COBOL 2002 |
 | LOWER-CASE | Argument converted to lowercase | COBOL-85 Amdt. 1 |
+| NATIONAL-OF | Alphanumeric string converted to national | COBOL 2002 |
 | ORD | Ordinal position of a character in the program collating sequence | COBOL-85 Amdt. 1 |
 | ORD-MAX | Ordinal position of the argument with the maximum value | COBOL-85 Amdt. 1 |
 | ORD-MIN | Ordinal position of the argument with the minimum value | COBOL-85 Amdt. 1 |
 | REVERSE | Argument with characters in reversed order | COBOL-85 Amdt. 1 |
+| STANDARD-COMPARE | Comparison using standardized rules | COBOL 2002 |
 | SUBSTITUTE | Argument with specified substitutions applied | COBOL 2023 |
 | TRIM | Argument with leading or trailing spaces removed | COBOL 2002 |
 | UPPER-CASE | Argument converted to uppercase | COBOL-85 Amdt. 1 |
 
 !!! note "COBOL 2002"
-    The functions CONCATENATE and TRIM were introduced in COBOL 2002.
+    The functions BYTE-LENGTH, CHAR-NATIONAL, CONCATENATE, DISPLAY-OF, LENGTH-AN, LOCALE-COMPARE, NATIONAL-OF, STANDARD-COMPARE, and TRIM were introduced in COBOL 2002.
+
+!!! note "COBOL 2014"
+    CONCAT was introduced in COBOL 2014 as the preferred shorter name for CONCATENATE.
 
 !!! note "COBOL 2023"
     The function SUBSTITUTE was introduced in COBOL 2023.
@@ -125,20 +142,35 @@ The following tables list all standard intrinsic functions grouped by category. 
 
 | Function | Description | Since |
 |---|---|---|
+| COMBINED-DATETIME | Combined date and time as a single numeric value | COBOL 2002 |
 | CURRENT-DATE | Current date and time as a 21-character alphanumeric value | COBOL-85 Amdt. 1 |
 | DATE-OF-INTEGER | Standard date (YYYYMMDD) corresponding to an integer date | COBOL-85 Amdt. 1 |
 | DATE-TO-YYYYMMDD | Conversion of a date from YYMMDD to YYYYMMDD using a windowing rule | COBOL 2002 |
 | DAY-OF-INTEGER | Julian date (YYYYDDD) corresponding to an integer date | COBOL-85 Amdt. 1 |
 | DAY-TO-YYYYDDD | Conversion of a date from YYDDD to YYYYDDD using a windowing rule | COBOL 2002 |
+| FORMATTED-CURRENT-DATE | Current date/time formatted per a format string | COBOL 2014 |
+| FORMATTED-DATE | Integer date formatted per a format string | COBOL 2014 |
+| FORMATTED-DATETIME | Combined date-time formatted per a format string | COBOL 2014 |
+| FORMATTED-TIME | Time formatted per a format string | COBOL 2014 |
 | INTEGER-OF-DATE | Integer date corresponding to a standard date (YYYYMMDD) | COBOL-85 Amdt. 1 |
 | INTEGER-OF-DAY | Integer date corresponding to a Julian date (YYYYDDD) | COBOL-85 Amdt. 1 |
+| INTEGER-OF-FORMATTED-DATE | Integer date from a formatted date string | COBOL 2014 |
+| LOCALE-DATE | Date formatted according to locale conventions | COBOL 2002 |
+| LOCALE-TIME | Time formatted according to locale conventions | COBOL 2002 |
+| LOCALE-TIME-FROM-SECONDS | Locale-formatted time from seconds past midnight | COBOL 2002 |
 | SECONDS-FROM-FORMATTED-TIME | Number of seconds from a formatted time string | COBOL 2002 |
 | SECONDS-PAST-MIDNIGHT | Number of seconds since midnight | COBOL-85 Amdt. 1 |
+| TEST-DATE-YYYYMMDD | Tests validity of a YYYYMMDD date | COBOL 2002 |
+| TEST-DAY-YYYYDDD | Tests validity of a YYYYDDD Julian date | COBOL 2002 |
+| TEST-FORMATTED-DATETIME | Tests validity of a formatted date/time string | COBOL 2014 |
 | WHEN-COMPILED | Date and time the program was compiled | COBOL-85 Amdt. 1 |
 | YEAR-TO-YYYY | Conversion of a two-digit year to a four-digit year using a windowing rule | COBOL 2002 |
 
 !!! note "COBOL 2002"
-    The functions DATE-TO-YYYYMMDD, DAY-TO-YYYYDDD, SECONDS-FROM-FORMATTED-TIME, and YEAR-TO-YYYY were introduced in COBOL 2002.
+    The functions COMBINED-DATETIME, DATE-TO-YYYYMMDD, DAY-TO-YYYYDDD, LOCALE-DATE, LOCALE-TIME, LOCALE-TIME-FROM-SECONDS, SECONDS-FROM-FORMATTED-TIME, TEST-DATE-YYYYMMDD, TEST-DAY-YYYYDDD, and YEAR-TO-YYYY were introduced in COBOL 2002.
+
+!!! note "COBOL 2014"
+    The formatted date/time family (FORMATTED-CURRENT-DATE, FORMATTED-DATE, FORMATTED-DATETIME, FORMATTED-TIME, INTEGER-OF-FORMATTED-DATE, TEST-FORMATTED-DATETIME) was introduced in COBOL 2014.
 
 ### Financial Functions
 
@@ -154,16 +186,33 @@ The following tables list all standard intrinsic functions grouped by category. 
 | NUMVAL | Numeric value of an alphanumeric string in simple format | COBOL-85 Amdt. 1 |
 | NUMVAL-C | Numeric value of an alphanumeric string with optional currency sign | COBOL-85 Amdt. 1 |
 | NUMVAL-F | Numeric value of an alphanumeric string in floating-point format | COBOL 2002 |
+| TEST-NUMVAL | Tests validity of a string for NUMVAL | COBOL 2014 |
+| TEST-NUMVAL-C | Tests validity of a string for NUMVAL-C | COBOL 2014 |
+| TEST-NUMVAL-F | Tests validity of a string for NUMVAL-F | COBOL 2014 |
 
 !!! note "COBOL 2002"
     The function NUMVAL-F was introduced in COBOL 2002.
+
+!!! note "COBOL 2014"
+    The validation functions TEST-NUMVAL, TEST-NUMVAL-C, and TEST-NUMVAL-F were introduced in COBOL 2014.
 
 ### Boolean and Ordinal Functions
 
 | Function | Description | Since |
 |---|---|---|
+| BOOLEAN-OF-INTEGER | Integer converted to boolean representation | COBOL 2002 |
+| INTEGER-OF-BOOLEAN | Boolean value converted to integer | COBOL 2002 |
 | ORD-MAX | Ordinal position of the argument with the maximum value | COBOL-85 Amdt. 1 |
 | ORD-MIN | Ordinal position of the argument with the minimum value | COBOL-85 Amdt. 1 |
+
+### Exception Handling Functions
+
+| Function | Description | Since |
+|---|---|---|
+| EXCEPTION-FILE | File name associated with the last I/O exception | COBOL 2002 |
+| EXCEPTION-LOCATION | Source location of the last exception | COBOL 2002 |
+| EXCEPTION-STATEMENT | Statement that caused the last exception | COBOL 2002 |
+| EXCEPTION-STATUS | Exception condition name for the last exception | COBOL 2002 |
 
 ## Examples
 
