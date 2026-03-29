@@ -18,11 +18,11 @@ The very first COBOL specification and the origin of the language.
 
 In **March 1959**, **Mary K. Hawes**, a programmer at Burroughs Corporation, called for computer users and manufacturers to create a new computer language — one that could run on different brands of computers and perform accounting tasks such as payroll calculations, inventory control, and records of credits and debits. On **April 8, 1959**, she organized a meeting at the University of Pennsylvania Computing Center; attendees included Grace Hopper, Robert Rossheim, Saul Gorn, and others. Attendees asked **Charles Phillips** of the U.S. Department of Defense if his agency would sponsor a formal conference. Phillips agreed, and on **May 28-29, 1959**, approximately 40 representatives of computer users and manufacturers met at the Pentagon to create a common language for business-type data processing. Three committees were formed: a **Short Range Committee**, an **Intermediate Range Committee**, and a **Long Range Committee** (the Long Range Committee was never established). The effort was organized under CODASYL (Committee on Data Systems Languages), chaired by **Charles A. Phillips** of the Office of the Secretary of Defense, with **Grace Hopper** and **Robert Bemer** as advisors.
 
-The Short Range Committee was composed of six manufacturers and three Government representatives. **Jean E. Sammet** of Sylvania Electric Products chaired the Statement Language Task Group (Procedure Division design) and later wrote the definitive account of COBOL's development. **Mary Hawes** chaired the Data Description subcommittee.
+The Short Range Committee was composed of six manufacturers and three Government representatives. Its assigned mission was "to do a fact finding study of what's wrong and right with existing business compilers," but the committee set itself the ambitious goal of developing a complete language within three months. **Jean E. Sammet** of Sylvania Electric Products chaired the Statement Language Task Group (Procedure Division design) and later wrote the definitive account of COBOL's development. **Mary Hawes** chaired the Data Description subcommittee.
 
-The Short Range Committee held its first meeting on June 23, 1959, and organized four working groups: Data Description, Procedural Statements, Application Survey, and Usage and Experience. On **June 4, 1959**, the steering committee formally established CODASYL. In **mid-September 1959**, **R.W. Bemer** proposed the name **COBOL** (alternatives considered included "BUSY", "INFOSYL", and "COCOSYL"), suggesting a **CO**mmon **B**usiness **O**riented **L**anguage. A six-person subcommittee (Gertrude Tierney and William Selden from IBM; Howard Bromberg and Norman Discount from RCA; Vernon Reeves and Jean Sammet from Sylvania) produced the final specification in two weeks of intensive work, finishing on November 7, 1959.
+The Short Range Committee held its first meeting on June 23, 1959, and organized four working groups: Data Description, Procedural Statements, Application Survey, and Usage and Experience. On **June 4, 1959**, the steering committee formally established CODASYL. In **mid-September 1959**, **R.W. Bemer** proposed the name **COBOL** (alternatives considered included "BUSY", "INFOSYL", and "COCOSYL"), suggesting a **CO**mmon **B**usiness **O**riented **L**anguage. The September 4, 1959 report to the Executive Committee stated that the committee had prepared "a framework upon which an effective common business language could be built" but needed additional time; they were authorized to complete the work by December 1, 1959. A six-person subcommittee (Gertrude Tierney and William Selden from IBM; Howard Bromberg and Norman Discount from RCA; Vernon Reeves and Jean Sammet from Sylvania) produced the final specification in two weeks of intensive work, finishing on November 7, 1959.
 
-The COBOL System was reviewed and approved by the Short Range Committee during November 16-20, 1959. The final report was delivered to the Executive Committee on December 17, 1959. The Executive Committee accepted and approved the report on January 7-8, 1960, establishing the **"Basic COBOL" minimum compliance concept** — no manufacturer could claim COBOL support without implementing at least Basic COBOL. **Frances (Betty) Holberton** edited the final Government Printing Office publication, which was published in April 1960. RCA and Remington-Rand Univac raced to produce the first COBOL compilers. At Remington Rand UNIVAC, **Grace Hopper** directed the team using the room-sized UNIVAC I and UNIVAC II computers; programs were entered on reels of magnetic tape using a special typewriter called a Unityper. The **first COBOL program executed on August 17, 1960** on an RCA 501 computer. On **December 6-7, 1960**, the same COBOL programs ran successfully on both a UNIVAC II (in Philadelphia) and an RCA 501 (at the RCA Systems Center in Cherry Hill, NJ), using programs from United States Steel and the General Services Administration — demonstrating cross-platform compatibility for the first time. Printouts from the RCA test runs were preserved by **Howard Bromberg** (of the original six-person editing subcommittee) and are now in the Smithsonian Institution's National Museum of American History.
+The COBOL System was reviewed and approved by the Short Range Committee during November 16-20, 1959. **Jean E. Sammet**, as chairman of the editing group, led the final editing after the November 16-20 review. The final report was delivered to the Executive Committee on December 17, 1959. The Executive Committee accepted and approved the report on January 7-8, 1960, establishing the **"Basic COBOL" minimum compliance concept** — no manufacturer could claim COBOL support without implementing at least Basic COBOL. **Frances (Betty) Holberton** edited the final Government Printing Office publication, which was published in April 1960. RCA and Remington-Rand Univac raced to produce the first COBOL compilers. At Remington Rand UNIVAC, **Grace Hopper** directed the team using the room-sized UNIVAC I and UNIVAC II computers; programs were entered on reels of magnetic tape using a special typewriter called a Unityper. Notably, Remington Rand used FLOW-MATIC to write a significant part of their COBOL compiler — a notable early example of compiler bootstrapping. The **first COBOL program executed on August 17, 1960** on an RCA 501 computer. On **December 6-7, 1960**, the same COBOL programs ran successfully on both a UNIVAC II (in Philadelphia) and an RCA 501 (at the RCA Systems Center in Cherry Hill, NJ), using programs from United States Steel and the General Services Administration — demonstrating cross-platform compatibility for the first time. Printouts from the RCA test runs were preserved by **Howard Bromberg** (of the original six-person editing subcommittee) and are now in the Smithsonian Institution's National Museum of American History.
 
 The committee later acknowledged that COBOL was originally conceived as a stopgap: "had the Short-Range Committee realized at the outset that the language it created was going to be in use for such a long period of time, it would have gone about the task quite differently."
 
@@ -96,7 +96,7 @@ Features explicitly planned for future versions included Table Handling Function
 
 **CODASYL specification (pre-standard)**
 
-A cleanup of COBOL-60, addressing numerous logical flaws found in the original specification. A Special Task Group was created in September 1960 and worked through February 1961 to prepare the revision. The Maintenance Committee resumed work in May 1961, working on extensions including report-writing and sorting (which became COBOL-61 Extended). The COBOL-61 manual was published by the Government Printing Office in August 1961. It replaced COBOL-60 and became the first version widely implemented by compiler vendors.
+A cleanup of COBOL-60, addressing numerous logical flaws found in the original specification. A Special Task Group was created in September 1960 and worked through February 1961 to prepare the revision. The Special Task Group sessions were chaired by **J.L. Jones** (Air Materiel Command) and **G.M. Dillon** (DuPont Company). The Maintenance Committee resumed work in May 1961, working on extensions including report-writing and sorting (which became COBOL-61 Extended). The COBOL-61 manual was published by the Government Printing Office in August 1961. It replaced COBOL-60 and became the first version widely implemented by compiler vendors.
 
 #### Structure
 
@@ -165,17 +165,19 @@ The COBOL-61 reserved word list included words that were later removed or replac
 
 IBM's OS/360 COBOL implementation (December 1964) shipped two compilers — **COBOL E** (subset) and **COBOL F** (full). COBOL E omitted CORRESPONDING, Report Writer, Sort, nested IF, and implied subjects. Notably, the **Linkage Section** and the **REWRITE statement** were IBM extensions in 1964, not yet part of the CODASYL standard. IBM also introduced the **TRANSFORM** statement (character translation, later dropped) and **EXHIBIT**/**TRACE** debugging statements.
 
+A subset called **"Compact COBOL"** was defined by a COBOL Committee subcommittee but was never published, to avoid confusion with the standards work.
+
 ### COBOL-61 EXTENDED
 
 **CODASYL specification (pre-standard)**
 
-Published in 1963, this revision added the SORT and REPORT WRITER features to the language.
+Published in November 1962, this revision added the SORT and REPORT WRITER features to the language.
 
 ### COBOL-65
 
 **CODASYL specification (pre-standard)**
 
-Published in 1965, this revision introduced facilities for mass storage file handling and tables (OCCURS clause with DEPENDING ON). COBOL-65 also brought improvements to the SORT feature and added the ability to define library text for inclusion (the precursor to the COPY statement).
+The COBOL-65 manual was issued in 1966 (despite its name). This revision introduced facilities for mass storage file handling and tables (OCCURS clause with DEPENDING ON). COBOL-65 also brought improvements to the SORT feature and added the ability to define library text for inclusion (the precursor to the COPY statement). Significant contributions were made by **ECMA** (European Computer Manufacturer's Association).
 
 ---
 
@@ -187,7 +189,9 @@ Beginning in 1968, COBOL became a formally standardized language under the Ameri
 
 **ANSI X3.23-1968**
 
-The first formal ANSI standard for COBOL. Building on the CODASYL specifications, it codified the four-division program structure (as established by COBOL-61), the PICTURE clause, level-number data hierarchy, and the core set of Procedure Division verbs (MOVE, ADD, SUBTRACT, MULTIPLY, DIVIDE, IF, PERFORM, GO TO, READ, WRITE, OPEN, CLOSE).
+The first formal ANSI standard for COBOL. Standardization under ASA/USASI began in January 1963 with Task Group X3.4.4, chaired by **Howard Bromberg**. The proposed standard (pUSASI COBOL) was distributed as COBOL Information Bulletin No. 9. During balloting (July 1967 through July 1968), X3 voted to remove the **Random Processing Module** from the standard and place it in an Appendix. COBOL was officially approved as **USA Standard X3.23-1968 in August 1968**.
+
+Building on the CODASYL specifications, it codified the four-division program structure (as established by COBOL-61), the PICTURE clause, level-number data hierarchy, and the core set of Procedure Division verbs (MOVE, ADD, SUBTRACT, MULTIPLY, DIVIDE, IF, PERFORM, GO TO, READ, WRITE, OPEN, CLOSE).
 
 COBOL-68 defined two source formats (fixed-form with 80-column layout) and introduced the concept of functional processing modules at different implementation levels.
 
@@ -339,3 +343,13 @@ Robert L. Glass observed in 1997: "COBOL is a very bad business programming lang
 As of 2016, COBOL remained deeply embedded in U.S. federal agencies including the Departments of Veterans Affairs, Homeland Security, Agriculture, Health and Human Services, Justice, and Treasury. A Micro Focus product director noted that finding "an agency in the federal government that doesn't have an application written in COBOL" would be difficult.
 
 No compiler currently implements the full COBOL 2002 or COBOL 2014 specification. Feature coverage varies significantly between vendors, and many implementations include proprietary extensions beyond the standard.
+
+## Significant Contributions to Technology
+
+Jean E. Sammet identified several aspects of COBOL that represented significant contributions to the state of the art in programming languages (Sammet, 1969):
+
+- **Separation of concerns** — COBOL was the first language to clearly separate actions (Procedure Division), data descriptions (Data Division), and physical environment (Environment Division) into distinct program sections.
+- **Machine-independent data description** — The Data Division logically describes data without reference to internal machine representation, a concept that was novel at the time.
+- **Large file processing** — COBOL provided effective handling of problems involving large files with relatively simple processing, the dominant pattern in business computing.
+- **Readable, English-like syntax** — Natural, readable programming with mnemonic names, making programs accessible to non-programmers and serving as their own documentation.
+- **First operating system interface specifications** — The Environment Division provided the first rudimentary interface specifications for an operating system in a programming language.
