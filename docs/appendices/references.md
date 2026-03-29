@@ -31,6 +31,7 @@ This page lists primary sources, standards documents, historical accounts, and a
 ## Historical Papers and Accounts
 
 11b. Jean E. Sammet, "Programming Languages: History and Fundamentals," Prentice-Hall, 1969. Chapter V.3: COBOL (pp. 330-376).
+11c. CODASYL 10th Anniversary Meeting transcript, May 27-28, 1969. Computer Oral History Collection, Archives Center, National Museum of American History (NMAH-AC0196).
 12. Jean E. Sammet, "Basic Elements of COBOL 61," *Communications of the ACM*, Vol. 5, No. 5, pp. 237-253, May 1962.
 13. Jean E. Sammet, "The Early History of COBOL," *ACM SIGPLAN History of Programming Languages Conference (HOPL)*, pp. 199-243, 1981.
 14. Jean E. Sammet, "Brief Summary of the Early History of COBOL," *Annals of the History of Computing*, Vol. 7, No. 4, October 1985.
