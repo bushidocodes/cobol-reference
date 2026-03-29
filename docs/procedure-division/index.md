@@ -26,10 +26,12 @@ Six arithmetic operators were defined: `=` (EQUALS), `+` (PLUS), `-` (MINUS), `*
 
 Notably, `IF` was not classified as a verb but was acknowledged as having "the most important characteristics of one." Several original verbs evolved significantly or were replaced in later standards:
 
-- **EXAMINE** was the original string inspection verb, replaced by `INSPECT` in COBOL-85.
-- **INCLUDE** was the predecessor to the `COPY` statement.
+- **EXAMINE** was the original string inspection verb, replaced by `INSPECT` in COBOL-74. EXAMINE supported TALLYING ALL/LEADING/UNTIL FIRST with REPLACING BY syntax, making it clearly the precursor to INSPECT's TALLYING/REPLACING phrases.
+- **INCLUDE** incorporated procedures from a library tape into the source program, with a REPLACING clause for parameter substitution (e.g., `INCLUDE STOCK-STATUS-REPORT REPLACING CHAIRS BY TABLES`). This was the predecessor to the modern `COPY...REPLACING` mechanism.
 - **NOTE** allowed inline comments within the Procedure Division, predating the `*>` comment syntax introduced in COBOL 2002.
-- **DEFINE** allowed defining compile-time constants, a concept that would not return to the standard until much later.
+- **DEFINE** allowed new verbs to be defined in terms of existing COBOL verbs, functioning like macros with parameters. This made the language "open-ended" — special-purpose verbs could be added to individual compilers while preserving compatibility. DEFINE was removed in later standards.
+
+    By the 1968 CODASYL Journal of Development, the verb count had grown to **36 statements**, including an asynchronous I/O subsystem: **HOLD** (exclusive record access), **SEEK** (pre-position a direct-access device), **PROCESS** (initiate out-of-line async processing), and **SUSPEND** (yield control during async processing). This entire subsystem was removed before COBOL-74. COBOL-85 formally marked **ALTER**, **ENTER**, **GO TO without a procedure-name**, and **STOP literal** as obsolete.
 
 ---
 

@@ -69,6 +69,8 @@ MOVE CORRESPONDING INPUT-REC TO OUTPUT-REC
 *> are not moved because they have no corresponding match.
 ```
 
+`CORRESPONDING` can be abbreviated as `CORR`. The same matching logic applies to `ADD CORRESPONDING` and `SUBTRACT CORRESPONDING`, which perform arithmetic on matching numeric fields between two group items.
+
 ---
 
 ## Data Conversion Rules

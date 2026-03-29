@@ -49,6 +49,9 @@ Any value from 01 to 49 is valid; the convention of using multiples of 5 is a wi
 
 ### Level 66 -- RENAMES Clause
 
+!!! info "Historical Note"
+    Level-66 RENAMES has been part of COBOL since COBOL-61, where it was used for regrouping elementary items across record boundaries.
+
 Level 66 provides an alternative grouping of elementary items by assigning a new name to a contiguous range of items within a record.
 
 ```cobol

@@ -167,6 +167,17 @@ An out-of-line `PERFORM` sets up a return point at the end of the performed rang
 !!! warning "Overlapping PERFORM Ranges"
     If two active `PERFORM` statements have overlapping ranges, the results are undefined. For example, if paragraph A performs paragraphs B THRU D, and paragraph C within that range performs paragraphs D THRU E, the ranges overlap at paragraph D. This produces unpredictable behavior.
 
+!!! warning "Fall-Through Behavior"
+    When a PERFORMed paragraph ends, control returns to the statement after
+    the PERFORM. However, during normal sequential execution (without PERFORM),
+    control "falls through" from one paragraph to the next. This means a
+    paragraph may behave differently depending on whether it was PERFORMed
+    or reached by fall-through. GO TO statements that exit a PERFORMed range
+    create undefined behavior on most compilers. The "COBOL Minefield
+    Detection" study (Veerman & Verhoeven, 2006) identified overlapping
+    PERFORM ranges, fall-through, and GO TO out of PERFORM as among the
+    most hazardous constructs in legacy COBOL code.
+
 ### State of Varying Identifier After Loop
 
 After a `PERFORM VARYING` loop completes:

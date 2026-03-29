@@ -16,11 +16,15 @@ The very first COBOL specification and the origin of the language.
 
 #### Origin
 
-On May 28-29, 1959, a meeting was called at the Pentagon to consider creating a common language for business-type data processing. Three committees were formed to carry out the work: a **Short Range Committee**, an **Intermediate Range Committee**, and a **Long Range Committee**. The Short Range Committee was composed of six manufacturers and three Government representatives.
+The effort that led to COBOL began on **April 8, 1959**, when **Mary K. Hawes** of Burroughs ElectroData Division organized a meeting at the University of Pennsylvania Computing Center. Attendees included Grace Hopper, Robert Rossheim, Saul Gorn, and others. This meeting led to a larger conference at the Pentagon on **May 28-29, 1959**, where the participants agreed to create a common language for business-type data processing. Three committees were formed: a **Short Range Committee**, an **Intermediate Range Committee**, and a **Long Range Committee** (the Long Range Committee was never established). The effort was organized under CODASYL (Committee on Data Systems Languages), chaired by **Charles A. Phillips** of the Office of the Secretary of Defense, with **Grace Hopper** and **Robert Bemer** as advisors.
 
-The Short Range Committee held its first meeting on June 23, 1959, and organized four working groups: Data Description, Procedural Statements, Application Survey, and Usage and Experience. During this work, the name **COBOL** was adopted, suggesting a **CO**mmon **B**usiness **O**riented **L**anguage.
+The Short Range Committee was composed of six manufacturers and three Government representatives. **Jean E. Sammet** of Sylvania Electric Products chaired the Statement Language Task Group (Procedure Division design) and later wrote the definitive account of COBOL's development. **Mary Hawes** chaired the Data Description subcommittee.
 
-The COBOL System was reviewed and approved by the Short Range Committee during November 16-20, 1959. The final report was delivered to the Executive Committee on December 17, 1959. The Executive Committee accepted and approved the report on January 7-8, 1960, and it was published in April 1960.
+The Short Range Committee held its first meeting on June 23, 1959, and organized four working groups: Data Description, Procedural Statements, Application Survey, and Usage and Experience. During this work, the name **COBOL** was adopted, suggesting a **CO**mmon **B**usiness **O**riented **L**anguage. A six-person subcommittee (Tierney and Selden from IBM; Bromberg and Discount from RCA; Reeves and Sammet from Sylvania) produced the final specification in two weeks of intensive work, finishing on November 7, 1959.
+
+The COBOL System was reviewed and approved by the Short Range Committee during November 16-20, 1959. The final report was delivered to the Executive Committee on December 17, 1959. The Executive Committee accepted and approved the report on January 7-8, 1960, establishing the **"Basic COBOL" minimum compliance concept** — no manufacturer could claim COBOL support without implementing at least Basic COBOL. **Frances (Betty) Holberton** edited the final Government Printing Office publication, which was published in April 1960. RCA and Remington-Rand Univac raced to produce the first COBOL compilers.
+
+The committee later acknowledged that COBOL was originally conceived as a stopgap: "had the Short-Range Committee realized at the outset that the language it created was going to be in use for such a long period of time, it would have gone about the task quite differently."
 
 #### Contributing organizations
 
@@ -41,9 +45,11 @@ The Short Range Committee drew members from the following organizations:
 
 COBOL drew on three existing languages:
 
-- **FLOW-MATIC** (Sperry-Rand, 1958) — Grace Hopper's language, the primary influence on COBOL's English-like syntax
-- **Commercial Translator** (IBM, 1959)
-- **AIMACO** (Air Materiel Command and Sperry-Rand)
+- **FLOW-MATIC** (Sperry-Rand, 1958) — Grace Hopper's language and the primary influence on COBOL. FLOW-MATIC was the only one of the three actually in production use. Its specific contributions included: full data-names instead of short symbolic names, full English words for commands, and sub-word-length data items (unlike FORTRAN's assumption of one number per machine word).
+- **Commercial Translator / COMTRAN** (IBM, 1959) — existed only as specifications, never implemented
+- **AIMACO** (Air Materiel Command and Sperry-Rand) — a minor modification of FLOW-MATIC
+
+During the development, the Honeywell-800 Business Compiler (later renamed **FACT**) was considered technically superior. The Intermediate Range Committee passed a motion in October 1959 recommending FACT replace the Short Range Committee's draft, but this was overtaken by events — the Executive Committee accepted the Short Range report before acting on the FACT recommendation.
 
 #### Phasing
 
@@ -90,7 +96,7 @@ Features explicitly planned for future versions included Table Handling Function
 
 **CODASYL specification (pre-standard)**
 
-A cleanup of COBOL-60, addressing numerous logical flaws found in the original specification. Published in 1961, it replaced COBOL-60 and became the first version widely implemented by compiler vendors.
+A cleanup of COBOL-60, addressing numerous logical flaws found in the original specification. A Special Task Group was created in September 1960 and worked through February 1961 to prepare the revision. The Maintenance Committee resumed work in May 1961, working on extensions including report-writing and sorting (which became COBOL-61 Extended). The COBOL-61 manual was published by the Government Printing Office in August 1961. It replaced COBOL-60 and became the first version widely implemented by compiler vendors.
 
 #### Structure
 
@@ -101,7 +107,22 @@ COBOL-61 was split into two compliance levels:
 
 #### Maintenance Group
 
-Beyond the original ten organizations on the Short Range Committee, additional organizations joined the COBOL Maintenance Group, including **Allstate Insurance Company** and others from both the insurance and manufacturing sectors.
+Beyond the original organizations on the Short Range Committee, the following organizations participated in the Maintenance Group:
+
+- Allstate Insurance Company
+- Bendix Corporation (Computer Division)
+- Control Data Corporation
+- Dupont Corporation
+- General Electric Company
+- General Motors Corporation
+- Lockheed Aircraft Corporation
+- National Cash Register Company
+- Philco Corporation
+- Standard Oil Company (N.J.)
+- United States Steel Corporation
+
+!!! note
+    The organization called "Bureau of Standards" in the original 1960 report was referred to as "National Bureau of Standards" in the COBOL-61 documentation.
 
 #### Identification Division
 
@@ -186,7 +207,9 @@ COBOL-74 also refined the module system and clarified many areas left ambiguous 
 
 **ANSI X3.23-1985 / ISO 1989:1985**
 
-The most widely implemented COBOL standard and the de facto baseline for production COBOL code worldwide. COBOL-85 introduced substantial structural improvements:
+Formally the "Third Standard COBOL" (First = X3.23-1968, Second = X3.23-1974), approved September 10, 1985. At 824 pages, it was organized into **11 functional modules** — 7 required (Nucleus, Sequential I-O, Relative I-O, Indexed I-O, Inter-Program Communication, Sort-Merge, Source Text Manipulation) and 4 optional (Report Writer, Communication, Debug, Segmentation). Each module had two implementation levels (Level 1 = minimum subset, Level 2 = full feature set).
+
+COBOL-85 is the most widely implemented standard and the de facto baseline for production COBOL code worldwide. Key improvements:
 
 - **Scope terminators** (END-IF, END-PERFORM, END-READ, END-EVALUATE, etc.)
 - **Inline PERFORM** — PERFORM with imperative statements between PERFORM and END-PERFORM
@@ -198,6 +221,8 @@ The most widely implemented COBOL standard and the de facto baseline for product
 - **INITIALIZE** statement — structured data initialization
 - **Day-of-week intrinsic** via ACCEPT FROM DAY-OF-WEEK
 - Improvements to file handling, including LINAGE for report formatting
+
+COBOL-85 formally marked several elements as obsolete (scheduled for deletion): ALTER, ENTER, GO TO without procedure-name, STOP literal, comment-entries in Identification Division paragraphs, DATA RECORDS clause, VALUE OF clause, LABEL RECORDS clause, MULTIPLE FILE TAPE, RERUN, and the entire Segmentation and Debug modules. The ENTER statement had unique status — its implementation was optional for the implementor, the only statement with this distinction.
 
 Two amendments followed: Amendment 1 (1989) added **intrinsic functions** (FUNCTION LENGTH, FUNCTION CURRENT-DATE, FUNCTION UPPER-CASE, etc.), and Amendment 2 (1993) added corrections and clarifications.
 
@@ -297,5 +322,16 @@ Most production COBOL code targets **COBOL-85**. All major compilers fully suppo
 - **Micro Focus Visual COBOL / COBOL Server** — full COBOL-85 support; extensive COBOL 2002/2014 coverage including OO, managed types, and free-form source
 - **GnuCOBOL** — full COBOL-85 support; partial COBOL 2002 support (free-form source, some intrinsic functions, binary data types); limited COBOL 2014 features
 - **gcobol (GCC 15.1+)** — a COBOL front-end for GCC based on the COBOL 2023 standard
+
+## COBOL in Practice
+
+COBOL remains one of the most widely deployed programming languages in the world, particularly in financial services, government, and insurance:
+
+- By 1997, roughly two-thirds of programmers used COBOL (Glass, 1997).
+- An estimated 180-200 billion lines of COBOL code are in active use worldwide (Lammel & De Schutter, 2005).
+- COBOL processes approximately $3 trillion in daily commerce, powers 80% of financial services, and handles 95% of ATM transactions (Ali et al., 2023).
+- The Commonwealth Bank of Australia's COBOL migration required 5 years and $749.9 million (Ali et al., 2023).
+
+Robert L. Glass observed in 1997: "COBOL is a very bad business programming language — but all the others are so much worse." He identified four essential characteristics of business programming that COBOL uniquely addresses: heterogeneous record-structure data, decimal arithmetic, report generation, and mass data access/manipulation.
 
 No compiler currently implements the full COBOL 2002 or COBOL 2014 specification. Feature coverage varies significantly between vendors, and many implementations include proprietary extensions beyond the standard.

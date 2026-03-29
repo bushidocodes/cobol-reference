@@ -34,7 +34,7 @@ The following table lists all scope terminators defined in the COBOL standard:
 | `END-WRITE` | [WRITE](../procedure-division/io/write.md) | COBOL-85 |
 
 !!! note
-    `END-ACCEPT` and `END-DISPLAY` were introduced in COBOL 2002. All other scope terminators were introduced in COBOL-85. Prior to COBOL-85, scope termination was performed exclusively by the period.
+    `END-ACCEPT` and `END-DISPLAY` were introduced in COBOL 2002. All other scope terminators were introduced in COBOL-85 as Nucleus Level 2 features. Their addition was one of the most significant changes in the COBOL-85 standard, enabling structured programming without reliance on the period as a scope delimiter. Prior to COBOL-85, scope termination was performed exclusively by the period.
 
 ## Explicit vs. Implicit Scope Termination
 

@@ -64,7 +64,10 @@ nav:
       - COMPUTE: procedure-division/arithmetic/compute.md
     - Data Movement:
       - MOVE: procedure-division/data-movement/move.md
+      - SET: procedure-division/data-movement/set.md
+      - INITIALIZE: procedure-division/data-movement/initialize.md
     - Control Flow:
+      - DECLARATIVES and USE: procedure-division/control-flow/declaratives.md
       - IF: procedure-division/control-flow/if.md
       - EVALUATE: procedure-division/control-flow/evaluate.md
       - PERFORM: procedure-division/control-flow/perform.md
@@ -72,11 +75,16 @@ nav:
       - STOP: procedure-division/control-flow/stop.md
       - EXIT: procedure-division/control-flow/exit.md
       - CONTINUE: procedure-division/control-flow/continue.md
+      - NEXT SENTENCE: procedure-division/control-flow/next-sentence.md
+    - Table Handling:
+      - SEARCH: procedure-division/data-movement/search.md
     - Input/Output:
       - OPEN: procedure-division/io/open.md
       - READ: procedure-division/io/read.md
       - WRITE: procedure-division/io/write.md
       - CLOSE: procedure-division/io/close.md
+      - ACCEPT: procedure-division/io/accept.md
+      - DISPLAY: procedure-division/io/display.md
     - String Handling:
       - STRING: procedure-division/string-handling/string.md
       - UNSTRING: procedure-division/string-handling/unstring.md
@@ -89,6 +97,14 @@ nav:
       - MERGE: procedure-division/sort-merge/merge.md
     - Dynamic Memory:
       - ALLOCATE and FREE: procedure-division/memory/allocate-free.md
+    - Archaic Verbs (Removed):
+      - EXAMINE: procedure-division/archaic/examine.md
+      - ALTER: procedure-division/archaic/alter.md
+      - ENTER: procedure-division/archaic/enter.md
+      - NOTE: procedure-division/archaic/note.md
+      - DEFINE: procedure-division/archaic/define.md
+      - INCLUDE: procedure-division/archaic/include.md
+      - Async I/O (HOLD, SEEK, PROCESS, SUSPEND): procedure-division/archaic/async-io.md
   - Intrinsic Functions:
     - intrinsic-functions/index.md
     - Numeric Functions: intrinsic-functions/numeric.md
@@ -111,3 +127,4 @@ nav:
     - Arithmetic Precision: appendices/arithmetic-precision.md
     - Collating Sequence: appendices/collating-sequence.md
     - Reserved Words: appendices/reserved-words.md
+    - References: appendices/references.md

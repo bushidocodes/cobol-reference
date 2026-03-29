@@ -2,7 +2,7 @@
 
 The `SPECIAL-NAMES` paragraph in the Configuration Section associates implementor-defined names with user-defined names, defines the currency symbol, overrides the decimal point character, establishes custom alphabet orderings, defines user class conditions, and assigns symbolic names to characters.
 
-- **Standard:** COBOL-68, COBOL-85, COBOL 2002, COBOL 2014
+- **Standard:** COBOL-60, COBOL-68, COBOL-85, COBOL 2002, COBOL 2014
 
 ---
 

@@ -4,6 +4,12 @@ The `INSPECT` statement tallies, replaces, or converts occurrences of single cha
 
 - **Standard:** COBOL-74, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023
 
+!!! info "Historical Note"
+    `INSPECT` replaced the `EXAMINE` verb in COBOL-74. `EXAMINE` had
+    `TALLYING ALL/LEADING/UNTIL FIRST` with `REPLACING BY` syntax, making it
+    the direct precursor to `INSPECT`'s `TALLYING`/`REPLACING` phrases. The
+    `CONVERTING` phrase was added in COBOL-85.
+
 ## Syntax
 
 ### Format 1: TALLYING
