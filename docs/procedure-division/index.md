@@ -33,6 +33,8 @@ Notably, `IF` was not classified as a verb but was acknowledged as having "the m
 
     By the 1968 CODASYL Journal of Development, the verb count had grown to **36 statements**, including an asynchronous I/O subsystem: **HOLD** (exclusive record access), **SEEK** (pre-position a direct-access device), **PROCESS** (initiate out-of-line async processing), and **SUSPEND** (yield control during async processing). This entire subsystem was removed before COBOL-74. COBOL-85 formally marked **ALTER**, **ENTER**, **GO TO without a procedure-name**, and **STOP literal** as obsolete.
 
+    At the CODASYL 10th Anniversary Meeting (1969), Grace Hopper advocated for pre-compilers to enforce coding standards and catch bugs before compilation. She noted: "One of my favorite topics, the complex IF statements in every compiler that I know produce poorer object code than just a sequence of simple IF statements." The STRING and UNSTRING verbs originated from the Communications Task Group (led by Ron Hamm of Honeywell), which designed them as part of a terminal-independent message handling facility — their goal was that "the programmer couldn't care less about the particular characteristics of that device."
+
 ---
 
 ## Syntax
