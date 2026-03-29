@@ -25,6 +25,8 @@ This page lists primary sources, standards documents, historical accounts, and a
 14. IBM Corporation, "Enterprise COBOL for z/OS 6.4 Language Reference," SC27-8713-03, 906 pages.
 15. Melinda Fisher, "Teach Yourself Computer Programming in COBOL," Hodder and Stoughton, 1982.
 16. GnuCOBOL Project, "GnuCOBOL Programmer's Guide," https://superbol.eu/gnucobol/gnucobpg/index.html
+17. National Museum of American History, Smithsonian Institution, "COBOL Exhibition," https://americanhistory.si.edu/cobol/
+18. FedTech Magazine, "How COBOL Became the Early Backbone of Federal Computing," September 2017.
 
 ## Historical Papers and Accounts
 
