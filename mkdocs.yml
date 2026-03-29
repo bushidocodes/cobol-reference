@@ -36,6 +36,8 @@ nav:
     - Scope Terminators: language/scope-terminators.md
     - Reference Modification: language/reference-modification.md
     - Name Qualification: language/qualification.md
+    - Conditions: language/conditions.md
+    - Special Registers: language/special-registers.md
   - Identification Division:
     - identification-division/index.md
     - Program Attributes: identification-division/program-attributes.md
@@ -54,6 +56,8 @@ nav:
     - REDEFINES Clause: data-division/redefines.md
     - VALUE Clause: data-division/value.md
     - User-Defined Types (TYPEDEF): data-division/typedef.md
+    - RENAMES (Level 66): data-division/renames.md
+    - LINAGE Clause: data-division/linage.md
     - Report Section: data-division/report-section.md
     - Screen Section: data-division/screen-section.md
   - Procedure Division:

@@ -14,6 +14,7 @@ level-number  data-name  [PICTURE clause]  [USAGE [IS] usage-type].
 
 ```
 usage-type := DISPLAY
+            | DISPLAY-1
             | BINARY
             | COMP | COMPUTATIONAL
             | COMP-1 | COMPUTATIONAL-1
@@ -22,8 +23,18 @@ usage-type := DISPLAY
             | PACKED-DECIMAL
             | COMP-4 | COMPUTATIONAL-4
             | COMP-5 | COMPUTATIONAL-5
+            | BINARY-CHAR
+            | BINARY-SHORT
+            | BINARY-LONG
+            | BINARY-DOUBLE
+            | FLOAT-SHORT
+            | FLOAT-LONG
+            | FLOAT-EXTENDED
+            | FLOAT-DECIMAL-16
+            | FLOAT-DECIMAL-34
             | INDEX
             | POINTER
+            | PROGRAM-POINTER
             | NATIONAL
 ```
 
@@ -220,6 +231,66 @@ The item is stored in national character encoding (typically UTF-16).
 - Used for Unicode / double-byte character data.
 
 **Standard:** COBOL 2002 and later.
+
+### Fixed-Size Binary Types (COBOL 2002)
+
+These types allocate a fixed number of bytes regardless of the PICTURE clause, providing predictable sizes for inter-language communication:
+
+| Type | Size | Range | C Equivalent |
+|------|------|-------|-------------|
+| `BINARY-CHAR` | 1 byte | -128 to 127 (signed) or 0 to 255 | `signed char` / `unsigned char` |
+| `BINARY-SHORT` | 2 bytes | -32768 to 32767 | `short` |
+| `BINARY-LONG` | 4 bytes | -2,147,483,648 to 2,147,483,647 | `int` / `long` |
+| `BINARY-DOUBLE` | 8 bytes | -9.2 x 10^18 to 9.2 x 10^18 | `long long` |
+
+Each type accepts an optional `SIGNED` or `UNSIGNED` qualifier. The default is SIGNED. No PICTURE clause is needed.
+
+```cobol
+01  WS-FLAGS      USAGE BINARY-CHAR UNSIGNED.
+01  WS-COUNT      USAGE BINARY-LONG.
+01  WS-BIG-NUM    USAGE BINARY-DOUBLE.
+```
+
+### IEEE Floating-Point Types (COBOL 2002)
+
+| Type | Size | Precision | C Equivalent |
+|------|------|-----------|-------------|
+| `FLOAT-SHORT` | 4 bytes | ~7 decimal digits | `float` |
+| `FLOAT-LONG` | 8 bytes | ~15 decimal digits | `double` |
+| `FLOAT-EXTENDED` | 16 bytes | ~18 decimal digits | `long double` |
+
+No PICTURE clause is needed.
+
+```cobol
+01  WS-RATE       USAGE FLOAT-SHORT.
+01  WS-PRECISE    USAGE FLOAT-LONG.
+```
+
+### IEEE 754 Decimal Floating-Point (COBOL 2014)
+
+| Type | Size | Precision |
+|------|------|-----------|
+| `FLOAT-DECIMAL-16` | 8 bytes | 16 decimal digits |
+| `FLOAT-DECIMAL-34` | 16 bytes | 34 decimal digits |
+
+These provide exact decimal arithmetic without the rounding errors of binary floating-point — suitable for financial calculations that exceed PACKED-DECIMAL capacity.
+
+### PROGRAM-POINTER
+
+A pointer to a program entry point rather than a data item. Used with dynamic CALL.
+
+```cobol
+01  WS-PROG-PTR   USAGE PROGRAM-POINTER.
+
+SET WS-PROG-PTR TO ENTRY "CALC-ROUTINE"
+CALL WS-PROG-PTR USING WS-DATA
+```
+
+**Standard:** COBOL 2002.
+
+### DISPLAY-1 (IBM Extension)
+
+Double-byte character set (DBCS) display representation. Each character occupies 2 bytes. Used with PIC G or PIC N on IBM mainframes.
 
 ---
 
