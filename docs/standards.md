@@ -163,6 +163,8 @@ FILE-CONTROL included a **RENAMING** option that allowed one file to share anoth
 
 The COBOL-61 reserved word list included words that were later removed or replaced in subsequent standards: **CONSTANT**, **RENAMING**, **TALLY**, **EXAMINE**, **OTHERWISE**, **PROTECT**, **CHECK**, **PLACE**, **FLOAT**, **DOLLAR**, **DIGIT**, **LEAVING**, **SUPPRESS**, **LOCATION**, **ADDRESS**.
 
+IBM's OS/360 COBOL implementation (December 1964) shipped two compilers — **COBOL E** (subset) and **COBOL F** (full). COBOL E omitted CORRESPONDING, Report Writer, Sort, nested IF, and implied subjects. Notably, the **Linkage Section** and the **REWRITE statement** were IBM extensions in 1964, not yet part of the CODASYL standard. IBM also introduced the **TRANSFORM** statement (character translation, later dropped) and **EXHIBIT**/**TRACE** debugging statements.
+
 ### COBOL-61 EXTENDED
 
 **CODASYL specification (pre-standard)**

@@ -20,6 +20,11 @@ This page lists primary sources, standards documents, historical accounts, and a
 ## Vendor Documentation
 
 11. IBM Corporation, "Common Business Oriented Language (COBOL) General Information," Form F28-8053-2, Systems Reference Library, 1961.
+12. IBM Corporation, "IBM Operating System/360 COBOL Language," Form C28-6516-2, Systems Reference Library, December 1964.
+13. IBM Corporation, "IBM OS Full American National Standard COBOL," Form GC28-6396-6, Systems Reference Library, April 1976 (rev. October 1981).
+14. IBM Corporation, "Enterprise COBOL for z/OS 6.4 Language Reference," SC27-8713-03, 906 pages.
+15. Melinda Fisher, "Teach Yourself Computer Programming in COBOL," Hodder and Stoughton, 1982.
+16. GnuCOBOL Project, "GnuCOBOL Programmer's Guide," https://superbol.eu/gnucobol/gnucobpg/index.html
 
 ## Historical Papers and Accounts
 
