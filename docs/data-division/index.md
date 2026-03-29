@@ -18,6 +18,11 @@ DATA DIVISION.
 
 If no data items are needed, the entire division may be omitted.
 
+!!! note "Historical Note: COBOL-60 and COBOL-61"
+    The Data Division was one of the original three divisions defined in the 1960 COBOL report, where it was described as "the second division of the problem definition" (the Procedure Division being considered the primary one). In COBOL-60, data fell into three categories: file data, intermediate/working-storage data, and constants/figurative constants. The division originally contained three sections: **FILE**, **WORKING-STORAGE**, and **CONSTANT**. The CONSTANT Section was a dedicated section for defining named constants and figurative constants; its concepts were later absorbed into the `VALUE` clause and the language's built-in figurative constants (such as `ZERO`, `SPACE`, and `HIGH-VALUE`), and the section itself was removed in subsequent standards. Even in 1960, records were described using the hierarchical level-number system and the `PICTURE` clause. File Description and Record Description entries could also be stored on a COBOL library tape for reuse across programs, an early precursor to the `COPY` statement.
+
+    In **COBOL-61**, the Data Division still had these same three sections (FILE, WORKING-STORAGE, CONSTANT) with no LINKAGE Section yet — parameter passing between programs was not standardized. Record descriptions could use separate **SIZE**, **CLASS**, **POINT LOCATION**, and **SIGNED** clauses rather than a unified PICTURE clause (though PICTURE was also available as an alternative). The **COPY** clause could copy record descriptions from elsewhere in the Data Division or from a COBOL library. **Level-77** was used for independent (non-grouped) items in both the Working-Storage and Constant sections. **TALLY** was a special register — a system-defined counter used with the **EXAMINE** verb (the predecessor to INSPECT, introduced in COBOL-74).
+
 ## Sections
 
 The Data Division contains up to six sections. Each section, if present, must appear in the order shown below.

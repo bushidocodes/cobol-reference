@@ -8,6 +8,30 @@ word as a data name is one of the most common sources of compilation errors.
     Reserved word lists vary by compiler and standard. A word reserved in one compiler
     may be unreserved in another. Always consult your specific compiler's documentation.
 
+## Evolution of the Reserved Word List
+
+The COBOL reserved word list has changed significantly across standards. COBOL-61 had approximately **200 reserved words**. Many words from the early specifications were later removed or replaced as the language evolved:
+
+| COBOL-61 Word | Disposition |
+|---------------|-------------|
+| `CONSTANT` | Section header for the CONSTANT Section; removed when that section was dropped |
+| `EXAMINE` | String-scanning verb; replaced by `INSPECT` in COBOL-74 |
+| `OTHERWISE` | Conditional keyword; replaced by `ELSE` |
+| `TALLY` | Special register used with EXAMINE; removed |
+| `RENAMING` | FILE-CONTROL option for sharing File Descriptions; removed |
+| `ADDRESS` | OBJECT-COMPUTER clause for memory address ranges; removed |
+| `PROTECT` | Removed in later standards |
+| `CHECK` | Removed in later standards |
+| `PLACE` | Removed in later standards |
+| `FLOAT` | Removed in later standards (not related to COBOL 2002 FLOAT-SHORT/FLOAT-LONG) |
+| `DOLLAR` | Currency-related; removed |
+| `DIGIT` | Removed in later standards |
+| `LEAVING` | Removed in later standards |
+
+Note that `CONSTANT` was re-added in COBOL 2002 with a different meaning (as a clause for defining named constants, not as a section header).
+
+---
+
 ## COBOL-85 Standard Reserved Words
 
 The following words are reserved in the ANSI COBOL-85 standard (ANSI X3.23-1985).

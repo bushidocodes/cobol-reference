@@ -2,7 +2,18 @@
 
 The Identification Division is the first and only required division in a COBOL program. It identifies the program and may provide additional documentary information.
 
-**Standard:** COBOL-60, COBOL-61, COBOL-61 Extended, COBOL-65, COBOL-68, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023
+**Standard:** COBOL-61, COBOL-61 Extended, COBOL-65, COBOL-68, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023
+
+!!! info "Historical Note"
+    The Identification Division was not part of the original COBOL-60 specification,
+    which defined only three divisions (Procedure, Data, and Environment). It was
+    first defined in COBOL-61 with seven paragraphs: PROGRAM-ID (required, must be
+    first), AUTHOR, INSTALLATION, DATE-WRITTEN, DATE-COMPILED, SECURITY, and
+    REMARKS (all optional). COBOL-61 also included the REMARKS paragraph, which was
+    later dropped from formal standards. The documentary paragraphs (AUTHOR,
+    INSTALLATION, DATE-WRITTEN, DATE-COMPILED, SECURITY) were classified as obsolete
+    in COBOL-85 and removed from the standard in COBOL 2002, though most compilers
+    still accept them for backward compatibility.
 
 ---
 

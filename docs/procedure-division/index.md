@@ -7,6 +7,32 @@ The Procedure Division contains the executable statements of a COBOL program. It
 
 ---
 
+## Historical Note: COBOL-60
+
+The Procedure Division was described in the 1960 COBOL report as "commonly called the program" and "only one of the three parts of the program," reflecting its central role. Operations were divided into **sections**, each subdivided into **paragraphs** — only these could be named and transferred to, a structural convention that persists today.
+
+The original specification defined **23 verbs** across six categories:
+
+| Category | Verbs |
+|---|---|
+| Arithmetic | ADD, SUBTRACT, MULTIPLY, DIVIDE, COMPUTE |
+| Input-Output | READ, WRITE, OPEN, CLOSE, ACCEPT, DISPLAY |
+| Procedure Branching | GO, ALTER, PERFORM |
+| Data Movement | MOVE, EXAMINE |
+| Ending | STOP |
+| Compiler Directing | DEFINE, ENTER, EXIT, INCLUDE, NOTE, USE |
+
+Six arithmetic operators were defined: `=` (EQUALS), `+` (PLUS), `-` (MINUS), `*` (MULTIPLIED BY), `/` (DIVIDED BY), and `**` (EXPONENTIATED BY).
+
+Notably, `IF` was not classified as a verb but was acknowledged as having "the most important characteristics of one." Several original verbs evolved significantly or were replaced in later standards:
+
+- **EXAMINE** was the original string inspection verb, replaced by `INSPECT` in COBOL-85.
+- **INCLUDE** was the predecessor to the `COPY` statement.
+- **NOTE** allowed inline comments within the Procedure Division, predating the `*>` comment syntax introduced in COBOL 2002.
+- **DEFINE** allowed defining compile-time constants, a concept that would not return to the standard until much later.
+
+---
+
 ## Syntax
 
 ```cobol
@@ -127,7 +153,7 @@ Statements that move or transform data between data items.
 | SET | Sets condition names, indexes, or switches |
 | STRING | Concatenates partial or complete contents of data items |
 | UNSTRING | Separates a data item into multiple receiving items |
-| INSPECT | Tallies, replaces, or converts characters |
+| INSPECT | Tallies, replaces, or converts characters (replaced EXAMINE in COBOL-85) |
 
 ### Control Flow Statements
 

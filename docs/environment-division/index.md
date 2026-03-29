@@ -2,7 +2,7 @@
 
 The Environment Division specifies the computing environment in which the program operates and defines the mapping between logical file references in the program and the physical files of the operating environment. It is the second of the four COBOL divisions and is optional.
 
-- **Standard:** COBOL-68, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023
+- **Standard:** COBOL-60, COBOL-68, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023
 
 ---
 
@@ -24,17 +24,52 @@ The Environment Division specifies the computing environment in which the progra
 
 The Environment Division contains two sections: the **Configuration Section** and the **Input-Output Section**. Both are optional, as is the division itself. If neither section is needed, the entire `ENVIRONMENT DIVISION.` header may be omitted.
 
+### Historical Note
+
+!!! info "Origins in COBOL-60"
+    The Environment Division is one of the three original COBOL divisions defined in
+    the 1960 COBOL report (alongside the Procedure Division and Data Division). Its
+    stated purpose was *"to centralize those aspects of the total data processing
+    problem which are dependent upon the physical characteristics of a specific
+    computer."* The report noted that *"the ENVIRONMENT DIVISION is the one part of
+    the COBOL system which must be rewritten each time a given program is run on a
+    different computer"* -- a portability concern that shaped the division's design
+    from the very beginning.
+
+    In COBOL-60, the Configuration Section had three paragraphs: SOURCE-COMPUTER,
+    OBJECT-COMPUTER, and SPECIAL-NAMES. The Input-Output Section contained
+    FILE-CONTROL (which named and associated files with external media) and
+    I-O-CONTROL (which specified special input-output techniques such as RERUN,
+    multiple file tapes, and the APPLY clause -- notably, APPLY resided in
+    I-O-CONTROL rather than FILE-CONTROL at this stage).
+
+!!! info "COBOL-61 Additions"
+    In COBOL-61, the Environment Division gained several features:
+
+    - **OBJECT-COMPUTER** had additional clauses: ASSIGN OBJECT-PROGRAM (to specify
+      the input device for the object program), ADDRESS (to specify memory address
+      ranges), and device configuration clauses.
+    - **COPY** option was available for OBJECT-COMPUTER, SPECIAL-NAMES, FILE-CONTROL,
+      and I-O-CONTROL, allowing entire paragraphs to be copied from a COBOL library.
+    - **FILE-CONTROL** had a RENAMING option to allow one file to share another
+      file's File Description, and a RESERVE clause for specifying alternate I/O
+      buffer areas.
+    - **I-O-CONTROL** had a RERUN clause for establishing restart/checkpoint points
+      at end-of-reel.
+    - **SPECIAL-NAMES** could assign mnemonic-names to device-names and
+      condition-names (ON/OFF STATUS) to switch-names.
+
 ### Evolution Across Standards
 
-| Element | COBOL-68 | COBOL-85 | COBOL 2002 | COBOL 2014 |
-|---------|----------|----------|------------|------------|
-| ENVIRONMENT DIVISION | Required | Required | Optional | Optional |
-| CONFIGURATION SECTION | Required | Optional | Optional | Optional |
-| SOURCE-COMPUTER | Required | Optional | Obsolete | Removed |
-| OBJECT-COMPUTER | Required | Optional | Optional | Optional |
-| SPECIAL-NAMES | Optional | Optional | Optional | Optional |
-| REPOSITORY | -- | -- | Added | Optional |
-| INPUT-OUTPUT SECTION | Optional | Optional | Optional | Optional |
+| Element | COBOL-60 | COBOL-68 | COBOL-85 | COBOL 2002 | COBOL 2014 |
+|---------|----------|----------|----------|------------|------------|
+| ENVIRONMENT DIVISION | Required | Required | Required | Optional | Optional |
+| CONFIGURATION SECTION | Required | Required | Optional | Optional | Optional |
+| SOURCE-COMPUTER | Required | Required | Optional | Obsolete | Removed |
+| OBJECT-COMPUTER | Required | Required | Optional | Optional | Optional |
+| SPECIAL-NAMES | Required | Optional | Optional | Optional | Optional |
+| REPOSITORY | -- | -- | -- | Added | Optional |
+| INPUT-OUTPUT SECTION | Required | Optional | Optional | Optional | Optional |
 
 ---
 
@@ -369,15 +404,15 @@ The following table summarizes elements that have been deprecated, made obsolete
 
 | Element | Introduced | Obsolete | Removed | Replacement |
 |---------|-----------|----------|---------|-------------|
-| `SOURCE-COMPUTER` paragraph | COBOL-68 | COBOL 2002 | COBOL 2014 | Compiler options for debugging |
+| `SOURCE-COMPUTER` paragraph | COBOL-60 | COBOL 2002 | COBOL 2014 | Compiler options for debugging |
 | `WITH DEBUGGING MODE` | COBOL-68 | COBOL 2002 | COBOL 2014 | Compiler options (`-fdebugging-line`, `TEST`, etc.) |
-| `MEMORY SIZE` clause | COBOL-68 | COBOL-85 | COBOL 2002 | OS memory management |
+| `MEMORY SIZE` clause | COBOL-60 | COBOL-85 | COBOL 2002 | OS memory management |
 | `SEGMENT-LIMIT` clause | COBOL-68 | COBOL 2002 | COBOL 2014 | Virtual memory (OS-level) |
 | `SAME AREA` | COBOL-68 | COBOL 2002 | -- | No longer needed with modern memory |
 | `SAME SORT AREA` | COBOL-68 | COBOL 2002 | -- | Compiler manages sort buffers |
 | `SAME SORT-MERGE AREA` | COBOL-68 | COBOL 2002 | -- | Compiler manages sort/merge buffers |
-| `MULTIPLE FILE TAPE` | COBOL-68 | COBOL-85 | COBOL 2002 | Not applicable (tape is rare) |
-| `RERUN` clause | COBOL-68 | COBOL-85 | COBOL 2002 | Transaction/checkpoint systems |
+| `MULTIPLE FILE TAPE` | COBOL-60 | COBOL-85 | COBOL 2002 | Not applicable (tape is rare) |
+| `RERUN` clause | COBOL-60 | COBOL-85 | COBOL 2002 | Transaction/checkpoint systems |
 
 !!! tip "Legacy Code"
     When maintaining older programs, you will encounter these obsolete elements

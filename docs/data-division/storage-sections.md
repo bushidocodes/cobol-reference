@@ -4,6 +4,21 @@ The Data Division contains three sections that define program variables: **WORKI
 
 - **Standard:** WORKING-STORAGE and LINKAGE: COBOL-68. LOCAL-STORAGE: COBOL 2002.
 
+!!! info "Historical Note"
+    **WORKING-STORAGE** has existed since COBOL-60, where it was one of the original
+    three Data Division sections (alongside FILE and CONSTANT). In COBOL-61,
+    working-storage items were either "independent" (level-77) or "grouped" (level-01
+    with subordinates); independent items had to precede grouped items. Initial values
+    were set via the VALUE clause, same as today.
+
+    The **CONSTANT Section** was a separate third section in COBOL-60 and COBOL-61,
+    organized identically to WORKING-STORAGE, but items defined there could not be
+    modified at runtime. It was removed in later standards, with its role absorbed by
+    VALUE clauses on WORKING-STORAGE items.
+
+    The **LINKAGE Section** did not exist in COBOL-60 or COBOL-61. It was added in
+    COBOL-65/68 to support parameter passing between programs via the CALL statement.
+
 ---
 
 ## WORKING-STORAGE SECTION
