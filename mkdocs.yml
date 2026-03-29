@@ -34,6 +34,8 @@ nav:
     - Character Set: language/character-set.md
     - Figurative Constants: language/figurative-constants.md
     - Scope Terminators: language/scope-terminators.md
+    - Reference Modification: language/reference-modification.md
+    - Name Qualification: language/qualification.md
   - Identification Division:
     - identification-division/index.md
     - Program Attributes: identification-division/program-attributes.md
@@ -76,6 +78,7 @@ nav:
       - EXIT: procedure-division/control-flow/exit.md
       - CONTINUE: procedure-division/control-flow/continue.md
       - NEXT SENTENCE: procedure-division/control-flow/next-sentence.md
+      - GOBACK: procedure-division/control-flow/goback.md
     - Table Handling:
       - SEARCH: procedure-division/data-movement/search.md
     - Input/Output:
@@ -85,6 +88,9 @@ nav:
       - CLOSE: procedure-division/io/close.md
       - ACCEPT: procedure-division/io/accept.md
       - DISPLAY: procedure-division/io/display.md
+      - DELETE: procedure-division/io/delete.md
+      - START: procedure-division/io/start.md
+      - REWRITE: procedure-division/io/rewrite.md
     - String Handling:
       - STRING: procedure-division/string-handling/string.md
       - UNSTRING: procedure-division/string-handling/unstring.md
@@ -92,9 +98,12 @@ nav:
     - Program Linkage:
       - CALL: procedure-division/program-linkage/call.md
       - CANCEL: procedure-division/program-linkage/cancel.md
+      - ENTRY: procedure-division/program-linkage/entry.md
     - Sort/Merge:
       - SORT: procedure-division/sort-merge/sort.md
       - MERGE: procedure-division/sort-merge/merge.md
+      - RELEASE: procedure-division/sort-merge/release.md
+      - RETURN: procedure-division/sort-merge/return.md
     - Dynamic Memory:
       - ALLOCATE and FREE: procedure-division/memory/allocate-free.md
     - Archaic Verbs (Removed):
@@ -126,5 +135,6 @@ nav:
   - Appendices:
     - Arithmetic Precision: appendices/arithmetic-precision.md
     - Collating Sequence: appendices/collating-sequence.md
+    - File Status Codes: appendices/file-status-codes.md
     - Reserved Words: appendices/reserved-words.md
     - References: appendices/references.md
