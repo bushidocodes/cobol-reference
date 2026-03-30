@@ -14,7 +14,8 @@ theme:
     - content.code.copy
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\-\.]+'
 
 markdown_extensions:
   - admonition
@@ -141,4 +142,5 @@ nav:
     - Collating Sequence: appendices/collating-sequence.md
     - File Status Codes: appendices/file-status-codes.md
     - Reserved Words: appendices/reserved-words.md
+    - Terminology Mapping: appendices/terminology.md
     - References: appendices/references.md
