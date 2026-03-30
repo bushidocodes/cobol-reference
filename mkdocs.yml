@@ -78,6 +78,7 @@ nav:
       - SET: procedure-division/data-movement/set.md
       - INITIALIZE: procedure-division/data-movement/initialize.md
       - CORRESPONDING: procedure-division/data-movement/corresponding.md
+      - VALIDATE: procedure-division/data-movement/validate.md
     - Control Flow:
       - DECLARATIVES and USE: procedure-division/control-flow/declaratives.md
       - IF: procedure-division/control-flow/if.md
@@ -102,6 +103,7 @@ nav:
       - DELETE: procedure-division/io/delete.md
       - START: procedure-division/io/start.md
       - REWRITE: procedure-division/io/rewrite.md
+      - COMMIT and ROLLBACK: procedure-division/io/commit-rollback.md
     - String Handling:
       - STRING: procedure-division/string-handling/string.md
       - UNSTRING: procedure-division/string-handling/unstring.md
@@ -156,5 +158,7 @@ nav:
     - Best Practices: appendices/best-practices.md
     - Sample Programs: appendices/sample-programs.md
     - Glossary: appendices/glossary.md
+    - Migration Guide: appendices/migration.md
+    - Debugging Techniques: appendices/debugging.md
     - Terminology Mapping: appendices/terminology.md
     - References: appendices/references.md
