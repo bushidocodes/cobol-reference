@@ -49,7 +49,18 @@ COBOL drew on three existing languages:
 - **Commercial Translator / COMTRAN** (IBM, 1959) — existed only as specifications, never implemented
 - **AIMACO** (Air Materiel Command and Sperry-Rand) — a minor modification of FLOW-MATIC
 
-During the development, the Honeywell-800 Business Compiler (later renamed **FACT**) was considered technically superior. The Intermediate Range Committee passed a motion in October 1959 recommending FACT replace the Short Range Committee's draft, but this was overtaken by events — the Executive Committee accepted the Short Range report before acting on the FACT recommendation.
+A fourth language, **FACT** (Fully Automatic Compiling Technique) for the Honeywell 800, was considered technically superior. FACT was designed by **Fletcher Jones, Roy Nutt, and Robert L. Patrick** at Computer Sciences Corporation (CSC), supervised by **Richard F. Clippinger** of Honeywell, and drew on **Basic English** (C.K. Ogden, ~1925) for its design philosophy. Roy Nutt represented Honeywell at CODASYL and brought the FACT manual. The Intermediate Range Committee passed a motion in October 1959 recommending FACT replace the Short Range Committee's draft, but this was overtaken by events — the Executive Committee accepted the Short Range report before acting on the FACT recommendation. Nevertheless, eight specific FACT features were incorporated into COBOL:
+
+1. Hierarchical data definition using level numbers (group items and elementary items)
+2. Initial value assignment via the VALUE clause
+3. Restricted literal values via level-88 condition names
+4. Data-name qualification using IN or OF
+5. MOVE CORRESPONDING for bulk transfer of like-named items
+6. The ON ERROR clause
+7. A built-in SORT function
+8. Non-procedural report generation (precursor to COBOL's Report Writer)
+
+Clippinger later chaired both the ANSI and ISO COBOL language-standardization committees.
 
 #### Phasing
 
@@ -369,3 +380,6 @@ Jean E. Sammet identified several aspects of COBOL that represented significant 
 - **Large file processing** — COBOL provided effective handling of problems involving large files with relatively simple processing, the dominant pattern in business computing.
 - **Readable, English-like syntax** — Natural, readable programming with mnemonic names, making programs accessible to non-programmers and serving as their own documentation.
 - **First operating system interface specifications** — The Environment Division provided the first rudimentary interface specifications for an operating system in a programming language.
+- **Influence on software engineering** — J.C. Emery's 1962 paper on modular data processing systems written in COBOL introduced hierarchy charts for organizing COBOL programs, which directly influenced Larry Constantine's structure charts (1966) and the structured design methodology that followed.
+
+As early as 1962, users were building floating-point arithmetic from COBOL procedures using working storage (Kesner, 1962), years before native floating-point support arrived via vendor extensions (COMP-1/COMP-2) and ultimately IEEE 754 types in COBOL 2014.
