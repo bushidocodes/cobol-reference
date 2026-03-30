@@ -351,7 +351,7 @@ This moves the first 10 characters of the selected `EMP-NAME` element.
 - [Level Numbers](level-numbers.md)
 - [PICTURE Clause](picture.md)
 - [USAGE Clause](usage.md)
-- SEARCH Statement
+- [SEARCH Statement](../procedure-division/data-movement/search.md)
 - [PERFORM Statement](../procedure-division/control-flow/perform.md)
-- SET Statement
+- [SET Statement](../procedure-division/data-movement/set.md)
 - [REDEFINES Clause](redefines.md)

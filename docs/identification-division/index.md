@@ -204,6 +204,8 @@ These features are part of the OO COBOL extensions defined in COBOL 2002 and COB
 
 ## See also
 
+- [Program Attributes (INITIAL, COMMON, RECURSIVE)](program-attributes.md)
 - [Environment Division](../environment-division/index.md)
 - [Data Division](../data-division/index.md)
 - [Procedure Division](../procedure-division/index.md)
+- [User-Defined Functions (FUNCTION-ID)](../intrinsic-functions/user-defined.md)

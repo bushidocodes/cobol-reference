@@ -201,5 +201,5 @@ This structure is equivalent to one using levels 01, 05, 10 -- the specific numb
 - [USAGE Clause](usage.md)
 - [OCCURS Clause](occurs.md)
 - [Condition Names (Level 88)](condition-names.md)
-- RENAMES Clause
+- [RENAMES Clause (Level 66)](renames.md)
 - [VALUE Clause](value.md)

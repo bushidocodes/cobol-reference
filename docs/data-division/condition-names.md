@@ -368,6 +368,6 @@ When the conditional variable is part of a table (has an OCCURS clause or is sub
 - [Level Numbers](level-numbers.md)
 - [PICTURE Clause](picture.md)
 - [VALUE Clause](value.md)
-- SET Statement
+- [SET Statement](../procedure-division/data-movement/set.md)
 - [IF Statement](../procedure-division/control-flow/if.md)
 - [EVALUATE Statement](../procedure-division/control-flow/evaluate.md)

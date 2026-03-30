@@ -439,3 +439,6 @@ When AT is specified, it overrides the LINE and COLUMN values in the screen desc
 - [EVALUATE Statement](../procedure-division/control-flow/evaluate.md)
 - [PERFORM Statement](../procedure-division/control-flow/perform.md)
 - [MOVE Statement](../procedure-division/data-movement/move.md)
+- [ACCEPT](../procedure-division/io/accept.md) -- screen input
+- [DISPLAY](../procedure-division/io/display.md) -- screen output
+- [SPECIAL-NAMES](../environment-division/special-names.md) -- CURSOR and CRT STATUS
