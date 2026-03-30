@@ -108,3 +108,5 @@ END-START
 - [READ](read.md) -- record input (sequential READ NEXT after START)
 - [DELETE](delete.md) -- record removal
 - [REWRITE](rewrite.md) -- record replacement
+- [OPEN](open.md) -- file opening
+- [File Status Codes](../../appendices/file-status-codes.md)

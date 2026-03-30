@@ -185,3 +185,5 @@ The date and time the program was compiled.
 - [XML Processing](../extensions/xml.md) -- XML special registers
 - [JSON Processing](../extensions/json.md) -- JSON special registers
 - [ALLOCATE and FREE](../procedure-division/memory/allocate-free.md) -- ADDRESS OF
+- [INSPECT](../procedure-division/string-handling/inspect.md) -- replaced EXAMINE/TALLY
+- [EXAMINE (Removed)](../procedure-division/archaic/examine.md) -- historical TALLY usage

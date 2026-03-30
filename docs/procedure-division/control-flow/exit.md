@@ -269,5 +269,5 @@ END-PERFORM
 - [GO TO](go-to.md) — unconditional transfer of control
 - [STOP](stop.md) — terminates the run unit
 - [CONTINUE](continue.md) — explicit no-operation statement
-- GOBACK — returns to calling program or terminates run unit
-- [Procedure Division Overview](../index.md)
+- [GOBACK](goback.md) -- returns to calling program or terminates run unit
+- [CALL](../program-linkage/call.md) -- invoking subprograms

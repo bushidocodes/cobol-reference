@@ -394,10 +394,13 @@ END-EVALUATE
 
 ## See Also
 
-- [READ](read.md) — reads a record from a file
-- REWRITE — replaces an existing record in a file
-- [OPEN](open.md) — opens a file for processing
-- [CLOSE](close.md) — closes a file
+- [READ](read.md) -- reads a record from a file
+- [REWRITE](rewrite.md) -- replaces an existing record in a file
+- [DELETE](delete.md) -- removes a record from a file
+- [OPEN](open.md) -- opens a file for processing
+- [CLOSE](close.md) -- closes a file
+- [LINAGE Clause](../../data-division/linage.md) -- page structure for print files
+- [File Status Codes](../../appendices/file-status-codes.md)
 - [MOVE](../data-movement/move.md) — moves data between data items
 - [SELECT](../../environment-division/select.md) — associates a file with an external resource
 - [Procedure Division Overview](../index.md)

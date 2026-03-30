@@ -112,3 +112,4 @@ Key differences:
 ## See Also
 
 - [INSPECT](../string-handling/inspect.md) -- modern replacement
+- [Special Registers](../../language/special-registers.md) -- TALLY register

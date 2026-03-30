@@ -150,4 +150,8 @@ Every file I/O statement updates the FILE STATUS variable (if one is specified i
 - [OPEN](../procedure-division/io/open.md) -- opening files
 - [READ](../procedure-division/io/read.md) -- reading records
 - [WRITE](../procedure-division/io/write.md) -- writing records
+- [CLOSE](../procedure-division/io/close.md) -- closing files
+- [REWRITE](../procedure-division/io/rewrite.md) -- replacing records
+- [DELETE](../procedure-division/io/delete.md) -- deleting records
+- [START](../procedure-division/io/start.md) -- file positioning
 - [DECLARATIVES and USE](../procedure-division/control-flow/declaratives.md) -- automatic error handling

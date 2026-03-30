@@ -331,9 +331,10 @@ END-EVALUATE
 
 ## See Also
 
-- WRITE — writes a record to a file
-- REWRITE — replaces an existing record
-- START — positions within an indexed or relative file
-- OPEN — opens a file for processing
-- CLOSE — closes a file
-- [Procedure Division Overview](../index.md)
+- [WRITE](write.md) -- writes a record to a file
+- [REWRITE](rewrite.md) -- replaces an existing record
+- [DELETE](delete.md) -- removes a record from a file
+- [START](start.md) -- positions within an indexed or relative file
+- [OPEN](open.md) -- opens a file for processing
+- [CLOSE](close.md) -- closes a file
+- [File Status Codes](../../appendices/file-status-codes.md)

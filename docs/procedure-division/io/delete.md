@@ -77,3 +77,5 @@ END-DELETE
 - [REWRITE](rewrite.md) -- record replacement
 - [WRITE](write.md) -- record output
 - [START](start.md) -- file positioning
+- [OPEN](open.md) -- file opening
+- [File Status Codes](../../appendices/file-status-codes.md)

@@ -232,5 +232,7 @@ CLOSE-ALL-FILES.
 - [OPEN](open.md) — opens a file for processing
 - [READ](read.md) — reads a record from a file
 - [WRITE](write.md) — writes a record to a file
-- [SELECT](../../environment-division/select.md) — associates a file with an external resource
-- [Procedure Division Overview](../index.md)
+- [REWRITE](rewrite.md) -- replaces a record
+- [DELETE](delete.md) -- removes a record
+- [SELECT](../../environment-division/select.md) -- associates a file with an external resource
+- [File Status Codes](../../appendices/file-status-codes.md)

@@ -189,4 +189,9 @@ This integrates with the COBOL 2002 exception handling model (RAISE, RESUME, exc
 - [OPEN](../io/open.md) -- file opening
 - [READ](../io/read.md) -- record input
 - [WRITE](../io/write.md) -- record output
+- [REWRITE](../io/rewrite.md) -- record replacement
+- [DELETE](../io/delete.md) -- record removal
+- [START](../io/start.md) -- file positioning
 - [CLOSE](../io/close.md) -- file closing
+- [File Status Codes](../../appendices/file-status-codes.md)
+- [Exception Handling Functions](../../intrinsic-functions/exception-handling.md)

@@ -162,5 +162,5 @@ END-IF
 - [EXIT](exit.md) — exits a paragraph, section, or called program
 - [GO TO](go-to.md) — unconditional transfer of control
 - [PERFORM](perform.md) — executes paragraphs or inline statements
-- GOBACK — returns to calling program or terminates run unit
-- [Procedure Division Overview](../index.md)
+- [GOBACK](goback.md) -- returns to calling program or terminates run unit
+- [CALL](../program-linkage/call.md) -- invoking subprograms

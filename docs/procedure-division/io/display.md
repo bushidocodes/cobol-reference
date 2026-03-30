@@ -100,3 +100,4 @@ END-DISPLAY
 - [ACCEPT](accept.md) -- console input
 - [WRITE](write.md) -- file output
 - [SPECIAL-NAMES](../../environment-division/special-names.md) -- device mappings
+- [Screen Section](../../data-division/screen-section.md) -- screen definitions for DISPLAY

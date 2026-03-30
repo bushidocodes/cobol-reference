@@ -92,3 +92,5 @@ END-REWRITE
 - [WRITE](write.md) -- record creation
 - [DELETE](delete.md) -- record removal
 - [START](start.md) -- file positioning
+- [OPEN](open.md) -- file opening
+- [File Status Codes](../../appendices/file-status-codes.md)

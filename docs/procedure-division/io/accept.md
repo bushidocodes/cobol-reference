@@ -123,3 +123,4 @@ ACCEPT WS-HOME FROM ENV-VALUE
 - [DISPLAY](display.md) -- console output
 - [SPECIAL-NAMES](../../environment-division/special-names.md) -- device and environment mappings
 - [CURRENT-DATE](../../intrinsic-functions/date-time.md) -- four-digit year date/time retrieval
+- [Screen Section](../../data-division/screen-section.md) -- screen definitions for ACCEPT

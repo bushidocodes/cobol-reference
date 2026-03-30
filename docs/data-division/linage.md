@@ -167,4 +167,7 @@ LINAGE is often preferred over Report Writer for its simplicity and wider compil
 
 - [WRITE](../procedure-division/io/write.md) -- writing records with ADVANCING
 - [Report Section](report-section.md) -- Report Writer (declarative alternative)
+- [SELECT](../environment-division/select.md) -- file-control entries
+- [OPEN](../procedure-division/io/open.md) -- file opening
+- [Special Registers](../language/special-registers.md) -- LINAGE-COUNTER
 - [File Status Codes](../appendices/file-status-codes.md) -- I/O status codes

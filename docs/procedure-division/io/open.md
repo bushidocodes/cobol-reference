@@ -279,5 +279,8 @@ END-EVALUATE
 - [CLOSE](close.md) — closes a file
 - [READ](read.md) — reads a record from a file
 - [WRITE](write.md) — writes a record to a file
+- [REWRITE](rewrite.md) — replaces a record
+- [DELETE](delete.md) — removes a record
+- [START](start.md) — positions within a file
 - [SELECT](../../environment-division/select.md) — associates a file with an external resource
-- [Procedure Division Overview](../index.md)
+- [File Status Codes](../../appendices/file-status-codes.md)

@@ -125,4 +125,5 @@ Use reference modification for dynamic substring access and one-off extractions.
 - [OCCURS Clause](../data-division/occurs.md) -- subscripting
 - [MOVE](../procedure-division/data-movement/move.md) -- data movement
 - [STRING](../procedure-division/string-handling/string.md) -- string concatenation
+- [UNSTRING](../procedure-division/string-handling/unstring.md) -- string splitting
 - [INSPECT](../procedure-division/string-handling/inspect.md) -- character scanning
