@@ -38,6 +38,7 @@ nav:
     - Reference Modification: language/reference-modification.md
     - Name Qualification: language/qualification.md
     - Conditions: language/conditions.md
+    - Conditional Phrases: language/conditional-phrases.md
     - Special Registers: language/special-registers.md
   - Identification Division:
     - identification-division/index.md
@@ -50,12 +51,15 @@ nav:
     - data-division/index.md
     - Storage Sections: data-division/storage-sections.md
     - Level Numbers: data-division/level-numbers.md
+    - FD Entry: data-division/fd-entry.md
+    - SD Entry: data-division/sd-entry.md
     - PICTURE Clause: data-division/picture.md
     - USAGE Clause: data-division/usage.md
     - OCCURS Clause (Arrays): data-division/occurs.md
     - Condition Names: data-division/condition-names.md
     - REDEFINES Clause: data-division/redefines.md
     - VALUE Clause: data-division/value.md
+    - Additional Clauses: data-division/data-clauses.md
     - User-Defined Types (TYPEDEF): data-division/typedef.md
     - RENAMES (Level 66): data-division/renames.md
     - LINAGE Clause: data-division/linage.md
@@ -73,6 +77,7 @@ nav:
       - MOVE: procedure-division/data-movement/move.md
       - SET: procedure-division/data-movement/set.md
       - INITIALIZE: procedure-division/data-movement/initialize.md
+      - CORRESPONDING: procedure-division/data-movement/corresponding.md
     - Control Flow:
       - DECLARATIVES and USE: procedure-division/control-flow/declaratives.md
       - IF: procedure-division/control-flow/if.md
@@ -84,6 +89,7 @@ nav:
       - CONTINUE: procedure-division/control-flow/continue.md
       - NEXT SENTENCE: procedure-division/control-flow/next-sentence.md
       - GOBACK: procedure-division/control-flow/goback.md
+      - RAISE and RESUME: procedure-division/control-flow/raise-resume.md
     - Table Handling:
       - SEARCH: procedure-division/data-movement/search.md
     - Input/Output:
@@ -109,6 +115,8 @@ nav:
       - MERGE: procedure-division/sort-merge/merge.md
       - RELEASE: procedure-division/sort-merge/release.md
       - RETURN: procedure-division/sort-merge/return.md
+    - Report Writer:
+      - INITIATE, GENERATE, TERMINATE: procedure-division/report-writer-verbs.md
     - Dynamic Memory:
       - ALLOCATE and FREE: procedure-division/memory/allocate-free.md
     - Archaic Verbs (Removed):
@@ -135,6 +143,9 @@ nav:
     - Embedded SQL: extensions/embedded-sql.md
     - XML Processing: extensions/xml.md
     - JSON Processing: extensions/json.md
+    - Conditional Compilation: extensions/conditional-compilation.md
+    - Object-Oriented COBOL: extensions/oo-cobol.md
+    - Inter-Language Interop: extensions/interop.md
     - Compiler Directives: extensions/compiler-directives.md
     - Vendor Extensions: extensions/vendor-extensions.md
   - Appendices:
@@ -142,5 +153,8 @@ nav:
     - Collating Sequence: appendices/collating-sequence.md
     - File Status Codes: appendices/file-status-codes.md
     - Reserved Words: appendices/reserved-words.md
+    - Best Practices: appendices/best-practices.md
+    - Sample Programs: appendices/sample-programs.md
+    - Glossary: appendices/glossary.md
     - Terminology Mapping: appendices/terminology.md
     - References: appendices/references.md
