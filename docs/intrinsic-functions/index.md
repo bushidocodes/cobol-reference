@@ -68,6 +68,7 @@ The following tables list all standard intrinsic functions grouped by category. 
 | ANNUITY | Ratio of annuity paid for a given period and interest rate | COBOL-85 Amdt. 1 |
 | ASIN | Arcsine of an argument | COBOL-85 Amdt. 1 |
 | ATAN | Arctangent of an argument | COBOL-85 Amdt. 1 |
+| CONVERT | Base conversion of a numeric string | COBOL 2023 |
 | COS | Cosine of an argument | COBOL-85 Amdt. 1 |
 | E | Value of the mathematical constant *e* | COBOL 2023 |
 | EXP | *e* raised to the power of the argument | COBOL-85 Amdt. 1 |
@@ -103,7 +104,7 @@ The following tables list all standard intrinsic functions grouped by category. 
     The functions FRACTION-PART, HIGHEST-ALGEBRAIC, and LOWEST-ALGEBRAIC were introduced in COBOL 2014.
 
 !!! note "COBOL 2023"
-    The functions E, PI, and SIGN were introduced in COBOL 2023.
+    The functions CONVERT, E, PI, SIGN, and SUBSTITUTE were introduced in COBOL 2023.
 
 ### String Functions
 

@@ -235,6 +235,33 @@ This ensures consistent data definitions across all programs that use the shared
 
 ---
 
+## SAME AS Clause
+
+The `SAME AS` clause copies the description of another data item without creating a type definition. Unlike TYPEDEF, it does not create a reusable named type — it simply duplicates the structure.
+
+```cobol
+01  WS-ORIGINAL.
+    05  ORIG-NAME    PIC X(30).
+    05  ORIG-AMOUNT  PIC 9(7)V99.
+
+01  WS-COPY SAME AS WS-ORIGINAL.
+*> WS-COPY has the same structure as WS-ORIGINAL
+*> (ORIG-NAME PIC X(30), ORIG-AMOUNT PIC 9(7)V99)
+```
+
+### SAME AS vs TYPEDEF
+
+| Aspect | TYPEDEF | SAME AS |
+|--------|---------|---------|
+| Creates a named type | Yes | No |
+| Reusable across items | Yes (via TYPE clause) | No (one-time copy) |
+| Type checking (with STRONG) | Optional | No |
+| Standard | COBOL 2002 | COBOL 2002 |
+
+Use TYPEDEF when you want to define a reusable type used in multiple places. Use SAME AS for a one-time structural copy.
+
+---
+
 ## TYPEDEF vs REDEFINES vs COPY
 
 | Feature | TYPEDEF | REDEFINES | COPY |

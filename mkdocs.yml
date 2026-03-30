@@ -119,6 +119,7 @@ nav:
       - RETURN: procedure-division/sort-merge/return.md
     - Report Writer:
       - INITIATE, GENERATE, TERMINATE: procedure-division/report-writer-verbs.md
+    - COBOL 2023 Statements: procedure-division/cobol2023.md
     - Dynamic Memory:
       - ALLOCATE and FREE: procedure-division/memory/allocate-free.md
     - Archaic Verbs (Removed):

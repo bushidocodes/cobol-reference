@@ -345,6 +345,31 @@ This moves the first 10 characters of the selected `EMP-NAME` element.
 
 ---
 
+## OCCURS DYNAMIC (COBOL 2014)
+
+!!! note "COBOL 2014"
+    Dynamic-capacity tables were introduced in COBOL 2014.
+
+```cobol
+01  WS-DYNAMIC-TABLE.
+    05  WS-ENTRY OCCURS DYNAMIC
+        CAPACITY IN WS-CURRENT-SIZE
+        LIMIT IS 10000.
+        10  ENTRY-KEY    PIC X(10).
+        10  ENTRY-DATA   PIC X(50).
+01  WS-CURRENT-SIZE  PIC 9(5).
+```
+
+- `OCCURS DYNAMIC` creates a table whose size can change at runtime.
+- `CAPACITY IN` names a data item that holds the current number of allocated occurrences.
+- `LIMIT IS` specifies the maximum number of occurrences.
+- Use `ALLOCATE` and `FREE` or implicit resizing to change the table size.
+- `SET WS-ENTRY TO ALLOCATE 100` allocates space for 100 occurrences.
+
+This replaces the common pattern of defining a large fixed-size table and using a counter to track how many entries are actually in use.
+
+---
+
 ## See Also
 
 - [Data Division](index.md)
