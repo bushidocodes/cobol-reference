@@ -347,5 +347,5 @@ END-IF
 - [Intrinsic Functions](index.md) -- overview of all intrinsic functions
 - [Numeric Functions](numeric.md) -- mathematical intrinsic functions
 - [String Functions](string.md) -- string manipulation intrinsic functions
-- [PICTURE](../../data-division/picture.md) -- data item format specification
-- [USAGE](../../data-division/usage.md) -- internal representation and storage format
+- [PICTURE](../data-division/picture.md) -- data item format specification
+- [USAGE](../data-division/usage.md) -- internal representation and storage format

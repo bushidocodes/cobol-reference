@@ -14,7 +14,7 @@ FUNCTION function-name ( argument-1 [ argument-2 ] ... )
 
 All numeric intrinsic functions return a value of category **numeric** or **integer**. Numeric functions may appear anywhere an arithmetic expression is permitted, including in `COMPUTE`, `IF`, `EVALUATE`, and `DISPLAY` statements.
 
-Arguments to numeric functions must be of category numeric unless otherwise specified. The result is a temporary numeric value with implementation-defined precision; it does not correspond to a declared [PICTURE](../../data-division/picture.md) or [USAGE](../../data-division/usage.md).
+Arguments to numeric functions must be of category numeric unless otherwise specified. The result is a temporary numeric value with implementation-defined precision; it does not correspond to a declared [PICTURE](../data-division/picture.md) or [USAGE](../data-division/usage.md).
 
 ---
 
@@ -890,5 +890,5 @@ COMPUTE WS-INT = FUNCTION INTEGER-OF-BOOLEAN(WS-FLAGS)
 - [String Functions](string.md) -- string manipulation intrinsic functions
 - [Date and Time Functions](date-time.md) -- date and time intrinsic functions
 - [Financial Functions](financial.md) -- financial calculation intrinsic functions
-- [PICTURE](../../data-division/picture.md) -- data item format specification
-- [USAGE](../../data-division/usage.md) -- internal representation and storage format
+- [PICTURE](../data-division/picture.md) -- data item format specification
+- [USAGE](../data-division/usage.md) -- internal representation and storage format
