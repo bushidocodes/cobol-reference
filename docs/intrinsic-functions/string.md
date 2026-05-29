@@ -214,7 +214,7 @@ FUNCTION LENGTH ( argument-1 )
 
 - **argument-1** -- any category. May be a literal, data-name, or another function reference.
 - **Return category** -- integer.
-- **Behavior** -- returns the number of character positions in argument-1. For a data item, the length is the defined length (the number of character positions in its [PICTURE](../../data-division/picture.md)), not the length of the data content. For a national item, it returns the number of national character positions.
+- **Behavior** -- returns the number of character positions in argument-1. For a data item, the length is the defined length (the number of character positions in its [PICTURE](../data-division/picture.md)), not the length of the data content. For a national item, it returns the number of national character positions.
 
 ```cobol
 01  WS-NAME  PIC X(20) VALUE "SMITH".
@@ -672,5 +672,5 @@ MOVE FUNCTION LOCALE-COMPARE("résumé" "resume" "fr_FR")
 - [Numeric Functions](numeric.md) -- mathematical intrinsic functions
 - [Date and Time Functions](date-time.md) -- date and time intrinsic functions
 - [Financial Functions](financial.md) -- financial calculation intrinsic functions
-- [PICTURE](../../data-division/picture.md) -- data item format specification
-- [USAGE](../../data-division/usage.md) -- internal representation and storage format
+- [PICTURE](../data-division/picture.md) -- data item format specification
+- [USAGE](../data-division/usage.md) -- internal representation and storage format

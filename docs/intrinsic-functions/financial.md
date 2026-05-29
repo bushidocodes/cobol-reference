@@ -12,7 +12,7 @@ Intrinsic functions that perform financial calculations including annuity ratios
 FUNCTION function-name ( argument-1  argument-2 [ argument-3 ] ... )
 ```
 
-Financial intrinsic functions return values of category **numeric**. The results are suitable for use in `COMPUTE` statements and arithmetic expressions. The receiving data item should have a [PICTURE](../../data-division/picture.md) and [USAGE](../../data-division/usage.md) appropriate for the precision required by the financial calculation.
+Financial intrinsic functions return values of category **numeric**. The results are suitable for use in `COMPUTE` statements and arithmetic expressions. The receiving data item should have a [PICTURE](../data-division/picture.md) and [USAGE](../data-division/usage.md) appropriate for the precision required by the financial calculation.
 
 ---
 
@@ -277,5 +277,5 @@ If all amount arguments are equal, the result is equivalent to `amount * (1 / FU
 - [Numeric Functions](numeric.md) -- mathematical intrinsic functions
 - [String Functions](string.md) -- string manipulation intrinsic functions
 - [Date and Time Functions](date-time.md) -- date and time intrinsic functions
-- [PICTURE](../../data-division/picture.md) -- data item format specification
-- [USAGE](../../data-division/usage.md) -- internal representation and storage format
+- [PICTURE](../data-division/picture.md) -- data item format specification
+- [USAGE](../data-division/usage.md) -- internal representation and storage format
