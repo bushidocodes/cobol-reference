@@ -340,6 +340,6 @@ END-PERFORM
 
 - [IF](if.md) — conditional execution
 - [EVALUATE](evaluate.md) — multi-branch conditional
-- GO TO — unconditional transfer of control
-- EXIT — provides a common end point or exits a loop
+- [GO TO](go-to.md) — unconditional transfer of control
+- [EXIT](exit.md) — provides a common end point or exits a loop
 - [Procedure Division Overview](../index.md)
