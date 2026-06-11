@@ -276,6 +276,7 @@ Demonstrates SORT with filtering (INPUT PROCEDURE) and formatting (OUTPUT PROCED
 
        WRITE-REPORT SECTION.
            OPEN OUTPUT OUT-FILE
+           MOVE "N" TO WS-EOF  *> reset flag set by FILTER-ACTIVE
            MOVE "Dept  Name                      Salary"
                TO OUT-RECORD
            WRITE OUT-RECORD
