@@ -340,6 +340,11 @@ A main program calling a subprogram that validates and formats a date.
        01  WS-YEAR     PIC 9(4).
        01  WS-MONTH    PIC 9(2).
        01  WS-DAY      PIC 9(2).
+       01  WS-MAX-DAY  PIC 9(2).
+       01  WS-MONTH-DAYS        PIC X(24)
+                                VALUE "312831303130313130313031".
+       01  WS-MONTH-TABLE REDEFINES WS-MONTH-DAYS.
+           05  WS-DAYS-IN-MONTH PIC 9(2) OCCURS 12 TIMES.
 
        LINKAGE SECTION.
        01  LS-DATE-IN  PIC 9(8).
@@ -355,11 +360,20 @@ A main program calling a subprogram that validates and formats a date.
            COMPUTE WS-DAY   =
                FUNCTION MOD(LS-DATE-IN, 100)
 
-           IF WS-MONTH >= 1 AND WS-MONTH <= 12
-               AND WS-DAY >= 1 AND WS-DAY <= 31
-               MOVE "Y" TO LS-VALID
-               STRING WS-YEAR "/" WS-MONTH "/" WS-DAY
-                   DELIMITED BY SIZE INTO LS-DATE-OUT
+           IF WS-YEAR >= 1
+               AND WS-MONTH >= 1 AND WS-MONTH <= 12
+               MOVE WS-DAYS-IN-MONTH(WS-MONTH) TO WS-MAX-DAY
+               IF WS-MONTH = 2
+                   AND FUNCTION MOD(WS-YEAR, 4) = 0
+                   AND (FUNCTION MOD(WS-YEAR, 100) NOT = 0
+                       OR FUNCTION MOD(WS-YEAR, 400) = 0)
+                   MOVE 29 TO WS-MAX-DAY  *> leap-year February
+               END-IF
+               IF WS-DAY >= 1 AND WS-DAY <= WS-MAX-DAY
+                   MOVE "Y" TO LS-VALID
+                   STRING WS-YEAR "/" WS-MONTH "/" WS-DAY
+                       DELIMITED BY SIZE INTO LS-DATE-OUT
+               END-IF
            END-IF
            GOBACK.
 ```
