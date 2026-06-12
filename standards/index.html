@@ -1,0 +1,6077 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../language/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Standards - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cobol-standards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Standards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#codasyl-specifications-1960-1965" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CODASYL Specifications (1960-1965)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CODASYL Specifications (1960-1965)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobol-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-60
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="COBOL-60">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Origin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing-organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing organizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-cobol-60-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original COBOL-60 structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-and-future-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance and future direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-61
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="COBOL-61">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identification-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identification Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPY clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-control-renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILE-CONTROL RENAMING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reserved words
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-61-extended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-61 EXTENDED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-65
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansiiso-standards-1968-present" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANSI/ISO Standards (1968-present)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANSI/ISO Standards (1968-present)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobol-68" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-68
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-74
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-85
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-2002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL 2002
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL 2014
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL 2023
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-summary-by-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Summary by Standard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cobol-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL in Practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="COBOL in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensions-and-debates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensions and Debates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significant-contributions-to-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significant Contributions to Technology
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../data-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-division/screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#codasyl-specifications-1960-1965" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CODASYL Specifications (1960-1965)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CODASYL Specifications (1960-1965)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobol-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-60
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="COBOL-60">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Origin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing-organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing organizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-cobol-60-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original COBOL-60 structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-and-future-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance and future direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-61
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="COBOL-61">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identification-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identification Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPY clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-control-renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FILE-CONTROL RENAMING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reserved words
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-61-extended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-61 EXTENDED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-65
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansiiso-standards-1968-present" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANSI/ISO Standards (1968-present)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANSI/ISO Standards (1968-present)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobol-68" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-68
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-74
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL-85
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-2002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL 2002
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL 2014
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL 2023
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-summary-by-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Summary by Standard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cobol-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL in Practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="COBOL in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensions-and-debates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensions and Debates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significant-contributions-to-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significant Contributions to Technology
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cobol-standards">COBOL Standards<a class="headerlink" href="#cobol-standards" title="Permanent link">&para;</a></h1>
+<p>COBOL has evolved through two distinct phases: the early CODASYL specifications (1960-1965), which were industry reports produced by voluntary committees, and the formal ANSI/ISO standards (1968 onward), which carried the weight of national and international standardization bodies. Each revision builds on the previous one, adding new features while maintaining backward compatibility with existing programs.</p>
+<hr />
+<h2 id="codasyl-specifications-1960-1965">CODASYL Specifications (1960-1965)<a class="headerlink" href="#codasyl-specifications-1960-1965" title="Permanent link">&para;</a></h2>
+<p>The pre-standard era of COBOL was governed by the Conference on Data Systems Languages (CODASYL), a voluntary industry group that produced successive specification reports. These were not formal standards but served as the de facto definition of the language for early implementors.</p>
+<h3 id="cobol-60">COBOL-60<a class="headerlink" href="#cobol-60" title="Permanent link">&para;</a></h3>
+<p><strong>CODASYL Initial Specifications, April 1960</strong> — <em>"COBOL - Initial Specifications for a COmmon Business Oriented Language"</em></p>
+<p>The very first COBOL specification and the origin of the language.</p>
+<h4 id="origin">Origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h4>
+<p>In <strong>March 1959</strong>, <strong>Mary K. Hawes</strong>, a programmer at Burroughs Corporation, called for computer users and manufacturers to create a new computer language — one that could run on different brands of computers and perform accounting tasks such as payroll calculations, inventory control, and records of credits and debits. On <strong>April 8, 1959</strong>, she organized a meeting at the University of Pennsylvania Computing Center; attendees included Grace Hopper, Robert Rossheim, Saul Gorn, and others. Attendees asked <strong>Charles Phillips</strong> of the U.S. Department of Defense if his agency would sponsor a formal conference. Phillips agreed, and on <strong>May 28-29, 1959</strong>, approximately 40 representatives of computer users and manufacturers met at the Pentagon to create a common language for business-type data processing. Three committees were formed: a <strong>Short Range Committee</strong>, an <strong>Intermediate Range Committee</strong>, and a <strong>Long Range Committee</strong> (the Long Range Committee was never established). The effort was organized under CODASYL (Committee on Data Systems Languages), chaired by <strong>Charles A. Phillips</strong> of the Office of the Secretary of Defense, with <strong>Grace Hopper</strong> and <strong>Robert Bemer</strong> as advisors.</p>
+<p>The Short Range Committee was composed of six manufacturers and three Government representatives. Its assigned mission was "to do a fact finding study of what's wrong and right with existing business compilers," but the committee set itself the ambitious goal of developing a complete language within three months. <strong>Jean E. Sammet</strong> of Sylvania Electric Products chaired the Statement Language Task Group (Procedure Division design) and later wrote the definitive account of COBOL's development. <strong>Mary Hawes</strong> chaired the Data Description subcommittee.</p>
+<p>The Short Range Committee held its first meeting on June 23, 1959, and organized four working groups: Data Description, Procedural Statements, Application Survey, and Usage and Experience. On <strong>June 4, 1959</strong>, the steering committee formally established CODASYL. In <strong>mid-September 1959</strong>, <strong>R.W. Bemer</strong> proposed the name <strong>COBOL</strong> (alternatives considered included "BUSY", "INFOSYL", and "COCOSYL"), suggesting a <strong>CO</strong>mmon <strong>B</strong>usiness <strong>O</strong>riented <strong>L</strong>anguage. The September 4, 1959 report to the Executive Committee stated that the committee had prepared "a framework upon which an effective common business language could be built" but needed additional time; they were authorized to complete the work by December 1, 1959. A six-person subcommittee (Gertrude Tierney and William Selden from IBM; Howard Bromberg and Norman Discount from RCA; Vernon Reeves and Jean Sammet from Sylvania) produced the final specification in two weeks of intensive work, finishing on November 7, 1959.</p>
+<p>The COBOL System was reviewed and approved by the Short Range Committee during November 16-20, 1959. <strong>Jean E. Sammet</strong>, as chairman of the editing group, led the final editing after the November 16-20 review. The final report was delivered to the Executive Committee on December 17, 1959. The Executive Committee accepted and approved the report on January 7-8, 1960, establishing the <strong>"Basic COBOL" minimum compliance concept</strong> — no manufacturer could claim COBOL support without implementing at least Basic COBOL. <strong>Frances (Betty) Holberton</strong> edited the final Government Printing Office publication, which was published in April 1960. RCA and Remington-Rand Univac raced to produce the first COBOL compilers. At Remington Rand UNIVAC, <strong>Grace Hopper</strong> directed the team using the room-sized UNIVAC I and UNIVAC II computers; programs were entered on reels of magnetic tape using a special typewriter called a Unityper. Notably, Remington Rand used FLOW-MATIC to write a significant part of their COBOL compiler — a notable early example of compiler bootstrapping. The <strong>first COBOL program executed on August 17, 1960</strong> on an RCA 501 computer. On <strong>December 6-7, 1960</strong>, the same COBOL programs ran successfully on both a UNIVAC II (in Philadelphia) and an RCA 501 (at the RCA Systems Center in Cherry Hill, NJ), using programs from United States Steel and the General Services Administration — demonstrating cross-platform compatibility for the first time. Printouts from the RCA test runs were preserved by <strong>Howard Bromberg</strong> (of the original six-person editing subcommittee) and are now in the Smithsonian Institution's National Museum of American History.</p>
+<p>The committee later acknowledged that COBOL was originally conceived as a stopgap: "had the Short-Range Committee realized at the outset that the language it created was going to be in use for such a long period of time, it would have gone about the task quite differently."</p>
+<h4 id="contributing-organizations">Contributing organizations<a class="headerlink" href="#contributing-organizations" title="Permanent link">&para;</a></h4>
+<p>The Short Range Committee drew members from the following organizations:</p>
+<ul>
+<li>Air Materiel Command, U.S. Air Force</li>
+<li>Bureau of Standards, Department of Commerce</li>
+<li>Computer Science Corporation</li>
+<li>Datamatic Division, Minneapolis-Honeywell Corporation</li>
+<li>David Taylor Model Basin, Bureau of Ships, U.S. Navy</li>
+<li>ElectroData Division, Burroughs Corporation</li>
+<li>International Business Machines Corporation</li>
+<li>Radio Corporation of America</li>
+<li>Remington-Rand Division of Sperry-Rand, Inc.</li>
+<li>Sylvania Electric Products, Inc.</li>
+</ul>
+<h4 id="source-languages">Source languages<a class="headerlink" href="#source-languages" title="Permanent link">&para;</a></h4>
+<p>COBOL drew on three existing languages:</p>
+<ul>
+<li><strong>FLOW-MATIC</strong> (Sperry-Rand, 1958) — Grace Hopper's language and the primary influence on COBOL. FLOW-MATIC was the only one of the three actually in production use. Its specific contributions included: full data-names instead of short symbolic names, full English words for commands, and sub-word-length data items (unlike FORTRAN's assumption of one number per machine word).</li>
+<li><strong>Commercial Translator / COMTRAN</strong> (IBM, 1959) — existed only as specifications, never implemented</li>
+<li><strong>AIMACO</strong> (Air Materiel Command and Sperry-Rand) — a minor modification of FLOW-MATIC</li>
+</ul>
+<p>A fourth language, <strong>FACT</strong> (Fully Automatic Compiling Technique) for the Honeywell 800, was considered technically superior. FACT was designed by <strong>Fletcher Jones, Roy Nutt, and Robert L. Patrick</strong> at Computer Sciences Corporation (CSC), supervised by <strong>Richard F. Clippinger</strong> of Honeywell, and drew on <strong>Basic English</strong> (C.K. Ogden, ~1925) for its design philosophy. Roy Nutt represented Honeywell at CODASYL and brought the FACT manual. The Intermediate Range Committee passed a motion in October 1959 recommending FACT replace the Short Range Committee's draft, but this was overtaken by events — the Executive Committee accepted the Short Range report before acting on the FACT recommendation. Nevertheless, eight specific FACT features were incorporated into COBOL:</p>
+<ol>
+<li>Hierarchical data definition using level numbers (group items and elementary items)</li>
+<li>Initial value assignment via the VALUE clause</li>
+<li>Restricted literal values via level-88 condition names</li>
+<li>Data-name qualification using IN or OF</li>
+<li>MOVE CORRESPONDING for bulk transfer of like-named items</li>
+<li>The ON ERROR clause</li>
+<li>A built-in SORT function</li>
+<li>Non-procedural report generation (precursor to COBOL's Report Writer)</li>
+</ol>
+<p>Clippinger later chaired both the ANSI and ISO COBOL language-standardization committees.</p>
+<h4 id="phasing">Phasing<a class="headerlink" href="#phasing" title="Permanent link">&para;</a></h4>
+<p>The 1960 report defined three implementation levels:</p>
+<ul>
+<li><strong>Phase I (Basic COBOL)</strong> — the minimum language that all compilers were expected to support</li>
+<li><strong>Phase II (COBOL)</strong> — the present level, as defined in the full specification</li>
+<li><strong>Phase III (Extended COBOL)</strong> — a more ideal system, reserved for future development</li>
+</ul>
+<p>Basic COBOL (Phase I) excluded the following features: algebraic formulas, the COMPUTE verb, segmentation, multi-way IF, the REVERSE option in OPEN, the VARY option in PERFORM, the UNTIL option in PERFORM, and the INCLUDE, USE, DEFINE, and ENTER verbs.</p>
+<h4 id="original-cobol-60-structure">Original COBOL-60 structure<a class="headerlink" href="#original-cobol-60-structure" title="Permanent link">&para;</a></h4>
+<p>COBOL-60 defined only <strong>three divisions</strong> (not four):</p>
+<ul>
+<li><strong>Environment Division</strong></li>
+<li><strong>Data Division</strong></li>
+<li><strong>Procedure Division</strong></li>
+</ul>
+<p>There was no Identification Division; it was added later in COBOL-61.</p>
+<p>The Data Division contained three sections: the <strong>FILE Section</strong>, the <strong>WORKING-STORAGE Section</strong>, and a <strong>CONSTANT Section</strong>.</p>
+<p>The Procedure Division defined <strong>23 verbs</strong> in six categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arithmetic</td>
+<td>ADD, SUBTRACT, MULTIPLY, DIVIDE, COMPUTE</td>
+</tr>
+<tr>
+<td>Input-Output</td>
+<td>READ, WRITE, OPEN, CLOSE, ACCEPT, DISPLAY</td>
+</tr>
+<tr>
+<td>Procedure Branching</td>
+<td>GO, ALTER, PERFORM</td>
+</tr>
+<tr>
+<td>Data Movement</td>
+<td>MOVE, EXAMINE</td>
+</tr>
+<tr>
+<td>Ending</td>
+<td>STOP</td>
+</tr>
+<tr>
+<td>Compiler Directing</td>
+<td>DEFINE, ENTER, EXIT, INCLUDE, NOTE, USE</td>
+</tr>
+</tbody>
+</table>
+<h4 id="maintenance-and-future-direction">Maintenance and future direction<a class="headerlink" href="#maintenance-and-future-direction" title="Permanent link">&para;</a></h4>
+<p>Two standing committees were established to maintain COBOL: a <strong>Technical Committee</strong> (composed of manufacturers) and an <strong>Executive Committee</strong> (with broader membership). The original report noted:</p>
+<blockquote>
+<p>"The prospective user of COBOL is reminded that a source program language such as COBOL must be dynamic to be effective."</p>
+</blockquote>
+<p>Features explicitly planned for future versions included Table Handling Functions, External Format and Media Translation, Report Writing Extension, and Sort-Merge Functions.</p>
+<h3 id="cobol-61">COBOL-61<a class="headerlink" href="#cobol-61" title="Permanent link">&para;</a></h3>
+<p><strong>CODASYL specification (pre-standard)</strong></p>
+<p>A cleanup of COBOL-60, addressing numerous logical flaws found in the original specification. A Special Task Group was created in September 1960 and worked through February 1961 to prepare the revision. The Special Task Group sessions were chaired by <strong>J.L. Jones</strong> (Air Materiel Command) and <strong>G.M. Dillon</strong> (DuPont Company). The Maintenance Committee resumed work in May 1961, working on extensions including report-writing and sorting (which became COBOL-61 Extended). The COBOL-61 manual was published by the Government Printing Office in August 1961. It replaced COBOL-60 and became the first version widely implemented by compiler vendors.</p>
+<h4 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h4>
+<p>COBOL-61 was split into two compliance levels:</p>
+<ul>
+<li><strong>REQUIRED COBOL-1961</strong> — the minimum subset that every conforming implementation must support</li>
+<li><strong>ELECTIVE COBOL-1961</strong> — optional features that implementations could choose to include</li>
+</ul>
+<h4 id="maintenance-group">Maintenance Group<a class="headerlink" href="#maintenance-group" title="Permanent link">&para;</a></h4>
+<p>Beyond the original organizations on the Short Range Committee, the following organizations participated in the Maintenance Group:</p>
+<ul>
+<li>Allstate Insurance Company</li>
+<li>Bendix Corporation (Computer Division)</li>
+<li>Control Data Corporation</li>
+<li>Dupont Corporation</li>
+<li>General Electric Company</li>
+<li>General Motors Corporation</li>
+<li>Lockheed Aircraft Corporation</li>
+<li>National Cash Register Company</li>
+<li>Philco Corporation</li>
+<li>Standard Oil Company (N.J.)</li>
+<li>United States Steel Corporation</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The organization called "Bureau of Standards" in the original 1960 report was referred to as "National Bureau of Standards" in the COBOL-61 documentation.</p>
+</div>
+<h4 id="identification-division">Identification Division<a class="headerlink" href="#identification-division" title="Permanent link">&para;</a></h4>
+<p>COBOL-61 introduced the <strong>Identification Division</strong>, establishing the four-division program structure that would become a defining characteristic of the language. The division defined seven paragraphs:</p>
+<ul>
+<li><strong>PROGRAM-ID</strong> (required, must be the first paragraph)</li>
+<li><strong>AUTHOR</strong> (optional)</li>
+<li><strong>INSTALLATION</strong> (optional)</li>
+<li><strong>DATE-WRITTEN</strong> (optional)</li>
+<li><strong>DATE-COMPILED</strong> (optional)</li>
+<li><strong>SECURITY</strong> (optional)</li>
+<li><strong>REMARKS</strong> (optional)</li>
+</ul>
+<h4 id="data-division">Data Division<a class="headerlink" href="#data-division" title="Permanent link">&para;</a></h4>
+<p>The Data Division retained three sections from COBOL-60: <strong>FILE</strong>, <strong>WORKING-STORAGE</strong>, and <strong>CONSTANT</strong>. There was no LINKAGE Section; parameter passing between programs was not yet standardized.</p>
+<p>Record descriptions used separate <strong>SIZE</strong>, <strong>CLASS</strong>, <strong>POINT LOCATION</strong>, and <strong>SIGNED</strong> clauses for defining data item characteristics, though the <strong>PICTURE</strong> clause was also available as a more concise alternative. These separate clauses were later unified into PICTURE in subsequent standards.</p>
+<p><strong>Level-77</strong> items were used for independent (non-grouped) work areas and constants in both the Working-Storage and Constant sections.</p>
+<p><strong>TALLY</strong> was a special register — a system-defined counter used with the <strong>EXAMINE</strong> verb (the predecessor to INSPECT).</p>
+<h4 id="procedure-division">Procedure Division<a class="headerlink" href="#procedure-division" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>EXAMINE</strong> was the string-scanning verb, later replaced by <strong>INSPECT</strong> in COBOL-74.</li>
+<li><strong>OTHERWISE</strong> was used in IF statements where <strong>ELSE</strong> would later be used.</li>
+</ul>
+<h4 id="copy-clause">COPY clause<a class="headerlink" href="#copy-clause" title="Permanent link">&para;</a></h4>
+<p>The COPY clause was pervasive in COBOL-61, available for copying library text into <strong>FD entries</strong>, <strong>Record Description entries</strong>, <strong>OBJECT-COMPUTER</strong>, <strong>SPECIAL-NAMES</strong>, <strong>FILE-CONTROL</strong>, and <strong>I-O-CONTROL</strong> paragraphs.</p>
+<h4 id="file-control-renaming">FILE-CONTROL RENAMING<a class="headerlink" href="#file-control-renaming" title="Permanent link">&para;</a></h4>
+<p>FILE-CONTROL included a <strong>RENAMING</strong> option that allowed one file to share another file's File Description, avoiding the need to duplicate record layouts.</p>
+<h4 id="reserved-words">Reserved words<a class="headerlink" href="#reserved-words" title="Permanent link">&para;</a></h4>
+<p>The COBOL-61 reserved word list included words that were later removed or replaced in subsequent standards: <strong>CONSTANT</strong>, <strong>RENAMING</strong>, <strong>TALLY</strong>, <strong>EXAMINE</strong>, <strong>OTHERWISE</strong>, <strong>PROTECT</strong>, <strong>CHECK</strong>, <strong>PLACE</strong>, <strong>FLOAT</strong>, <strong>DOLLAR</strong>, <strong>DIGIT</strong>, <strong>LEAVING</strong>, <strong>SUPPRESS</strong>, <strong>LOCATION</strong>, <strong>ADDRESS</strong>.</p>
+<p>IBM's OS/360 COBOL implementation (December 1964) shipped two compilers — <strong>COBOL E</strong> (subset) and <strong>COBOL F</strong> (full). COBOL E omitted CORRESPONDING, Report Writer, Sort, nested IF, and implied subjects. Notably, the <strong>Linkage Section</strong> and the <strong>REWRITE statement</strong> were IBM extensions in 1964, not yet part of the CODASYL standard. IBM also introduced the <strong>TRANSFORM</strong> statement (character translation, later dropped) and <strong>EXHIBIT</strong>/<strong>TRACE</strong> debugging statements.</p>
+<p>A subset called <strong>"Compact COBOL"</strong> was defined by a COBOL Committee subcommittee but was never published, to avoid confusion with the standards work.</p>
+<h3 id="cobol-61-extended">COBOL-61 EXTENDED<a class="headerlink" href="#cobol-61-extended" title="Permanent link">&para;</a></h3>
+<p><strong>CODASYL specification (pre-standard)</strong></p>
+<p>Published in November 1962, this revision added the SORT and REPORT WRITER features to the language.</p>
+<h3 id="cobol-65">COBOL-65<a class="headerlink" href="#cobol-65" title="Permanent link">&para;</a></h3>
+<p><strong>CODASYL specification (pre-standard)</strong></p>
+<p>The COBOL-65 manual was issued in 1966 (despite its name). This revision introduced facilities for mass storage file handling and tables (OCCURS clause with DEPENDING ON). COBOL-65 also brought improvements to the SORT feature and added the ability to define library text for inclusion (the precursor to the COPY statement). Significant contributions were made by <strong>ECMA</strong> (European Computer Manufacturer's Association).</p>
+<hr />
+<h2 id="ansiiso-standards-1968-present">ANSI/ISO Standards (1968-present)<a class="headerlink" href="#ansiiso-standards-1968-present" title="Permanent link">&para;</a></h2>
+<p>Beginning in 1968, COBOL became a formally standardized language under the American National Standards Institute (ANSI) and later the International Organization for Standardization (ISO). These standards carry formal authority and define conformance requirements for compiler vendors.</p>
+<h3 id="cobol-68">COBOL-68<a class="headerlink" href="#cobol-68" title="Permanent link">&para;</a></h3>
+<p><strong>ANSI X3.23-1968</strong></p>
+<p>The first formal ANSI standard for COBOL. Standardization under ASA/USASI began in January 1963 with Task Group X3.4.4, chaired by <strong>Howard Bromberg</strong>. The proposed standard (pUSASI COBOL) was distributed as COBOL Information Bulletin No. 9. During balloting (July 1967 through July 1968), X3 voted to remove the <strong>Random Processing Module</strong> from the standard and place it in an Appendix. COBOL was officially approved as <strong>USA Standard X3.23-1968 in August 1968</strong>. Charlie Phillips described the scale of the X3 standards operation at the CODASYL 10th Anniversary Meeting: 44 member bodies had produced 28 approved standards over approximately 9 years, at roughly $1 million each. In 1968 alone, 62 committees held 248 meetings with 3,461 participants contributing 18,500 person-days (over 71 person-years) at a total cost of $5.7 million. Phillips also noted that the COBOL copyright was "impractical and improper" since COBOL was in the public domain, but the "acknowledgement section" — which all COBOL manuals reproduce — served as the practical resolution.</p>
+<p>At the CODASYL 10th Anniversary Meeting (May 27-28, 1969), <strong>Grace Hopper</strong> called for an independent <strong>data description language</strong> separate from any procedure language, capable of describing "lists, trees, rings, and even multidimensional structures." She argued that the major difficulty in moving between languages was data description, not procedures — foreshadowing the database work that CODASYL would undertake with the Data Base Task Group (DBTG). Hopper reflected on how this understanding had evolved: "At first, when we started out on COBOL, I think we concerned ourselves far more with the procedures than we did with the data because we hadn't yet started jumping across generations and across manufacturers." By 1969, CODASYL had organized into four committees: the Executive Committee, the Planning Committee (chaired by Warren Simmons of U.S. Steel), the Systems Committee (chaired by Bill Olle of RCA, which produced the CODASYL DBTG report — the Database Task Group originated from a one-day meeting organized by Warren Simmons and Charles Bachman in Phoenix in late 1965, formalized in spring 1966, and explicitly decided its work was "equally applicable to other languages and not restricted to COBOL," making data management language-independent from the start), and the Programming Language Committee (chaired by Dick Kerrs of NCR, responsible for COBOL maintenance).</p>
+<p>Dick Kerrs, as PLC Chairman, provided a definitive publication timeline at the anniversary meeting: COBOL-60, COBOL-61 ("precipitated by changes rather than new functions"), COBOL-61 Extended ("introducing the sort and report writer features"), COBOL-65 ("containing the mass storage functions and a different approach to table handling"), and the Journal of Development 1968 ("major addition... was an inter-program communication facility"). Despite a decade of progress, Kerrs acknowledged a persistent portability gap: "you still can't write a tape-print routine that works without some difficulty from machine to machine."</p>
+<p>Joe Cunningham of the Bureau of the Budget reported that the federal government had 4,200 computers installed from 11 manufacturers, with no single manufacturer providing more than 28% — in contrast to private-sector IBM dominance. The scale of government data was already immense: Social Security had 130,000 reels of tape, the IRS had approximately 110,000, and Air Force wholesale logistics had approximately 240,000. Cunningham noted that "70% to 90% of the third-generation computers are trying to make like a second-generation computer."</p>
+<p>The Programming Language Committee operated under rigorous rules: it met for five days every month, had a maximum of 25 members, and required 75% attendance over the last 15 meeting days for voting privileges. Active task groups at the time included the Report Writer Task Group (Larry Guin of RCA and Jay Sitka of IBM — Kerrs noted "major surgery was agreed to by everyone who tried to implement it"), the Communications Task Group (Ron Hamm of Honeywell, which developed the STRING and UNSTRING verbs as part of a terminal-independent message handling facility), the Database Task Group (Tax Metaxides of AT&amp;T), and the Asynchronous Processing Task Group (Jerry Corpru of UNIVAC — Kerrs observed that the async processing specification "was put in at a time when not many people had the ability to actually do this... After it became commonplace, we found that our guess at what common language would be was not too good").</p>
+<p>Kerrs enumerated the PLC's future work items, many of which would take decades to realize: mathematical functions, floating-point numbers, free-form source, default options, extended segmentation, list processing and database structures, closed subroutines, collating sequence standardization, removal of period requirements, variable-length data items, and an "else" in implied conditional statements.</p>
+<p>Building on the CODASYL specifications, it codified the four-division program structure (as established by COBOL-61), the PICTURE clause, level-number data hierarchy, and the core set of Procedure Division verbs (MOVE, ADD, SUBTRACT, MULTIPLY, DIVIDE, IF, PERFORM, GO TO, READ, WRITE, OPEN, CLOSE).</p>
+<p>COBOL-68 defined two source formats (fixed-form with 80-column layout) and introduced the concept of functional processing modules at different implementation levels.</p>
+<h3 id="cobol-74">COBOL-74<a class="headerlink" href="#cobol-74" title="Permanent link">&para;</a></h3>
+<p><strong>ANSI X3.23-1974</strong></p>
+<p>The second ANSI revision. Notable additions include:</p>
+<ul>
+<li><strong>INSPECT</strong> statement for tallying and replacing characters</li>
+<li><strong>STRING</strong> and <strong>UNSTRING</strong> statements for string concatenation and splitting</li>
+<li><strong>Communication module</strong> for message handling</li>
+<li>Improvements to the SORT and MERGE features</li>
+<li>Extended WRITE ADVANCING capabilities</li>
+</ul>
+<p>COBOL-74 also refined the module system and clarified many areas left ambiguous by COBOL-68.</p>
+<h3 id="cobol-85">COBOL-85<a class="headerlink" href="#cobol-85" title="Permanent link">&para;</a></h3>
+<p><strong>ANSI X3.23-1985 / ISO 1989:1985</strong></p>
+<p>Formally the "Third Standard COBOL" (First = X3.23-1968, Second = X3.23-1974), approved September 10, 1985. At 824 pages, it was organized into <strong>11 functional modules</strong> — 7 required (Nucleus, Sequential I-O, Relative I-O, Indexed I-O, Inter-Program Communication, Sort-Merge, Source Text Manipulation) and 4 optional (Report Writer, Communication, Debug, Segmentation). Each module had two implementation levels (Level 1 = minimum subset, Level 2 = full feature set).</p>
+<p>COBOL-85 is the most widely implemented standard and the de facto baseline for production COBOL code worldwide. Key improvements:</p>
+<ul>
+<li><strong>Scope terminators</strong> (END-IF, END-PERFORM, END-READ, END-EVALUATE, etc.)</li>
+<li><strong>Inline PERFORM</strong> — PERFORM with imperative statements between PERFORM and END-PERFORM</li>
+<li><strong>EVALUATE</strong> statement — multi-branch conditional (analogous to switch/case)</li>
+<li><strong>Reference modification</strong> — substring access via <code>identifier(start:length)</code></li>
+<li><strong>CONTINUE</strong> statement — explicit no-operation</li>
+<li><strong>Nested programs</strong> — programs defined within other programs, with shared data via GLOBAL and EXTERNAL clauses</li>
+<li><strong>NOT ON SIZE ERROR</strong>, <strong>NOT AT END</strong>, <strong>NOT INVALID KEY</strong> — negative condition phrases</li>
+<li><strong>INITIALIZE</strong> statement — structured data initialization</li>
+<li><strong>Day-of-week intrinsic</strong> via ACCEPT FROM DAY-OF-WEEK</li>
+<li>Improvements to file handling, including LINAGE for report formatting</li>
+</ul>
+<p>COBOL-85 formally marked several elements as obsolete (scheduled for deletion): ALTER, ENTER, GO TO without procedure-name, STOP literal, comment-entries in Identification Division paragraphs, DATA RECORDS clause, VALUE OF clause, LABEL RECORDS clause, MULTIPLE FILE TAPE, RERUN, and the entire Segmentation and Debug modules. The ENTER statement had unique status — its implementation was optional for the implementor, the only statement with this distinction.</p>
+<p>Two amendments followed: Amendment 1 (1989) added <strong>intrinsic functions</strong> (FUNCTION LENGTH, FUNCTION CURRENT-DATE, FUNCTION UPPER-CASE, etc.), and Amendment 2 (1993) added corrections and clarifications.</p>
+<h3 id="cobol-2002">COBOL 2002<a class="headerlink" href="#cobol-2002" title="Permanent link">&para;</a></h3>
+<p><strong>ISO/IEC 1989:2002</strong></p>
+<p>A major revision that modernized the language:</p>
+<ul>
+<li><strong>Object-oriented programming</strong> — classes, methods, interfaces, INVOKE statement, object references</li>
+<li><strong>Free-form source format</strong> — removal of the fixed-column constraints</li>
+<li><strong>User-defined functions</strong> — FUNCTION-ID paragraph, RETURNING clause</li>
+<li><strong>LOCALE support</strong> — locale-sensitive collating sequences and formatting</li>
+<li><strong>Unicode support</strong> — national (UTF-16) data items via USAGE NATIONAL and PIC N</li>
+<li><strong>Binary and boolean data types</strong> — USAGE BIT</li>
+<li><strong>TYPEDEF and SAME AS</strong> — user-defined data types</li>
+<li><strong>Multiple currency signs</strong> — CURRENCY SIGN clause with PICTURE SYMBOL</li>
+<li><strong>Expanded CALL conventions</strong> — BY VALUE parameter passing</li>
+<li><strong>Conditional compilation</strong> — &gt;&gt;DEFINE, &gt;&gt;IF, &gt;&gt;ELSE, &gt;&gt;END-IF directives</li>
+<li><strong>Exception handling</strong> — RAISE and RESUME statements</li>
+<li><strong>Pointer arithmetic</strong> and expanded pointer support</li>
+</ul>
+<h3 id="cobol-2014">COBOL 2014<a class="headerlink" href="#cobol-2014" title="Permanent link">&para;</a></h3>
+<p><strong>ISO/IEC 1989:2014</strong></p>
+<p>A focused revision building on COBOL 2002:</p>
+<ul>
+<li><strong>Dynamic-capacity tables</strong> — OCCURS DYNAMIC, ALLOCATE/FREE statements for variable-length tables</li>
+<li><strong>VALIDATE statement</strong> — data validation against class conditions and ranges</li>
+<li><strong>JSON and XML extensions</strong> — JSON GENERATE, JSON PARSE, XML GENERATE, XML PARSE</li>
+<li><strong>Enhanced arithmetic</strong> — IEEE 754 floating-point via USAGE FLOAT-BINARY, FLOAT-DECIMAL, FLOAT-EXTENDED</li>
+<li><strong>FUNCTION FORMATTED-CURRENT-DATE</strong> and related date/time functions</li>
+<li><strong>Interface enhancements</strong> — factory methods, stronger typing for object references</li>
+<li><strong>COMMIT and ROLLBACK</strong> — transaction-oriented I/O verbs</li>
+<li><strong>Enhanced DISPLAY and ACCEPT</strong> — screen handling improvements</li>
+</ul>
+<h3 id="cobol-2023">COBOL 2023<a class="headerlink" href="#cobol-2023" title="Permanent link">&para;</a></h3>
+<p><strong>ISO/IEC 1989:2023</strong></p>
+<p>The latest revision of the COBOL standard:</p>
+<ul>
+<li><strong>Asynchronous messaging</strong> — SEND and RECEIVE statements for message-based communication</li>
+<li><strong>Transaction processing</strong> — COMMIT and ROLLBACK facility (moved from COBOL 2014 draft)</li>
+<li><strong>XOR logical operator</strong> — exclusive-or in conditional expressions</li>
+<li><strong>CONTINUE with duration</strong> — pause program execution for a specified time</li>
+<li><strong>DELETE FILE</strong> statement — delete a file from external storage</li>
+<li><strong>LINE SEQUENTIAL</strong> file organization — standardization of a widely-used vendor extension</li>
+<li><strong>PERFORM UNTIL EXIT</strong> — defined infinite looping construct</li>
+<li><strong>SUBSTITUTE</strong> intrinsic function — substring substitution with different-length replacement</li>
+<li><strong>CONVERT</strong> intrinsic function — base conversion</li>
+<li><strong>Boolean shifting operators</strong> — logical shift operations on boolean data</li>
+</ul>
+<p>GCC 15.1 introduced <code>gcobol</code>, a COBOL front-end based on this standard.</p>
+<h2 id="feature-summary-by-standard">Feature Summary by Standard<a class="headerlink" href="#feature-summary-by-standard" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Three-division structure, PICTURE, level numbers, 23 verbs</td>
+<td>COBOL-60</td>
+</tr>
+<tr>
+<td>Identification Division (four-division structure)</td>
+<td>COBOL-61</td>
+</tr>
+<tr>
+<td>SORT, REPORT WRITER</td>
+<td>COBOL-61 EXT</td>
+</tr>
+<tr>
+<td>OCCURS DEPENDING ON, mass storage files</td>
+<td>COBOL-65</td>
+</tr>
+<tr>
+<td>First ANSI standard, module system</td>
+<td>COBOL-68</td>
+</tr>
+<tr>
+<td>INSPECT, STRING, UNSTRING</td>
+<td>COBOL-74</td>
+</tr>
+<tr>
+<td>DELETE statement, file organizations</td>
+<td>COBOL-74</td>
+</tr>
+<tr>
+<td>Scope terminators (END-IF, etc.)</td>
+<td>COBOL-85</td>
+</tr>
+<tr>
+<td>Inline PERFORM</td>
+<td>COBOL-85</td>
+</tr>
+<tr>
+<td>EVALUATE</td>
+<td>COBOL-85</td>
+</tr>
+<tr>
+<td>Reference modification</td>
+<td>COBOL-85</td>
+</tr>
+<tr>
+<td>Nested programs</td>
+<td>COBOL-85</td>
+</tr>
+<tr>
+<td>CONTINUE, INITIALIZE</td>
+<td>COBOL-85</td>
+</tr>
+<tr>
+<td>Intrinsic functions</td>
+<td>COBOL-85 Amdt. 1</td>
+</tr>
+<tr>
+<td>Object-oriented programming</td>
+<td>COBOL 2002</td>
+</tr>
+<tr>
+<td>Free-form source format</td>
+<td>COBOL 2002</td>
+</tr>
+<tr>
+<td>User-defined functions</td>
+<td>COBOL 2002</td>
+</tr>
+<tr>
+<td>Unicode / USAGE NATIONAL</td>
+<td>COBOL 2002</td>
+</tr>
+<tr>
+<td>Conditional compilation</td>
+<td>COBOL 2002</td>
+</tr>
+<tr>
+<td>RAISE / RESUME exception handling</td>
+<td>COBOL 2002</td>
+</tr>
+<tr>
+<td>Dynamic-capacity tables</td>
+<td>COBOL 2014</td>
+</tr>
+<tr>
+<td>JSON GENERATE / JSON PARSE</td>
+<td>COBOL 2014</td>
+</tr>
+<tr>
+<td>XML GENERATE / XML PARSE</td>
+<td>COBOL 2014</td>
+</tr>
+<tr>
+<td>VALIDATE statement</td>
+<td>COBOL 2014</td>
+</tr>
+<tr>
+<td>IEEE 754 arithmetic types</td>
+<td>COBOL 2014</td>
+</tr>
+<tr>
+<td>Asynchronous messaging (SEND/RECEIVE)</td>
+<td>COBOL 2023</td>
+</tr>
+<tr>
+<td>COMMIT / ROLLBACK</td>
+<td>COBOL 2023</td>
+</tr>
+<tr>
+<td>XOR operator, boolean shifting</td>
+<td>COBOL 2023</td>
+</tr>
+<tr>
+<td>LINE SEQUENTIAL organization</td>
+<td>COBOL 2023</td>
+</tr>
+<tr>
+<td>PERFORM UNTIL EXIT</td>
+<td>COBOL 2023</td>
+</tr>
+</tbody>
+</table>
+<h2 id="compiler-support">Compiler Support<a class="headerlink" href="#compiler-support" title="Permanent link">&para;</a></h2>
+<p>Most production COBOL code targets <strong>COBOL-85</strong>. All major compilers fully support this standard:</p>
+<ul>
+<li><strong>IBM Enterprise COBOL</strong> (z/OS) — full COBOL-85 support; selective COBOL 2002/2014 features (free-form source, XML/JSON statements, some OO support)</li>
+<li><strong>Micro Focus Visual COBOL / COBOL Server</strong> — full COBOL-85 support; extensive COBOL 2002/2014 coverage including OO, managed types, and free-form source</li>
+<li><strong>GnuCOBOL</strong> — full COBOL-85 support; partial COBOL 2002 support (free-form source, some intrinsic functions, binary data types); limited COBOL 2014 features</li>
+<li><strong>gcobol (GCC 15.1+)</strong> — a COBOL front-end for GCC based on the COBOL 2023 standard</li>
+</ul>
+<h2 id="cobol-in-practice">COBOL in Practice<a class="headerlink" href="#cobol-in-practice" title="Permanent link">&para;</a></h2>
+<p>COBOL remains one of the most widely deployed programming languages in the world, particularly in financial services, government, and insurance:</p>
+<ul>
+<li>By 1997, roughly two-thirds of programmers used COBOL (Glass, 1997).</li>
+<li>An estimated 180-200 billion lines of COBOL code are in active use worldwide (Lammel &amp; De Schutter, 2005).</li>
+<li>COBOL processes approximately $3 trillion in daily commerce, powers 80% of financial services, and handles 95% of ATM transactions (Ali et al., 2023).</li>
+<li>The Commonwealth Bank of Australia's COBOL migration required 5 years and $749.9 million (Ali et al., 2023).</li>
+</ul>
+<p>Robert L. Glass observed in 1997: "COBOL is a very bad business programming language — but all the others are so much worse." He identified four essential characteristics of business programming that COBOL uniquely addresses: heterogeneous record-structure data, decimal arithmetic, report generation, and mass data access/manipulation.</p>
+<p>As of 2016, COBOL remained deeply embedded in U.S. federal agencies including the Departments of Veterans Affairs, Homeland Security, Agriculture, Health and Human Services, Justice, and Treasury. A Micro Focus product director noted that finding "an agency in the federal government that doesn't have an application written in COBOL" would be difficult.</p>
+<h3 id="tensions-and-debates">Tensions and Debates<a class="headerlink" href="#tensions-and-debates" title="Permanent link">&para;</a></h3>
+<p>The CODASYL 10th Anniversary Meeting (1969) surfaced candid disagreements about the organization's future and COBOL's direction. Jean Sammet (by then at IBM) observed that CODASYL's greatest organizational disadvantage was that it was "self-created, self-appointed, and in fact, there is no check and balance on the CODASYL Executive Committee." When asked why CODASYL rather than ACM should lead language development, Grace Hopper replied: "You say, 'Why not ACM?' I think the reason there is they don't get anything done." Dick Schubert of BF Goodrich warned: "If you don't do something to improve COBOL, it's going to become a dead language... the development of PL/I sealed the vacuum that was created by inactivity and the further development of COBOL." On the portability question, Kerrs posed a fundamental design choice: "Do we want to make COBOL such that if you write a program in COBOL, it will absolutely operate across computer lines? Or do we want to make COBOL a tool, when used properly, you can do this with it? There is a difference." Sammet revealed PL/I's origin: "The original intent was, in fact, to extend FORTRAN to bring into it the character handling and other kinds of capabilities... The people who were working on that work eventually realized that there was just a limit to which they could push FORTRAN."</p>
+<p>Jack Jones of the Association of American Railroads described practical portability success: "We have about 2,500 programs, including quite a number of real-time programs written in COBOL... making this conversion [between computer lines] in about six months with about 25 people, which is considerably better than a conversion we had off the 705... which took that many people about a year and a half." Mary Hollis cautioned about COBOL's limits: "If you extend COBOL enough, if you take care of our database systems today, just forget it, it won't be COBOL. It will be something else by that time."</p>
+<p>No compiler currently implements the full COBOL 2002 or COBOL 2014 specification. Feature coverage varies significantly between vendors, and many implementations include proprietary extensions beyond the standard.</p>
+<h2 id="significant-contributions-to-technology">Significant Contributions to Technology<a class="headerlink" href="#significant-contributions-to-technology" title="Permanent link">&para;</a></h2>
+<p>Jean E. Sammet identified several aspects of COBOL that represented significant contributions to the state of the art in programming languages (Sammet, 1969):</p>
+<ul>
+<li><strong>Separation of concerns</strong> — COBOL was the first language to clearly separate actions (Procedure Division), data descriptions (Data Division), and physical environment (Environment Division) into distinct program sections.</li>
+<li><strong>Machine-independent data description</strong> — The Data Division logically describes data without reference to internal machine representation, a concept that was novel at the time.</li>
+<li><strong>Large file processing</strong> — COBOL provided effective handling of problems involving large files with relatively simple processing, the dominant pattern in business computing.</li>
+<li><strong>Readable, English-like syntax</strong> — Natural, readable programming with mnemonic names, making programs accessible to non-programmers and serving as their own documentation.</li>
+<li><strong>First operating system interface specifications</strong> — The Environment Division provided the first rudimentary interface specifications for an operating system in a programming language.</li>
+<li><strong>Influence on software engineering</strong> — J.C. Emery's 1962 paper on modular data processing systems written in COBOL introduced hierarchy charts for organizing COBOL programs, which directly influenced Larry Constantine's structure charts (1966) and the structured design methodology that followed.</li>
+</ul>
+<p>As early as 1962, users were building floating-point arithmetic from COBOL procedures using working storage (Kesner, 1962), years before native floating-point support arrived via vendor extensions (COMP-1/COMP-2) and ultimately IEEE 754 types in COBOL 2014.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

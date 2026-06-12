@@ -1,0 +1,6125 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../numeric/">
+      
+      
+        <link rel="next" href="../date-time/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>String Functions - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#string-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              String Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#byte-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BYTE-LENGTH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BYTE-LENGTH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#byte-length-vs-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BYTE-LENGTH vs LENGTH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHAR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char-national" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHAR-NATIONAL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONCAT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONCATENATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DISPLAY-OF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LENGTH
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-an" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LENGTH-AN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lower-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOWER-CASE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#national-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NATIONAL-OF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ord-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORD-MAX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ord-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORD-MIN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REVERSE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STANDARD-COMPARE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substitute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SUBSTITUTE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRIM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPPER-CASE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locale-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOCALE-COMPARE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LOCALE-COMPARE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-a-formatted-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building a Formatted Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-input-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validating Input Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-code-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character Code Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#byte-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BYTE-LENGTH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BYTE-LENGTH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#byte-length-vs-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BYTE-LENGTH vs LENGTH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHAR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char-national" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CHAR-NATIONAL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONCAT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concatenate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONCATENATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DISPLAY-OF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LENGTH
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-an" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LENGTH-AN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lower-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOWER-CASE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#national-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NATIONAL-OF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ord-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORD-MAX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ord-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ORD-MIN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REVERSE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STANDARD-COMPARE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substitute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SUBSTITUTE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRIM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UPPER-CASE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locale-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOCALE-COMPARE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LOCALE-COMPARE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-a-formatted-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building a Formatted Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-input-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validating Input Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-code-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character Code Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="string-functions">String Functions<a class="headerlink" href="#string-functions" title="Permanent link">&para;</a></h1>
+<p>Intrinsic functions that perform operations on alphanumeric and national character strings.</p>
+<p><strong>Standard:</strong> COBOL-85 Amendment 1 (1989), COBOL 2002, COBOL 2014, COBOL 2023</p>
+<hr />
+<h2 id="general-syntax">General Syntax<a class="headerlink" href="#general-syntax" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">function-name</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="nv">argument-2</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<p>String intrinsic functions return a value of category <strong>alphanumeric</strong>, <strong>national</strong>, or <strong>integer</strong> depending on the function. Alphanumeric and national results may be used wherever a data item of the corresponding category is permitted, including in <code>MOVE</code>, <code>STRING</code>, <code>DISPLAY</code>, and <code>IF</code> statements.</p>
+<hr />
+<h2 id="byte-length">BYTE-LENGTH<a class="headerlink" href="#byte-length" title="Permanent link">&para;</a></h2>
+<p>Returns the length of a data item in bytes.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The BYTE-LENGTH function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="kp">BYTE-LENGTH </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- any category. May be a literal, data-name, or another function reference.</li>
+<li><strong>Return category</strong> -- integer.</li>
+<li><strong>Behavior</strong> -- returns the number of bytes occupied by argument-1. For alphanumeric items, BYTE-LENGTH and LENGTH return the same value. For national (UTF-16) items, BYTE-LENGTH returns twice the value of LENGTH because each national character occupies 2 bytes. For items with <code>USAGE COMP</code> or other non-display usages, BYTE-LENGTH returns the actual storage size in bytes.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">01  WS</span><span class="o">-</span><span class="nv">ALPHA</span><span class="w">   </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">NATIONAL</span><span class="w"> </span><span class="kt">PIC N(10)</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">COMP</span><span class="w">    </span><span class="kt">PIC 9(8)</span><span class="w"> </span><span class="kp">USAGE</span><span class="w"> </span><span class="kt">COMP</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">BYTE-LENGTH</span><span class="p">(</span><span class="nv">WS-ALPHA</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">BYTE-LENGTH</span><span class="p">(</span><span class="nv">WS-NATIONAL</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20 </span><span class="p">(</span><span class="mi">10 </span><span class="kp">national</span><span class="w"> </span><span class="nv">chars</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2 </span><span class="nv">bytes</span><span class="w"> </span><span class="nv">each</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">BYTE-LENGTH</span><span class="p">(</span><span class="nv">WS-COMP</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4 </span><span class="p">(</span><span class="kt">binary</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="kp">for</span><span class="w"> </span><span class="mi">9</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">LENGTH</span><span class="p">(</span><span class="nv">WS-NATIONAL</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10 </span><span class="p">(</span><span class="kp">character</span><span class="w"> </span><span class="nv">positions</span><span class="p">,</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">bytes</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="byte-length-vs-length">BYTE-LENGTH vs LENGTH<a class="headerlink" href="#byte-length-vs-length" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Data Item</th>
+<th>LENGTH</th>
+<th>BYTE-LENGTH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PIC X(20)</code></td>
+<td>20</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>PIC N(10)</code> (national/UTF-16)</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>PIC 9(8) COMP</code></td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>PIC 9(8) COMP-3</code></td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>"HELLO"</code> (literal)</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="char">CHAR<a class="headerlink" href="#char" title="Permanent link">&para;</a></h2>
+<p>Returns the character at a specified position in the program collating sequence.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">CHAR </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- integer, in the range 1 through the number of positions in the program collating sequence.</li>
+<li><strong>Return category</strong> -- alphanumeric, length 1.</li>
+<li><strong>Behavior</strong> -- returns the character that occupies ordinal position argument-1 in the program collating sequence. The program collating sequence is determined by the ALPHABET clause in the SPECIAL-NAMES paragraph, or the native collating sequence if no ALPHABET clause is specified.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">CHAR</span><span class="p">(</span><span class="mi">66</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-CH</span>
+<span class="c">*&gt; In </span><span class="nv">ASCII</span><span class="p">,</span><span class="w"> </span><span class="nv">ordinal</span><span class="w"> </span><span class="mi">66 </span><span class="nv">corresponds</span><span class="w"> </span><span class="kp">to </span><span class="s1">&#39;A&#39;</span><span class="w"> </span><span class="p">(</span><span class="kp">code</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span>
+<span class="c">*&gt; CHA</span><span class="nv">R</span><span class="w"> </span><span class="nv">uses</span><span class="w"> </span><span class="nv">ordinal</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="nv">based</span><span class="p">),</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="kp">code</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="nv">based</span><span class="p">)</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-FIRST</span>
+<span class="c">*&gt; Ret</span><span class="nv">urns</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">first</span><span class="w"> </span><span class="kp">character</span><span class="w"> </span><span class="kp">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">collating</span><span class="w"> </span><span class="kp">sequence</span>
+</code></pre></div>
+<hr />
+<h2 id="char-national">CHAR-NATIONAL<a class="headerlink" href="#char-national" title="Permanent link">&para;</a></h2>
+<p>Returns the national character at a specified ordinal position.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The CHAR-NATIONAL function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">CHAR-NATIONAL</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- integer, in the range 1 through the number of positions in the national character set.</li>
+<li><strong>Return category</strong> -- national, length 1.</li>
+<li><strong>Behavior</strong> -- returns the national character that occupies ordinal position argument-1 in the national character set. CHAR-NATIONAL is the national character equivalent of CHAR; where CHAR returns an alphanumeric character from the program collating sequence, CHAR-NATIONAL returns a national character from the national character set.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">CHAR-NATIONAL</span><span class="p">(</span><span class="mi">66</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-NCHAR</span>
+<span class="c">*&gt; Ret</span><span class="nv">urns</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">national</span><span class="w"> </span><span class="kp">character</span><span class="w"> </span><span class="kp">at</span><span class="w"> </span><span class="nv">ordinal</span><span class="w"> </span><span class="kp">position</span><span class="w"> </span><span class="mi">66</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">CHAR-NATIONAL</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-FIRST-NCHAR</span>
+<span class="c">*&gt; Ret</span><span class="nv">urns</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">first</span><span class="w"> </span><span class="kp">character</span><span class="w"> </span><span class="kp">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">national</span><span class="w"> </span><span class="kp">character</span><span class="w"> </span><span class="kr">set</span>
+</code></pre></div>
+<hr />
+<h2 id="concat">CONCAT<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h2>
+<p>Returns the concatenation of the argument strings.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2014</p>
+<p>The CONCAT function was introduced in COBOL 2014 as the revised shorter name for CONCATENATE. Both names may be used interchangeably; CONCATENATE remains available as a synonym for backward compatibility.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">CONCAT</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1 ...</strong> -- one or more arguments of category alphanumeric or national. All arguments must be of the same category.</li>
+<li><strong>Return category</strong> -- same as the argument category. The length of the result is the sum of the lengths of all arguments.</li>
+<li><strong>Behavior</strong> -- returns a character string that is the concatenation of the arguments in the order specified. No padding or trimming is performed; trailing spaces in each argument are preserved in the result. The behavior is identical to CONCATENATE.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">CONCAT</span><span class="p">(</span><span class="nv">WS-FIRST</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="nv">WS-LAST</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-FULL-NAME</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">CONCAT</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="w"> </span><span class="s2">&quot;, &quot;</span><span class="w"> </span><span class="s2">&quot;World&quot;</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-GREETING</span>
+<span class="c">*&gt; WS-</span><span class="nv">GREETING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="concatenate">CONCATENATE<a class="headerlink" href="#concatenate" title="Permanent link">&para;</a></h2>
+<p>Returns the concatenation of the argument strings.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The CONCATENATE function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">CONCATENATE </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1 ...</strong> -- one or more arguments of category alphanumeric or national. All arguments must be of the same category.</li>
+<li><strong>Return category</strong> -- same as the argument category. The length of the result is the sum of the lengths of all arguments.</li>
+<li><strong>Behavior</strong> -- returns a character string that is the concatenation of the arguments in the order specified. No padding or trimming is performed; trailing spaces in each argument are preserved in the result.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">CONCATENATE</span><span class="p">(</span><span class="nv">WS-FIRST</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="nv">WS-LAST</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-FULL-NAME</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">CONCATENATE</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="w"> </span><span class="s2">&quot;, &quot;</span><span class="w"> </span><span class="s2">&quot;World&quot;</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-GREETING</span>
+<span class="c">*&gt; WS-</span><span class="nv">GREETING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span>
+
+<span class="c">*&gt; Not</span><span class="nv">e</span><span class="p">:</span><span class="w"> </span><span class="kp">trailing</span><span class="w"> </span><span class="no">spaces</span><span class="w"> </span><span class="kp">in</span><span class="w"> </span><span class="nv">arguments</span><span class="w"> </span><span class="kp">are</span><span class="w"> </span><span class="nv">included</span>
+<span class="c">MOVE &quot;</span><span class="nv">John</span><span class="w">      </span><span class="s2">&quot; TO WS-FIRST</span>
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">CONCATENATE</span><span class="p">(</span><span class="nv">WS-FIRST</span><span class="w"> </span><span class="nv">WS-LAST</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-FULL</span>
+<span class="c">*&gt; WS-</span><span class="nv">FULL</span><span class="w"> </span><span class="nv">includes</span><span class="w"> </span><span class="kp">trailing</span><span class="w"> </span><span class="no">spaces</span><span class="w"> </span><span class="kp">from</span><span class="w"> </span><span class="nv">WS-FIRST</span>
+<span class="c">*&gt; Use</span><span class="w"> </span><span class="nf">TRIM</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="nv">remove</span><span class="w"> </span><span class="nv">them</span><span class="p">:</span>
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">CONCATENATE</span><span class="p">(</span>
+<span class="c">    FU</span><span class="nv">NCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="nv">WS-FIRST</span><span class="w"> </span><span class="kp">TRAILING</span><span class="p">)</span>
+<span class="c">    &quot; </span><span class="s2">&quot;</span>
+<span class="c">    WS</span><span class="o">-</span><span class="nv">LAST</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-FULL</span>
+</code></pre></div>
+<hr />
+<h2 id="display-of">DISPLAY-OF<a class="headerlink" href="#display-of" title="Permanent link">&para;</a></h2>
+<p>Converts a national character string to alphanumeric representation.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The DISPLAY-OF function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">DISPLAY-OF</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="nv">argument-2</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- national. The national character string to convert.</li>
+<li><strong>argument-2</strong> -- optional, alphanumeric. The code page to use for the conversion. If omitted, the system default code page is used.</li>
+<li><strong>Return category</strong> -- alphanumeric.</li>
+<li><strong>Behavior</strong> -- converts a national (Unicode/UTF-16) character string to its alphanumeric representation. DISPLAY-OF is the inverse of NATIONAL-OF. The result length depends on the national characters and the target code page, as some national characters may require multiple alphanumeric positions.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">01  WS</span><span class="o">-</span><span class="nv">NATIONAL</span><span class="w">   </span><span class="kt">PIC N(10)</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">ALPHA</span><span class="w">      </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">DISPLAY-OF</span><span class="p">(</span><span class="nv">WS-NATIONAL</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-ALPHA</span>
+<span class="c">*&gt; Con</span><span class="nv">verts</span><span class="w"> </span><span class="kp">national</span><span class="w"> </span><span class="kr">string</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="kp">alphanumeric</span><span class="w"> </span><span class="kp">using</span><span class="w"> </span><span class="kp">default</span>
+<span class="c">*&gt; cod</span><span class="nv">e</span><span class="w"> </span><span class="kp">page</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">DISPLAY-OF</span><span class="p">(</span><span class="nv">WS-NATIONAL</span><span class="w"> </span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-ALPHA</span>
+<span class="c">*&gt; Con</span><span class="nv">verts</span><span class="w"> </span><span class="kp">national</span><span class="w"> </span><span class="kr">string</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="kp">alphanumeric</span><span class="w"> </span><span class="kp">using</span><span class="w"> </span><span class="err">UTF-8</span>
+</code></pre></div>
+<hr />
+<h2 id="length">LENGTH<a class="headerlink" href="#length" title="Permanent link">&para;</a></h2>
+<p>Returns the length of the argument in character positions.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="kp">LENGTH </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- any category. May be a literal, data-name, or another function reference.</li>
+<li><strong>Return category</strong> -- integer.</li>
+<li><strong>Behavior</strong> -- returns the number of character positions in argument-1. For a data item, the length is the defined length (the number of character positions in its <a href="../../data-division/picture/">PICTURE</a>), not the length of the data content. For a national item, it returns the number of national character positions.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">01  WS</span><span class="o">-</span><span class="nv">NAME</span><span class="w">  </span><span class="kt">PIC X(20)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;SMITH&quot;</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">LENGTH</span><span class="p">(</span><span class="nv">WS-NAME</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20 </span><span class="p">(</span><span class="nv">defined</span><span class="w"> </span><span class="kp">length</span><span class="p">,</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="kp">content</span><span class="w"> </span><span class="kp">length</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">LENGTH</span><span class="p">(</span><span class="s2">&quot;HELLO&quot;</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+
+<span class="c">IF FUN</span><span class="nv">CTION</span><span class="w"> </span><span class="kp">LENGTH</span><span class="p">(</span><span class="nv">WS-FIELD</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="mi">    </span><span class="kr">DISPLAY </span><span class="s2">&quot;Field exceeds 10 characters&quot;</span>
+<span class="c">END-IF</span>
+</code></pre></div>
+<hr />
+<h2 id="length-an">LENGTH-AN<a class="headerlink" href="#length-an" title="Permanent link">&para;</a></h2>
+<p>Returns the length of an argument in alphanumeric character positions.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The LENGTH-AN function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">LENGTH-AN</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- any category. May be a literal, data-name, or another function reference.</li>
+<li><strong>Return category</strong> -- integer.</li>
+<li><strong>Behavior</strong> -- returns the length of argument-1 measured in alphanumeric character positions, regardless of the argument's actual category. For alphanumeric items, LENGTH-AN returns the same value as LENGTH. For national items, LENGTH-AN returns the number of alphanumeric character positions that would be needed to represent the item, which may differ from the number of national character positions returned by LENGTH.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">01  WS</span><span class="o">-</span><span class="nv">ALPHA</span><span class="w">     </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">NATIONAL</span><span class="w">  </span><span class="kt">PIC N(10)</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nv">LENGTH-AN</span><span class="p">(</span><span class="nv">WS-ALPHA</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10 </span><span class="p">(</span><span class="kp">same</span><span class="w"> </span><span class="kp">as</span><span class="w"> </span><span class="kp">LENGTH</span><span class="w"> </span><span class="kp">for</span><span class="w"> </span><span class="kp">alphanumeric</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nv">LENGTH-AN</span><span class="p">(</span><span class="nv">WS-NATIONAL</span><span class="p">)</span>
+<span class="c">*&gt; Ret</span><span class="nv">urns</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">number</span><span class="w"> </span><span class="kp">of</span><span class="w"> </span><span class="kp">alphanumeric</span><span class="w"> </span><span class="nv">positions</span><span class="w"> </span><span class="nv">needed</span>
+<span class="c">*&gt; (ma</span><span class="nv">y</span><span class="w"> </span><span class="nv">differ</span><span class="w"> </span><span class="kp">from</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">LENGTH</span><span class="p">(</span><span class="nv">WS-NATIONAL</span><span class="p">)</span><span class="w"> </span><span class="nv">which</span>
+<span class="c">*&gt;  re</span><span class="nv">turns</span><span class="w"> </span><span class="mi">10 </span><span class="kp">national</span><span class="w"> </span><span class="kp">character</span><span class="w"> </span><span class="nv">positions</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="lower-case">LOWER-CASE<a class="headerlink" href="#lower-case" title="Permanent link">&para;</a></h2>
+<p>Returns the argument with all uppercase letters converted to lowercase.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">LOWER-CASE </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national.</li>
+<li><strong>Return category</strong> -- same as argument-1 category. Length equals the length of argument-1.</li>
+<li><strong>Behavior</strong> -- returns a character string with the same length as argument-1, in which each uppercase letter is replaced by its lowercase equivalent. Characters that are not uppercase letters are returned unchanged.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">LOWER-CASE</span><span class="p">(</span><span class="s2">&quot;HELLO WORLD&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello world&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">LOWER-CASE</span><span class="p">(</span><span class="nv">WS-INPUT</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-OUTPUT</span>
+</code></pre></div>
+<hr />
+<h2 id="national-of">NATIONAL-OF<a class="headerlink" href="#national-of" title="Permanent link">&para;</a></h2>
+<p>Converts an alphanumeric string to national (Unicode/UTF-16) representation.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The NATIONAL-OF function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">NATIONAL-OF</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="nv">argument-2</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric. The alphanumeric string to convert.</li>
+<li><strong>argument-2</strong> -- optional, alphanumeric. The code page of argument-1. If omitted, the system default code page is assumed.</li>
+<li><strong>Return category</strong> -- national.</li>
+<li><strong>Behavior</strong> -- converts an alphanumeric character string to its national (Unicode/UTF-16) representation. NATIONAL-OF is the inverse of DISPLAY-OF. The result length in national character positions depends on the source characters and the source code page.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">01  WS</span><span class="o">-</span><span class="nv">ALPHA</span><span class="w">     </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">NATIONAL</span><span class="w">  </span><span class="kt">PIC N(20)</span><span class="p">.</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">NATIONAL-OF</span><span class="p">(</span><span class="nv">WS-ALPHA</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-NATIONAL</span>
+<span class="c">*&gt; Con</span><span class="nv">verts</span><span class="w"> </span><span class="kp">alphanumeric</span><span class="w"> </span><span class="kr">string</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="kp">national</span><span class="w"> </span><span class="kp">using</span><span class="w"> </span><span class="kp">default</span>
+<span class="c">*&gt; cod</span><span class="nv">e</span><span class="w"> </span><span class="kp">page</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">NATIONAL-OF</span><span class="p">(</span><span class="nv">WS-ALPHA</span><span class="w"> </span><span class="s2">&quot;IBM-1047&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-NATIONAL</span>
+<span class="c">*&gt; Con</span><span class="nv">verts</span><span class="w"> </span><span class="kp">from</span><span class="w"> </span><span class="kp">EBCDIC</span><span class="w"> </span><span class="kp">code</span><span class="w"> </span><span class="kp">page</span><span class="w"> </span><span class="nv">IBM-1047</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="kp">national</span>
+</code></pre></div>
+<hr />
+<h2 id="ord">ORD<a class="headerlink" href="#ord" title="Permanent link">&para;</a></h2>
+<p>Returns the ordinal position of a character in the program collating sequence.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">ORD </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric, length 1.</li>
+<li><strong>Return category</strong> -- integer.</li>
+<li><strong>Behavior</strong> -- returns the ordinal position of argument-1 in the program collating sequence. ORD and CHAR are inverse functions: <code>FUNCTION CHAR(FUNCTION ORD(x)) = x</code> for any single character x.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="c">*&gt; In </span><span class="nv">ASCII</span><span class="w"> </span><span class="kp">native</span><span class="w"> </span><span class="kp">collating</span><span class="w"> </span><span class="kp">sequence</span><span class="p">,</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">66</span>
+<span class="c">*&gt; (or</span><span class="nv">dinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">code</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD</span><span class="p">(</span><span class="nv">WS-CHAR</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="ord-max">ORD-MAX<a class="headerlink" href="#ord-max" title="Permanent link">&para;</a></h2>
+<p>Returns the ordinal position of the argument that contains the maximum value.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">ORD-MAX </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1 ...</strong> -- one or more arguments of the same category (alphanumeric, national, or numeric).</li>
+<li><strong>Return category</strong> -- integer.</li>
+<li><strong>Behavior</strong> -- returns the ordinal number (1-based position in the argument list) of the argument that has the maximum value. If two or more arguments are equal and are the maximum, the ordinal of the leftmost such argument is returned. Comparison uses the program collating sequence for alphanumeric and national arguments.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD-MAX</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1 </span><span class="p">(</span><span class="kp">first</span><span class="w"> </span><span class="nv">argument</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">maximum</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD-MAX</span><span class="p">(</span><span class="mi">10 30 20</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2 </span><span class="p">(</span><span class="nv">second</span><span class="w"> </span><span class="nv">argument</span><span class="w"> </span><span class="mi">30 </span><span class="kp">is</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">maximum</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="ord-min">ORD-MIN<a class="headerlink" href="#ord-min" title="Permanent link">&para;</a></h2>
+<p>Returns the ordinal position of the argument that contains the minimum value.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">ORD-MIN </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1 ...</strong> -- one or more arguments of the same category.</li>
+<li><strong>Return category</strong> -- integer.</li>
+<li><strong>Behavior</strong> -- returns the ordinal number (1-based position in the argument list) of the argument that has the minimum value. If two or more arguments are equal and are the minimum, the ordinal of the leftmost such argument is returned.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD-MIN</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2 </span><span class="p">(</span><span class="nv">second</span><span class="w"> </span><span class="nv">argument</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">minimum</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD-MIN</span><span class="p">(</span><span class="mi">10 30 20</span><span class="p">)</span>
+<span class="c">*&gt; WS-</span><span class="nv">POS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1 </span><span class="p">(</span><span class="kp">first</span><span class="w"> </span><span class="nv">argument</span><span class="w"> </span><span class="mi">10 </span><span class="kp">is</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">minimum</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="reverse">REVERSE<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h2>
+<p>Returns the argument with characters in reversed order.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">REVERSE </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national.</li>
+<li><strong>Return category</strong> -- same as argument-1 category. Length equals the length of argument-1.</li>
+<li><strong>Behavior</strong> -- returns a character string of the same length as argument-1 with the characters in reverse order. The last character of argument-1 becomes the first character of the result, and so on.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">REVERSE</span><span class="p">(</span><span class="s2">&quot;ABCDE&quot;</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;EDCBA&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">REVERSE</span><span class="p">(</span><span class="nv">WS-INPUT</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-OUTPUT</span>
+<span class="c">*&gt; Not</span><span class="nv">e</span><span class="p">:</span><span class="w"> </span><span class="kp">trailing</span><span class="w"> </span><span class="no">spaces</span><span class="w"> </span><span class="kp">in</span><span class="w"> </span><span class="nv">WS-INPUT</span><span class="w"> </span><span class="nv">become</span><span class="w"> </span><span class="kp">leading</span><span class="w"> </span><span class="no">spaces</span>
+</code></pre></div>
+<hr />
+<h2 id="standard-compare">STANDARD-COMPARE<a class="headerlink" href="#standard-compare" title="Permanent link">&para;</a></h2>
+<p>Compares two strings using standardized comparison rules.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The STANDARD-COMPARE function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">STANDARD-COMPARE</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w">  </span><span class="nv">argument-2</span>
+<span class="c">    [ </span><span class="nv">argument-3</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="nv">argument-4</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national. The first string to compare.</li>
+<li><strong>argument-2</strong> -- alphanumeric or national. The second string to compare.</li>
+<li><strong>argument-3</strong> -- optional, alphanumeric. The comparison method to use for alphanumeric arguments.</li>
+<li><strong>argument-4</strong> -- optional, alphanumeric. The comparison method to use for national arguments.</li>
+<li><strong>Return category</strong> -- alphanumeric, length 1.</li>
+<li><strong>Behavior</strong> -- compares argument-1 and argument-2 using standardized comparison rules (as opposed to the program collating sequence used by normal comparison or the locale-specific rules used by LOCALE-COMPARE) and returns:<ul>
+<li><code>"&lt;"</code> if argument-1 is less than argument-2</li>
+<li><code>"="</code> if argument-1 equals argument-2</li>
+<li><code>"&gt;"</code> if argument-1 is greater than argument-2</li>
+</ul>
+</li>
+</ul>
+<p>The optional argument-3 and argument-4 parameters allow specification of the comparison method for alphanumeric and national arguments respectively.</p>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">STANDARD-COMPARE</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">STANDARD-COMPARE</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="w"> </span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;=&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">STANDARD-COMPARE</span><span class="p">(</span><span class="nv">WS-STR-1</span><span class="w"> </span><span class="nv">WS-STR-2</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">IF WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;&quot;</span>
+<span class="c">    DI</span><span class="nv">SPLAY</span><span class="w"> </span><span class="s2">&quot;First string is greater&quot;</span>
+<span class="c">END-IF</span>
+</code></pre></div>
+<hr />
+<h2 id="substitute">SUBSTITUTE<a class="headerlink" href="#substitute" title="Permanent link">&para;</a></h2>
+<p>Returns the argument with specified substitutions applied.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2023</p>
+<p>The SUBSTITUTE function was introduced in COBOL 2023.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">SUBSTITUTE </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span>
+<span class="c">    ar</span><span class="nv">gument-2</span><span class="w">  </span><span class="nv">argument-3</span>
+<span class="c">  [ ar</span><span class="nv">gument-4</span><span class="w">  </span><span class="nv">argument-5</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national. The source string.</li>
+<li><strong>argument-2, argument-4, ...</strong> -- same category as argument-1. The search strings.</li>
+<li><strong>argument-3, argument-5, ...</strong> -- same category as argument-1. The replacement strings.</li>
+<li><strong>Return category</strong> -- same as argument-1 category.</li>
+<li><strong>Behavior</strong> -- returns a character string derived from argument-1 by replacing each non-overlapping occurrence of each search string with the corresponding replacement string. Substitution pairs are processed from left to right within argument-1. The replacement strings need not be the same length as the search strings, so the result length may differ from the length of argument-1.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">SUBSTITUTE</span><span class="p">(</span>
+<span class="c">    &quot;H</span><span class="nv">ello</span><span class="w"> </span><span class="nv">World</span><span class="s2">&quot; &quot;</span><span class="nv">World</span><span class="s2">&quot; &quot;</span><span class="nv">COBOL</span><span class="s2">&quot;)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello COBOL&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">SUBSTITUTE</span><span class="p">(</span>
+<span class="c">    WS</span><span class="o">-</span><span class="nv">TEXT</span>
+<span class="c">    &quot;F</span><span class="nv">OO</span><span class="s2">&quot; &quot;</span><span class="nv">BAR</span><span class="s2">&quot;</span>
+<span class="c">    &quot;B</span><span class="nv">AZ</span><span class="s2">&quot; &quot;</span><span class="nv">QUX</span><span class="s2">&quot;)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-OUTPUT</span>
+<span class="c">*&gt; Rep</span><span class="nv">laces</span><span class="w"> </span><span class="kp">all </span><span class="s2">&quot;FOO&quot;</span><span class="w"> </span><span class="kp">with </span><span class="s2">&quot;BAR&quot;</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="kp">all </span><span class="s2">&quot;BAZ&quot;</span><span class="w"> </span><span class="kp">with </span><span class="s2">&quot;QUX&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="trim">TRIM<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
+<p>Returns the argument with leading or trailing spaces removed.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The TRIM function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">TRIM </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="kp">LEADING </span><span class="err">|</span><span class="w"> </span><span class="kp">TRAILING </span><span class="err">]</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national.</li>
+<li><strong>LEADING</strong> -- if specified, only leading spaces are removed.</li>
+<li><strong>TRAILING</strong> -- if specified, only trailing spaces are removed.</li>
+<li>If neither LEADING nor TRAILING is specified, both leading and trailing spaces are removed.</li>
+<li><strong>Return category</strong> -- same as argument-1 category. The length of the result depends on the number of spaces removed. If argument-1 contains only spaces, the result is a single space.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="s2">&quot;   Hello   &quot;</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="s2">&quot;   Hello   &quot;</span><span class="w"> </span><span class="kp">LEADING</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello   &quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="s2">&quot;   Hello   &quot;</span><span class="w"> </span><span class="kp">TRAILING</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;   Hello&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="nv">WS-INPUT</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-CLEAN</span>
+</code></pre></div>
+<hr />
+<h2 id="upper-case">UPPER-CASE<a class="headerlink" href="#upper-case" title="Permanent link">&para;</a></h2>
+<p>Returns the argument with all lowercase letters converted to uppercase.</p>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nf">UPPER-CASE </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national.</li>
+<li><strong>Return category</strong> -- same as argument-1 category. Length equals the length of argument-1.</li>
+<li><strong>Behavior</strong> -- returns a character string with the same length as argument-1, in which each lowercase letter is replaced by its uppercase equivalent. Characters that are not lowercase letters are returned unchanged.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">UPPER-CASE</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;HELLO WORLD&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nf">UPPER-CASE</span><span class="p">(</span><span class="nv">WS-NAME</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-NAME-UPPER</span>
+</code></pre></div>
+<hr />
+<h2 id="locale-compare">LOCALE-COMPARE<a class="headerlink" href="#locale-compare" title="Permanent link">&para;</a></h2>
+<p>Returns a value indicating the result of comparing two strings according to the rules of a specified locale.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The LOCALE-COMPARE function was introduced in COBOL 2002.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c">FUNCTI</span><span class="nv">ON</span><span class="w"> </span><span class="nv">LOCALE-COMPARE</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nv">argument-1</span><span class="w">  </span><span class="nv">argument-2</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="nv">argument-3</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>argument-1</strong> -- alphanumeric or national. The first string.</li>
+<li><strong>argument-2</strong> -- alphanumeric or national. The second string. Must be the same category as argument-1.</li>
+<li><strong>argument-3</strong> -- optional, alphanumeric. The locale identifier. If omitted, the system default locale is used.</li>
+<li><strong>Return category</strong> -- alphanumeric, length 1.</li>
+<li><strong>Behavior</strong> -- compares argument-1 and argument-2 according to the cultural sorting rules of the specified locale and returns:<ul>
+<li><code>"&lt;"</code> if argument-1 is less than argument-2</li>
+<li><code>"="</code> if argument-1 equals argument-2</li>
+<li><code>"&gt;"</code> if argument-1 is greater than argument-2</li>
+</ul>
+</li>
+</ul>
+<p>Locale-aware comparison differs from standard collating sequence comparison in that it accounts for language-specific rules such as accent ordering, case folding, and multi-character collation elements (e.g., in German, "ä" sorts near "a"; in Swedish, "ä" sorts after "z").</p>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">LOCALE-COMPARE</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;&quot;</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">LOCALE-COMPARE</span><span class="p">(</span><span class="s2">&quot;straße&quot;</span><span class="w"> </span><span class="s2">&quot;strasse&quot;</span><span class="w"> </span><span class="s2">&quot;de_DE&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; Res</span><span class="nv">ult</span><span class="w"> </span><span class="nv">depends</span><span class="w"> </span><span class="kp">on</span><span class="w"> </span><span class="nv">German</span><span class="w"> </span><span class="kp">locale</span><span class="w"> </span><span class="nv">collation</span><span class="w"> </span><span class="nv">rules</span>
+
+<span class="c">MOVE F</span><span class="nv">UNCTION</span><span class="w"> </span><span class="nv">LOCALE-COMPARE</span><span class="p">(</span><span class="s2">&quot;résumé&quot;</span><span class="w"> </span><span class="s2">&quot;resume&quot;</span><span class="w"> </span><span class="s2">&quot;fr_FR&quot;</span><span class="p">)</span>
+<span class="c">    TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; Fre</span><span class="nv">nch</span><span class="w"> </span><span class="kp">locale</span><span class="w"> </span><span class="nv">determines</span><span class="w"> </span><span class="nv">how</span><span class="w"> </span><span class="nv">accented</span><span class="w"> </span><span class="kp">characters</span><span class="w"> </span><span class="nv">compare</span>
+</code></pre></div>
+<h3 id="practical-example">Practical Example<a class="headerlink" href="#practical-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-NAME-1</span><span class="w">       </span><span class="kt">PIC X(30)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Müller&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-NAME-2</span><span class="w">       </span><span class="kt">PIC X(30)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Mueller&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-CMP</span><span class="w">          </span><span class="kt">PIC X(1)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nv">LOCALE-COMPARE</span><span class="p">(</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">WS-NAME-1</span><span class="w"> </span><span class="nv">WS-NAME-2</span><span class="w"> </span><span class="s2">&quot;de_DE&quot;</span><span class="p">)</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-CMP</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">EVALUATE</span><span class="w"> </span><span class="nv">WS-CMP</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">WHEN </span><span class="s2">&quot;&lt;&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-NAME-1</span><span class="w"> </span><span class="s2">&quot; sorts before &quot;</span>
+<span class="c">      </span><span class="w">                     </span><span class="nv">WS-NAME-2</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">WHEN </span><span class="s2">&quot;=&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-NAME-1</span><span class="w"> </span><span class="s2">&quot; equals &quot;</span>
+<span class="c">      </span><span class="w">                     </span><span class="nv">WS-NAME-2</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">WHEN </span><span class="s2">&quot;&gt;&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-NAME-1</span><span class="w"> </span><span class="s2">&quot; sorts after &quot;</span>
+<span class="c">      </span><span class="w">                     </span><span class="nv">WS-NAME-2</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">END-EVALUATE</span>
+<span class="kr">          </span><span class="w"> </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="building-a-formatted-name">Building a Formatted Name<a class="headerlink" href="#building-a-formatted-name" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-FIRST</span><span class="w">       </span><span class="kt">PIC X(20)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;  john  &quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-LAST</span><span class="w">        </span><span class="kt">PIC X(20)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;  SMITH  &quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-FORMATTED</span><span class="w">   </span><span class="kt">PIC X(50)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">CONCATENATE</span><span class="p">(</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">UPPER-CASE</span><span class="p">(</span>
+<span class="c">      </span><span class="w">             </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="nv">WS-FIRST</span><span class="p">))</span>
+<span class="c">      </span><span class="w">         </span><span class="s2">&quot;, &quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">UPPER-CASE</span><span class="p">(</span>
+<span class="c">      </span><span class="w">             </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="nv">WS-LAST</span><span class="p">)))</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-FORMATTED</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-FORMATTED</span>
+<span class="c">      </span><span class="w">     </span><span class="c">*&gt; &quot;JOHN, SMITH&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="validating-input-length">Validating Input Length<a class="headerlink" href="#validating-input-length" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-INPUT</span><span class="w">       </span><span class="kt">PIC X(100)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-TRIMMED</span><span class="w">     </span><span class="kt">PIC X(100)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-LENGTH</span><span class="w">      </span><span class="kt">PIC 9(3)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">ACCEPT</span><span class="w"> </span><span class="nv">WS-INPUT</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">CONSOLE</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="nv">WS-INPUT</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-TRIMMED</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">COMPUTE</span><span class="w"> </span><span class="nv">WS-LENGTH</span><span class="w"> </span><span class="o">=</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="kp">LENGTH</span><span class="p">(</span>
+<span class="c">      </span><span class="w">             </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">TRIM</span><span class="p">(</span><span class="nv">WS-INPUT</span><span class="p">))</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">IF</span><span class="w"> </span><span class="nv">WS-LENGTH</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50</span>
+<span class="mi">               </span><span class="kr">DISPLAY </span><span class="s2">&quot;Input too long&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">ELSE</span><span class="w"> </span><span class="kr">IF</span><span class="w"> </span><span class="nv">WS-LENGTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="mi">               </span><span class="kr">DISPLAY </span><span class="s2">&quot;Input required&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">ELSE</span>
+<span class="kr">              </span><span class="w"> </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">PROCESS-INPUT</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">END-IF</span>
+<span class="kr">          </span><span class="w"> </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="character-code-conversion">Character Code Conversion<a class="headerlink" href="#character-code-conversion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-CHAR</span><span class="w">        </span><span class="kt">PIC X(1)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-ORD</span><span class="w">         </span><span class="kt">PIC 9(3)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-SHIFTED</span><span class="w">     </span><span class="kt">PIC X(1)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      *&gt;   Shift a character by 1 position in the</span>
+<span class="c">      *&gt;   collating sequence</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;A&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-CHAR</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">COMPUTE</span><span class="w"> </span><span class="nv">WS-ORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">ORD</span><span class="p">(</span><span class="nv">WS-CHAR</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">           </span><span class="kr">MOVE</span><span class="w"> </span><span class="kp">FUNCTION</span><span class="w"> </span><span class="nf">CHAR</span><span class="p">(</span><span class="nv">WS-ORD</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SHIFTED</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-SHIFTED</span>
+<span class="c">      </span><span class="w">     </span><span class="c">*&gt; Displays &quot;B&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../">Intrinsic Functions</a> -- overview of all intrinsic functions</li>
+<li><a href="../numeric/">Numeric Functions</a> -- mathematical intrinsic functions</li>
+<li><a href="../date-time/">Date and Time Functions</a> -- date and time intrinsic functions</li>
+<li><a href="../financial/">Financial Functions</a> -- financial calculation intrinsic functions</li>
+<li><a href="../../data-division/picture/">PICTURE</a> -- data item format specification</li>
+<li><a href="../../data-division/usage/">USAGE</a> -- internal representation and storage format</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

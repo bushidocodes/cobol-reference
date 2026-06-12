@@ -1,0 +1,6009 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../level-numbers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Storage Sections - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#storage-sections-working-storage-local-storage-linkage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Storage Sections
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-storage-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WORKING-STORAGE SECTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WORKING-STORAGE SECTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocation and Lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-persistence-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Persistence Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetting-working-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resetting WORKING-STORAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-storage-in-recursive-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WORKING-STORAGE in Recursive Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-storage-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOCAL-STORAGE SECTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LOCAL-STORAGE SECTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-lifetime_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocation and Lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-invocation-state-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Invocation State Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-storage-in-recursive-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOCAL-STORAGE in Recursive Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkage-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LINKAGE SECTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LINKAGE SECTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-lifetime_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocation and Lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-passing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Passing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passing Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-linkage-without-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing LINKAGE Without CALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifetime-and-initialization-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifetime and Initialization Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifetime and Initialization Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeline-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLOBAL Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GLOBAL Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLOBAL Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTERNAL Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EXTERNAL Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTERNAL Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing the Right Section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-storage-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WORKING-STORAGE SECTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WORKING-STORAGE SECTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocation and Lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-persistence-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Persistence Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetting-working-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resetting WORKING-STORAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-storage-in-recursive-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WORKING-STORAGE in Recursive Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-storage-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOCAL-STORAGE SECTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LOCAL-STORAGE SECTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-lifetime_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocation and Lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-invocation-state-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Invocation State Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-storage-in-recursive-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOCAL-STORAGE in Recursive Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkage-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LINKAGE SECTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LINKAGE SECTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-lifetime_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocation and Lifetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-passing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Passing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passing Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-linkage-without-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing LINKAGE Without CALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifetime-and-initialization-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifetime and Initialization Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifetime and Initialization Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeline-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLOBAL Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GLOBAL Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLOBAL Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTERNAL Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EXTERNAL Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTERNAL Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing the Right Section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="storage-sections-working-storage-local-storage-linkage">Storage Sections (WORKING-STORAGE, LOCAL-STORAGE, LINKAGE)<a class="headerlink" href="#storage-sections-working-storage-local-storage-linkage" title="Permanent link">&para;</a></h1>
+<p>The Data Division contains three sections that define program variables: <strong>WORKING-STORAGE</strong>, <strong>LOCAL-STORAGE</strong>, and <strong>LINKAGE</strong>. Each section has distinct rules for storage allocation, initialization, lifetime, and visibility. Understanding these differences is essential for writing correct COBOL programs, especially subprograms and recursive programs.</p>
+<ul>
+<li><strong>Standard:</strong> WORKING-STORAGE and LINKAGE: COBOL-68. LOCAL-STORAGE: COBOL 2002.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Historical Note</p>
+<p><strong>WORKING-STORAGE</strong> has existed since COBOL-60, where it was one of the original
+three Data Division sections (alongside FILE and CONSTANT). In COBOL-61,
+working-storage items were either "independent" (level-77) or "grouped" (level-01
+with subordinates); independent items had to precede grouped items. Initial values
+were set via the VALUE clause, same as today.</p>
+<p>The <strong>CONSTANT Section</strong> was a separate third section in COBOL-60 and COBOL-61,
+organized identically to WORKING-STORAGE, but items defined there could not be
+modified at runtime. It was removed in later standards, with its role absorbed by
+VALUE clauses on WORKING-STORAGE items.</p>
+<p>The <strong>LINKAGE Section</strong> did not exist in COBOL-60 or COBOL-61. It was added in
+COBOL-65/68 to support parameter passing between programs via the CALL statement.</p>
+</div>
+<hr />
+<h2 id="working-storage-section">WORKING-STORAGE SECTION<a class="headerlink" href="#working-storage-section" title="Permanent link">&para;</a></h2>
+<p>The Working-Storage Section defines data items that are allocated statically and persist for the lifetime of the run unit.</p>
+<div class="highlight"><pre><span></span><code><span class="c">WORKIN</span><span class="nv">G-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">COUNTER</span><span class="w">       </span><span class="kt">PIC 9(5)   </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">NAME</span><span class="w">          </span><span class="kt">PIC X(30)  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+<span class="c">77  WS</span><span class="o">-</span><span class="nv">STATUS</span><span class="w">        </span><span class="kt">PIC X(2)   </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;OK&quot;</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="allocation-and-lifetime">Allocation and Lifetime<a class="headerlink" href="#allocation-and-lifetime" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Storage is allocated <strong>once</strong>, when the program is first loaded into memory.</li>
+<li>Storage <strong>persists</strong> across multiple <code>CALL</code> invocations of the program. Data items retain their last-used values between calls.</li>
+<li>Storage is <strong>not released</strong> until the program is canceled (<code>CANCEL</code> statement) or the run unit terminates (<code>STOP RUN</code>).</li>
+<li>For the <strong>main program</strong>, WORKING-STORAGE exists for the entire execution.</li>
+<li>For a <strong>subprogram</strong>, WORKING-STORAGE is allocated on the first <code>CALL</code> and retained across subsequent calls.</li>
+</ul>
+<h3 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>VALUE</code> clauses are applied <strong>once</strong>, at initial load time.</li>
+<li>On subsequent <code>CALL</code> invocations, data items retain their prior values -- <code>VALUE</code> clauses are <strong>not</strong> reapplied.</li>
+<li>If no <code>VALUE</code> clause is specified, the initial content is undefined on most compilers (though some compilers zero-fill or space-fill by default as an extension).</li>
+</ul>
+<h3 id="state-persistence-example">State Persistence Example<a class="headerlink" href="#state-persistence-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      *&gt; Subprogram that counts how many times it is called</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">CALL-COUNTER</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">DATA</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-COUNT</span><span class="w">      </span><span class="kt">PIC 9(5)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">LINKAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-RESULT</span><span class="w">     </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="nv">LS-RESULT</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">ADD</span><span class="w"> </span><span class="mi">1 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-COUNT</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-COUNT</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LS-RESULT</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">GOBACK</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="w"> </span><span class="nv">CALL-COUNTER</span><span class="p">.</span>
+</code></pre></div>
+<p>Each call increments and returns an ever-increasing count because <code>WS-COUNT</code> retains its value:</p>
+<div class="highlight"><pre><span></span><code>Call 1: LS-RESULT = 00001
+Call 2: LS-RESULT = 00002
+Call 3: LS-RESULT = 00003
+</code></pre></div>
+<h3 id="resetting-working-storage">Resetting WORKING-STORAGE<a class="headerlink" href="#resetting-working-storage" title="Permanent link">&para;</a></h3>
+<p>There are three ways to reset WORKING-STORAGE to its initial state:</p>
+<ol>
+<li>
+<p><strong>CANCEL the subprogram</strong> -- the next <code>CALL</code> reloads and reinitializes:</p>
+<div class="highlight"><pre><span></span><code><span class="c">CALL &quot;</span><span class="nv">CALL-COUNTER</span><span class="s2">&quot; USING WS-RESULT</span>
+<span class="c">CANCEL</span><span class="w"> </span><span class="s2">&quot;CALL-COUNTER&quot;</span>
+<span class="c">CALL &quot;</span><span class="nv">CALL-COUNTER</span><span class="s2">&quot; USING WS-RESULT</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">00001 </span><span class="p">(</span><span class="err">reset</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Use the INITIAL clause</strong> on <code>PROGRAM-ID</code> -- the program reinitializes on every call:</p>
+<div class="highlight"><pre><span></span><code><span class="c">PROGRA</span><span class="nv">M-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">CALL-COUNTER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">INITIAL</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="p">.</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Use INITIALIZE</strong> explicitly in the PROCEDURE DIVISION.</p>
+</li>
+</ol>
+<h3 id="working-storage-in-recursive-programs">WORKING-STORAGE in Recursive Programs<a class="headerlink" href="#working-storage-in-recursive-programs" title="Permanent link">&para;</a></h3>
+<p>When a program is declared <code>RECURSIVE</code>, WORKING-STORAGE is <strong>shared</strong> across all active invocations. There is only one copy, and all recursive calls read and write the same data. This makes WORKING-STORAGE unsuitable for per-invocation variables in recursive programs -- use LOCAL-STORAGE instead.</p>
+<hr />
+<h2 id="local-storage-section">LOCAL-STORAGE SECTION<a class="headerlink" href="#local-storage-section" title="Permanent link">&para;</a></h2>
+<p>The Local-Storage Section defines data items that are allocated and initialized fresh on <strong>every invocation</strong> of the program.</p>
+<ul>
+<li><strong>Standard:</strong> COBOL 2002</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">LOCAL-</span><span class="nv">STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">01  LS</span><span class="o">-</span><span class="nv">TEMP</span><span class="w">          </span><span class="kt">PIC X(100) </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+<span class="c">01  LS</span><span class="o">-</span><span class="nv">INDEX</span><span class="w">         </span><span class="kt">PIC 9(5)   </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="allocation-and-lifetime_1">Allocation and Lifetime<a class="headerlink" href="#allocation-and-lifetime_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Storage is allocated <strong>each time</strong> the program is invoked (via <code>CALL</code> or recursive entry).</li>
+<li>Storage is <strong>deallocated</strong> when the program returns control to its caller (<code>GOBACK</code>, <code>EXIT PROGRAM</code>, or <code>EXIT FUNCTION</code>).</li>
+<li>Each active invocation has its own <strong>independent copy</strong> of LOCAL-STORAGE.</li>
+<li>Data items <strong>do not persist</strong> between calls.</li>
+</ul>
+<h3 id="initialization_1">Initialization<a class="headerlink" href="#initialization_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>VALUE</code> clauses are applied on <strong>every invocation</strong>, not just the first.</li>
+<li>If no <code>VALUE</code> clause is specified, the initial content is undefined.</li>
+<li>This behavior is fundamentally different from WORKING-STORAGE, where <code>VALUE</code> clauses are applied only once.</li>
+</ul>
+<h3 id="per-invocation-state-example">Per-Invocation State Example<a class="headerlink" href="#per-invocation-state-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      *&gt; Subprogram demonstrating LOCAL-STORAGE behavior</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">FORMAT-LINE</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">DATA</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">LOCAL-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-BUFFER</span><span class="w">     </span><span class="kt">PIC X(80)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-LENGTH</span><span class="w">     </span><span class="kt">PIC 9(3) </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">LINKAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-INPUT</span><span class="w">      </span><span class="kt">PIC X(50)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-OUTPUT</span><span class="w">     </span><span class="kt">PIC X(80)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="nv">LS-INPUT</span><span class="w"> </span><span class="nv">LS-OUTPUT</span><span class="p">.</span>
+<span class="c">      *&gt;   LS-BUFFER is guaranteed to be SPACES here</span>
+<span class="c">      *&gt;   LS-LENGTH is guaranteed to be 0 here</span>
+<span class="c">      *&gt;   regardless of what previous calls did</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STRING</span><span class="w"> </span><span class="nv">LS-INPUT</span><span class="w"> </span><span class="kp">DELIMITED</span><span class="w"> </span><span class="kp">BY</span><span class="w"> </span><span class="no">SPACES</span>
+<span class="no">              </span><span class="w"> </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">LS-BUFFER</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">WITH</span><span class="w"> </span><span class="kp">POINTER</span><span class="w"> </span><span class="nv">LS-LENGTH</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">LS-BUFFER</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LS-OUTPUT</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">GOBACK</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="w"> </span><span class="nv">FORMAT-LINE</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="local-storage-in-recursive-programs">LOCAL-STORAGE in Recursive Programs<a class="headerlink" href="#local-storage-in-recursive-programs" title="Permanent link">&para;</a></h3>
+<p>LOCAL-STORAGE is essential for recursion. Each recursive invocation gets its own copy, making it safe for per-invocation variables like loop counters, intermediate results, and saved parameters.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">FIBONACCI</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">RECURSIVE</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">DATA</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      *&gt;   Shared across all invocations (input/output interface)</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-N</span><span class="w">           </span><span class="kt">PIC 9(4)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-RESULT</span><span class="w">      </span><span class="kt">PIC 9(18)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">LOCAL-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      *&gt;   Separate copy per invocation</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-MY-N</span><span class="w">        </span><span class="kt">PIC 9(4)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-FIB-1</span><span class="w">       </span><span class="kt">PIC 9(18)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-FIB-2</span><span class="w">       </span><span class="kt">PIC 9(18)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-N</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LS-MY-N</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">EVALUATE</span><span class="w"> </span><span class="nb">TRUE</span>
+<span class="nb">              </span><span class="w"> </span><span class="kp">WHEN</span><span class="w"> </span><span class="nv">LS-MY-N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="mi">                   </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">0 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">WHEN</span><span class="w"> </span><span class="nv">LS-MY-N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">                   </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">1 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">WHEN</span><span class="w"> </span><span class="kp">OTHER</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">SUBTRACT</span><span class="w"> </span><span class="mi">1 </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">LS-MY-N</span><span class="w"> </span><span class="kp">GIVING</span><span class="w"> </span><span class="nv">WS-N</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">CALL </span><span class="s2">&quot;FIBONACCI&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LS-FIB-1</span>
+
+<span class="c">      </span><span class="w">             </span><span class="kr">SUBTRACT</span><span class="w"> </span><span class="mi">2 </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">LS-MY-N</span><span class="w"> </span><span class="kp">GIVING</span><span class="w"> </span><span class="nv">WS-N</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">CALL </span><span class="s2">&quot;FIBONACCI&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LS-FIB-2</span>
+
+<span class="c">      </span><span class="w">             </span><span class="kr">ADD</span><span class="w"> </span><span class="nv">LS-FIB-1</span><span class="w"> </span><span class="nv">LS-FIB-2</span><span class="w"> </span><span class="kp">GIVING</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">END-EVALUATE</span>
+<span class="kr">          </span><span class="w"> </span><span class="kr">GOBACK</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="w"> </span><span class="nv">FIBONACCI</span><span class="p">.</span>
+</code></pre></div>
+<p>Without LOCAL-STORAGE, the intermediate values <code>LS-FIB-1</code> and <code>LS-FIB-2</code> would be overwritten by deeper recursive calls.</p>
+<hr />
+<h2 id="linkage-section">LINKAGE SECTION<a class="headerlink" href="#linkage-section" title="Permanent link">&para;</a></h2>
+<p>The Linkage Section describes data items whose storage is <strong>not allocated by the program</strong>. Instead, the storage is owned by a caller (or by the runtime via <code>ALLOCATE</code>) and the program receives an address to it.</p>
+<div class="highlight"><pre><span></span><code><span class="c">LINKAG</span><span class="nv">E</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">01  LS</span><span class="o">-</span><span class="nv">CUSTOMER-REC</span><span class="p">.</span>
+<span class="c">    05</span><span class="w">  </span><span class="nv">LS-CUST-ID</span><span class="w">     </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">    05</span><span class="w">  </span><span class="nv">LS-CUST-NAME</span><span class="w">   </span><span class="kt">PIC X(30)</span><span class="p">.</span>
+<span class="c">    05</span><span class="w">  </span><span class="nv">LS-CUST-BAL</span><span class="w">    </span><span class="kt">PIC S9(9)V99</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="allocation-and-lifetime_2">Allocation and Lifetime<a class="headerlink" href="#allocation-and-lifetime_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The program <strong>does not allocate</strong> storage for LINKAGE items. Declaring them only describes the expected layout.</li>
+<li>Storage is <strong>provided by the caller</strong> through <code>CALL ... USING</code> or by the runtime through <code>ALLOCATE</code> / <code>SET ADDRESS OF</code>.</li>
+<li>The lifetime of the data is controlled by the <strong>caller</strong>, not the called program.</li>
+<li>LINKAGE items are <strong>accessible only while the program is active</strong> (between entry and <code>GOBACK</code>/<code>EXIT PROGRAM</code>).</li>
+<li>After the called program returns, the caller's data items still exist in the caller's storage.</li>
+</ul>
+<h3 id="initialization_2">Initialization<a class="headerlink" href="#initialization_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>VALUE</code> clauses are <strong>not permitted</strong> on LINKAGE items (except on level-88 condition names).</li>
+<li>The data content is whatever the caller provides. The called program must not assume any initial state beyond what the caller guarantees.</li>
+</ul>
+<h3 id="parameter-passing">Parameter Passing<a class="headerlink" href="#parameter-passing" title="Permanent link">&para;</a></h3>
+<p>LINKAGE items are associated with caller arguments through the <code>PROCEDURE DIVISION USING</code> phrase:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      *&gt; Calling program</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">CALL </span><span class="s2">&quot;CALC-TAX&quot;</span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="nv">WS-AMOUNT</span><span class="w"> </span><span class="nv">WS-RATE</span><span class="w"> </span><span class="nv">WS-TAX</span>
+
+<span class="c">      *&gt; Called program</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">LINKAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-AMOUNT</span><span class="w">    </span><span class="kt">PIC 9(7)V99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-RATE</span><span class="w">      </span><span class="kt">PIC 9V9(4)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-TAX</span><span class="w">       </span><span class="kt">PIC 9(7)V99</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="nv">LS-AMOUNT</span><span class="w"> </span><span class="nv">LS-RATE</span><span class="w"> </span><span class="nv">LS-TAX</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">COMPUTE</span><span class="w"> </span><span class="nv">LS-TAX</span><span class="w"> </span><span class="kp">ROUNDED </span><span class="o">=</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">LS-AMOUNT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">LS-RATE</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">GOBACK</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="passing-modes">Passing Modes<a class="headerlink" href="#passing-modes" title="Permanent link">&para;</a></h3>
+<p>The <code>USING</code> phrase supports three passing modes:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Syntax</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BY REFERENCE</code></td>
+<td><code>USING LS-ITEM</code> (default)</td>
+<td>Caller's storage is shared; changes are visible to the caller</td>
+</tr>
+<tr>
+<td><code>BY CONTENT</code></td>
+<td><code>USING BY CONTENT LS-ITEM</code></td>
+<td>A copy of the caller's data is passed; changes are <strong>not</strong> visible to the caller</td>
+</tr>
+<tr>
+<td><code>BY VALUE</code></td>
+<td><code>USING BY VALUE LS-ITEM</code></td>
+<td>The value is passed (not the address); used for interoperability with C and other languages</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span>
+<span class="kr">          </span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="kp">BY</span><span class="w"> </span><span class="kp">REFERENCE</span><span class="w"> </span><span class="nv">LS-RESULT</span>
+<span class="c">      </span><span class="w">           </span><span class="kp">BY</span><span class="w"> </span><span class="kp">CONTENT</span><span class="w"> </span><span class="nv">LS-INPUT</span>
+<span class="c">      </span><span class="w">           </span><span class="kp">BY</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="nv">LS-FLAG</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="accessing-linkage-without-call">Accessing LINKAGE Without CALL<a class="headerlink" href="#accessing-linkage-without-call" title="Permanent link">&para;</a></h3>
+<p>LINKAGE items can also be associated with storage via the <code>SET ADDRESS OF</code> statement, without a <code>CALL</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-PTR</span><span class="w">        </span><span class="kp">USAGE</span><span class="w"> </span><span class="kp">POINTER</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">LINKAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">LS-RECORD</span><span class="w"> </span><span class="kp">BASED</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">LS-FIELD-A</span><span class="w"> </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">LS-FIELD-B</span><span class="w"> </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">ALLOCATE</span><span class="w"> </span><span class="nv">LS-RECORD</span><span class="w"> </span><span class="kp">RETURNING</span><span class="w"> </span><span class="nv">WS-PTR</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">SET</span><span class="w"> </span><span class="kp">ADDRESS</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">LS-RECORD</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-PTR</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;Hello&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LS-FIELD-A</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">FREE</span><span class="w"> </span><span class="nv">LS-RECORD</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<p>See <a href="../../procedure-division/memory/allocate-free/">ALLOCATE and FREE</a> for details.</p>
+<hr />
+<h2 id="lifetime-and-initialization-comparison">Lifetime and Initialization Comparison<a class="headerlink" href="#lifetime-and-initialization-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>WORKING-STORAGE</th>
+<th>LOCAL-STORAGE</th>
+<th>LINKAGE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Allocated by</strong></td>
+<td>Runtime (once)</td>
+<td>Runtime (each invocation)</td>
+<td>Caller or ALLOCATE</td>
+</tr>
+<tr>
+<td><strong>Allocation time</strong></td>
+<td>Program load</td>
+<td>Each CALL / entry</td>
+<td>Caller's discretion</td>
+</tr>
+<tr>
+<td><strong>Deallocation time</strong></td>
+<td>CANCEL or STOP RUN</td>
+<td>GOBACK / EXIT PROGRAM</td>
+<td>Caller's discretion</td>
+</tr>
+<tr>
+<td><strong>Persists across calls</strong></td>
+<td>Yes</td>
+<td>No</td>
+<td>Depends on caller</td>
+</tr>
+<tr>
+<td><strong>VALUE clause applied</strong></td>
+<td>Once (at load)</td>
+<td>Every invocation</td>
+<td>Not permitted</td>
+</tr>
+<tr>
+<td><strong>Shared in recursion</strong></td>
+<td>Yes (one copy)</td>
+<td>No (copy per invocation)</td>
+<td>Depends on caller</td>
+</tr>
+<tr>
+<td><strong>Default initial value</strong></td>
+<td>Undefined (without VALUE)</td>
+<td>Undefined (without VALUE)</td>
+<td>Caller's data</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>COBOL-68</td>
+<td>COBOL 2002</td>
+<td>COBOL-68</td>
+</tr>
+</tbody>
+</table>
+<h3 id="timeline-diagram">Timeline Diagram<a class="headerlink" href="#timeline-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Main program CALLs subprogram three times:
+
+CALL 1          CALL 2          CALL 3
+┌──────────┐   ┌──────────┐   ┌──────────┐
+│ WORKING- │   │ WORKING- │   │ WORKING- │
+│ STORAGE  │ = │ STORAGE  │ = │ STORAGE  │  Same storage,
+│ (values  │   │ (values  │   │ (values  │  values persist
+│  from    │   │  from    │   │  from    │
+│  CALL 1) │   │  CALL 2) │   │  CALL 3) │
+├──────────┤   ├──────────┤   ├──────────┤
+│ LOCAL-   │   │ LOCAL-   │   │ LOCAL-   │
+│ STORAGE  │   │ STORAGE  │   │ STORAGE  │  Fresh copy,
+│ (VALUE   │   │ (VALUE   │   │ (VALUE   │  VALUE clauses
+│  clauses │   │  clauses │   │  clauses │  reapplied
+│  applied)│   │  applied)│   │  applied)│
+├──────────┤   ├──────────┤   ├──────────┤
+│ LINKAGE  │   │ LINKAGE  │   │ LINKAGE  │
+│ (points  │   │ (points  │   │ (points  │  Caller&#39;s data,
+│  to      │   │  to      │   │  to      │  no allocation
+│  caller) │   │  caller) │   │  caller) │
+└──────────┘   └──────────┘   └──────────┘
+   freed          freed          freed     ← LOCAL-STORAGE
+</code></pre></div>
+<hr />
+<h2 id="global-clause">GLOBAL Clause<a class="headerlink" href="#global-clause" title="Permanent link">&para;</a></h2>
+<p>The <code>GLOBAL</code> clause on a WORKING-STORAGE or FILE SECTION item makes that item visible to all programs contained (nested) within the declaring program.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">OUTER-PROG</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">DATA</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-SHARED-DATA</span><span class="w">  </span><span class="kt">PIC X(50)</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">GLOBAL</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;Visible to inner&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SHARED-DATA</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">CALL </span><span class="s2">&quot;INNER-PROG&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">INNER-PROG</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      *&gt;   WS-SHARED-DATA is accessible here because</span>
+<span class="c">      *&gt;   it was declared GLOBAL in the containing program</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-SHARED-DATA</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">GOBACK</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="w"> </span><span class="nv">INNER-PROG</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kp">PROGRAM</span><span class="w"> </span><span class="nv">OUTER-PROG</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="global-rules">GLOBAL Rules<a class="headerlink" href="#global-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Only items in WORKING-STORAGE and the FILE SECTION can be declared GLOBAL.</li>
+<li>LOCAL-STORAGE and LINKAGE items <strong>cannot</strong> be GLOBAL.</li>
+<li>GLOBAL items are visible to all directly and indirectly contained programs.</li>
+<li>A GLOBAL item in a nested program is visible only to programs nested within it, not to sibling or parent programs.</li>
+</ul>
+<hr />
+<h2 id="external-clause">EXTERNAL Clause<a class="headerlink" href="#external-clause" title="Permanent link">&para;</a></h2>
+<p>The <code>EXTERNAL</code> clause declares that a data item's storage is shared across separately compiled programs within the same run unit. All programs that declare the same EXTERNAL item with the same name share a single copy of the storage.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      *&gt; Program A</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">SHARED-CONFIG</span><span class="w">  </span><span class="kt">PIC X(100)</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">EXTERNAL</span><span class="p">.</span>
+
+<span class="c">      *&gt; Program B (separately compiled)</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">SHARED-CONFIG</span><span class="w">  </span><span class="kt">PIC X(100)</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">EXTERNAL</span><span class="p">.</span>
+
+<span class="c">      *&gt; Both programs access the same storage</span>
+</code></pre></div>
+<h3 id="external-rules">EXTERNAL Rules<a class="headerlink" href="#external-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>EXTERNAL items must be level-01 in WORKING-STORAGE.</li>
+<li>The name, size, and structure must match across all programs sharing the item.</li>
+<li>EXTERNAL provides a form of global shared memory without parameter passing.</li>
+<li><code>VALUE</code> clauses on EXTERNAL items are generally ignored (the runtime allocates and initializes the storage once).</li>
+</ul>
+<hr />
+<h2 id="choosing-the-right-section">Choosing the Right Section<a class="headerlink" href="#choosing-the-right-section" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Section</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Program-wide variables and accumulators</td>
+<td>WORKING-STORAGE</td>
+<td>Persists across calls, allocated once</td>
+</tr>
+<tr>
+<td>Constants and lookup tables</td>
+<td>WORKING-STORAGE</td>
+<td>Initialized once, never changes</td>
+</tr>
+<tr>
+<td>Temporary work areas in a subprogram</td>
+<td>LOCAL-STORAGE</td>
+<td>Clean slate on each call</td>
+</tr>
+<tr>
+<td>Variables in a recursive program</td>
+<td>LOCAL-STORAGE</td>
+<td>Separate copy per invocation</td>
+</tr>
+<tr>
+<td>Receiving parameters from a caller</td>
+<td>LINKAGE</td>
+<td>Storage owned by caller</td>
+</tr>
+<tr>
+<td>Dynamically allocated structures</td>
+<td>LINKAGE (BASED)</td>
+<td>Storage from ALLOCATE</td>
+</tr>
+<tr>
+<td>Data shared across nested programs</td>
+<td>WORKING-STORAGE (GLOBAL)</td>
+<td>Visible to contained programs</td>
+</tr>
+<tr>
+<td>Data shared across separate programs</td>
+<td>WORKING-STORAGE (EXTERNAL)</td>
+<td>Shared by name across run unit</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Rule of Thumb</p>
+<p>Use WORKING-STORAGE by default. Switch to LOCAL-STORAGE when you need
+guaranteed clean state on each invocation (especially in recursive or
+multi-threaded contexts). Use LINKAGE for parameters and dynamically
+allocated memory.</p>
+</div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../level-numbers/">Level Numbers</a> -- data item level numbers</li>
+<li><a href="../value/">VALUE Clause</a> -- data initialization</li>
+<li><a href="../redefines/">REDEFINES Clause</a> -- storage overlay</li>
+<li><a href="../../procedure-division/program-linkage/call/">CALL</a> -- invoking subprograms</li>
+<li><a href="../../identification-division/program-attributes/">Program Attributes</a> -- INITIAL, COMMON, RECURSIVE</li>
+<li><a href="../../procedure-division/memory/allocate-free/">ALLOCATE and FREE</a> -- dynamic memory</li>
+<li><a href="../typedef/">User-Defined Types</a> -- TYPEDEF clause</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
