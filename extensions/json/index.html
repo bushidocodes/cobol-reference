@@ -1,0 +1,5855 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../xml/">
+      
+      
+        <link rel="next" href="../conditional-compilation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>JSON Processing - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#json-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JSON Processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#json-generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON GENERATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON GENERATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-generation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Generation Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming-json-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renaming JSON Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-nested-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating Nested Objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-json-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating JSON Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suppressing-empty-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suppressing Empty Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON PARSE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON PARSE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-parsing-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Parsing Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsing-with-key-name-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing with Key Name Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsing-json-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing JSON Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsing-nested-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing Nested Objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-error-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Error Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundtrip-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roundtrip Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#micro-focus-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro Focus Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#json-generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON GENERATE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON GENERATE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-generation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Generation Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming-json-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renaming JSON Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-nested-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating Nested Objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-json-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating JSON Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suppressing-empty-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suppressing Empty Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON PARSE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON PARSE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-parsing-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Parsing Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsing-with-key-name-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing with Key Name Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsing-json-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing JSON Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parsing-nested-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parsing Nested Objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-error-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Error Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundtrip-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roundtrip Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#micro-focus-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro Focus Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="json-processing">JSON Processing<a class="headerlink" href="#json-processing" title="Permanent link">&para;</a></h1>
+<p>COBOL provides statements for generating JSON documents from COBOL data structures and parsing JSON documents into COBOL data items.</p>
+<ul>
+<li><strong>Standard:</strong> IBM Enterprise COBOL v6.1+ (<code>JSON GENERATE</code>, <code>JSON PARSE</code>). Micro Focus provides similar functionality. Not part of the ISO COBOL standard.</li>
+<li><strong>Category:</strong> Extension -- Data Interchange</li>
+</ul>
+<hr />
+<h2 id="json-generate">JSON GENERATE<a class="headerlink" href="#json-generate" title="Permanent link">&para;</a></h2>
+<p>The <code>JSON GENERATE</code> statement converts a COBOL group data item into a JSON document.</p>
+<h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">JSON G</span><span class="nv">ENERATE</span><span class="w"> </span><span class="nv">json-document</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">data-name</span>
+<span class="c">    [ </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">count-field</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span>
+<span class="kp">       </span><span class="w"> </span><span class="nv">data-name-1</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">json-name-1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">      </span><span class="err">[</span><span class="w"> </span><span class="nv">data-name-2</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">json-name-2</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">OMITTED </span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="kr">SUPPRESS</span>
+<span class="kr">       </span><span class="w"> </span><span class="nv">data-name-1</span><span class="w"> </span><span class="kp">WHEN</span><span class="w"> </span><span class="no">ZEROES</span>
+<span class="no">      </span><span class="err">[</span><span class="w"> </span><span class="nv">data-name-2</span><span class="w"> </span><span class="kp">WHEN</span><span class="w"> </span><span class="no">SPACES </span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span><span class="w"> </span><span class="nv">imperative-statement</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span><span class="w"> </span><span class="nv">imperative-statement</span><span class="w"> </span><span class="err">]</span>
+<span class="c">END-JS</span><span class="nv">ON</span>
+</code></pre></div>
+<ul>
+<li><strong>json-document</strong> -- an alphanumeric data item to receive the generated JSON.</li>
+<li><strong>data-name</strong> -- the group item whose subordinate entries become JSON name-value pairs.</li>
+<li><strong>COUNT IN</strong> -- receives the number of characters written to json-document.</li>
+<li><strong>NAME OF ... IS</strong> -- renames COBOL data names to different JSON key names.</li>
+<li><strong>NAME OF ... IS OMITTED</strong> -- removes the wrapper object for a group item, promoting its children.</li>
+<li><strong>SUPPRESS</strong> -- omits items that contain zero or space values.</li>
+</ul>
+<h3 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Elementary items within the source group are generated as JSON name-value pairs.</li>
+<li>Subordinate group items are generated as nested JSON objects.</li>
+<li><code>OCCURS</code> items are generated as JSON arrays.</li>
+<li>Numeric items are generated as JSON numbers (unquoted).</li>
+<li>Alphanumeric items are generated as JSON strings (quoted).</li>
+<li>COBOL data names are used as JSON keys by default (in uppercase). Use <code>NAME OF</code> to override.</li>
+<li>FILLER items are suppressed by default.</li>
+</ul>
+<h3 id="basic-generation-example">Basic Generation Example<a class="headerlink" href="#basic-generation-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-OUTPUT</span><span class="w">   </span><span class="kt">PIC X(1000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-LENGTH</span><span class="w">   </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-EMPLOYEE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-ID</span><span class="w">        </span><span class="kt">PIC 9(5) </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">10042</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-NAME</span><span class="w">      </span><span class="kt">PIC X(20)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Jane Smith&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-DEPT</span><span class="w">      </span><span class="kt">PIC X(10)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Finance&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-SALARY</span><span class="w">    </span><span class="kt">PIC 9(7)V99</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">85000</span><span class="p">.</span><span class="mi">00</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">WS-JSON-OUTPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-EMPLOYEE</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span>
+<span class="c">      </span><span class="w">         </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-JSON-OUTPUT</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nv">WS-JSON-LENGTH</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;WS-EMPLOYEE&quot;</span><span class="p">:{</span><span class="nt">&quot;EMP-ID&quot;</span><span class="p">:</span><span class="mi">10042</span><span class="p">,</span><span class="nt">&quot;EMP-NAME&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Smith&quot;</span><span class="p">,</span><span class="nt">&quot;EMP-DEPT&quot;</span><span class="p">:</span><span class="s2">&quot;Finance&quot;</span><span class="p">,</span><span class="nt">&quot;EMP-SALARY&quot;</span><span class="p">:</span><span class="mi">8500000</span><span class="p">}}</span>
+</code></pre></div>
+<h3 id="renaming-json-keys">Renaming JSON Keys<a class="headerlink" href="#renaming-json-keys" title="Permanent link">&para;</a></h3>
+<p>COBOL data names typically use uppercase with hyphens, which is not idiomatic JSON. Use <code>NAME OF</code> to produce cleaner output:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="nv">JSON</span><span class="w"> </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">WS-JSON-OUTPUT</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-EMPLOYEE</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-EMPLOYEE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                  </span><span class="w"> </span><span class="nv">EMP-ID</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;id&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="nv">EMP-NAME</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;name&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="nv">EMP-DEPT</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;department&quot;</span>
+<span class="c">      </span><span class="w">             </span><span class="nv">EMP-SALARY</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;salary&quot;</span>
+<span class="c">      </span><span class="w"> </span><span class="nv">END-JSON</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10042</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Smith&quot;</span><span class="p">,</span><span class="nt">&quot;department&quot;</span><span class="p">:</span><span class="s2">&quot;Finance&quot;</span><span class="p">,</span><span class="nt">&quot;salary&quot;</span><span class="p">:</span><span class="mi">8500000</span><span class="p">}</span>
+</code></pre></div>
+<p>Using <code>OMITTED</code> on the top-level group removes the wrapper object, producing a flat JSON object.</p>
+<h3 id="generating-nested-objects">Generating Nested Objects<a class="headerlink" href="#generating-nested-objects" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-OUTPUT</span><span class="w">   </span><span class="kt">PIC X(2000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-LENGTH</span><span class="w">   </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-ORDER</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-ID</span><span class="w">      </span><span class="kt">PIC 9(8)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">10001234</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-DATE</span><span class="w">    </span><span class="kt">PIC X(10)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;2025-03-22&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-CUSTOMER</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="nv">CUST-NAME</span><span class="w"> </span><span class="kt">PIC X(25)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Acme Corp&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="nv">CUST-ID</span><span class="w">   </span><span class="kt">PIC X(10)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;ACME-001&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-TOTAL</span><span class="w">   </span><span class="kt">PIC 9(9)V99</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">4599</span><span class="p">.</span><span class="mi">98</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">WS-JSON-OUTPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-ORDER</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-ORDER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">ORDER-ID</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;orderId&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">ORDER-DATE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;orderDate&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">ORDER-CUSTOMER</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;customer&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-NAME</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;name&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-ID</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;id&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">ORDER-TOTAL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;total&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;orderId&quot;</span><span class="p">:</span><span class="mi">10001234</span><span class="p">,</span><span class="nt">&quot;orderDate&quot;</span><span class="p">:</span><span class="s2">&quot;2025-03-22&quot;</span><span class="p">,</span><span class="nt">&quot;customer&quot;</span><span class="p">:{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Acme Corp&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;ACME-001&quot;</span><span class="p">},</span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="mi">459998</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="generating-json-arrays">Generating JSON Arrays<a class="headerlink" href="#generating-json-arrays" title="Permanent link">&para;</a></h3>
+<p>Items defined with <code>OCCURS</code> are automatically generated as JSON arrays:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-OUTPUT</span><span class="w">   </span><span class="kt">PIC X(2000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-LENGTH</span><span class="w">   </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-SCORES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">WS-LABEL</span><span class="w">     </span><span class="kt">PIC X(10)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Math&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">WS-SCORE</span><span class="w">     </span><span class="kt">PIC 9(3)</span><span class="w"> </span><span class="kp">OCCURS</span><span class="w"> </span><span class="mi">4 </span><span class="kp">TIMES</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">92 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SCORE</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">87 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SCORE</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">95 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SCORE</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">78 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SCORE</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">WS-JSON-OUTPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-SCORES</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-SCORES</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">WS-LABEL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;subject&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">WS-SCORE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;scores&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="s2">&quot;Math&quot;</span><span class="p">,</span><span class="nt">&quot;scores&quot;</span><span class="p">:[</span><span class="mi">92</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="mi">78</span><span class="p">]}</span>
+</code></pre></div>
+<h3 id="suppressing-empty-fields">Suppressing Empty Fields<a class="headerlink" href="#suppressing-empty-fields" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-OUTPUT</span><span class="w">   </span><span class="kt">PIC X(1000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-LENGTH</span><span class="w">   </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-CONTACT</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CONTACT-NAME</span><span class="w">    </span><span class="kt">PIC X(30)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CONTACT-EMAIL</span><span class="w">   </span><span class="kt">PIC X(50)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CONTACT-PHONE</span><span class="w">   </span><span class="kt">PIC X(15)</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;555-0100&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CONTACT-FAX</span><span class="w">     </span><span class="kt">PIC X(15)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">WS-JSON-OUTPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-CONTACT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-CONTACT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">CONTACT-NAME</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;name&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CONTACT-EMAIL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;email&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CONTACT-PHONE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;phone&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CONTACT-FAX</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;fax&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kr">SUPPRESS</span><span class="w"> </span><span class="nv">CONTACT-EMAIL</span><span class="w"> </span><span class="kp">WHEN</span><span class="w"> </span><span class="no">SPACES</span>
+<span class="no">                       </span><span class="w"> </span><span class="nv">CONTACT-FAX</span><span class="w"> </span><span class="kp">WHEN</span><span class="w"> </span><span class="no">SPACES</span>
+<span class="no">          </span><span class="w"> </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;555-0100&quot;</span><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="json-parse">JSON PARSE<a class="headerlink" href="#json-parse" title="Permanent link">&para;</a></h2>
+<p>The <code>JSON PARSE</code> statement parses a JSON document and populates a COBOL group data item with the values from the JSON name-value pairs.</p>
+<h3 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">JSON P</span><span class="nv">ARSE</span><span class="w"> </span><span class="nv">json-document</span><span class="w"> </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">data-name</span>
+<span class="c">    [ </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span>
+<span class="kp">       </span><span class="w"> </span><span class="nv">data-name-1</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">json-name-1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">      </span><span class="err">[</span><span class="w"> </span><span class="nv">data-name-2</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">json-name-2</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">OMITTED </span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="kr">SUPPRESS</span>
+<span class="kr">       </span><span class="w"> </span><span class="nv">data-name-1</span>
+<span class="c">      </span><span class="err">[</span><span class="w"> </span><span class="nv">data-name-2</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="kp">CONVERTING</span>
+<span class="kp">       </span><span class="w"> </span><span class="nv">json-name-1</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="err">BOOLEAN</span>
+<span class="err">           </span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="nb">TRUE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">true-value</span><span class="w"> </span><span class="nb">FALSE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">false-value</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span><span class="w"> </span><span class="nv">imperative-statement</span><span class="w"> </span><span class="err">]</span>
+<span class="c">    [ </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span><span class="w"> </span><span class="nv">imperative-statement</span><span class="w"> </span><span class="err">]</span>
+<span class="c">END-JS</span><span class="nv">ON</span>
+</code></pre></div>
+<ul>
+<li><strong>json-document</strong> -- an alphanumeric data item containing the JSON text.</li>
+<li><strong>data-name</strong> -- the group item to populate with parsed values.</li>
+<li><strong>NAME OF</strong> -- maps JSON key names to COBOL data names.</li>
+<li><strong>NAME OF ... IS OMITTED</strong> -- skips a group wrapper level in the JSON.</li>
+<li><strong>SUPPRESS</strong> -- skips specified data items during parsing.</li>
+<li><strong>CONVERTING ... FROM BOOLEAN</strong> -- converts JSON boolean values to COBOL values.</li>
+</ul>
+<h3 id="rules_1">Rules<a class="headerlink" href="#rules_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>JSON string values are moved to the corresponding alphanumeric COBOL items.</li>
+<li>JSON number values are moved to the corresponding numeric COBOL items.</li>
+<li>JSON arrays are parsed into <code>OCCURS</code> items.</li>
+<li>JSON keys are matched to COBOL data names (case-insensitive by default). Use <code>NAME OF</code> when the JSON keys differ from the COBOL names.</li>
+<li>JSON null values result in the COBOL item being set to spaces (alphanumeric) or zeros (numeric).</li>
+<li>Unmatched JSON keys (keys with no corresponding COBOL item) are ignored.</li>
+<li>Unmatched COBOL items (items with no corresponding JSON key) retain their prior values.</li>
+</ul>
+<h3 id="basic-parsing-example">Basic Parsing Example<a class="headerlink" href="#basic-parsing-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-INPUT</span><span class="w">    </span><span class="kt">PIC X(500)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-EMPLOYEE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-ID</span><span class="w">        </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-NAME</span><span class="w">      </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-DEPT</span><span class="w">      </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">EMP-SALARY</span><span class="w">    </span><span class="kt">PIC 9(7)V99</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s1">&#39;{&quot;EMP-ID&quot;:10042,&quot;EMP-NAME&quot;:&quot;Jane Smith&quot;,&#39;</span>
+<span class="c">      </span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;&quot;EMP-DEPT&quot;:&quot;Finance&quot;,&quot;EMP-SALARY&quot;:8500000}&#39;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">PARSE</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-EMPLOYEE</span>
+<span class="c">      </span><span class="w">         </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;ID:     &quot;</span><span class="w"> </span><span class="nv">EMP-ID</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Name:   &quot;</span><span class="w"> </span><span class="nv">EMP-NAME</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Dept:   &quot;</span><span class="w"> </span><span class="nv">EMP-DEPT</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Salary: &quot;</span><span class="w"> </span><span class="nv">EMP-SALARY</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="parsing-with-key-name-mapping">Parsing with Key Name Mapping<a class="headerlink" href="#parsing-with-key-name-mapping" title="Permanent link">&para;</a></h3>
+<p>When JSON keys don't match COBOL data names, use <code>NAME OF</code> to establish the mapping:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-INPUT</span><span class="w">    </span><span class="kt">PIC X(500)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-CUSTOMER</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CUST-ID</span><span class="w">       </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CUST-NAME</span><span class="w">     </span><span class="kt">PIC X(30)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CUST-EMAIL</span><span class="w">    </span><span class="kt">PIC X(50)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CUST-ACTIVE</span><span class="w">   </span><span class="kt">PIC X(1)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s1">&#39;{&quot;id&quot;:&quot;C-1001&quot;,&quot;name&quot;:&quot;Acme Corp&quot;,&#39;</span>
+<span class="c">      </span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;&quot;email&quot;:&quot;info@acme.com&quot;,&quot;active&quot;:true}&#39;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">PARSE</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-CUSTOMER</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-CUSTOMER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">CUST-ID</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;id&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-NAME</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;name&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-EMAIL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;email&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-ACTIVE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;active&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">CONVERTING </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="err">BOOLEAN</span>
+<span class="err">                  </span><span class="w"> </span><span class="kp">USING</span><span class="w"> </span><span class="nb">TRUE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="nb">FALSE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;N&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;ID:     &quot;</span><span class="w"> </span><span class="nv">CUST-ID</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Name:   &quot;</span><span class="w"> </span><span class="nv">CUST-NAME</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Email:  &quot;</span><span class="w"> </span><span class="nv">CUST-EMAIL</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Active: &quot;</span><span class="w"> </span><span class="nv">CUST-ACTIVE</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="parsing-json-arrays">Parsing JSON Arrays<a class="headerlink" href="#parsing-json-arrays" title="Permanent link">&para;</a></h3>
+<p>JSON arrays are parsed into COBOL tables defined with <code>OCCURS</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-INPUT</span><span class="w">    </span><span class="kt">PIC X(1000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-CLASS-DATA</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CLASS-NAME</span><span class="w">    </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">CLASS-SCORES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="nv">SCORE</span><span class="w">     </span><span class="kt">PIC 9(3)</span><span class="w"> </span><span class="kp">OCCURS</span><span class="w"> </span><span class="mi">5 </span><span class="kp">TIMES</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s1">&#39;{&quot;CLASS-NAME&quot;:&quot;Biology&quot;,&#39;</span>
+<span class="c">      </span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;&quot;CLASS-SCORES&quot;:[92,87,95,78,88]}&#39;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">PARSE</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-CLASS-DATA</span>
+<span class="c">      </span><span class="w">         </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Class: &quot;</span><span class="w"> </span><span class="nv">CLASS-NAME</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Score 1: &quot;</span><span class="w"> </span><span class="nv">SCORE</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Score 2: &quot;</span><span class="w"> </span><span class="nv">SCORE</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="parsing-nested-objects">Parsing Nested Objects<a class="headerlink" href="#parsing-nested-objects" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-INPUT</span><span class="w">    </span><span class="kt">PIC X(1000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-ORDER</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-ID</span><span class="w">      </span><span class="kt">PIC 9(8)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-CUSTOMER</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="nv">CUST-NAME</span><span class="w"> </span><span class="kt">PIC X(25)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="nv">CUST-ID</span><span class="w">   </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">ORDER-TOTAL</span><span class="w">   </span><span class="kt">PIC 9(9)V99</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s1">&#39;{&quot;orderId&quot;:10001234,&#39;</span>
+<span class="c">      </span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;&quot;customer&quot;:{&quot;name&quot;:&quot;Acme Corp&quot;,&#39;</span>
+<span class="c">      </span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="s1">&#39;&quot;id&quot;:&quot;ACME-001&quot;},&quot;total&quot;:459998}&#39;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">PARSE</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-ORDER</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-ORDER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">ORDER-ID</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;orderId&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">ORDER-CUSTOMER</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;customer&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-NAME</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;name&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">CUST-ID</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;id&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">ORDER-TOTAL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;total&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Order: &quot;</span><span class="w"> </span><span class="nv">ORDER-ID</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Customer: &quot;</span><span class="w"> </span><span class="nv">CUST-NAME</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">DISPLAY </span><span class="s2">&quot;Total: &quot;</span><span class="w"> </span><span class="nv">ORDER-TOTAL</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">END-JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<hr />
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p>Both <code>JSON GENERATE</code> and <code>JSON PARSE</code> set a return code accessible via the <code>ON EXCEPTION</code> phrase. The special register <code>JSON-CODE</code> contains the status:</p>
+<table>
+<thead>
+<tr>
+<th>JSON-CODE Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Successful completion</td>
+</tr>
+<tr>
+<td>Non-zero</td>
+<td>An error occurred</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">PARSE</span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-DATA</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">              </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;JSON error code: &quot;</span><span class="w"> </span><span class="nv">JSON-CODE</span>
+<span class="c">      </span><span class="w">         </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">JSON-ERROR-HANDLER</span>
+<span class="c">      </span><span class="w">     </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">              </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;JSON parsed successfully&quot;</span>
+<span class="c">      </span><span class="w"> </span><span class="nv">END-JSON</span>
+</code></pre></div>
+<h3 id="common-error-conditions">Common Error Conditions<a class="headerlink" href="#common-error-conditions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid JSON syntax</td>
+<td>Malformed JSON (missing quotes, brackets, etc.)</td>
+</tr>
+<tr>
+<td>Data overflow</td>
+<td>JSON value too large for the receiving COBOL item</td>
+</tr>
+<tr>
+<td>Type mismatch</td>
+<td>JSON string in a numeric field or vice versa</td>
+</tr>
+<tr>
+<td>Array overflow</td>
+<td>JSON array has more elements than the OCCURS count</td>
+</tr>
+<tr>
+<td>Output overflow</td>
+<td>Generated JSON exceeds the receiving field length</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="roundtrip-example">Roundtrip Example<a class="headerlink" href="#roundtrip-example" title="Permanent link">&para;</a></h2>
+<p>Generating JSON from a COBOL structure and parsing it back:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-BUFFER</span><span class="w">   </span><span class="kt">PIC X(2000)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-JSON-LENGTH</span><span class="w">   </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-INVOICE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">INV-NUMBER</span><span class="w">    </span><span class="kt">PIC 9(8)   </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">20250001</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">INV-DATE</span><span class="w">      </span><span class="kt">PIC X(10)  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;2025-03-22&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">INV-VENDOR</span><span class="w">    </span><span class="kt">PIC X(25)  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Parts Co&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">INV-LINES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="nv">INV-LINE</span><span class="w"> </span><span class="kp">OCCURS</span><span class="w"> </span><span class="mi">3 </span><span class="kp">TIMES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">             </span><span class="mi">15  </span><span class="nv">LINE-DESC</span><span class="w">   </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">             </span><span class="mi">15  </span><span class="nv">LINE-AMT</span><span class="w">   </span><span class="kt">PIC 9(7)V99</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">INV-TOTAL</span><span class="w">     </span><span class="kt">PIC 9(9)V99</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-PARSED-INVOICE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">P-INV-NUMBER</span><span class="w">  </span><span class="kt">PIC 9(8)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">P-INV-DATE</span><span class="w">    </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">P-INV-VENDOR</span><span class="w">  </span><span class="kt">PIC X(25)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">P-INV-TOTAL</span><span class="w">   </span><span class="kt">PIC 9(9)V99</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      *&gt;   Set up line items</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;Bolts&quot;</span><span class="w">     </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LINE-DESC</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">150</span><span class="p">.</span><span class="mi">00      </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LINE-AMT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;Nuts&quot;</span><span class="w">      </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LINE-DESC</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">75</span><span class="p">.</span><span class="mi">50       </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LINE-AMT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;Washers&quot;</span><span class="w">   </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LINE-DESC</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">42</span><span class="p">.</span><span class="mi">25       </span><span class="kp">TO</span><span class="w"> </span><span class="nv">LINE-AMT</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">COMPUTE</span><span class="w"> </span><span class="nv">INV-TOTAL</span><span class="w"> </span><span class="o">=</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">LINE-AMT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">LINE-AMT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">LINE-AMT</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c">      *&gt;   Generate JSON</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">WS-JSON-BUFFER</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-INVOICE</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">COUNT</span><span class="w"> </span><span class="kp">IN</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-INVOICE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">INV-NUMBER</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;invoiceNumber&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">INV-DATE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;date&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">INV-VENDOR</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;vendor&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">INV-LINES</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;lineItems&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">INV-LINE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">LINE-DESC</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;description&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">LINE-AMT</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;amount&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">INV-TOTAL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;total&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Generate error: &quot;</span><span class="w"> </span><span class="nv">JSON-CODE</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span>
+<span class="kp">          </span><span class="w"> </span><span class="nv">END-JSON</span>
+
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;Generated JSON:&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-JSON-BUFFER</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nv">WS-JSON-LENGTH</span><span class="p">)</span>
+
+<span class="c">      *&gt;   Parse the JSON back into a different structure</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">PARSE</span><span class="w"> </span><span class="nv">WS-JSON-BUFFER</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-PARSED-INVOICE</span>
+<span class="c">      </span><span class="w">         </span><span class="nv">NAME</span><span class="w"> </span><span class="kp">OF</span><span class="w"> </span><span class="nv">WS-PARSED-INVOICE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">OMITTED</span>
+<span class="kp">                      </span><span class="w"> </span><span class="nv">P-INV-NUMBER</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;invoiceNumber&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">P-INV-DATE</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;date&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">P-INV-VENDOR</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;vendor&quot;</span>
+<span class="c">      </span><span class="w">                 </span><span class="nv">P-INV-TOTAL</span><span class="w"> </span><span class="kp">IS </span><span class="s2">&quot;total&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">ON</span><span class="w"> </span><span class="kp">EXCEPTION</span>
+<span class="kp">                  </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Parse error: &quot;</span><span class="w"> </span><span class="nv">JSON-CODE</span>
+<span class="c">      </span><span class="w">             </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span>
+<span class="kp">          </span><span class="w"> </span><span class="nv">END-JSON</span>
+
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;Parsed back:&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;  Invoice: &quot;</span><span class="w"> </span><span class="nv">P-INV-NUMBER</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;  Date:    &quot;</span><span class="w"> </span><span class="nv">P-INV-DATE</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;  Vendor:  &quot;</span><span class="w"> </span><span class="nv">P-INV-VENDOR</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;  Total:   &quot;</span><span class="w"> </span><span class="nv">P-INV-TOTAL</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<hr />
+<h2 id="micro-focus-extensions">Micro Focus Extensions<a class="headerlink" href="#micro-focus-extensions" title="Permanent link">&para;</a></h2>
+<p>Micro Focus Visual COBOL supports JSON through:</p>
+<ul>
+<li><strong>JSON GENERATE / JSON PARSE</strong> -- compatible syntax with IBM Enterprise COBOL</li>
+<li><strong>CBL_JSON_* library routines</strong> -- procedural API for fine-grained JSON construction and parsing</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">      *&gt; Micro Focus procedural approach</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">CALL </span><span class="s2">&quot;CBL_JSON_PARSE_START&quot;</span><span class="w"> </span><span class="kp">USING</span>
+<span class="kp">          </span><span class="w"> </span><span class="nv">WS-JSON-INPUT</span><span class="w"> </span><span class="nv">WS-JSON-LENGTH</span><span class="w"> </span><span class="nv">WS-HANDLE</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">CALL </span><span class="s2">&quot;CBL_JSON_PARSE_GET_NEXT&quot;</span><span class="w"> </span><span class="kp">USING</span>
+<span class="kp">          </span><span class="w"> </span><span class="nv">WS-HANDLE</span><span class="w"> </span><span class="nv">WS-KEY</span><span class="w"> </span><span class="nv">WS-VALUE</span><span class="w"> </span><span class="nv">WS-TYPE</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../xml/">XML Processing</a> -- XML parsing and generation</li>
+<li><a href="../embedded-sql/">Embedded SQL</a> -- database access</li>
+<li><a href="../../data-division/occurs/">OCCURS Clause</a> -- table definitions for JSON arrays</li>
+<li><a href="../../procedure-division/string-handling/string/">STRING</a> -- string concatenation</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

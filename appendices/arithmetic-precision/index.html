@@ -1,0 +1,6058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../../extensions/vendor-extensions/">
+      
+      
+        <link rel="next" href="../collating-sequence/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Arithmetic Precision - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arithmetic-precision" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arithmetic Precision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decimal-arithmetic-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal Arithmetic Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-significant-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum Significant Digits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate-result-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Result Precision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intermediate Result Precision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-intermediate-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules for Intermediate Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-intermediate-precision-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Intermediate Precision Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision-of-individual-arithmetic-statements-vs-compute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Precision of Individual Arithmetic Statements vs COMPUTE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Precision of Individual Arithmetic Statements vs COMPUTE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#individual-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Individual Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPUTE Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decimal-point-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal Point Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decimal Point Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alignment-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alignment Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncation-vs-rounding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Truncation vs Rounding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Truncation vs Rounding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truncation-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Truncation (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rounded-phrase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROUNDED Phrase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rounding-modes-cobol-2002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rounding Modes (COBOL 2002+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-size-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ON SIZE ERROR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ON SIZE ERROR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-constitutes-a-size-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Constitutes a Size Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ieee-754-floating-point-types-cobol-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEEE 754 Floating-Point Types (COBOL 2014)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-picture-sizes-and-digit-capacities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum PICTURE Sizes and Digit Capacities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maximum PICTURE Sizes and Digit Capacities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaling-with-p-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling with P Symbol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avoiding-precision-loss-in-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoiding Precision Loss in Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstrating-rounding-mode-differences-cobol-2002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstrating Rounding Mode Differences (COBOL 2002)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-intermediate-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecting Intermediate Overflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picture-size-impact-on-calculation-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PICTURE Size Impact on Calculation Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decimal-arithmetic-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal Arithmetic Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-significant-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum Significant Digits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate-result-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Result Precision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intermediate Result Precision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-intermediate-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules for Intermediate Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-intermediate-precision-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Intermediate Precision Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision-of-individual-arithmetic-statements-vs-compute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Precision of Individual Arithmetic Statements vs COMPUTE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Precision of Individual Arithmetic Statements vs COMPUTE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#individual-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Individual Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPUTE Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decimal-point-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal Point Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decimal Point Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alignment-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alignment Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncation-vs-rounding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Truncation vs Rounding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Truncation vs Rounding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truncation-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Truncation (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rounded-phrase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROUNDED Phrase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rounding-modes-cobol-2002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rounding Modes (COBOL 2002+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-size-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ON SIZE ERROR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ON SIZE ERROR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-constitutes-a-size-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Constitutes a Size Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ieee-754-floating-point-types-cobol-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEEE 754 Floating-Point Types (COBOL 2014)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-picture-sizes-and-digit-capacities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum PICTURE Sizes and Digit Capacities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maximum PICTURE Sizes and Digit Capacities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaling-with-p-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling with P Symbol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avoiding-precision-loss-in-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoiding Precision Loss in Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demonstrating-rounding-mode-differences-cobol-2002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstrating Rounding Mode Differences (COBOL 2002)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-intermediate-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecting Intermediate Overflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picture-size-impact-on-calculation-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PICTURE Size Impact on Calculation Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="arithmetic-precision">Arithmetic Precision<a class="headerlink" href="#arithmetic-precision" title="Permanent link">&para;</a></h1>
+<p>COBOL performs arithmetic using a fixed-point decimal model rather than binary floating-point. This ensures that decimal values are represented exactly, making COBOL well-suited for financial and business calculations where rounding errors from binary representation are unacceptable. The rules governing precision, intermediate results, and rounding behavior have evolved across successive standards.</p>
+<p><strong>Standard:</strong> COBOL-60, COBOL-61, COBOL-61 Extended, COBOL-65, COBOL-68, COBOL-74, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023</p>
+<hr />
+<h2 id="decimal-arithmetic-model">Decimal Arithmetic Model<a class="headerlink" href="#decimal-arithmetic-model" title="Permanent link">&para;</a></h2>
+<p>All standard arithmetic operations in COBOL use a decimal (base-10) arithmetic model. Numeric data items declared with a <a href="../../data-division/picture/">PICTURE</a> clause containing <code>9</code>, <code>V</code>, <code>S</code>, and <code>P</code> symbols store values as decimal digits. Arithmetic on these items produces exact decimal results, subject only to the precision limits of the receiving item and any intermediate result fields.</p>
+<p>This contrasts with languages that use binary floating-point (IEEE 754 binary) by default, where values like <code>0.1</code> cannot be represented exactly. In COBOL, <code>PIC 9V9 VALUE 0.1</code> stores exactly one-tenth.</p>
+<div class="admonition note">
+<p class="admonition-title">USAGE Clause Interaction</p>
+<p>The <a href="../../data-division/usage/">USAGE</a> clause determines the internal storage format (DISPLAY, COMP, COMP-3, etc.), but the decimal arithmetic model applies regardless of usage. The compiler converts between internal representations and the decimal model as needed during arithmetic operations.</p>
+</div>
+<hr />
+<h2 id="maximum-significant-digits">Maximum Significant Digits<a class="headerlink" href="#maximum-significant-digits" title="Permanent link">&para;</a></h2>
+<p>The maximum number of decimal digits that a numeric data item can hold is governed by the standard and the compiler implementation.</p>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Maximum Digits</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COBOL-68 through COBOL-85</td>
+<td>18</td>
+<td>The <a href="../../data-division/picture/">PICTURE</a> string may contain at most 18 digit positions (<code>9</code> symbols)</td>
+</tr>
+<tr>
+<td>COBOL 2002</td>
+<td>Implementation-defined (at least 18)</td>
+<td>Most compilers support 18 or 31 digits</td>
+</tr>
+<tr>
+<td>COBOL 2014, COBOL 2023</td>
+<td>Implementation-defined (at least 18)</td>
+<td>31-digit support is common in modern compilers</td>
+</tr>
+</tbody>
+</table>
+<p>A data item declared as <code>PIC 9(18)V9(18)</code> is invalid under COBOL-85 because it specifies 36 digit positions. The total number of <code>9</code> symbols (including those implied by <code>P</code>) must not exceed the maximum.</p>
+<hr />
+<h2 id="intermediate-result-precision">Intermediate Result Precision<a class="headerlink" href="#intermediate-result-precision" title="Permanent link">&para;</a></h2>
+<p>When the <a href="../../procedure-division/arithmetic/compute/">COMPUTE</a> statement evaluates a compound arithmetic expression, the compiler generates intermediate results for each sub-operation. The precision of these intermediate results determines whether a calculation succeeds or loses significant digits.</p>
+<h3 id="rules-for-intermediate-results">Rules for Intermediate Results<a class="headerlink" href="#rules-for-intermediate-results" title="Permanent link">&para;</a></h3>
+<p>The COBOL standard does not prescribe a single algorithm for intermediate result precision. Instead, it requires that intermediate results have sufficient precision to avoid loss of significant digits, subject to implementation-defined limits. In practice, compilers use one of two approaches:</p>
+<ol>
+<li>
+<p><strong>Fixed intermediate precision</strong> --- The compiler uses a fixed number of digits (commonly 18 or 31) for all intermediate results, regardless of the operands.</p>
+</li>
+<li>
+<p><strong>Computed intermediate precision</strong> --- The compiler analyzes the PICTURE clauses of the operands and calculates the minimum number of integer and decimal digits required for each intermediate result.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Intermediate Overflow</p>
+<p>Even if the final result fits within the receiving item, an intermediate result may overflow. For example, in <code>COMPUTE X = (A * B) / C</code>, the product <code>A * B</code> may exceed the intermediate result capacity even though the final quotient is small. This can cause a size error or silent truncation, depending on the compiler and whether ON SIZE ERROR is specified.</p>
+</div>
+<h3 id="example-intermediate-precision-loss">Example: Intermediate Precision Loss<a class="headerlink" href="#example-intermediate-precision-loss" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">A</span><span class="w">      </span><span class="kt">PIC 9(10)V99  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">9999999999</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">B</span><span class="w">      </span><span class="kt">PIC 9(10)V99  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">9999999999</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">C</span><span class="w">      </span><span class="kt">PIC 9(10)V99  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">9999999999</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="kt">PIC 9(10)V99</span><span class="p">.</span>
+
+<span class="c">*&gt; The</span><span class="w"> </span><span class="nv">product</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">B</span><span class="w"> </span><span class="nv">produces</span><span class="w"> </span><span class="kp">up</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="mi">24 </span><span class="nv">digits</span><span class="p">.</span>
+<span class="c">*&gt; On </span><span class="nv">a</span><span class="w"> </span><span class="nv">compiler</span><span class="w"> </span><span class="kp">with</span><span class="w"> </span><span class="mi">18</span><span class="o">-</span><span class="nv">digit</span><span class="w"> </span><span class="nv">intermediates</span><span class="p">,</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">overflows</span><span class="p">.</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">WS-A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">WS-B</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-C</span>
+<span class="c">    ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Intermediate overflow occurred&quot;</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+</code></pre></div>
+<p>To avoid intermediate overflow, restructure the expression:</p>
+<div class="highlight"><pre><span></span><code><span class="c">*&gt; Div</span><span class="nv">iding</span><span class="w"> </span><span class="kp">first</span><span class="w"> </span><span class="nv">keeps</span><span class="w"> </span><span class="nv">intermediate</span><span class="w"> </span><span class="kp">values</span><span class="w"> </span><span class="nv">smaller</span><span class="p">.</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">WS-A</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-C</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">WS-B</span>
+<span class="c">    ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Overflow occurred&quot;</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+</code></pre></div>
+<hr />
+<h2 id="precision-of-individual-arithmetic-statements-vs-compute">Precision of Individual Arithmetic Statements vs COMPUTE<a class="headerlink" href="#precision-of-individual-arithmetic-statements-vs-compute" title="Permanent link">&para;</a></h2>
+<p>The individual arithmetic statements (<a href="../../procedure-division/arithmetic/add/">ADD</a>, <a href="../../procedure-division/arithmetic/subtract/">SUBTRACT</a>, <a href="../../procedure-division/arithmetic/multiply/">MULTIPLY</a>, <a href="../../procedure-division/arithmetic/divide/">DIVIDE</a>) each perform a single operation with well-defined precision rules. The <a href="../../procedure-division/arithmetic/compute/">COMPUTE</a> statement, by contrast, evaluates an arbitrarily complex expression and must manage intermediate results.</p>
+<h3 id="individual-statements">Individual Statements<a class="headerlink" href="#individual-statements" title="Permanent link">&para;</a></h3>
+<p>For <code>ADD</code> and <code>SUBTRACT</code>, the result has enough integer digits to hold the sum or difference and enough decimal digits to hold the operand with the most decimal places. The final result is then stored in the receiving item, with truncation or rounding applied.</p>
+<p>For <code>MULTIPLY</code>, the number of integer digits in the intermediate result equals the sum of the integer digits of the two operands, and the number of decimal digits equals the sum of the decimal digits.</p>
+<p>For <code>DIVIDE</code>, the intermediate quotient has a number of decimal digits that is implementation-defined but sufficient for the precision of the receiving item.</p>
+<h3 id="compute-statements">COMPUTE Statements<a class="headerlink" href="#compute-statements" title="Permanent link">&para;</a></h3>
+<p>The <code>COMPUTE</code> statement evaluates its expression left to right (respecting operator precedence), and each intermediate sub-result follows the rules of the corresponding operation. The key difference is that chained operations accumulate precision requirements, increasing the risk of intermediate overflow.</p>
+<div class="highlight"><pre><span></span><code><span class="c">*&gt; Ind</span><span class="nv">ividual</span><span class="w"> </span><span class="nv">statements</span><span class="p">:</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">intermediate</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">well-bounded</span><span class="p">.</span>
+<span class="c">MULTIP</span><span class="nv">LY</span><span class="w"> </span><span class="nv">WS-RATE</span><span class="w"> </span><span class="kp">BY</span><span class="w"> </span><span class="nv">WS-HOURS</span><span class="w"> </span><span class="kp">GIVING</span><span class="w"> </span><span class="nv">WS-GROSS</span>
+<span class="c">ADD WS</span><span class="o">-</span><span class="nv">BONUS</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-GROSS</span>
+<span class="c">SUBTRA</span><span class="nv">CT</span><span class="w"> </span><span class="nv">WS-DEDUCTIONS</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-GROSS</span><span class="w"> </span><span class="kp">GIVING</span><span class="w"> </span><span class="nv">WS-NET</span>
+
+<span class="c">*&gt; COM</span><span class="nv">PUTE</span><span class="p">:</span><span class="w"> </span><span class="nv">single</span><span class="w"> </span><span class="nv">expression</span><span class="p">,</span><span class="w"> </span><span class="nv">intermediate</span><span class="w"> </span><span class="nv">precision</span><span class="w"> </span><span class="nv">must</span><span class="w"> </span><span class="nv">cover</span><span class="w"> </span><span class="kp">all</span><span class="w"> </span><span class="nv">steps</span><span class="p">.</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-NET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-RATE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">WS-HOURS</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">WS-BONUS</span>
+<span class="c">      </span><span class="w">           </span><span class="o">-</span><span class="w"> </span><span class="nv">WS-DEDUCTIONS</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For simple operations, individual arithmetic statements and <code>COMPUTE</code> produce identical results. The distinction matters primarily for complex expressions where intermediate precision is a concern.</p>
+</div>
+<hr />
+<h2 id="decimal-point-alignment">Decimal Point Alignment<a class="headerlink" href="#decimal-point-alignment" title="Permanent link">&para;</a></h2>
+<p>When arithmetic is performed on operands with different numbers of decimal places, COBOL aligns values on their decimal points before the operation. This alignment is sometimes called "inner decimal point alignment."</p>
+<h3 id="alignment-rules">Alignment Rules<a class="headerlink" href="#alignment-rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Each operand is conceptually extended with leading or trailing zeros so that all operands have the same number of integer and decimal positions.</li>
+<li>The operation is performed on the aligned values.</li>
+<li>The result is stored in the receiving item, which may truncate high-order integer digits (if the item is too small) or low-order decimal digits (if the item has fewer decimal places).</li>
+</ol>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">A</span><span class="w">      </span><span class="kt">PIC 9(3)V9     </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">123</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">B</span><span class="w">      </span><span class="kt">PIC 9(2)V9(3)  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">45</span><span class="p">.</span><span class="mi">678</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="kt">PIC 9(3)V99</span><span class="p">.</span>
+
+<span class="c">ADD WS</span><span class="o">-</span><span class="nv">A</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-B</span><span class="w"> </span><span class="kp">GIVING</span><span class="w"> </span><span class="nv">WS-RESULT</span>
+<span class="c">*&gt; Ali</span><span class="nv">gnment</span><span class="p">:</span>
+<span class="c">*&gt;   W</span><span class="nv">S-A</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">123</span><span class="p">.</span><span class="mi">400</span>
+<span class="c">*&gt;   W</span><span class="nv">S-B</span><span class="w">  </span><span class="o">=</span><span class="w">  </span><span class="mi">045</span><span class="p">.</span><span class="mi">678</span>
+<span class="c">*&gt;   S</span><span class="nv">um</span><span class="w">   </span><span class="o">=</span><span class="w">  </span><span class="mi">169</span><span class="p">.</span><span class="mi">078</span>
+<span class="c">*&gt; Sto</span><span class="nv">red</span><span class="w"> </span><span class="kp">in</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="p">(</span><span class="kt">PIC 9(3)V99): </span><span class="w"> </span><span class="mi">169</span><span class="p">.</span><span class="mi">07  </span><span class="p">(</span><span class="nv">truncated</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="truncation-vs-rounding">Truncation vs Rounding<a class="headerlink" href="#truncation-vs-rounding" title="Permanent link">&para;</a></h2>
+<p>When the result of an arithmetic operation has more decimal digits than the receiving item can hold, the excess digits are either truncated or rounded, depending on whether the <code>ROUNDED</code> phrase is specified.</p>
+<h3 id="truncation-default">Truncation (Default)<a class="headerlink" href="#truncation-default" title="Permanent link">&para;</a></h3>
+<p>Without the <code>ROUNDED</code> phrase, excess low-order decimal digits are simply discarded. No adjustment is made to the remaining digits.</p>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="kt">PIC 9(3)V99</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100 </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span>
+<span class="c">*&gt; Exa</span><span class="nv">ct</span><span class="w"> </span><span class="nv">result</span><span class="p">:</span><span class="w">  </span><span class="mi">033</span><span class="p">.</span><span class="mi">33333</span><span class="p">...</span>
+<span class="c">*&gt; Sto</span><span class="nv">red</span><span class="p">:</span><span class="w">        </span><span class="mi">033</span><span class="p">.</span><span class="mi">33  </span><span class="p">(</span><span class="nv">truncated</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="rounded-phrase">ROUNDED Phrase<a class="headerlink" href="#rounded-phrase" title="Permanent link">&para;</a></h3>
+<p>When <code>ROUNDED</code> is specified, the absolute value of the excess portion is compared to half of the value of the last retained digit position. If the excess equals or exceeds half, the last retained digit is incremented by one.</p>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="kt">PIC 9(3)V99</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="kp">ROUNDED </span><span class="o">=</span><span class="w"> </span><span class="mi">100 </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span>
+<span class="c">*&gt; Exa</span><span class="nv">ct</span><span class="w"> </span><span class="nv">result</span><span class="p">:</span><span class="w">  </span><span class="mi">033</span><span class="p">.</span><span class="mi">33333</span><span class="p">...</span>
+<span class="c">*&gt; Sto</span><span class="nv">red</span><span class="p">:</span><span class="w">        </span><span class="mi">033</span><span class="p">.</span><span class="mi">33  </span><span class="p">(</span><span class="nv">excess</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">00333</span><span class="p">...</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">005</span><span class="p">,</span><span class="w"> </span><span class="nv">so</span><span class="w"> </span><span class="kp">no</span><span class="w"> </span><span class="nv">rounding</span><span class="w"> </span><span class="kp">up</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="kp">ROUNDED </span><span class="o">=</span><span class="w"> </span><span class="mi">200 </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span>
+<span class="c">*&gt; Exa</span><span class="nv">ct</span><span class="w"> </span><span class="nv">result</span><span class="p">:</span><span class="w">  </span><span class="mi">066</span><span class="p">.</span><span class="mi">66666</span><span class="p">...</span>
+<span class="c">*&gt; Sto</span><span class="nv">red</span><span class="p">:</span><span class="w">        </span><span class="mi">066</span><span class="p">.</span><span class="mi">67  </span><span class="p">(</span><span class="nv">excess</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">00666</span><span class="p">...</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">005</span><span class="p">,</span><span class="w"> </span><span class="nv">so</span><span class="w"> </span><span class="kp">rounded</span><span class="w"> </span><span class="kp">up</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="rounding-modes-cobol-2002">Rounding Modes (COBOL 2002+)<a class="headerlink" href="#rounding-modes-cobol-2002" title="Permanent link">&para;</a></h3>
+<p>COBOL 2002 introduced the <code>ROUNDED MODE IS</code> phrase, providing explicit control over rounding behavior. The following modes are available:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AWAY-FROM-ZERO</code></td>
+<td>Always rounds away from zero. <code>1.225</code> with 2 decimal places becomes <code>1.23</code>; <code>-1.225</code> becomes <code>-1.23</code>.</td>
+</tr>
+<tr>
+<td><code>NEAREST-AWAY-FROM-ZERO</code></td>
+<td>Rounds to nearest; ties round away from zero. This is the traditional "round half up" behavior.</td>
+</tr>
+<tr>
+<td><code>NEAREST-EVEN</code></td>
+<td>Rounds to nearest; ties round to the nearest even digit. Also known as banker's rounding. <code>1.225</code> becomes <code>1.22</code>; <code>1.235</code> becomes <code>1.24</code>.</td>
+</tr>
+<tr>
+<td><code>NEAREST-TOWARD-ZERO</code></td>
+<td>Rounds to nearest; ties round toward zero. <code>1.225</code> becomes <code>1.22</code>; <code>-1.225</code> becomes <code>-1.22</code>.</td>
+</tr>
+<tr>
+<td><code>PROHIBITED</code></td>
+<td>A size error is raised if the result has any excess digits that would require rounding.</td>
+</tr>
+<tr>
+<td><code>TOWARD-GREATER</code></td>
+<td>Rounds toward positive infinity. <code>1.221</code> becomes <code>1.23</code>; <code>-1.229</code> becomes <code>-1.22</code>.</td>
+</tr>
+<tr>
+<td><code>TOWARD-LESSER</code></td>
+<td>Rounds toward negative infinity. <code>1.229</code> becomes <code>1.22</code>; <code>-1.221</code> becomes <code>-1.23</code>.</td>
+</tr>
+<tr>
+<td><code>TRUNCATION</code></td>
+<td>Discards excess digits. Equivalent to omitting <code>ROUNDED</code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="kp">ROUNDED</span><span class="w"> </span><span class="kp">MODE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">NEAREST-EVEN</span>
+<span class="c">    = </span><span class="nv">WS-TOTAL</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-COUNT</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to COBOL 2002, the basic <code>ROUNDED</code> keyword uses an implementation-defined rounding mode, typically equivalent to NEAREST-AWAY-FROM-ZERO.</p>
+</div>
+<hr />
+<h2 id="on-size-error">ON SIZE ERROR<a class="headerlink" href="#on-size-error" title="Permanent link">&para;</a></h2>
+<p>A size error occurs when the result of an arithmetic operation cannot be stored in the receiving data item because the result has more integer digits than the receiving item provides. Division by zero also constitutes a size error.</p>
+<h3 id="what-constitutes-a-size-error">What Constitutes a Size Error<a class="headerlink" href="#what-constitutes-a-size-error" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Integer overflow:</strong> The magnitude of the result exceeds the capacity of the receiving item's integer portion. For example, storing the value <code>1000</code> in <code>PIC 9(3)V99</code> causes a size error because only three integer digits are available.</li>
+<li><strong>Division by zero:</strong> Any division where the divisor is zero.</li>
+<li><strong>PROHIBITED rounding mode:</strong> In COBOL 2002+, if the <code>ROUNDED MODE IS PROHIBITED</code> phrase is specified and the result would require rounding.</li>
+</ul>
+<h3 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h3>
+<p>When the ON SIZE ERROR phrase is specified and a size error occurs:</p>
+<ol>
+<li>The value of the receiving item is <strong>not modified</strong>.</li>
+<li>The imperative statement following ON SIZE ERROR is executed.</li>
+</ol>
+<p>When ON SIZE ERROR is <strong>not</strong> specified and a size error occurs, the result is <strong>undefined</strong>. The receiving item may contain a truncated value, garbage, or the program may abend.</p>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">SMALL</span><span class="w">  </span><span class="kt">PIC 99V99</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-SMALL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">999</span><span class="p">.</span><span class="mi">99</span>
+<span class="mi">    </span><span class="kp">ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Value too large for WS-SMALL&quot;</span>
+<span class="c">    NO</span><span class="nv">T</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Stored: &quot;</span><span class="w"> </span><span class="nv">WS-SMALL</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+<span class="c">*&gt; Dis</span><span class="nv">plays</span><span class="w"> </span><span class="s2">&quot;Value too large for WS-SMALL&quot;</span>
+<span class="c">*&gt; WS-</span><span class="nv">SMALL</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">unchanged</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A size error is <strong>not</strong> raised for loss of decimal precision. Storing <code>1.23456</code> in <code>PIC 9V99</code> stores <code>1.23</code> without a size error --- only the excess decimal digits are lost. Size errors apply only to the integer portion.</p>
+</div>
+<hr />
+<h2 id="ieee-754-floating-point-types-cobol-2014">IEEE 754 Floating-Point Types (COBOL 2014)<a class="headerlink" href="#ieee-754-floating-point-types-cobol-2014" title="Permanent link">&para;</a></h2>
+<p>COBOL 2014 introduced three floating-point <a href="../../data-division/usage/">USAGE</a> types that conform to the IEEE 754 standard. These types supplement the traditional fixed-point decimal model for use cases that require very large ranges or scientific computation.</p>
+<table>
+<thead>
+<tr>
+<th>USAGE</th>
+<th>IEEE 754 Format</th>
+<th>Approximate Range</th>
+<th>Significant Digits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FLOAT-BINARY-32</code></td>
+<td>Binary32 (single)</td>
+<td>~1.2 x 10^-38 to ~3.4 x 10^38</td>
+<td>~7 decimal digits</td>
+</tr>
+<tr>
+<td><code>FLOAT-BINARY-64</code></td>
+<td>Binary64 (double)</td>
+<td>~2.2 x 10^-308 to ~1.8 x 10^308</td>
+<td>~15 decimal digits</td>
+</tr>
+<tr>
+<td><code>FLOAT-BINARY-128</code></td>
+<td>Binary128 (quad)</td>
+<td>~3.4 x 10^-4932 to ~1.2 x 10^4932</td>
+<td>~34 decimal digits</td>
+</tr>
+<tr>
+<td><code>FLOAT-DECIMAL-16</code></td>
+<td>Decimal64</td>
+<td>~1 x 10^-383 to ~9.999... x 10^384</td>
+<td>16 decimal digits</td>
+</tr>
+<tr>
+<td><code>FLOAT-DECIMAL-34</code></td>
+<td>Decimal128</td>
+<td>~1 x 10^-6143 to ~9.999... x 10^6144</td>
+<td>34 decimal digits</td>
+</tr>
+<tr>
+<td><code>FLOAT-EXTENDED</code></td>
+<td>Implementation-defined</td>
+<td>Implementation-defined</td>
+<td>Implementation-defined</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">SCIENTIFIC</span><span class="w">   </span><span class="kp">USAGE</span><span class="w"> </span><span class="nv">FLOAT-BINARY-64</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">FINANCIAL</span><span class="w">    </span><span class="kp">USAGE</span><span class="w"> </span><span class="err">FLOAT-DECIMAL-34</span><span class="p">.</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Binary Floating-Point Precision</p>
+<p>The FLOAT-BINARY types use binary floating-point and are subject to the same representation errors as <code>double</code> in C or Java. The value <code>0.1</code> cannot be represented exactly in FLOAT-BINARY-64. For financial calculations, use fixed-point decimal items or FLOAT-DECIMAL types.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2014</p>
+<p>The IEEE 754 floating-point types were introduced in COBOL 2014. They are not available in COBOL 2002 or earlier standards.</p>
+</div>
+<hr />
+<h2 id="maximum-picture-sizes-and-digit-capacities">Maximum PICTURE Sizes and Digit Capacities<a class="headerlink" href="#maximum-picture-sizes-and-digit-capacities" title="Permanent link">&para;</a></h2>
+<p>The following table shows common <a href="../../data-division/picture/">PICTURE</a> patterns and their maximum representable values. The total number of digit positions (<code>9</code> symbols) determines the precision of the item.</p>
+<table>
+<thead>
+<tr>
+<th>PICTURE</th>
+<th>Integer Digits</th>
+<th>Decimal Digits</th>
+<th>Total Digits</th>
+<th>Maximum Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9(4)</code></td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>9999</td>
+</tr>
+<tr>
+<td><code>9(9)</code></td>
+<td>9</td>
+<td>0</td>
+<td>9</td>
+<td>999,999,999</td>
+</tr>
+<tr>
+<td><code>9(18)</code></td>
+<td>18</td>
+<td>0</td>
+<td>18</td>
+<td>999,999,999,999,999,999</td>
+</tr>
+<tr>
+<td><code>9(5)V99</code></td>
+<td>5</td>
+<td>2</td>
+<td>7</td>
+<td>99999.99</td>
+</tr>
+<tr>
+<td><code>9(7)V9(4)</code></td>
+<td>7</td>
+<td>4</td>
+<td>11</td>
+<td>9999999.9999</td>
+</tr>
+<tr>
+<td><code>S9(9)V99</code></td>
+<td>9</td>
+<td>2</td>
+<td>11</td>
+<td>+999,999,999.99</td>
+</tr>
+<tr>
+<td><code>S9(15)V9(3)</code></td>
+<td>15</td>
+<td>3</td>
+<td>18</td>
+<td>+999,999,999,999,999.999</td>
+</tr>
+<tr>
+<td><code>S9(13)V9(5)</code></td>
+<td>13</td>
+<td>5</td>
+<td>18</td>
+<td>+9,999,999,999,999.99999</td>
+</tr>
+<tr>
+<td><code>9(31)</code></td>
+<td>31</td>
+<td>0</td>
+<td>31</td>
+<td>9,999,999,999,999,999,999,999,999,999,999</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Under COBOL-85, the total digit count must not exceed 18. Under COBOL 2002 and later, the maximum is implementation-defined but commonly 31 or 38.</p>
+</div>
+<h3 id="scaling-with-p-symbol">Scaling with P Symbol<a class="headerlink" href="#scaling-with-p-symbol" title="Permanent link">&para;</a></h3>
+<p>The <code>P</code> symbol represents an assumed decimal scaling position that is not stored. It extends the range of a numeric item without consuming storage.</p>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">LARGE</span><span class="w">  </span><span class="kt">PIC 9(5)PPP</span><span class="p">.</span>
+<span class="c">*&gt; Rep</span><span class="nv">resents</span><span class="w"> </span><span class="kp">values</span><span class="w"> </span><span class="kp">from</span><span class="w"> </span><span class="mi">0 </span><span class="kp">to</span><span class="w"> </span><span class="mi">99999000 </span><span class="p">(</span><span class="kp">last</span><span class="w"> </span><span class="mi">3 </span><span class="nv">digits</span><span class="w"> </span><span class="nv">always</span><span class="w"> </span><span class="no">zero</span><span class="p">)</span>
+<span class="c">*&gt; Sto</span><span class="nv">red</span><span class="w"> </span><span class="kp">as</span><span class="w"> </span><span class="mi">5 </span><span class="nv">digits</span><span class="p">;</span><span class="w"> </span><span class="nv">effective</span><span class="w"> </span><span class="kp">value</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">multiplied</span><span class="w"> </span><span class="kp">by</span><span class="w"> </span><span class="mi">1000</span>
+
+<span class="c">01 WS-</span><span class="nv">TINY</span><span class="w">   </span><span class="kt">PIC PPP9(5)</span><span class="p">.</span>
+<span class="c">*&gt; Rep</span><span class="nv">resents</span><span class="w"> </span><span class="kp">values</span><span class="w"> </span><span class="kp">from</span><span class="w"> </span><span class="mi">0 </span><span class="kp">to</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">00099999</span>
+<span class="c">*&gt; Sto</span><span class="nv">red</span><span class="w"> </span><span class="kp">as</span><span class="w"> </span><span class="mi">5 </span><span class="nv">digits</span><span class="p">;</span><span class="w"> </span><span class="nv">effective</span><span class="w"> </span><span class="kp">value</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">divided</span><span class="w"> </span><span class="kp">by</span><span class="w"> </span><span class="mi">100000000</span>
+</code></pre></div>
+<p>Each <code>P</code> counts toward the 18-digit (or implementation-defined) limit.</p>
+<hr />
+<h2 id="practical-examples">Practical Examples<a class="headerlink" href="#practical-examples" title="Permanent link">&para;</a></h2>
+<h3 id="avoiding-precision-loss-in-division">Avoiding Precision Loss in Division<a class="headerlink" href="#avoiding-precision-loss-in-division" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">AMOUNT</span><span class="w">   </span><span class="kt">PIC 9(7)V99    </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">1000000</span><span class="p">.</span><span class="mi">00</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">DIVISOR</span><span class="w">  </span><span class="kt">PIC 9(3)       </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">RESULT</span><span class="w">   </span><span class="kt">PIC 9(7)V9(4)</span><span class="p">.</span>
+
+<span class="c">*&gt; Res</span><span class="nv">ult</span><span class="w"> </span><span class="nv">field</span><span class="w"> </span><span class="nv">has</span><span class="w"> </span><span class="mi">4 </span><span class="nv">decimal</span><span class="w"> </span><span class="nv">places</span><span class="w"> </span><span class="kp">for</span><span class="w"> </span><span class="nv">better</span><span class="w"> </span><span class="nv">precision</span><span class="p">.</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-AMOUNT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-DIVISOR</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0333333</span><span class="p">.</span><span class="mi">3333  </span><span class="p">(</span><span class="nv">truncated</span><span class="w"> </span><span class="kp">after</span><span class="w"> </span><span class="mi">4 </span><span class="nv">decimal</span><span class="w"> </span><span class="nv">places</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-RESULT</span><span class="w"> </span><span class="kp">ROUNDED </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-AMOUNT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-DIVISOR</span>
+<span class="c">*&gt; WS-</span><span class="nv">RESULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0333333</span><span class="p">.</span><span class="mi">3333  </span><span class="p">(</span><span class="kp">same</span><span class="w"> </span><span class="nv">here</span><span class="p">;</span><span class="w"> </span><span class="mi">5</span><span class="nv">th</span><span class="w"> </span><span class="nv">digit</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="demonstrating-rounding-mode-differences-cobol-2002">Demonstrating Rounding Mode Differences (COBOL 2002)<a class="headerlink" href="#demonstrating-rounding-mode-differences-cobol-2002" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">VAL</span><span class="w">      </span><span class="kt">PIC 9V9(4)     </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">2250</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">ROUND-A</span><span class="w">  </span><span class="kt">PIC 9V99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">ROUND-B</span><span class="w">  </span><span class="kt">PIC 9V99</span><span class="p">.</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-ROUND-A</span><span class="w"> </span><span class="kp">ROUNDED</span><span class="w"> </span><span class="kp">MODE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">NEAREST-AWAY-FROM-ZERO</span>
+<span class="c">    = </span><span class="nv">WS-VAL</span>
+<span class="c">*&gt; WS-</span><span class="nv">ROUND-A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">23  </span><span class="p">(</span><span class="nv">tie</span><span class="w"> </span><span class="nv">broken</span><span class="w"> </span><span class="nv">away</span><span class="w"> </span><span class="kp">from</span><span class="w"> </span><span class="no">zero</span><span class="p">)</span>
+
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-ROUND-B</span><span class="w"> </span><span class="kp">ROUNDED</span><span class="w"> </span><span class="kp">MODE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">NEAREST-EVEN</span>
+<span class="c">    = </span><span class="nv">WS-VAL</span>
+<span class="c">*&gt; WS-</span><span class="nv">ROUND-B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">22  </span><span class="p">(</span><span class="nv">tie</span><span class="w"> </span><span class="nv">broken</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="nv">nearest</span><span class="w"> </span><span class="nv">even</span><span class="w"> </span><span class="nv">digit</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="detecting-intermediate-overflow">Detecting Intermediate Overflow<a class="headerlink" href="#detecting-intermediate-overflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">BIG-A</span><span class="w">    </span><span class="kt">PIC 9(10)      </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">9999999999</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">BIG-B</span><span class="w">    </span><span class="kt">PIC 9(10)      </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">9999999999</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">SMALL-C</span><span class="w">  </span><span class="kt">PIC 9(10)      </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">9999999999</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">OUT</span><span class="w">      </span><span class="kt">PIC 9(10)</span><span class="p">.</span>
+
+<span class="c">*&gt; Thi</span><span class="nv">s</span><span class="w"> </span><span class="nv">may</span><span class="w"> </span><span class="nv">cause</span><span class="w"> </span><span class="nv">an</span><span class="w"> </span><span class="nv">intermediate</span><span class="w"> </span><span class="kp">overflow</span><span class="w"> </span><span class="kp">on</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">B</span><span class="p">,</span>
+<span class="c">*&gt; eve</span><span class="nv">n</span><span class="w"> </span><span class="nv">though</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="kp">final</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">approximately</span><span class="w"> </span><span class="ow">equal</span>
+<span class="c">*&gt; to </span><span class="nv">WS-BIG-A</span><span class="p">.</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-OUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">WS-BIG-A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">WS-BIG-B</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-SMALL-C</span>
+<span class="c">    ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Intermediate overflow&quot;</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+
+<span class="c">*&gt; Res</span><span class="nv">tructured</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="nv">avoid</span><span class="w"> </span><span class="nv">large</span><span class="w"> </span><span class="nv">intermediates</span><span class="p">:</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-OUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-BIG-A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nv">WS-BIG-B</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">WS-SMALL-C</span><span class="p">)</span>
+<span class="c">    ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Overflow&quot;</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+<span class="c">*&gt; WS-</span><span class="nv">OUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9999999999 </span><span class="p">(</span><span class="nv">approximately</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="picture-size-impact-on-calculation-accuracy">PICTURE Size Impact on Calculation Accuracy<a class="headerlink" href="#picture-size-impact-on-calculation-accuracy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">PRICE</span><span class="w">    </span><span class="kt">PIC 9(5)V99     </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">99999</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">QTY</span><span class="w">      </span><span class="kt">PIC 9(5)        </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">99999</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">TOTAL</span><span class="w">    </span><span class="kt">PIC 9(7)V99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">TOTAL-LG</span><span class="w"> </span><span class="kt">PIC 9(10)V99</span><span class="p">.</span>
+
+<span class="c">*&gt; WS-</span><span class="nv">TOTAL</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">too</span><span class="w"> </span><span class="nv">small</span><span class="p">:</span><span class="w"> </span><span class="mi">99999</span><span class="p">.</span><span class="mi">99 </span><span class="o">*</span><span class="w"> </span><span class="mi">99999 </span><span class="o">=</span><span class="w"> </span><span class="mi">9999899900</span><span class="p">.</span><span class="mi">01</span>
+<span class="c">*&gt; Thi</span><span class="nv">s</span><span class="w"> </span><span class="nv">exceeds</span><span class="w"> </span><span class="kt">PIC 9(7)V99 </span><span class="p">(</span><span class="nf">max</span><span class="w"> </span><span class="mi">9999999</span><span class="p">.</span><span class="mi">99</span><span class="p">).</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-TOTAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-PRICE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">WS-QTY</span>
+<span class="c">    ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Result exceeds field capacity&quot;</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+
+<span class="c">*&gt; WS-</span><span class="nv">TOTAL-LG</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">large</span><span class="w"> </span><span class="nv">enough</span><span class="w"> </span><span class="kp">to</span><span class="w"> </span><span class="nv">hold</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">result</span><span class="p">.</span>
+<span class="c">COMPUT</span><span class="nv">E</span><span class="w"> </span><span class="nv">WS-TOTAL-LG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-PRICE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">WS-QTY</span>
+<span class="c">    ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Overflow&quot;</span>
+<span class="c">    NO</span><span class="nv">T</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">SIZE</span><span class="w"> </span><span class="kp">ERROR</span>
+<span class="kp">       </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Total: &quot;</span><span class="w"> </span><span class="nv">WS-TOTAL-LG</span>
+<span class="c">END-CO</span><span class="nv">MPUTE</span>
+<span class="c">*&gt; Dis</span><span class="nv">plays</span><span class="p">:</span><span class="w"> </span><span class="nv">Total</span><span class="p">:</span><span class="w"> </span><span class="mi">9999899900</span><span class="p">.</span><span class="mi">01</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../data-division/picture/">PICTURE Clause</a> --- defines numeric precision and format</li>
+<li><a href="../../data-division/usage/">USAGE Clause</a> --- specifies internal storage representation</li>
+<li><a href="../../procedure-division/arithmetic/compute/">COMPUTE</a> --- evaluates arithmetic expressions</li>
+<li><a href="../../procedure-division/arithmetic/add/">ADD</a> --- adds numeric operands</li>
+<li><a href="../../procedure-division/arithmetic/subtract/">SUBTRACT</a> --- subtracts numeric operands</li>
+<li><a href="../../procedure-division/arithmetic/multiply/">MULTIPLY</a> --- multiplies numeric operands</li>
+<li><a href="../../procedure-division/arithmetic/divide/">DIVIDE</a> --- divides numeric operands</li>
+<li><a href="../../intrinsic-functions/">Intrinsic Functions</a> --- built-in numeric and mathematical functions</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

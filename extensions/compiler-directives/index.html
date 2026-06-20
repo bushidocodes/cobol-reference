@@ -1,0 +1,5970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../interop/">
+      
+      
+        <link rel="next" href="../vendor-extensions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Compiler Directives - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#compiler-directives" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compiler Directives
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-division/screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-directive-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vendor Directive Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-directives_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Directives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;DEFINE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-end-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;IF / &gt;&gt;ELSE / &gt;&gt;END-IF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-when-end-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;EVALUATE / &gt;&gt;WHEN / &gt;&gt;END-EVALUATE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;SOURCE FORMAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;TURN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;DISPLAY
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vendor-specific-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vendor-Specific Directives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendor-Specific Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibm-enterprise-cobol-cbl-and-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM Enterprise COBOL -- CBL and PROCESS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-focus-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro Focus -- $SET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnucobol-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GnuCOBOL Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-compilation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional Compilation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Compilation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-specific-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-Specific Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-toggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Toggles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-release-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug / Release Builds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiler-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-debugging-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Debugging Lines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-platform-source-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Platform Source File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibm-cbl-with-compiler-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM CBL with Compiler Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-focus-set-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro Focus $SET Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-directive-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vendor Directive Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-directives_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Directives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;DEFINE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-end-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;IF / &gt;&gt;ELSE / &gt;&gt;END-IF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-when-end-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;EVALUATE / &gt;&gt;WHEN / &gt;&gt;END-EVALUATE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;SOURCE FORMAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;TURN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &gt;&gt;DISPLAY
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vendor-specific-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vendor-Specific Directives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendor-Specific Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibm-enterprise-cobol-cbl-and-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM Enterprise COBOL -- CBL and PROCESS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-focus-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro Focus -- $SET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnucobol-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GnuCOBOL Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-compilation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional Compilation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Compilation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-specific-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-Specific Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-toggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Toggles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-release-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug / Release Builds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiler-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-debugging-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Debugging Lines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-platform-source-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Platform Source File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibm-cbl-with-compiler-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM CBL with Compiler Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-focus-set-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Micro Focus $SET Directives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="compiler-directives">Compiler Directives<a class="headerlink" href="#compiler-directives" title="Permanent link">&para;</a></h1>
+<p>Compiler directives control conditional compilation, source format selection, and compiler behavior. The COBOL standard defines a set of directives beginning with <code>&gt;&gt;</code>, while vendors provide additional directive mechanisms.</p>
+<ul>
+<li><strong>Standard:</strong> COBOL 2002, COBOL 2014, COBOL 2023 (standard directives). Vendor directives are implementation-defined.</li>
+<li><strong>Category:</strong> Extension -- Compiler Control</li>
+</ul>
+<hr />
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<h3 id="standard-directives">Standard Directives<a class="headerlink" href="#standard-directives" title="Permanent link">&para;</a></h3>
+<p>Standard compiler directives begin with <code>&gt;&gt;</code> in Area A or Area B (the <code>&gt;&gt;</code> must be the first non-space characters on the line, optionally preceded by spaces). They are processed before compilation and do not generate executable code.</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">directive-name</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="nv">literal</span>
+<span class="c">&gt;&gt;IF c</span><span class="nv">ondition</span>
+<span class="c">&gt;&gt;ELSE</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+<span class="c">&gt;&gt;EVAL</span><span class="nv">UATE</span><span class="w"> </span><span class="nv">directive-expression</span>
+<span class="c">&gt;&gt;WHEN</span><span class="w"> </span><span class="kp">value</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">EVALUATE</span>
+<span class="c">&gt;&gt;SOUR</span><span class="nv">CE</span><span class="w"> </span><span class="kp">FORMAT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">format-type</span>
+<span class="c">&gt;&gt;TURN</span><span class="w"> </span><span class="nv">exception-name</span><span class="w"> </span><span class="nv">CHECKING</span><span class="w"> </span><span class="kp">ON</span><span class="err">|</span><span class="kp">OFF</span>
+<span class="c">&gt;&gt;DISP</span><span class="nv">LAY</span><span class="w"> </span><span class="err">text</span>
+</code></pre></div>
+<h3 id="vendor-directive-syntax">Vendor Directive Syntax<a class="headerlink" href="#vendor-directive-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">$SET d</span><span class="nv">irective</span><span class="w">           </span><span class="c">*&gt; Micro Focus</span>
+<span class="c">CBL op</span><span class="nv">tion-list</span><span class="w">          </span><span class="c">*&gt; IBM (before IDENTIFICATION DIVISION)</span>
+<span class="c">PROCES</span><span class="nv">S</span><span class="w"> </span><span class="nv">option-list</span><span class="w">      </span><span class="c">*&gt; IBM (before IDENTIFICATION DIVISION)</span>
+<span class="c">&gt;&gt;D de</span><span class="nv">bugging-line</span><span class="w">       </span><span class="c">*&gt; Standard debugging indicator</span>
+</code></pre></div>
+<hr />
+<h2 id="standard-directives_1">Standard Directives<a class="headerlink" href="#standard-directives_1" title="Permanent link">&para;</a></h2>
+<h3 id="define">&gt;&gt;DEFINE<a class="headerlink" href="#define" title="Permanent link">&para;</a></h3>
+<p>The <code>&gt;&gt;DEFINE</code> directive defines a compile-time constant for use in conditional compilation:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">USE-DB2</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="mi">1</span>
+<span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">PLATFORM</span><span class="w"> </span><span class="kp">AS </span><span class="s2">&quot;ZOS&quot;</span>
+<span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">MAX-RECORDS</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="mi">10000</span>
+</code></pre></div>
+<p>A defined name may be tested with <code>&gt;&gt;IF</code> and related directives. Redefinition of an already-defined name replaces the previous value.</p>
+<p>To undefine a name:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">USE-DB2</span><span class="w"> </span><span class="kp">OFF</span>
+</code></pre></div>
+<h3 id="if-else-end-if">&gt;&gt;IF / &gt;&gt;ELSE / &gt;&gt;END-IF<a class="headerlink" href="#if-else-end-if" title="Permanent link">&para;</a></h3>
+<p>The <code>&gt;&gt;IF</code> directive conditionally includes or excludes source lines based on compile-time conditions:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;IF U</span><span class="nv">SE-DB2</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">    EX</span><span class="nv">EC</span><span class="w"> </span><span class="nv">SQL</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="w"> </span><span class="nv">SQLCA</span><span class="w"> </span><span class="nv">END-EXEC</span>
+<span class="c">&gt;&gt;ELSE</span>
+<span class="c">    01</span><span class="w">  </span><span class="nv">WS-STATUS</span><span class="w">  </span><span class="kt">PIC X(2)</span><span class="p">.</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+</code></pre></div>
+<p>Supported conditions:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name IS DEFINED</code></td>
+<td>True if <code>name</code> has been defined with <code>&gt;&gt;DEFINE</code></td>
+</tr>
+<tr>
+<td><code>name IS NOT DEFINED</code></td>
+<td>True if <code>name</code> has not been defined</td>
+</tr>
+<tr>
+<td><code>name = literal</code></td>
+<td>True if the value of <code>name</code> equals the literal</td>
+</tr>
+<tr>
+<td><code>name &gt; literal</code></td>
+<td>True if the value of <code>name</code> is greater than the literal</td>
+</tr>
+<tr>
+<td><code>name &lt; literal</code></td>
+<td>True if the value of <code>name</code> is less than the literal</td>
+</tr>
+<tr>
+<td><code>name &gt;= literal</code></td>
+<td>True if the value of <code>name</code> is greater than or equal to the literal</td>
+</tr>
+<tr>
+<td><code>name &lt;= literal</code></td>
+<td>True if the value of <code>name</code> is less than or equal to the literal</td>
+</tr>
+</tbody>
+</table>
+<p>Conditions may be combined with <code>AND</code> and <code>OR</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;IF P</span><span class="nv">LATFORM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ZOS&quot;</span><span class="w"> </span><span class="ow">AND</span><span class="w"> </span><span class="nv">USE-DB2</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">    EX</span><span class="nv">EC</span><span class="w"> </span><span class="nv">SQL</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="w"> </span><span class="nv">SQLCA</span><span class="w"> </span><span class="nv">END-EXEC</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+</code></pre></div>
+<h3 id="evaluate-when-end-evaluate">&gt;&gt;EVALUATE / &gt;&gt;WHEN / &gt;&gt;END-EVALUATE<a class="headerlink" href="#evaluate-when-end-evaluate" title="Permanent link">&para;</a></h3>
+<p>The <code>&gt;&gt;EVALUATE</code> directive provides multi-way conditional compilation:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;EVAL</span><span class="nv">UATE</span><span class="w"> </span><span class="nv">PLATFORM</span>
+<span class="c">&gt;&gt;WHEN</span><span class="w"> </span><span class="s2">&quot;ZOS&quot;</span>
+<span class="c">    EX</span><span class="nv">EC</span><span class="w"> </span><span class="nv">SQL</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="w"> </span><span class="nv">SQLCA</span><span class="w"> </span><span class="nv">END-EXEC</span>
+<span class="c">&gt;&gt;WHEN</span><span class="w"> </span><span class="s2">&quot;UNIX&quot;</span>
+<span class="c">    CO</span><span class="nv">PY</span><span class="w"> </span><span class="s2">&quot;sqlca-unix.cpy&quot;</span><span class="p">.</span>
+<span class="c">&gt;&gt;WHEN</span><span class="w"> </span><span class="s2">&quot;WINDOWS&quot;</span>
+<span class="c">    CO</span><span class="nv">PY</span><span class="w"> </span><span class="s2">&quot;sqlca-win.cpy&quot;</span><span class="p">.</span>
+<span class="c">&gt;&gt;WHEN</span><span class="w"> </span><span class="kp">OTHER</span>
+<span class="kp">   </span><span class="w"> </span><span class="kp">COPY </span><span class="s2">&quot;sqlca-generic.cpy&quot;</span><span class="p">.</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">EVALUATE</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The <code>&gt;&gt;EVALUATE</code> directive was introduced in COBOL 2002. Not all compilers support it. Use <code>&gt;&gt;IF</code> / <code>&gt;&gt;ELSE</code> / <code>&gt;&gt;END-IF</code> chains for broader compatibility.</p>
+</div>
+<h3 id="source-format">&gt;&gt;SOURCE FORMAT<a class="headerlink" href="#source-format" title="Permanent link">&para;</a></h3>
+<p>The <code>&gt;&gt;SOURCE FORMAT</code> directive selects the source format for subsequent lines:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;SOUR</span><span class="nv">CE</span><span class="w"> </span><span class="kp">FORMAT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">FIXED</span>
+<span class="c">&gt;&gt;SOUR</span><span class="nv">CE</span><span class="w"> </span><span class="kp">FORMAT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kr">FREE</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FIXED</code></td>
+<td>Traditional fixed-format: columns 1-6 are the sequence area, column 7 is the indicator area, columns 8-11 are Area A, columns 12-72 are Area B.</td>
+</tr>
+<tr>
+<td><code>FREE</code></td>
+<td>Free-format: no column restrictions. Statements may begin in any column. Line length is implementation-defined (typically up to 255 characters).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The <code>&gt;&gt;SOURCE FORMAT</code> directive was standardized in COBOL 2002. It allows a program to switch between fixed and free format within a single source file.</p>
+</div>
+<h3 id="turn">&gt;&gt;TURN<a class="headerlink" href="#turn" title="Permanent link">&para;</a></h3>
+<p>The <code>&gt;&gt;TURN</code> directive enables or disables compile-time checking for specific exception conditions:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;TURN</span><span class="w"> </span><span class="nv">EC-BOUND-SUBSCRIPT</span><span class="w"> </span><span class="nv">CHECKING</span><span class="w"> </span><span class="kp">ON</span>
+<span class="c">&gt;&gt;TURN</span><span class="w"> </span><span class="nv">EC-SIZE-OVERFLOW</span><span class="w"> </span><span class="nv">CHECKING</span><span class="w"> </span><span class="kp">OFF</span>
+<span class="c">&gt;&gt;TURN</span><span class="w"> </span><span class="kp">ALL</span><span class="w"> </span><span class="nv">CHECKING</span><span class="w"> </span><span class="kp">ON</span>
+</code></pre></div>
+<p>Exception condition names follow the <code>EC-</code> prefix convention defined by the COBOL standard (e.g., <code>EC-BOUND-SUBSCRIPT</code>, <code>EC-SIZE-OVERFLOW</code>, <code>EC-DATA-INCOMPATIBLE</code>).</p>
+<p>When checking is enabled, the runtime raises the specified exception condition when the error occurs. When checking is disabled, the behavior for that condition is undefined.</p>
+<div class="admonition note">
+<p class="admonition-title">COBOL 2002</p>
+<p>The <code>&gt;&gt;TURN</code> directive and the exception condition model were introduced in COBOL 2002. Support varies by compiler.</p>
+</div>
+<h3 id="display">&gt;&gt;DISPLAY<a class="headerlink" href="#display" title="Permanent link">&para;</a></h3>
+<p>The <code>&gt;&gt;DISPLAY</code> directive outputs a message during compilation:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DISP</span><span class="nv">LAY</span><span class="w"> </span><span class="s2">&quot;Compiling with DB2 support enabled&quot;</span>
+</code></pre></div>
+<p>This is useful for confirming which conditional compilation paths are active.</p>
+<hr />
+<h2 id="vendor-specific-directives">Vendor-Specific Directives<a class="headerlink" href="#vendor-specific-directives" title="Permanent link">&para;</a></h2>
+<h3 id="ibm-enterprise-cobol-cbl-and-process">IBM Enterprise COBOL -- CBL and PROCESS<a class="headerlink" href="#ibm-enterprise-cobol-cbl-and-process" title="Permanent link">&para;</a></h3>
+<p>The <code>CBL</code> (or <code>PROCESS</code>) statement specifies compiler options and must appear before the <code>IDENTIFICATION DIVISION</code> header:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="nv">CBL</span><span class="w"> </span><span class="nv">RENT</span><span class="p">,</span><span class="nv">APOST</span><span class="p">,</span><span class="nv">MAP</span><span class="p">,</span><span class="nv">XREF</span><span class="p">,</span><span class="nv">OFFSET</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">MYPROGRAM</span><span class="p">.</span>
+</code></pre></div>
+<p>Common IBM compiler options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RENT</code></td>
+<td>Generate reentrant code</td>
+</tr>
+<tr>
+<td><code>APOST</code></td>
+<td>Use apostrophe as literal delimiter</td>
+</tr>
+<tr>
+<td><code>QUOTE</code></td>
+<td>Use quotation mark as literal delimiter</td>
+</tr>
+<tr>
+<td><code>MAP</code></td>
+<td>Produce a Data Division map</td>
+</tr>
+<tr>
+<td><code>XREF</code></td>
+<td>Produce a cross-reference listing</td>
+</tr>
+<tr>
+<td><code>OFFSET</code></td>
+<td>Produce a condensed procedure listing</td>
+</tr>
+<tr>
+<td><code>OPTIMIZE</code></td>
+<td>Enable optimization</td>
+</tr>
+<tr>
+<td><code>SQL("DB2")</code></td>
+<td>Specify the SQL precompiler to use</td>
+</tr>
+<tr>
+<td><code>CICS</code></td>
+<td>Enable CICS command translation</td>
+</tr>
+<tr>
+<td><code>DBCS</code></td>
+<td>Enable double-byte character set support</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">CBL Placement</p>
+<p>The <code>CBL</code> or <code>PROCESS</code> statement must appear on a line before the <code>IDENTIFICATION DIVISION</code>. If placed elsewhere, the compiler ignores it or produces an error.</p>
+</div>
+<h3 id="micro-focus-set">Micro Focus -- $SET<a class="headerlink" href="#micro-focus-set" title="Permanent link">&para;</a></h3>
+<p>The <code>$SET</code> directive controls Micro Focus compiler behavior and may appear anywhere in the source:</p>
+<div class="highlight"><pre><span></span><code><span class="c">$SET S</span><span class="nv">OURCEFORMAT</span><span class="s2">&quot;FREE&quot;</span>
+<span class="c">$SET D</span><span class="nv">IALECT</span><span class="s2">&quot;MF&quot;</span>
+<span class="c">$SET I</span><span class="nv">LUSING</span><span class="s2">&quot;System&quot;</span>
+<span class="c">$SET A</span><span class="nv">SSIGN</span><span class="s2">&quot;EXTERNAL&quot;</span>
+<span class="c">$SET C</span><span class="nv">OMP5</span><span class="s2">&quot;2&quot;</span>
+</code></pre></div>
+<p>Common <code>$SET</code> directives:</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SOURCEFORMAT"FREE"</code></td>
+<td>Switch to free-format source</td>
+</tr>
+<tr>
+<td><code>SOURCEFORMAT"FIXED"</code></td>
+<td>Switch to fixed-format source</td>
+</tr>
+<tr>
+<td><code>DIALECT"MF"</code></td>
+<td>Use Micro Focus dialect rules</td>
+</tr>
+<tr>
+<td><code>DIALECT"ENTCOBOL"</code></td>
+<td>Emulate IBM Enterprise COBOL behavior</td>
+</tr>
+<tr>
+<td><code>ILUSING"namespace"</code></td>
+<td>Import a .NET namespace (managed COBOL)</td>
+</tr>
+<tr>
+<td><code>ASSIGN"EXTERNAL"</code></td>
+<td>External file assignment semantics</td>
+</tr>
+<tr>
+<td><code>COMP5"2"</code></td>
+<td>COMP-5 storage behavior option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gnucobol-directives">GnuCOBOL Directives<a class="headerlink" href="#gnucobol-directives" title="Permanent link">&para;</a></h3>
+<p>GnuCOBOL supports standard <code>&gt;&gt;</code> directives and additional configuration through the command line and configuration files:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;SOUR</span><span class="nv">CE</span><span class="w"> </span><span class="kp">FORMAT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kr">FREE</span>
+<span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">GC-VERSION</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="mi">3</span>
+<span class="c">&gt;&gt;IF G</span><span class="nv">C-VERSION</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+<span class="mi">    </span><span class="c">*&gt; GnuCOBOL 3.x specific code</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+</code></pre></div>
+<p>GnuCOBOL compiler flags that affect source processing:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-free</code></td>
+<td>Compile in free format</td>
+</tr>
+<tr>
+<td><code>-fixed</code></td>
+<td>Compile in fixed format</td>
+</tr>
+<tr>
+<td><code>-std=cobol2014</code></td>
+<td>Enforce COBOL 2014 standard</td>
+</tr>
+<tr>
+<td><code>-std=ibm</code></td>
+<td>Emulate IBM COBOL dialect</td>
+</tr>
+<tr>
+<td><code>-std=mf</code></td>
+<td>Emulate Micro Focus dialect</td>
+</tr>
+<tr>
+<td><code>-D name=value</code></td>
+<td>Define a compile-time constant</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conditional-compilation-patterns">Conditional Compilation Patterns<a class="headerlink" href="#conditional-compilation-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="platform-specific-code">Platform-Specific Code<a class="headerlink" href="#platform-specific-code" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">PLATFORM</span><span class="w"> </span><span class="kp">AS </span><span class="s2">&quot;ZOS&quot;</span>
+
+<span class="c">&gt;&gt;IF P</span><span class="nv">LATFORM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ZOS&quot;</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-MESSAGE</span><span class="w"> </span><span class="kp">UPON</span><span class="w"> </span><span class="nv">SYSOUT</span>
+<span class="c">&gt;&gt;ELSE</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-MESSAGE</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+</code></pre></div>
+<h3 id="feature-toggles">Feature Toggles<a class="headerlink" href="#feature-toggles" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">USE-DB2</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="mi">1</span>
+<span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">USE-LOGGING</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="mi">       </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">&gt;&gt;IF U</span><span class="nv">SE-DB2</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">EXEC</span><span class="w"> </span><span class="nv">SQL</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="w"> </span><span class="nv">SQLCA</span><span class="w"> </span><span class="nv">END-EXEC</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+
+<span class="c">&gt;&gt;IF U</span><span class="nv">SE-LOGGING</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-LOG-FILE-STATUS</span><span class="w">  </span><span class="kt">PIC X(2)</span><span class="p">.</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+</code></pre></div>
+<h3 id="debug-release-builds">Debug / Release Builds<a class="headerlink" href="#debug-release-builds" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">DEBUG-MODE</span><span class="w"> </span><span class="kp">AS</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="mi">       </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="nv">PROCESS-RECORD</span><span class="p">.</span>
+<span class="c">&gt;&gt;IF D</span><span class="nv">EBUG-MODE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;DEBUG: Processing record &quot;</span><span class="w"> </span><span class="nv">WS-RECORD-ID</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">VALIDATE-RECORD</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">UPDATE-DATABASE</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="compiler-detection">Compiler Detection<a class="headerlink" href="#compiler-detection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;IF G</span><span class="nv">CVERSION</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">    *&gt;</span><span class="w"> </span><span class="nv">GnuCOBOL-specific</span><span class="w"> </span><span class="kp">code</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+
+<span class="c">&gt;&gt;IF P</span><span class="o">-</span><span class="nv">IBM</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">DEFINED</span>
+<span class="c">    *&gt;</span><span class="w"> </span><span class="nv">IBM</span><span class="w"> </span><span class="nv">Enterprise</span><span class="w"> </span><span class="nv">COBOL-specific</span><span class="w"> </span><span class="kp">code</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Predefined Names</p>
+<p>Some compilers predefine names that can be tested with <code>&gt;&gt;IF</code>. GnuCOBOL defines <code>GCVERSION</code>. IBM predefines names based on compiler level. Consult the compiler documentation for available predefined names.</p>
+</div>
+<hr />
+<h2 id="standard-debugging-lines">Standard Debugging Lines<a class="headerlink" href="#standard-debugging-lines" title="Permanent link">&para;</a></h2>
+<p>Before the <code>&gt;&gt;DEFINE</code> / <code>&gt;&gt;IF</code> mechanism, the COBOL standard provided a simpler conditional compilation mechanism using the indicator column:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="nv">D</span><span class="w">    </span><span class="kr">DISPLAY </span><span class="s2">&quot;Debug: WS-COUNTER = &quot;</span><span class="w"> </span><span class="nv">WS-COUNTER</span>
+</code></pre></div>
+<p>A <code>D</code> in column 7 (fixed format) marks the line as a debugging line. These lines are compiled only when the <code>WITH DEBUGGING MODE</code> clause is specified in the SOURCE-COMPUTER paragraph:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kp">SOURCE-COMPUTER</span><span class="p">.</span><span class="w"> </span><span class="nv">IBM-370</span><span class="w"> </span><span class="kp">WITH</span><span class="w"> </span><span class="kp">DEBUGGING</span><span class="w"> </span><span class="kp">MODE</span><span class="p">.</span>
+</code></pre></div>
+<p>When <code>WITH DEBUGGING MODE</code> is absent, debugging lines are treated as comments.</p>
+<div class="admonition warning">
+<p class="admonition-title">Obsolete Feature</p>
+<p>The <code>WITH DEBUGGING MODE</code> clause and the <code>D</code> indicator were made obsolete in COBOL-85 and deleted in COBOL 2002. Use <code>&gt;&gt;IF</code> directives for conditional compilation in new programs.</p>
+</div>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="multi-platform-source-file">Multi-Platform Source File<a class="headerlink" href="#multi-platform-source-file" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">&gt;&gt;SOUR</span><span class="nv">CE</span><span class="w"> </span><span class="kp">FORMAT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kr">FREE</span>
+<span class="c">&gt;&gt;DEFI</span><span class="nv">NE</span><span class="w"> </span><span class="nv">PLATFORM</span><span class="w"> </span><span class="kp">AS </span><span class="s2">&quot;ZOS&quot;</span>
+
+<span class="c">IDENTI</span><span class="nv">FICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">PROGRA</span><span class="nv">M-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">MULTIPLATFORM</span><span class="p">.</span>
+
+<span class="c">DATA D</span><span class="nv">IVISION</span><span class="p">.</span>
+<span class="c">WORKIN</span><span class="nv">G-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">&gt;&gt;IF P</span><span class="nv">LATFORM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ZOS&quot;</span>
+<span class="c">    EX</span><span class="nv">EC</span><span class="w"> </span><span class="nv">SQL</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="w"> </span><span class="nv">SQLCA</span><span class="w"> </span><span class="nv">END-EXEC</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">MESSAGE</span><span class="w">  </span><span class="kt">PIC X(80)</span><span class="p">.</span>
+
+<span class="c">PROCED</span><span class="nv">URE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">MAIN-P</span><span class="nv">ARA</span><span class="p">.</span>
+<span class="c">    MO</span><span class="nv">VE</span><span class="w"> </span><span class="s2">&quot;Program started&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-MESSAGE</span>
+<span class="c">&gt;&gt;IF P</span><span class="nv">LATFORM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ZOS&quot;</span>
+<span class="c">    DI</span><span class="nv">SPLAY</span><span class="w"> </span><span class="nv">WS-MESSAGE</span><span class="w"> </span><span class="kp">UPON</span><span class="w"> </span><span class="nv">SYSOUT</span>
+<span class="c">&gt;&gt;ELSE</span>
+<span class="c">    DI</span><span class="nv">SPLAY</span><span class="w"> </span><span class="nv">WS-MESSAGE</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+
+<span class="c">&gt;&gt;IF P</span><span class="nv">LATFORM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ZOS&quot;</span>
+<span class="c">    EX</span><span class="nv">EC</span><span class="w"> </span><span class="nv">SQL</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">SELECT</span><span class="w"> </span><span class="nv">CURRENT</span><span class="w"> </span><span class="nv">TIMESTAMP</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">INTO </span><span class="p">:</span><span class="nv">WS-MESSAGE</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">SYSIBM</span><span class="p">.</span><span class="nv">SYSDUMMY1</span>
+<span class="c">    EN</span><span class="nv">D-EXEC</span>
+<span class="c">&gt;&gt;END-</span><span class="nv">IF</span>
+
+<span class="c">    ST</span><span class="nv">OP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="ibm-cbl-with-compiler-options">IBM CBL with Compiler Options<a class="headerlink" href="#ibm-cbl-with-compiler-options" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="nv">CBL</span><span class="w"> </span><span class="nv">RENT</span><span class="p">,</span><span class="nv">APOST</span><span class="p">,</span><span class="nv">MAP</span><span class="p">,</span><span class="nv">XREF</span><span class="p">,</span><span class="nv">SQL</span><span class="p">(</span><span class="s2">&quot;DB2&quot;</span><span class="p">),</span><span class="nv">CICS</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">IBMPROG</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">ENVIRONMENT</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">CONFIGURATION</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kp">SOURCE-COMPUTER</span><span class="p">.</span><span class="w"> </span><span class="nv">IBM-370</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">DATA</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="nv">EXEC</span><span class="w"> </span><span class="nv">SQL</span><span class="w"> </span><span class="nv">INCLUDE</span><span class="w"> </span><span class="nv">SQLCA</span><span class="w"> </span><span class="nv">END-EXEC</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-DATA</span><span class="w">  </span><span class="kt">PIC X(100)</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="nv">MAIN-PARA</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY </span><span class="s2">&quot;IBM program started&quot;</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="micro-focus-set-directives">Micro Focus $SET Directives<a class="headerlink" href="#micro-focus-set-directives" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">$SET S</span><span class="nv">OURCEFORMAT</span><span class="s2">&quot;FREE&quot;</span>
+<span class="c">$SET D</span><span class="nv">IALECT</span><span class="s2">&quot;MF&quot;</span>
+
+<span class="c">IDENTI</span><span class="nv">FICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">PROGRA</span><span class="nv">M-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">MFPROG</span><span class="p">.</span>
+
+<span class="c">DATA D</span><span class="nv">IVISION</span><span class="p">.</span>
+<span class="c">WORKIN</span><span class="nv">G-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">01  WS</span><span class="o">-</span><span class="nv">COUNTER</span><span class="w">  </span><span class="kt">PIC 9(4)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+
+<span class="c">PROCED</span><span class="nv">URE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">MAIN-P</span><span class="nv">ARA</span><span class="p">.</span>
+<span class="c">    AD</span><span class="nv">D</span><span class="w"> </span><span class="mi">1 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-COUNTER</span>
+<span class="c">    DI</span><span class="nv">SPLAY</span><span class="w"> </span><span class="s2">&quot;Counter: &quot;</span><span class="w"> </span><span class="nv">WS-COUNTER</span>
+<span class="c">    ST</span><span class="nv">OP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../vendor-extensions/">Vendor Extensions</a> -- vendor-specific compiler features and extensions</li>
+<li><a href="../embedded-sql/">Embedded SQL</a> -- SQL preprocessing interacts with compiler directives</li>
+<li><a href="../../procedure-division/program-linkage/call/">CALL Statement</a> -- generated code from directives often produces CALL statements</li>
+<li><a href="../../procedure-division/control-flow/perform/">PERFORM Statement</a> -- conditional compilation within procedure code</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
