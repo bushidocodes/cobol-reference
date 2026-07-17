@@ -1,1 +1,2 @@
+# Dependencies live in pyproject.toml. Prefer:  pip install -e .
 mkdocs-material
