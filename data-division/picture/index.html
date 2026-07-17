@@ -1,0 +1,7001 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../sd-entry/">
+      
+      
+        <link rel="next" href="../usage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PICTURE Clause - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#picture-clause" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PICTURE Clause
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repetition-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repetition Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#picture-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Picture Symbols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Categories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Categories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphabetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphabetic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphanumeric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphanumeric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphanumeric-edited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphanumeric Edited
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-symbols-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Symbols in Detail
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Symbols in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9-digit-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 -- Digit Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-character-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X -- Character Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-alphabetic-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A -- Alphabetic Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-assumed-decimal-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V -- Assumed Decimal Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-operational-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S -- Operational Sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-decimal-scaling-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P -- Decimal Scaling Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-symbols-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing Symbols in Detail
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Symbols in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#z-zero-suppression-with-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Z -- Zero Suppression with Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-zero-suppression-with-asterisk-check-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * -- Zero Suppression with Asterisk (Check Protection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-plus-sign-floating-or-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        + -- Plus Sign (Floating or Fixed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-minus-sign-floating-or-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - -- Minus Sign (Floating or Fixed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-and-db-credit-and-debit-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CR and DB -- Credit and Debit Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-currency-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        $ -- Currency Sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-decimal-point-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        . -- Decimal Point (Insertion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-comma-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        , -- Comma (Insertion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-space-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B -- Space Insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0-zero-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0 -- Zero Insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-slash-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        / -- Slash Insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#picture-string-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Picture String Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Picture String Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allowed Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prohibited-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prohibited Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-insertion-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating Insertion Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-precision-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Precision Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De-editing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprehensive Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited-items-zero-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited Items -- Zero Suppression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited-items-currency-and-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited Items -- Currency and Signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited-items-insertion-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited Items -- Insertion Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphanumeric-and-alphabetic-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphanumeric and Alphabetic Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-working-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Working Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repetition-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repetition Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#picture-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Picture Symbols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Categories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Categories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphabetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphabetic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphanumeric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphanumeric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphanumeric-edited" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphanumeric Edited
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-symbols-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Symbols in Detail
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Symbols in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9-digit-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 -- Digit Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-character-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X -- Character Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-alphabetic-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A -- Alphabetic Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-assumed-decimal-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V -- Assumed Decimal Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-operational-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S -- Operational Sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-decimal-scaling-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P -- Decimal Scaling Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-symbols-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing Symbols in Detail
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Symbols in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#z-zero-suppression-with-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Z -- Zero Suppression with Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-zero-suppression-with-asterisk-check-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * -- Zero Suppression with Asterisk (Check Protection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-plus-sign-floating-or-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        + -- Plus Sign (Floating or Fixed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-minus-sign-floating-or-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - -- Minus Sign (Floating or Fixed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-and-db-credit-and-debit-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CR and DB -- Credit and Debit Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-currency-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        $ -- Currency Sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-decimal-point-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        . -- Decimal Point (Insertion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-comma-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        , -- Comma (Insertion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-space-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B -- Space Insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0-zero-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0 -- Zero Insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-slash-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        / -- Slash Insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#picture-string-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Picture String Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Picture String Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allowed Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prohibited-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prohibited Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-insertion-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating Insertion Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-precision-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Precision Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De-editing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprehensive-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprehensive Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited-items-zero-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited Items -- Zero Suppression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited-items-currency-and-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited Items -- Currency and Signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-edited-items-insertion-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Edited Items -- Insertion Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphanumeric-and-alphabetic-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alphanumeric and Alphabetic Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-working-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Working Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="picture-clause">PICTURE Clause<a class="headerlink" href="#picture-clause" title="Permanent link">&para;</a></h1>
+<p>The PICTURE clause specifies the category, size, and editing characteristics of an elementary data item by means of a character string of picture symbols.</p>
+<p><strong>Standard:</strong> COBOL-60, COBOL-61, COBOL-61 Extended, COBOL-65, COBOL-68, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023</p>
+<hr />
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c">level-</span><span class="nv">number</span><span class="w">  </span><span class="nv">data-name</span><span class="w">  </span><span class="nv">PIC</span><span class="err">[</span><span class="nv">TURE</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="kp">IS</span><span class="err">]</span><span class="w">  </span><span class="nv">picture-string</span><span class="p">.</span>
+</code></pre></div>
+<p>The picture string is a sequence of picture symbols that together define the item's category, size, and editing format.</p>
+<h3 id="repetition-factor">Repetition Factor<a class="headerlink" href="#repetition-factor" title="Permanent link">&para;</a></h3>
+<p>Any symbol may be followed by a parenthesized integer to indicate repetition:</p>
+<div class="highlight"><pre><span></span><code>9(5)      is equivalent to   99999
+X(10)     is equivalent to   XXXXXXXXXX
+Z(4)9     is equivalent to   ZZZZ9
+</code></pre></div>
+<p>The maximum length of a picture string (after expansion of repetition factors) is 30 characters for COBOL-85, and implementation-defined but typically at least 50 for COBOL 2002 and later.</p>
+<hr />
+<h2 id="picture-symbols">Picture Symbols<a class="headerlink" href="#picture-symbols" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9</code></td>
+<td>Numeric digit position</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Any character position (alphanumeric)</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>Alphabetic character position (A-Z, a-z, space)</td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td>Assumed decimal point (not stored)</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>Operational sign (not stored as a character unless <code>SIGN IS SEPARATE</code>)</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>Assumed decimal scaling position</td>
+</tr>
+<tr>
+<td><code>Z</code></td>
+<td>Zero-suppression replacement with space</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Zero-suppression replacement with asterisk</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Replacement sign, positive = space or <code>+</code>, negative = <code>-</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Replacement sign, positive = space, negative = <code>-</code></td>
+</tr>
+<tr>
+<td><code>CR</code></td>
+<td>Credit symbol, appears only if value is negative</td>
+</tr>
+<tr>
+<td><code>DB</code></td>
+<td>Debit symbol, appears only if value is negative</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Currency sign (fixed or floating)</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Decimal point (insertion character)</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>Comma (insertion character)</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Space insertion character</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>Zero insertion character</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Slash insertion character</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="data-categories">Data Categories<a class="headerlink" href="#data-categories" title="Permanent link">&para;</a></h2>
+<p>The combination of picture symbols determines the data item's category. Each elementary item with a PICTURE clause belongs to exactly one category.</p>
+<h3 id="alphabetic">Alphabetic<a class="headerlink" href="#alphabetic" title="Permanent link">&para;</a></h3>
+<p>Contains only <code>A</code> symbols.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PIC A(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<p>Permits only the letters A-Z, a-z, and the space character.</p>
+<h3 id="alphanumeric">Alphanumeric<a class="headerlink" href="#alphanumeric" title="Permanent link">&para;</a></h3>
+<p>Contains only <code>X</code> symbols, or a combination of <code>A</code>, <code>X</code>, and <code>9</code> symbols used together (when the string contains more than one type among <code>A</code>, <code>X</code>, and <code>9</code> without editing symbols).</p>
+<div class="highlight"><pre><span></span><code><span class="c">PIC X(</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">PIC X(</span><span class="mi">5</span><span class="p">)</span><span class="mi">9</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">      </span><span class="c">*&gt; treated as alphanumeric, size 8</span>
+</code></pre></div>
+<p>Permits any character in the character set.</p>
+<h3 id="numeric">Numeric<a class="headerlink" href="#numeric" title="Permanent link">&para;</a></h3>
+<p>Contains only <code>9</code>, <code>V</code>, <code>S</code>, and <code>P</code> symbols.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PIC 9(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c">PIC S9</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="nv">V99</span>
+<span class="c">PIC S9</span><span class="mi">99</span><span class="nv">V9</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c">PIC PP</span><span class="nv">P999</span>
+</code></pre></div>
+<p>Numeric items are used in arithmetic. The maximum number of digit positions (<code>9</code> and <code>P</code> combined) is 18 in standard COBOL (31 or more in some implementations).</p>
+<h3 id="numeric-edited">Numeric Edited<a class="headerlink" href="#numeric-edited" title="Permanent link">&para;</a></h3>
+<p>Contains <code>9</code> symbols mixed with one or more editing symbols: <code>Z</code>, <code>*</code>, <code>+</code>, <code>-</code>, <code>CR</code>, <code>DB</code>, <code>$</code>, <code>.</code>, <code>,</code>, <code>B</code>, <code>0</code>, <code>/</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PIC ZZ</span><span class="nv">Z</span><span class="p">,</span><span class="nv">ZZ9</span><span class="p">.</span><span class="mi">99</span>
+<span class="c">PIC $$</span><span class="err">$</span><span class="p">,</span><span class="err">$$</span><span class="mi">9</span><span class="p">.</span><span class="mi">99</span><span class="nv">CR</span>
+<span class="c">PIC *(</span><span class="mi">6</span><span class="p">).</span><span class="o">**</span>
+</code></pre></div>
+<p>Numeric edited items are the result of editing a numeric value for display. They cannot be used as operands in arithmetic statements.</p>
+<h3 id="alphanumeric-edited">Alphanumeric Edited<a class="headerlink" href="#alphanumeric-edited" title="Permanent link">&para;</a></h3>
+<p>Contains <code>X</code>, <code>A</code>, or <code>9</code> symbols combined with <code>B</code>, <code>0</code>, or <code>/</code> insertion symbols, where the result is not a numeric edited category.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PIC X(</span><span class="mi">5</span><span class="p">)</span><span class="nv">BX</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c">PIC 99/99/9999</span>
+<span class="c">PIC XX</span><span class="o">-</span><span class="nv">XX</span><span class="w">       </span><span class="c">*&gt; not standard; implementation-dependent</span>
+</code></pre></div>
+<hr />
+<h2 id="core-symbols-in-detail">Core Symbols in Detail<a class="headerlink" href="#core-symbols-in-detail" title="Permanent link">&para;</a></h2>
+<h3 id="9-digit-position">9 -- Digit Position<a class="headerlink" href="#9-digit-position" title="Permanent link">&para;</a></h3>
+<p>Each <code>9</code> represents one decimal digit (0-9) in storage.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">QUANTITY</span><span class="w">   </span><span class="kt">PIC 9(4)</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Stored Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000</td>
+<td><code>0000</code></td>
+</tr>
+<tr>
+<td>0042</td>
+<td><code>0042</code></td>
+</tr>
+<tr>
+<td>9999</td>
+<td><code>9999</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="x-character-position">X -- Character Position<a class="headerlink" href="#x-character-position" title="Permanent link">&para;</a></h3>
+<p>Each <code>X</code> represents one character position that may contain any character.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">CUSTOMER-NAME</span><span class="w">   </span><span class="kt">PIC X(25)</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="a-alphabetic-position">A -- Alphabetic Position<a class="headerlink" href="#a-alphabetic-position" title="Permanent link">&para;</a></h3>
+<p>Each <code>A</code> represents one character position restricted to letters and spaces.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">STATE-ABBREV</span><span class="w">   </span><span class="kt">PIC AA</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="v-assumed-decimal-point">V -- Assumed Decimal Point<a class="headerlink" href="#v-assumed-decimal-point" title="Permanent link">&para;</a></h3>
+<p><code>V</code> marks the position of the decimal point within a numeric item. It does not occupy storage; it defines where the compiler assumes the decimal point to be for alignment in arithmetic.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">UNIT-PRICE</span><span class="w">   </span><span class="kt">PIC 9(5)V99</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Internal Value</th>
+<th>Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0012350</code></td>
+<td>123.50</td>
+</tr>
+<tr>
+<td><code>9999999</code></td>
+<td>99999.99</td>
+</tr>
+</tbody>
+</table>
+<p>A picture string may contain at most one <code>V</code>. If no <code>V</code> is specified, the decimal point is assumed to be to the right of the rightmost digit.</p>
+<h3 id="s-operational-sign">S -- Operational Sign<a class="headerlink" href="#s-operational-sign" title="Permanent link">&para;</a></h3>
+<p><code>S</code> indicates that the item has an operational sign (positive or negative). It must be the leftmost symbol in the picture string.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">NET-AMOUNT</span><span class="w">   </span><span class="kt">PIC S9(7)V99</span><span class="p">.</span>
+</code></pre></div>
+<p>Without <code>S</code>, a numeric item is treated as unsigned (absolute value).</p>
+<p><strong>Sign storage:</strong> By default, the sign is stored as an overpunch on the last (or first) digit, sharing storage with that digit (no extra byte). With <code>SIGN IS SEPARATE</code>, an additional byte is used:</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">SIGNED-AMT</span><span class="w">   </span><span class="kt">PIC S9(5) </span><span class="w"> </span><span class="kp">SIGN</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">LEADING</span><span class="w"> </span><span class="kp">SEPARATE</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Clause</th>
+<th>Storage Size for <code>S9(5)</code></th>
+<th>Example (value -123)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(default, trailing)</td>
+<td>5 bytes</td>
+<td><code>0012M</code> (EBCDIC overpunch)</td>
+</tr>
+<tr>
+<td>SIGN IS LEADING</td>
+<td>5 bytes</td>
+<td><code>J0123</code> (EBCDIC overpunch)</td>
+</tr>
+<tr>
+<td>SIGN IS TRAILING SEPARATE</td>
+<td>6 bytes</td>
+<td><code>00123-</code></td>
+</tr>
+<tr>
+<td>SIGN IS LEADING SEPARATE</td>
+<td>6 bytes</td>
+<td><code>-00123</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="p-decimal-scaling-position">P -- Decimal Scaling Position<a class="headerlink" href="#p-decimal-scaling-position" title="Permanent link">&para;</a></h3>
+<p><code>P</code> represents an assumed decimal scaling position. Each <code>P</code> implies a digit position that is not stored but is used for decimal alignment. <code>P</code> symbols must appear at the left end or right end of the digit string (but not both).</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">BIG-NUMBER</span><span class="w">   </span><span class="kt">PIC 9(3)PPP</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">TINY-NUMBER</span><span class="w">  </span><span class="kt">PIC PPP999</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Picture</th>
+<th>Size</th>
+<th>Value 123 Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9(3)PPP</code></td>
+<td>3 bytes</td>
+<td>123,000</td>
+</tr>
+<tr>
+<td><code>PPP999</code></td>
+<td>3 bytes</td>
+<td>0.000123</td>
+</tr>
+<tr>
+<td><code>PPP9</code></td>
+<td>1 byte</td>
+<td>0.0001 through 0.0009</td>
+</tr>
+</tbody>
+</table>
+<p><code>P</code> counts toward the maximum 18-digit limit. <code>V</code> is implied at the end farthest from the <code>9</code> symbols.</p>
+<hr />
+<h2 id="editing-symbols-in-detail">Editing Symbols in Detail<a class="headerlink" href="#editing-symbols-in-detail" title="Permanent link">&para;</a></h2>
+<p>Editing symbols transform a numeric value into a human-readable format. The edited result is stored in the data item.</p>
+<h3 id="z-zero-suppression-with-space">Z -- Zero Suppression with Space<a class="headerlink" href="#z-zero-suppression-with-space" title="Permanent link">&para;</a></h3>
+<p>Each <code>Z</code> represents a digit position where a leading zero is replaced by a space. <code>Z</code> symbols must be contiguous and must appear to the left of any <code>9</code> symbols (except in an all-<code>Z</code> picture).</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">EDITED-QTY</span><span class="w">   </span><span class="kt">PIC Z(4)9</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000</td>
+<td><code>0</code></td>
+<td>Rightmost <code>9</code> always shows</td>
+</tr>
+<tr>
+<td>00042</td>
+<td><code>42</code></td>
+<td>Leading zeros suppressed</td>
+</tr>
+<tr>
+<td>12345</td>
+<td><code>12345</code></td>
+<td>No suppression needed</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ALL-SUPPRESS</span><span class="w">   </span><span class="kt">PIC Z(5)</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000</td>
+<td><code></code> (all spaces)</td>
+</tr>
+<tr>
+<td>00042</td>
+<td><code>42</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="-zero-suppression-with-asterisk-check-protection">* -- Zero Suppression with Asterisk (Check Protection)<a class="headerlink" href="#-zero-suppression-with-asterisk-check-protection" title="Permanent link">&para;</a></h3>
+<p>Behaves like <code>Z</code>, but replaces leading zeros with <code>*</code> instead of spaces. Commonly used for check printing.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">CHECK-AMT</span><span class="w">   </span><span class="kt">PIC **(6).**</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000000</td>
+<td><code>******.**</code></td>
+</tr>
+<tr>
+<td>00012350</td>
+<td><code>***123.50</code></td>
+</tr>
+<tr>
+<td>12345678</td>
+<td><code>123456.78</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="-plus-sign-floating-or-fixed">+ -- Plus Sign (Floating or Fixed)<a class="headerlink" href="#-plus-sign-floating-or-fixed" title="Permanent link">&para;</a></h3>
+<p>As a <strong>fixed</strong> sign (single <code>+</code> at the beginning or end): displays <code>+</code> for positive values and <code>-</code> for negative values.</p>
+<p>As a <strong>floating</strong> sign (multiple contiguous <code>+</code> symbols): the sign floats to the position just left of the first significant digit; leading zeros are replaced by spaces.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">FIXED-SIGN</span><span class="w">    </span><span class="kt">PIC +9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">FLOAT-SIGN</span><span class="w">    </span><span class="kt">PIC +(6).99</span><span class="p">.</span>
+</code></pre></div>
+<p>Fixed <code>+9(5)</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+00042</td>
+<td><code>+00042</code></td>
+</tr>
+<tr>
+<td>-00042</td>
+<td><code>-00042</code></td>
+</tr>
+</tbody>
+</table>
+<p>Floating <code>+(6).99</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+0012350</td>
+<td><code>+123.50</code></td>
+</tr>
+<tr>
+<td>-0012350</td>
+<td><code>-123.50</code></td>
+</tr>
+<tr>
+<td>+0000000</td>
+<td><code>+.00</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="-minus-sign-floating-or-fixed">- -- Minus Sign (Floating or Fixed)<a class="headerlink" href="#-minus-sign-floating-or-fixed" title="Permanent link">&para;</a></h3>
+<p>As a <strong>fixed</strong> sign: displays <code>-</code> for negative values and a space for positive values.</p>
+<p>As a <strong>floating</strong> sign: behaves like floating <code>+</code> but positive values show a space instead of <code>+</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">FIXED-NEG</span><span class="w">    </span><span class="kt">PIC 9(5)-</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">FLOAT-NEG</span><span class="w">    </span><span class="kt">PIC -(6).99</span><span class="p">.</span>
+</code></pre></div>
+<p>Fixed <code>9(5)-</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+00042</td>
+<td><code>00042</code></td>
+</tr>
+<tr>
+<td>-00042</td>
+<td><code>00042-</code></td>
+</tr>
+</tbody>
+</table>
+<p>Floating <code>-(6).99</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+0012350</td>
+<td><code>123.50</code></td>
+</tr>
+<tr>
+<td>-0012350</td>
+<td><code>-123.50</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cr-and-db-credit-and-debit-symbols">CR and DB -- Credit and Debit Symbols<a class="headerlink" href="#cr-and-db-credit-and-debit-symbols" title="Permanent link">&para;</a></h3>
+<p><code>CR</code> and <code>DB</code> each occupy two character positions at the rightmost end of the picture string. They appear only when the value is negative; otherwise, two spaces are displayed.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">BALANCE-CR</span><span class="w">   </span><span class="kt">PIC 9(5).99CR</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">BALANCE-DB</span><span class="w">   </span><span class="kt">PIC 9(5).99DB</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th><code>9(5).99CR</code></th>
+<th><code>9(5).99DB</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+12350</td>
+<td><code>00123.50</code></td>
+<td><code>00123.50</code></td>
+</tr>
+<tr>
+<td>-12350</td>
+<td><code>00123.50CR</code></td>
+<td><code>00123.50DB</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="-currency-sign">$ -- Currency Sign<a class="headerlink" href="#-currency-sign" title="Permanent link">&para;</a></h3>
+<p>As a <strong>fixed</strong> currency sign (single <code>$</code> at the left): the <code>$</code> appears in a fixed position.</p>
+<p>As a <strong>floating</strong> currency sign (multiple contiguous <code>$</code> symbols): the <code>$</code> floats to the position just left of the first significant digit.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">FIXED-AMT</span><span class="w">    </span><span class="kt">PIC $9(5).99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">FLOAT-AMT</span><span class="w">    </span><span class="kt">PIC $$(5).99</span><span class="p">.</span>
+</code></pre></div>
+<p>Fixed <code>$9(5).99</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0012350</td>
+<td><code>$00123.50</code></td>
+</tr>
+<tr>
+<td>9999999</td>
+<td><code>$99999.99</code></td>
+</tr>
+</tbody>
+</table>
+<p>Floating <code>$$(5).99</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0012350</td>
+<td><code>$123.50</code></td>
+</tr>
+<tr>
+<td>0000050</td>
+<td><code>$0.50</code></td>
+</tr>
+<tr>
+<td>0000000</td>
+<td><code>$.00</code></td>
+</tr>
+</tbody>
+</table>
+<p>The actual currency character is determined by the <code>CURRENCY SIGN</code> clause in the <code>SPECIAL-NAMES</code> paragraph. The default is <code>$</code>.</p>
+<h3 id="-decimal-point-insertion">. -- Decimal Point (Insertion)<a class="headerlink" href="#-decimal-point-insertion" title="Permanent link">&para;</a></h3>
+<p>The period (<code>.</code>) inserts an actual decimal point character in the edited result and defines the decimal alignment position for the source value.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">EDITED-PRICE</span><span class="w">   </span><span class="kt">PIC 9(3).99</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12350</td>
+<td><code>123.50</code></td>
+</tr>
+<tr>
+<td>00099</td>
+<td><code>000.99</code></td>
+</tr>
+</tbody>
+</table>
+<p>Only one <code>.</code> may appear in a picture string. The <code>DECIMAL-POINT IS COMMA</code> clause in <code>SPECIAL-NAMES</code> swaps the roles of <code>.</code> and <code>,</code>.</p>
+<h3 id="-comma-insertion">, -- Comma (Insertion)<a class="headerlink" href="#-comma-insertion" title="Permanent link">&para;</a></h3>
+<p>The comma (<code>,</code>) inserts a literal comma in the output at its position. It is commonly used as a thousands separator.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">BIG-AMT</span><span class="w">   </span><span class="kt">PIC 9(3),9(3),9(3).99</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00100000000</td>
+<td><code>001,000,000.00</code></td>
+</tr>
+</tbody>
+</table>
+<p>When used with zero suppression, commas in suppressed positions are replaced by the suppression character (space or <code>*</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">SUPPRESS-AMT</span><span class="w">   </span><span class="kt">PIC ZZZ,ZZ9.99</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000000</td>
+<td><code>0.00</code></td>
+</tr>
+<tr>
+<td>00012350</td>
+<td><code>123.50</code></td>
+</tr>
+<tr>
+<td>12345678</td>
+<td><code>123,456.78</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-space-insertion">B -- Space Insertion<a class="headerlink" href="#b-space-insertion" title="Permanent link">&para;</a></h3>
+<p>Each <code>B</code> inserts a space at its position in the output.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">PHONE-FMT</span><span class="w">   </span><span class="kt">PIC 9(3)B9(3)B9(4)</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5551234567</td>
+<td><code>555 123 4567</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="0-zero-insertion">0 -- Zero Insertion<a class="headerlink" href="#0-zero-insertion" title="Permanent link">&para;</a></h3>
+<p>Each <code>0</code> inserts a literal zero at its position.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">EXTENDED-CODE</span><span class="w">   </span><span class="kt">PIC 9(5)00</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12345</td>
+<td><code>1234500</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="-slash-insertion">/ -- Slash Insertion<a class="headerlink" href="#-slash-insertion" title="Permanent link">&para;</a></h3>
+<p>Each <code>/</code> inserts a literal slash at its position. Commonly used for date formatting.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">DATE-FMT</span><span class="w">   </span><span class="kt">PIC 99/99/9999</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>03222026</td>
+<td><code>03/22/2026</code></td>
+</tr>
+<tr>
+<td>12311999</td>
+<td><code>12/31/1999</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="picture-string-rules">Picture String Rules<a class="headerlink" href="#picture-string-rules" title="Permanent link">&para;</a></h2>
+<h3 id="allowed-combinations">Allowed Combinations<a class="headerlink" href="#allowed-combinations" title="Permanent link">&para;</a></h3>
+<p>The following table summarizes which symbols may appear together in a single picture string:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Allowed Symbols</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alphabetic</td>
+<td><code>A</code> only</td>
+</tr>
+<tr>
+<td>Alphanumeric</td>
+<td><code>X</code> only (or a mix of <code>A</code>, <code>X</code>, <code>9</code> without editing symbols)</td>
+</tr>
+<tr>
+<td>Numeric</td>
+<td><code>9</code>, <code>V</code>, <code>S</code>, <code>P</code></td>
+</tr>
+<tr>
+<td>Numeric Edited</td>
+<td><code>9</code> with one or more of: <code>Z</code>, <code>*</code>, <code>+</code>, <code>-</code>, <code>CR</code>, <code>DB</code>, <code>$</code>, <code>.</code>, <code>,</code>, <code>B</code>, <code>0</code>, <code>/</code></td>
+</tr>
+<tr>
+<td>Alphanumeric Edited</td>
+<td><code>A</code>, <code>X</code>, or <code>9</code> with <code>B</code>, <code>0</code>, or <code>/</code> (and the result is not numeric edited)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prohibited-combinations">Prohibited Combinations<a class="headerlink" href="#prohibited-combinations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>Z</code> and <code>*</code> may not appear in the same picture string.</li>
+<li><code>+</code> and <code>-</code> may not appear in the same picture string.</li>
+<li><code>CR</code> and <code>DB</code> may not appear in the same picture string.</li>
+<li>Only one of <code>CR</code>, <code>DB</code>, <code>+</code>, or <code>-</code> may serve as a sign indicator (floating or fixed) in a given picture.</li>
+<li><code>S</code> may not appear in an edited picture.</li>
+<li>Only one <code>V</code> or <code>.</code> may appear.</li>
+<li><code>$</code> may not be used with floating <code>+</code>, floating <code>-</code>, or floating <code>Z</code>/<code>*</code> as the leftmost symbol in the same picture.</li>
+</ol>
+<h3 id="floating-insertion-symbols">Floating Insertion Symbols<a class="headerlink" href="#floating-insertion-symbols" title="Permanent link">&para;</a></h3>
+<p>A floating insertion symbol (<code>+</code>, <code>-</code>, <code>$</code>, <code>Z</code>, <code>*</code>) is one that appears two or more times consecutively before the first <code>9</code>. The floating string defines the positions in which leading zeros are suppressed, and the insertion character (<code>+</code>, <code>-</code>, or <code>$</code>) floats rightward to appear just before the first significant digit.</p>
+<p>The number of digit positions represented by the floating string is one fewer than the number of symbols in the string (one position is reserved for the inserted character itself).</p>
+<div class="highlight"><pre><span></span><code>$$$$$.99   -&gt; 4 digit positions + the $ = 5 symbols, represents up to 9999.99
++++,++9.99 -&gt; 4 digit positions (the + symbols after first), plus fixed positions
+</code></pre></div>
+<h3 id="size-calculation">Size Calculation<a class="headerlink" href="#size-calculation" title="Permanent link">&para;</a></h3>
+<p>The <strong>size</strong> of an edited item (in characters/bytes) is the number of character positions in the expanded picture string. Each symbol contributes to the size as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol(s)</th>
+<th>Bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9</code>, <code>A</code>, <code>X</code></td>
+<td>1 each</td>
+</tr>
+<tr>
+<td><code>Z</code>, <code>*</code></td>
+<td>1 each</td>
+</tr>
+<tr>
+<td><code>+</code>, <code>-</code> (each occurrence)</td>
+<td>1 each</td>
+</tr>
+<tr>
+<td><code>$</code> (each occurrence)</td>
+<td>1 each</td>
+</tr>
+<tr>
+<td><code>.</code>, <code>,</code></td>
+<td>1 each</td>
+</tr>
+<tr>
+<td><code>B</code>, <code>0</code>, <code>/</code></td>
+<td>1 each</td>
+</tr>
+<tr>
+<td><code>CR</code>, <code>DB</code></td>
+<td>2 each</td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td>0 (not stored)</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>0 (unless SIGN IS SEPARATE, then 1)</td>
+</tr>
+<tr>
+<td><code>P</code> (each occurrence)</td>
+<td>0 (not stored)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="numeric-precision-limits">Numeric Precision Limits<a class="headerlink" href="#numeric-precision-limits" title="Permanent link">&para;</a></h3>
+<p>The maximum number of digit positions in a numeric (non-edited) item is <strong>18</strong> in COBOL-85 and COBOL 2002. This includes positions represented by <code>9</code> and <code>P</code> symbols. Some implementations extend this to 31 or 38 digits.</p>
+<hr />
+<h2 id="de-editing">De-editing<a class="headerlink" href="#de-editing" title="Permanent link">&para;</a></h2>
+<p>When a numeric edited item is used as a sending item in a <code>MOVE</code> to a numeric or numeric edited receiving item, the compiler performs <strong>de-editing</strong>: it extracts the numeric value from the edited representation, respecting sign, decimal point, and suppression characters.</p>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">EDITED-AMT</span><span class="w">   </span><span class="kt">PIC $ZZ,ZZ9.99-</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">NUMERIC-AMT</span><span class="w">  </span><span class="kt">PIC S9(7)V99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="p">...</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">EDITED-AMT</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">NUMERIC-AMT</span><span class="p">.</span>
+</code></pre></div>
+<p>If <code>EDITED-AMT</code> contains <code>" $1,234.56-"</code>, the de-edited value moved to <code>NUMERIC-AMT</code> is -1234.56.</p>
+<p>De-editing is defined in COBOL-85 and later. It applies only when a numeric edited item is the sending item and the receiving item is numeric or numeric edited.</p>
+<hr />
+<h2 id="comprehensive-examples">Comprehensive Examples<a class="headerlink" href="#comprehensive-examples" title="Permanent link">&para;</a></h2>
+<h3 id="numeric-items">Numeric Items<a class="headerlink" href="#numeric-items" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">WS-QTY</span><span class="w">          </span><span class="kt">PIC 9(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">WS-AMOUNT</span><span class="w">       </span><span class="kt">PIC S9(7)V99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">WS-RATE</span><span class="w">         </span><span class="kt">PIC V9(4)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">WS-BIG</span><span class="w">          </span><span class="kt">PIC 9(5)PP</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">WS-SMALL</span><span class="w">        </span><span class="kt">PIC PP9(3)</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Size (bytes)</th>
+<th>Max Value</th>
+<th>Example Internal</th>
+<th>Represents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WS-QTY</code></td>
+<td>5</td>
+<td>99999</td>
+<td><code>00042</code></td>
+<td>42</td>
+</tr>
+<tr>
+<td><code>WS-AMOUNT</code></td>
+<td>9</td>
+<td>+9999999.99</td>
+<td><code>012345678</code></td>
+<td>+123456.78</td>
+</tr>
+<tr>
+<td><code>WS-RATE</code></td>
+<td>4</td>
+<td>0.9999</td>
+<td><code>0725</code></td>
+<td>0.0725</td>
+</tr>
+<tr>
+<td><code>WS-BIG</code></td>
+<td>5</td>
+<td>9999900</td>
+<td><code>99999</code></td>
+<td>9999900</td>
+</tr>
+<tr>
+<td><code>WS-SMALL</code></td>
+<td>3</td>
+<td>0.00999</td>
+<td><code>999</code></td>
+<td>0.00999</td>
+</tr>
+</tbody>
+</table>
+<h3 id="numeric-edited-items-zero-suppression">Numeric Edited Items -- Zero Suppression<a class="headerlink" href="#numeric-edited-items-zero-suppression" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-A</span><span class="w">   </span><span class="kt">PIC Z(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-B</span><span class="w">   </span><span class="kt">PIC Z(4)9</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-C</span><span class="w">   </span><span class="kt">PIC ZZ,ZZ9</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-D</span><span class="w">   </span><span class="kt">PIC *(5)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-E</span><span class="w">   </span><span class="kt">PIC **(4)9</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ED-A</code></td>
+<td>0</td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>ED-A</code></td>
+<td>42</td>
+<td><code>42</code></td>
+</tr>
+<tr>
+<td><code>ED-B</code></td>
+<td>0</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>ED-B</code></td>
+<td>42</td>
+<td><code>42</code></td>
+</tr>
+<tr>
+<td><code>ED-C</code></td>
+<td>0</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>ED-C</code></td>
+<td>1234</td>
+<td><code>1,234</code></td>
+</tr>
+<tr>
+<td><code>ED-C</code></td>
+<td>123456</td>
+<td><code>123,456</code></td>
+</tr>
+<tr>
+<td><code>ED-D</code></td>
+<td>0</td>
+<td><code>*****</code></td>
+</tr>
+<tr>
+<td><code>ED-D</code></td>
+<td>42</td>
+<td><code>***42</code></td>
+</tr>
+<tr>
+<td><code>ED-E</code></td>
+<td>0</td>
+<td><code>****0</code></td>
+</tr>
+<tr>
+<td><code>ED-E</code></td>
+<td>12345</td>
+<td><code>12345</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="numeric-edited-items-currency-and-signs">Numeric Edited Items -- Currency and Signs<a class="headerlink" href="#numeric-edited-items-currency-and-signs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-F</span><span class="w">   </span><span class="kt">PIC $9(5).99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-G</span><span class="w">   </span><span class="kt">PIC $$(5).99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-H</span><span class="w">   </span><span class="kt">PIC $$(5).99CR</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-I</span><span class="w">   </span><span class="kt">PIC +(5)9.99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-J</span><span class="w">   </span><span class="kt">PIC -(5)9.99</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-K</span><span class="w">   </span><span class="kt">PIC $$$,$$9.99-</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ED-F</code></td>
+<td>12350</td>
+<td><code>$00123.50</code></td>
+</tr>
+<tr>
+<td><code>ED-G</code></td>
+<td>12350</td>
+<td><code>$123.50</code></td>
+</tr>
+<tr>
+<td><code>ED-G</code></td>
+<td>50</td>
+<td><code>$0.50</code></td>
+</tr>
+<tr>
+<td><code>ED-G</code></td>
+<td>0</td>
+<td><code>$.00</code></td>
+</tr>
+<tr>
+<td><code>ED-H</code></td>
+<td>+12350</td>
+<td><code>$123.50</code></td>
+</tr>
+<tr>
+<td><code>ED-H</code></td>
+<td>-12350</td>
+<td><code>$123.50CR</code></td>
+</tr>
+<tr>
+<td><code>ED-I</code></td>
+<td>+12350</td>
+<td><code>+1234.50</code></td>
+</tr>
+<tr>
+<td><code>ED-I</code></td>
+<td>-12350</td>
+<td><code>-1234.50</code></td>
+</tr>
+<tr>
+<td><code>ED-I</code></td>
+<td>0</td>
+<td><code>+0.00</code></td>
+</tr>
+<tr>
+<td><code>ED-J</code></td>
+<td>+12350</td>
+<td><code>1234.50</code></td>
+</tr>
+<tr>
+<td><code>ED-J</code></td>
+<td>-12350</td>
+<td><code>-1234.50</code></td>
+</tr>
+<tr>
+<td><code>ED-K</code></td>
+<td>+12350</td>
+<td><code>$123.50</code></td>
+</tr>
+<tr>
+<td><code>ED-K</code></td>
+<td>-12350</td>
+<td><code>$123.50-</code></td>
+</tr>
+<tr>
+<td><code>ED-K</code></td>
+<td>+1234567</td>
+<td><code>$12,345.67</code></td>
+</tr>
+<tr>
+<td><code>ED-K</code></td>
+<td>-1234567</td>
+<td><code>$12,345.67-</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="numeric-edited-items-insertion-characters">Numeric Edited Items -- Insertion Characters<a class="headerlink" href="#numeric-edited-items-insertion-characters" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-DATE</span><span class="w">    </span><span class="kt">PIC 99/99/9999</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-SSN</span><span class="w">     </span><span class="kt">PIC 999B99B9999</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-PHONE</span><span class="w">   </span><span class="kt">PIC 9(3)B9(3)B9(4)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">ED-ZERO</span><span class="w">    </span><span class="kt">PIC 9(5)00</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ED-DATE</code></td>
+<td>03222026</td>
+<td><code>03/22/2026</code></td>
+</tr>
+<tr>
+<td><code>ED-SSN</code></td>
+<td>123456789</td>
+<td><code>123 45 6789</code></td>
+</tr>
+<tr>
+<td><code>ED-PHONE</code></td>
+<td>5551234567</td>
+<td><code>555 123 4567</code></td>
+</tr>
+<tr>
+<td><code>ED-ZERO</code></td>
+<td>12345</td>
+<td><code>1234500</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="alphanumeric-and-alphabetic-items">Alphanumeric and Alphabetic Items<a class="headerlink" href="#alphanumeric-and-alphabetic-items" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">CUST-NAME</span><span class="w">     </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">STATE-CODE</span><span class="w">    </span><span class="kt">PIC AA</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">05  </span><span class="nv">MIXED-FIELD</span><span class="w">   </span><span class="kt">PIC X(5)BX(5)</span><span class="p">.</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+<th>Displayed As</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CUST-NAME</code></td>
+<td><code>SMITH</code></td>
+<td><code>SMITH</code></td>
+</tr>
+<tr>
+<td><code>STATE-CODE</code></td>
+<td><code>CA</code></td>
+<td><code>CA</code></td>
+</tr>
+<tr>
+<td><code>MIXED-FIELD</code></td>
+<td><code>ABCDE12345</code></td>
+<td><code>ABCDE 12345</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="complete-working-example">Complete Working Example<a class="headerlink" href="#complete-working-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-SALARY</span><span class="w">        </span><span class="kt">PIC S9(7)V99 </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">45000</span><span class="p">.</span><span class="mi">00</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-EDITED-SAL</span><span class="w">    </span><span class="kt">PIC $$$,$$$,$$9.99-</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-REPORT-LINE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">RPT-NAME</span><span class="w">     </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">FILLER      </span><span class="w"> </span><span class="kt">PIC X(3)  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">RPT-SALARY</span><span class="w">   </span><span class="kt">PIC $$$,$$$,$$9.99-</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">FILLER      </span><span class="w"> </span><span class="kt">PIC X(2)  </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="no">SPACES</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">RPT-DATE</span><span class="w">     </span><span class="kt">PIC 99/99/9999</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE </span><span class="s2">&quot;DOE, JOHN&quot;</span><span class="w">    </span><span class="kp">TO</span><span class="w"> </span><span class="nv">RPT-NAME</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-SALARY</span><span class="w">      </span><span class="kp">TO</span><span class="w"> </span><span class="nv">RPT-SALARY</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">03222026       </span><span class="kp">TO</span><span class="w"> </span><span class="nv">RPT-DATE</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-REPORT-LINE</span><span class="p">.</span>
+<span class="c">      *&gt;   Output: &quot;DOE, JOHN              $45,000.00    03/22/2026&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../">Data Division</a></li>
+<li><a href="../level-numbers/">Level Numbers</a></li>
+<li><a href="../usage/">USAGE Clause</a></li>
+<li><a href="../condition-names/">Condition Names (Level 88)</a></li>
+<li><a href="../../procedure-division/data-movement/move/">MOVE Statement</a></li>
+<li>Numeric Intrinsic Functions</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

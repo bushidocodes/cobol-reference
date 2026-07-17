@@ -1,0 +1,5851 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../evaluate/">
+      
+      
+        <link rel="next" href="../go-to/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PERFORM - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#perform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PERFORM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/report-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-division/screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-1-basic-out-of-line-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 1 — Basic Out-of-Line PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-2-perform-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 2 — PERFORM TIMES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-3-perform-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 3 — PERFORM UNTIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-4-perform-varying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 4 — PERFORM VARYING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-5-inline-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 5 — Inline PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#out-of-line-vs-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out-of-Line vs Inline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-thru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM THRU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM TIMES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM UNTIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-varying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM VARYING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-loops-with-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Loops with AFTER
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execution-flow-for-out-of-line-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Flow for Out-of-Line PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursion-and-active-performs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursion and Active PERFORMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-varying-identifier-after-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Varying Identifier After Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-out-of-line-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Out-of-Line PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-perform-with-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline PERFORM with UNTIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-times_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM TIMES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-varying-simple-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM VARYING (Simple Counter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-varying-with-after-nested-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM VARYING with AFTER (Nested Loop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-with-test-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM with TEST AFTER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-thru-with-exit-paragraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM THRU with EXIT Paragraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decrementing-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decrementing Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-level-nested-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-Level Nested Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-1-basic-out-of-line-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 1 — Basic Out-of-Line PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-2-perform-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 2 — PERFORM TIMES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-3-perform-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 3 — PERFORM UNTIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-4-perform-varying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 4 — PERFORM VARYING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-5-inline-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format 5 — Inline PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#out-of-line-vs-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out-of-Line vs Inline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-thru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM THRU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM TIMES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM UNTIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-varying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM VARYING
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-loops-with-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Loops with AFTER
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execution-flow-for-out-of-line-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Flow for Out-of-Line PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursion-and-active-performs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursion and Active PERFORMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-of-varying-identifier-after-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State of Varying Identifier After Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-out-of-line-perform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Out-of-Line PERFORM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-perform-with-until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline PERFORM with UNTIL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-times_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM TIMES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-varying-simple-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM VARYING (Simple Counter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-varying-with-after-nested-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM VARYING with AFTER (Nested Loop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-with-test-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM with TEST AFTER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-thru-with-exit-paragraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERFORM THRU with EXIT Paragraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decrementing-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decrementing Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-level-nested-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-Level Nested Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="perform">PERFORM<a class="headerlink" href="#perform" title="Permanent link">&para;</a></h1>
+<p>The <code>PERFORM</code> statement transfers control to one or more paragraphs or sections and returns control upon completion, or executes a set of inline statements. It supports counted iteration, condition-controlled looping, and multi-level varying with nested loop control.</p>
+<ul>
+<li><strong>Standard:</strong> COBOL-60, COBOL-61, COBOL-61 Extended, COBOL-65, COBOL-68, COBOL-74, COBOL-85, COBOL 2002, COBOL 2014, COBOL 2023</li>
+<li><strong>Division:</strong> Procedure Division</li>
+<li><strong>Category:</strong> Control Flow</li>
+</ul>
+<hr />
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<h3 id="format-1-basic-out-of-line-perform">Format 1 — Basic Out-of-Line PERFORM<a class="headerlink" href="#format-1-basic-out-of-line-perform" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">procedure-name-1</span><span class="w"> </span><span class="err">[{</span><span class="kp">THROUGH </span><span class="err">|</span><span class="w"> </span><span class="kp">THRU</span><span class="err">}</span><span class="w"> </span><span class="nv">procedure-name-2</span><span class="err">]</span>
+</code></pre></div>
+<h3 id="format-2-perform-times">Format 2 — PERFORM TIMES<a class="headerlink" href="#format-2-perform-times" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">procedure-name-1</span><span class="w"> </span><span class="err">[{</span><span class="kp">THROUGH </span><span class="err">|</span><span class="w"> </span><span class="kp">THRU</span><span class="err">}</span><span class="w"> </span><span class="nv">procedure-name-2</span><span class="err">]</span>
+<span class="c">    {i</span><span class="nv">dentifier-1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">integer-1</span><span class="err">}</span><span class="w"> </span><span class="kp">TIMES</span>
+</code></pre></div>
+<h3 id="format-3-perform-until">Format 3 — PERFORM UNTIL<a class="headerlink" href="#format-3-perform-until" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">procedure-name-1</span><span class="w"> </span><span class="err">[{</span><span class="kp">THROUGH </span><span class="err">|</span><span class="w"> </span><span class="kp">THRU</span><span class="err">}</span><span class="w"> </span><span class="nv">procedure-name-2</span><span class="err">]</span>
+<span class="c">    [W</span><span class="nv">ITH</span><span class="w"> </span><span class="kp">TEST </span><span class="err">{</span><span class="kp">BEFORE </span><span class="err">|</span><span class="w"> </span><span class="kp">AFTER</span><span class="err">}]</span>
+<span class="c">    UN</span><span class="nv">TIL</span><span class="w"> </span><span class="nv">condition-1</span>
+</code></pre></div>
+<h3 id="format-4-perform-varying">Format 4 — PERFORM VARYING<a class="headerlink" href="#format-4-perform-varying" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">procedure-name-1</span><span class="w"> </span><span class="err">[{</span><span class="kp">THROUGH </span><span class="err">|</span><span class="w"> </span><span class="kp">THRU</span><span class="err">}</span><span class="w"> </span><span class="nv">procedure-name-2</span><span class="err">]</span>
+<span class="c">    [W</span><span class="nv">ITH</span><span class="w"> </span><span class="kp">TEST </span><span class="err">{</span><span class="kp">BEFORE </span><span class="err">|</span><span class="w"> </span><span class="kp">AFTER</span><span class="err">}]</span>
+<span class="c">    VA</span><span class="nv">RYING</span><span class="w"> </span><span class="err">{</span><span class="nv">identifier-2</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">index-name-1</span><span class="err">}</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">FROM </span><span class="err">{</span><span class="nv">identifier-3</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">index-name-2</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">literal-1</span><span class="err">}</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">BY </span><span class="err">{</span><span class="nv">identifier-4</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">literal-2</span><span class="err">}</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">condition-1</span>
+<span class="c">    [A</span><span class="nv">FTER</span><span class="w"> </span><span class="err">{</span><span class="nv">identifier-5</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">index-name-3</span><span class="err">}</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">FROM </span><span class="err">{</span><span class="nv">identifier-6</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">index-name-4</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">literal-3</span><span class="err">}</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">BY </span><span class="err">{</span><span class="nv">identifier-7</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">literal-4</span><span class="err">}</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">condition-2</span><span class="err">]</span><span class="w"> </span><span class="p">...</span>
+</code></pre></div>
+<h3 id="format-5-inline-perform">Format 5 — Inline PERFORM<a class="headerlink" href="#format-5-inline-perform" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="err">[</span><span class="kp">WITH</span><span class="w"> </span><span class="kp">TEST </span><span class="err">{</span><span class="kp">BEFORE </span><span class="err">|</span><span class="w"> </span><span class="kp">AFTER</span><span class="err">}]</span>
+<span class="c">    [V</span><span class="nv">ARYING</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="kp">FROM </span><span class="p">...</span><span class="w"> </span><span class="kp">BY </span><span class="p">...</span><span class="w"> </span><span class="kp">UNTIL </span><span class="p">...</span>
+<span class="c">      </span><span class="w">  </span><span class="err">[</span><span class="kp">AFTER </span><span class="p">...</span><span class="w"> </span><span class="kp">FROM </span><span class="p">...</span><span class="w"> </span><span class="kp">BY </span><span class="p">...</span><span class="w"> </span><span class="kp">UNTIL </span><span class="p">...</span><span class="err">]</span><span class="w"> </span><span class="p">...</span><span class="err">]</span>
+<span class="c">    [{</span><span class="nv">identifier-1</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">integer-1</span><span class="err">}</span><span class="w"> </span><span class="kp">TIMES</span><span class="err">]</span>
+<span class="c">    [U</span><span class="nv">NTIL</span><span class="w"> </span><span class="nv">condition-1</span><span class="err">]</span>
+<span class="c">    st</span><span class="nv">atement-1</span><span class="w"> </span><span class="p">...</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">COBOL-85</p>
+<p>Inline <code>PERFORM</code> (Format 5 with <code>END-PERFORM</code>) was introduced in COBOL-85. COBOL-68 and COBOL-74 support only out-of-line <code>PERFORM</code>.</p>
+</div>
+<hr />
+<h2 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h2>
+<h3 id="out-of-line-vs-inline">Out-of-Line vs Inline<a class="headerlink" href="#out-of-line-vs-inline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Out-of-line PERFORM</strong> (Formats 1–4) transfers control to the named paragraph or section. After the last statement of the performed range executes, control returns to the statement following the <code>PERFORM</code>.</li>
+<li><strong>Inline PERFORM</strong> (Format 5) executes the statements between <code>PERFORM</code> and <code>END-PERFORM</code> directly. No separate paragraph is needed.</li>
+</ul>
+<h3 id="perform-thru">PERFORM THRU<a class="headerlink" href="#perform-thru" title="Permanent link">&para;</a></h3>
+<p>When <code>THRU</code> is specified, the performed range includes all paragraphs (or sections) from <code>procedure-name-1</code> through <code>procedure-name-2</code>, inclusive, in their physical order in the source.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="mi">1000</span><span class="o">-</span><span class="nv">INIT</span><span class="w"> </span><span class="kp">THRU</span><span class="w"> </span><span class="mi">1000</span><span class="o">-</span><span class="nv">INIT-EXIT</span><span class="p">.</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Pitfall: PERFORM THRU</p>
+<p><code>PERFORM THRU</code> relies on the physical ordering of paragraphs. Inserting a new paragraph between the start and end paragraphs inadvertently includes it in the performed range. Many coding standards discourage <code>PERFORM THRU</code> in favor of <code>PERFORM</code> of a single paragraph that uses explicit <code>GO TO</code> for its exit structure.</p>
+</div>
+<h3 id="perform-times">PERFORM TIMES<a class="headerlink" href="#perform-times" title="Permanent link">&para;</a></h3>
+<p>The statements in the performed range are executed <code>identifier-1</code> or <code>integer-1</code> times. The value of the operand is evaluated once, before the first execution. If the value is zero or negative, the performed range is not executed.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">PRINT-HEADER</span><span class="w"> </span><span class="mi">3 </span><span class="kp">TIMES</span>
+</code></pre></div>
+<h3 id="perform-until">PERFORM UNTIL<a class="headerlink" href="#perform-until" title="Permanent link">&para;</a></h3>
+<p>The performed range executes repeatedly until <code>condition-1</code> becomes true.</p>
+<ul>
+<li><strong>TEST BEFORE</strong> (default): The condition is tested before each execution. If the condition is true initially, the performed range is not executed at all.</li>
+<li><strong>TEST AFTER</strong>: The condition is tested after each execution. The performed range is always executed at least once.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">READ-RECORD</span>
+<span class="c">    WI</span><span class="nv">TH</span><span class="w"> </span><span class="kp">TEST</span><span class="w"> </span><span class="kp">BEFORE</span>
+<span class="kp">   </span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-EOF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">COBOL-85</p>
+<p>The <code>WITH TEST BEFORE</code> and <code>WITH TEST AFTER</code> phrases were introduced in COBOL-85. In COBOL-68 and COBOL-74, the test is always performed before execution (equivalent to <code>TEST BEFORE</code>).</p>
+</div>
+<h3 id="perform-varying">PERFORM VARYING<a class="headerlink" href="#perform-varying" title="Permanent link">&para;</a></h3>
+<p>The <code>VARYING</code> phrase provides loop-counter control. Before and during execution, the varying identifier is modified:</p>
+<ol>
+<li>The varying identifier is set to its <code>FROM</code> value.</li>
+<li>The <code>UNTIL</code> condition is tested (if <code>TEST BEFORE</code>).</li>
+<li>The performed range is executed.</li>
+<li>The varying identifier is incremented by its <code>BY</code> value.</li>
+<li>Steps 2–4 repeat until the condition is true.</li>
+</ol>
+<p>With <code>TEST AFTER</code>, steps 2 and 3 are swapped (execute first, then test).</p>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">PROCESS-ELEMENT</span>
+<span class="c">    VA</span><span class="nv">RYING</span><span class="w"> </span><span class="nv">WS-INDEX</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">    </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-INDEX</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div>
+<h3 id="nested-loops-with-after">Nested Loops with AFTER<a class="headerlink" href="#nested-loops-with-after" title="Permanent link">&para;</a></h3>
+<p>The <code>AFTER</code> phrase introduces inner loops. When the inner loop's condition becomes true, the outer varying identifier is incremented and the inner identifier is reset to its <code>FROM</code> value.</p>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="nv">PROCESS-CELL</span>
+<span class="c">    VA</span><span class="nv">RYING</span><span class="w"> </span><span class="nv">WS-ROW</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-ROW</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="mi">    </span><span class="kp">AFTER</span><span class="w"> </span><span class="nv">WS-COL</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-COL</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span>
+</code></pre></div>
+<p>This is equivalent to:</p>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE 1</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-ROW</span>
+<span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-ROW</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="mi">    </span><span class="kr">MOVE</span><span class="w"> </span><span class="mi">1 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-COL</span>
+<span class="c">    PE</span><span class="nv">RFORM</span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-COL</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span>
+<span class="mi">        </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">PROCESS-CELL</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">ADD</span><span class="w"> </span><span class="mi">1 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-COL</span>
+<span class="c">    EN</span><span class="nv">D-PERFORM</span>
+<span class="c">    AD</span><span class="nv">D</span><span class="w"> </span><span class="mi">1 </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-ROW</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<p>Multiple <code>AFTER</code> phrases may be specified for three or more levels of nesting.</p>
+<hr />
+<h2 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h2>
+<h3 id="execution-flow-for-out-of-line-perform">Execution Flow for Out-of-Line PERFORM<a class="headerlink" href="#execution-flow-for-out-of-line-perform" title="Permanent link">&para;</a></h3>
+<ol>
+<li>The current execution point is saved.</li>
+<li>Control transfers to the first statement of the performed range.</li>
+<li>Statements execute in sequence through the range.</li>
+<li>After the last statement of the range executes, control returns to the statement following the <code>PERFORM</code>.</li>
+</ol>
+<h3 id="recursion-and-active-performs">Recursion and Active PERFORMs<a class="headerlink" href="#recursion-and-active-performs" title="Permanent link">&para;</a></h3>
+<p>An out-of-line <code>PERFORM</code> sets up a return point at the end of the performed range. If the same range is performed recursively (a <code>PERFORM</code> of a paragraph that itself performs the same paragraph), behavior is undefined in COBOL-85. Some compilers support recursive <code>PERFORM</code> as an extension.</p>
+<div class="admonition warning">
+<p class="admonition-title">Overlapping PERFORM Ranges</p>
+<p>If two active <code>PERFORM</code> statements have overlapping ranges, the results are undefined. For example, if paragraph A performs paragraphs B THRU D, and paragraph C within that range performs paragraphs D THRU E, the ranges overlap at paragraph D. This produces unpredictable behavior.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Fall-Through Behavior</p>
+<p>When a PERFORMed paragraph ends, control returns to the statement after
+the PERFORM. However, during normal sequential execution (without PERFORM),
+control "falls through" from one paragraph to the next. This means a
+paragraph may behave differently depending on whether it was PERFORMed
+or reached by fall-through. GO TO statements that exit a PERFORMed range
+create undefined behavior on most compilers. The "COBOL Minefield
+Detection" study (Veerman &amp; Verhoeven, 2006) identified overlapping
+PERFORM ranges, fall-through, and GO TO out of PERFORM as among the
+most hazardous constructs in legacy COBOL code.</p>
+</div>
+<h3 id="state-of-varying-identifier-after-loop">State of Varying Identifier After Loop<a class="headerlink" href="#state-of-varying-identifier-after-loop" title="Permanent link">&para;</a></h3>
+<p>After a <code>PERFORM VARYING</code> loop completes:</p>
+<ul>
+<li>With <code>TEST BEFORE</code>, the varying identifier holds the first value that caused the condition to be true.</li>
+<li>With <code>TEST AFTER</code>, the varying identifier holds the value it had when the condition was last tested and found true (after the last increment).</li>
+</ul>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="basic-out-of-line-perform">Basic Out-of-Line PERFORM<a class="headerlink" href="#basic-out-of-line-perform" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PROCED</span><span class="nv">URE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">MAIN-L</span><span class="nv">OGIC</span><span class="p">.</span>
+<span class="c">    PE</span><span class="nv">RFORM</span><span class="w"> </span><span class="nv">INITIALIZE-DATA</span>
+<span class="c">    PE</span><span class="nv">RFORM</span><span class="w"> </span><span class="nv">PROCESS-DATA</span>
+<span class="c">    PE</span><span class="nv">RFORM</span><span class="w"> </span><span class="nv">FINALIZE-DATA</span>
+<span class="c">    ST</span><span class="nv">OP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+
+<span class="c">INITIA</span><span class="nv">LIZE-DATA</span><span class="p">.</span>
+<span class="c">    OP</span><span class="nv">EN</span><span class="w"> </span><span class="kp">INPUT</span><span class="w"> </span><span class="nv">IN-FILE</span><span class="w"> </span><span class="kp">OUTPUT</span><span class="w"> </span><span class="nv">OUT-FILE</span><span class="p">.</span>
+
+<span class="c">PROCES</span><span class="nv">S-DATA</span><span class="p">.</span>
+<span class="c">    RE</span><span class="nv">AD</span><span class="w"> </span><span class="nv">IN-FILE</span><span class="w"> </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-RECORD</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">AT</span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kr">MOVE </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-EOF</span>
+<span class="c">    EN</span><span class="nv">D-READ</span>
+<span class="c">    PE</span><span class="nv">RFORM</span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-EOF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">PROCESS-RECORD</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">READ</span><span class="w"> </span><span class="nv">IN-FILE</span><span class="w"> </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-RECORD</span>
+<span class="c">      </span><span class="w">      </span><span class="kp">AT</span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kr">MOVE </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-EOF</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">END-READ</span>
+<span class="kr">   </span><span class="w"> </span><span class="kr">END-PERFORM</span><span class="p">.</span>
+
+<span class="c">PROCES</span><span class="nv">S-RECORD</span><span class="p">.</span>
+<span class="c">    WR</span><span class="nv">ITE</span><span class="w"> </span><span class="nv">OUT-RECORD</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">WS-RECORD</span><span class="p">.</span>
+
+<span class="c">FINALI</span><span class="nv">ZE-DATA</span><span class="p">.</span>
+<span class="c">    CL</span><span class="nv">OSE</span><span class="w"> </span><span class="nv">IN-FILE</span><span class="w"> </span><span class="nv">OUT-FILE</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="inline-perform-with-until">Inline PERFORM with UNTIL<a class="headerlink" href="#inline-perform-with-until" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE &quot;</span><span class="nv">N</span><span class="s2">&quot; TO WS-EOF</span>
+<span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-EOF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span>
+<span class="c">    RE</span><span class="nv">AD</span><span class="w"> </span><span class="nv">TRANS-FILE</span><span class="w"> </span><span class="kp">INTO</span><span class="w"> </span><span class="nv">WS-TRANS</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">AT</span><span class="w"> </span><span class="kr">END</span>
+<span class="kr">           </span><span class="w"> </span><span class="kr">MOVE </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-EOF</span>
+<span class="c">      </span><span class="w">  </span><span class="ow">NOT</span><span class="w"> </span><span class="kp">AT</span><span class="w"> </span><span class="kr">END</span>
+<span class="kr">           </span><span class="w"> </span><span class="kr">PERFORM</span><span class="w"> </span><span class="nv">PROCESS-TRANSACTION</span>
+<span class="c">    EN</span><span class="nv">D-READ</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<h3 id="perform-times_1">PERFORM TIMES<a class="headerlink" href="#perform-times_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">MOVE S</span><span class="nv">PACES</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SEPARATOR-LINE</span>
+<span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="mi">3 </span><span class="kp">TIMES</span>
+<span class="kp">   </span><span class="w"> </span><span class="kr">DISPLAY</span><span class="w"> </span><span class="nv">WS-SEPARATOR-LINE</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<h3 id="perform-varying-simple-counter">PERFORM VARYING (Simple Counter)<a class="headerlink" href="#perform-varying-simple-counter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">VARYING</span><span class="w"> </span><span class="nv">WS-I</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">    </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-I</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">WS-TABLE-SIZE</span>
+<span class="c">    IF</span><span class="w"> </span><span class="nv">TBL-ITEM</span><span class="p">(</span><span class="nv">WS-I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">WS-SEARCH-KEY</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-I</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-FOUND-INDEX</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">MOVE </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-FOUND</span>
+<span class="c">    EN</span><span class="nv">D-IF</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<h3 id="perform-varying-with-after-nested-loop">PERFORM VARYING with AFTER (Nested Loop)<a class="headerlink" href="#perform-varying-with-after-nested-loop" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">01 WS-</span><span class="nv">MATRIX</span><span class="p">.</span>
+<span class="c">   05 </span><span class="nv">WS-ROW</span><span class="w"> </span><span class="kp">OCCURS</span><span class="w"> </span><span class="mi">10 </span><span class="kp">TIMES</span><span class="p">.</span>
+<span class="c">      </span><span class="mi">10 </span><span class="nv">WS-CELL</span><span class="w"> </span><span class="kp">OCCURS</span><span class="w"> </span><span class="mi">5 </span><span class="kp">TIMES </span><span class="w"> </span><span class="kt">PIC 9(4)</span><span class="p">.</span>
+
+<span class="c">01 WS-</span><span class="nv">R</span><span class="w">   </span><span class="kt">PIC 99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">C</span><span class="w">   </span><span class="kt">PIC 99</span><span class="p">.</span>
+<span class="c">01 WS-</span><span class="nv">SUM</span><span class="w"> </span><span class="kt">PIC 9(8)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>
+
+<span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">VARYING</span><span class="w"> </span><span class="nv">WS-R</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-R</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="mi">    </span><span class="kp">AFTER</span><span class="w"> </span><span class="nv">WS-C</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-C</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span>
+<span class="mi">    </span><span class="kr">ADD</span><span class="w"> </span><span class="nv">WS-CELL</span><span class="p">(</span><span class="nv">WS-R</span><span class="p">,</span><span class="w"> </span><span class="nv">WS-C</span><span class="p">)</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-SUM</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+
+<span class="c">DISPLA</span><span class="nv">Y</span><span class="w"> </span><span class="s2">&quot;Matrix sum: &quot;</span><span class="w"> </span><span class="nv">WS-SUM</span>
+</code></pre></div>
+<h3 id="perform-with-test-after">PERFORM with TEST AFTER<a class="headerlink" href="#perform-with-test-after" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">*&gt; Pro</span><span class="nv">mpt</span><span class="w"> </span><span class="kp">until</span><span class="w"> </span><span class="err">valid</span><span class="w"> </span><span class="kp">input</span><span class="w"> </span><span class="kp">is</span><span class="w"> </span><span class="nv">received</span><span class="w"> </span><span class="p">(</span><span class="nv">always</span><span class="w"> </span><span class="nv">prompts</span><span class="w"> </span><span class="kp">at</span><span class="w"> </span><span class="nv">least</span><span class="w"> </span><span class="nv">once</span><span class="p">)</span>
+<span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">WITH</span><span class="w"> </span><span class="kp">TEST</span><span class="w"> </span><span class="kp">AFTER</span>
+<span class="kp">   </span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-INPUT-VALID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span>
+<span class="c">    DI</span><span class="nv">SPLAY</span><span class="w"> </span><span class="s2">&quot;Enter Y or N: &quot;</span>
+<span class="c">    AC</span><span class="nv">CEPT</span><span class="w"> </span><span class="nv">WS-USER-INPUT</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="nv">CONSOLE</span>
+<span class="c">    EV</span><span class="nv">ALUATE</span><span class="w"> </span><span class="nv">WS-USER-INPUT</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">WHEN </span><span class="s2">&quot;Y&quot;</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">WHEN </span><span class="s2">&quot;N&quot;</span>
+<span class="c">      </span><span class="w">      </span><span class="kr">MOVE </span><span class="s2">&quot;Y&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-INPUT-VALID</span>
+<span class="c">      </span><span class="w">  </span><span class="kp">WHEN</span><span class="w"> </span><span class="kp">OTHER</span>
+<span class="kp">           </span><span class="w"> </span><span class="kr">DISPLAY </span><span class="s2">&quot;Invalid input. Try again.&quot;</span>
+<span class="c">      </span><span class="w">      </span><span class="kr">MOVE </span><span class="s2">&quot;N&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-INPUT-VALID</span>
+<span class="c">    EN</span><span class="nv">D-EVALUATE</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<h3 id="perform-thru-with-exit-paragraph">PERFORM THRU with EXIT Paragraph<a class="headerlink" href="#perform-thru-with-exit-paragraph" title="Permanent link">&para;</a></h3>
+<p>A common pattern uses <code>PERFORM THRU</code> with a dedicated exit paragraph:</p>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="mi">2000</span><span class="o">-</span><span class="nv">VALIDATE</span><span class="w"> </span><span class="kp">THRU</span><span class="w"> </span><span class="mi">2000</span><span class="o">-</span><span class="nv">VALIDATE-EXIT</span><span class="p">.</span>
+
+<span class="c">2000-V</span><span class="nv">ALIDATE</span><span class="p">.</span>
+<span class="c">    IF</span><span class="w"> </span><span class="nv">WS-AMOUNT</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="mi">        </span><span class="kr">MOVE </span><span class="s2">&quot;Negative amount&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-ERROR-MSG</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">GO</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="mi">2000</span><span class="o">-</span><span class="nv">VALIDATE-EXIT</span>
+<span class="c">    EN</span><span class="nv">D-IF</span>
+<span class="c">    IF</span><span class="w"> </span><span class="nv">WS-AMOUNT</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">WS-CREDIT-LIMIT</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">MOVE </span><span class="s2">&quot;Over limit&quot;</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-ERROR-MSG</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">GO</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="mi">2000</span><span class="o">-</span><span class="nv">VALIDATE-EXIT</span>
+<span class="c">    EN</span><span class="nv">D-IF</span>
+<span class="c">    MO</span><span class="nv">VE</span><span class="w"> </span><span class="no">SPACES</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-ERROR-MSG</span><span class="p">.</span>
+
+<span class="c">2000-V</span><span class="nv">ALIDATE-EXIT</span><span class="p">.</span>
+<span class="c">    EX</span><span class="nv">IT</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="decrementing-loop">Decrementing Loop<a class="headerlink" href="#decrementing-loop" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">VARYING</span><span class="w"> </span><span class="nv">WS-I</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">100 </span><span class="kp">BY</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="mi">    </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-I</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">    </span><span class="kr">DISPLAY </span><span class="s2">&quot;Countdown: &quot;</span><span class="w"> </span><span class="nv">WS-I</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<h3 id="three-level-nested-loop">Three-Level Nested Loop<a class="headerlink" href="#three-level-nested-loop" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">PERFOR</span><span class="nv">M</span><span class="w"> </span><span class="kp">VARYING</span><span class="w"> </span><span class="nv">WS-X</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-X</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span>
+<span class="mi">    </span><span class="kp">AFTER</span><span class="w"> </span><span class="nv">WS-Y</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-Y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span>
+<span class="mi">    </span><span class="kp">AFTER</span><span class="w"> </span><span class="nv">WS-Z</span><span class="w"> </span><span class="kp">FROM</span><span class="w"> </span><span class="mi">1 </span><span class="kp">BY</span><span class="w"> </span><span class="mi">1 </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">WS-Z</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span>
+<span class="mi">    </span><span class="kr">MOVE</span><span class="w"> </span><span class="nv">WS-VALUE</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">WS-CUBE</span><span class="p">(</span><span class="nv">WS-X</span><span class="p">,</span><span class="w"> </span><span class="nv">WS-Y</span><span class="p">,</span><span class="w"> </span><span class="nv">WS-Z</span><span class="p">)</span>
+<span class="c">END-PE</span><span class="nv">RFORM</span>
+</code></pre></div>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../if/">IF</a> — conditional execution</li>
+<li><a href="../evaluate/">EVALUATE</a> — multi-branch conditional</li>
+<li><a href="../go-to/">GO TO</a> — unconditional transfer of control</li>
+<li><a href="../exit/">EXIT</a> — provides a common end point or exits a loop</li>
+<li><a href="../../">Procedure Division Overview</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

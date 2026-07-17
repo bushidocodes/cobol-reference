@@ -1,0 +1,6087 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive reference for the COBOL programming language">
+      
+      
+      
+      
+        <link rel="prev" href="../linage/">
+      
+      
+        <link rel="next" href="../screen-section/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Report Section - COBOL Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#report-section-report-writer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="COBOL Reference" class="md-header__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COBOL Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Report Section
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="COBOL Reference" class="md-nav__button md-logo" aria-label="COBOL Reference" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    COBOL Reference
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/source-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/character-set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/figurative-constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figurative Constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/scope-terminators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Terminators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/reference-modification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Modification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/qualification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Name Qualification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditional-phrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Phrases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/special-registers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special Registers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../identification-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identification Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identification Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identification-division/program-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Attributes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../environment-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Environment Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/special-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPECIAL-NAMES
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment-division/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SELECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage-sections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage Sections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sd-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD Entry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PICTURE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../occurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OCCURS Clause (Arrays)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../condition-names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redefines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDEFINES Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALUE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-clauses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Clauses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typedef/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Types (TYPEDEF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RENAMES (Level 66)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINAGE Clause
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#report-section-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Section Declaration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-group-description-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Group Description Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure-division-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure Division Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-before-reporting-declarative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USE BEFORE REPORTING Declarative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rd-report-description-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RD (Report Description) Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RD (Report Description) Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-limit-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAGE LIMIT Clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTROL Clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-group-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Group Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Report Group Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LINE Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LINE Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COLUMN Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOURCE Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SUM Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SUM Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-clause-in-report-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VALUE Clause in Report Groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-indicate-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GROUP INDICATE Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-group-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT GROUP Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure-division-statements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure Division Statements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procedure Division Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initiate-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INITIATE Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GENERATE Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminate-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TERMINATE Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-before-reporting-declarative_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USE BEFORE REPORTING Declarative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sales-report-with-control-breaks-and-subtotals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sales Report with Control Breaks and Subtotals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screen-section/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Section
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../procedure-division/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedure Division
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Procedure Division
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arithmetic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/add/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/subtract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SUBTRACT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/multiply/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MULTIPLY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DIVIDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/arithmetic/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMPUTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Movement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Movement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/move/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/initialize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIALIZE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/corresponding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CORRESPONDING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/validate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VALIDATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/declaratives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DECLARATIVES and USE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/if/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/evaluate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVALUATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/perform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/go-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GO TO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/exit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/continue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONTINUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/next-sentence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXT SENTENCE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/goback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/control-flow/raise-resume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAISE and RESUME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Table Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/data-movement/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEARCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input/Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input/Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/open/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    READ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLOSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/accept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACCEPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISPLAY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DELETE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    START
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/rewrite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWRITE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/io/commit-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMMIT and ROLLBACK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Handling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    String Handling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/unstring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UNSTRING
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/string-handling/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Program Linkage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Program Linkage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/call/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CALL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/cancel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CANCEL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/program-linkage/entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTRY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sort/Merge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sort/Merge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SORT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MERGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RELEASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/sort-merge/return/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RETURN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report Writer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report Writer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/report-writer-verbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INITIATE, GENERATE, TERMINATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/cobol2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COBOL 2023 Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_12" id="__nav_7_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Memory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynamic Memory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/memory/allocate-free/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALLOCATE and FREE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_13" id="__nav_7_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archaic Verbs (Removed)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archaic Verbs (Removed)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/examine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/alter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/enter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENTER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/define/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEFINE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/include/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INCLUDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../procedure-division/archaic/async-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async I/O (HOLD, SEEK, PROCESS, SUSPEND)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../intrinsic-functions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intrinsic Functions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intrinsic Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date and Time Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/financial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/numeric-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Numeric Conversion Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/exception-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exception Handling Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intrinsic-functions/user-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User-Defined Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preprocessor
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preprocessor
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/copy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COPY Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../copy-replace/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REPLACE Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extensions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/embedded-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XML Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/conditional-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional Compilation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/oo-cobol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object-Oriented COBOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inter-Language Interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/compiler-directives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Directives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/vendor-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vendor Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/arithmetic-precision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Precision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/collating-sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collating Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/file-status-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Status Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/reserved-words/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reserved Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/sample-programs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Programs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging Techniques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#report-section-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Section Declaration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-group-description-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Group Description Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure-division-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure Division Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-before-reporting-declarative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USE BEFORE REPORTING Declarative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rd-report-description-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RD (Report Description) Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RD (Report Description) Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-limit-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAGE LIMIT Clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTROL Clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-group-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report Group Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Report Group Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LINE Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LINE Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COLUMN Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOURCE Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SUM Clause
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SUM Clause">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-clause-in-report-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VALUE Clause in Report Groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-indicate-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GROUP INDICATE Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-group-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT GROUP Clause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure-division-statements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure Division Statements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procedure Division Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initiate-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INITIATE Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GENERATE Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminate-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TERMINATE Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-before-reporting-declarative_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USE BEFORE REPORTING Declarative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sales-report-with-control-breaks-and-subtotals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sales Report with Control Breaks and Subtotals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="report-section-report-writer">Report Section — Report Writer<a class="headerlink" href="#report-section-report-writer" title="Permanent link">&para;</a></h1>
+<p>The Report Section defines the layout and control structure of printed reports using the COBOL Report Writer facility. It specifies report descriptions (RD entries) and report group descriptions that define headings, detail lines, footings, and subtotals, with automatic handling of page breaks and control breaks.</p>
+<p><strong>Standard:</strong> COBOL-61 Extended, COBOL-65, COBOL-68, COBOL-74, COBOL-85, COBOL 2002, COBOL 2014 (optional), COBOL 2023</p>
+<hr />
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<h3 id="report-section-declaration">Report Section Declaration<a class="headerlink" href="#report-section-declaration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">DATA D</span><span class="nv">IVISION</span><span class="p">.</span>
+<span class="c">REPORT</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">RD  re</span><span class="nv">port-name</span>
+<span class="c">    [C</span><span class="nv">ONTROL</span><span class="w"> </span><span class="kp">IS    </span><span class="err">{</span><span class="w"> </span><span class="nv">data-name-1</span><span class="w"> </span><span class="err">[</span><span class="nv">data-name-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="w"> </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">             </span><span class="err">{</span><span class="w"> </span><span class="kp">FINAL </span><span class="err">[</span><span class="nv">data-name-1</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="w"> </span><span class="err">}</span><span class="w">       </span><span class="err">]</span>
+<span class="c">    [P</span><span class="nv">AGE</span><span class="w"> </span><span class="kp">LIMIT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">integer-1</span><span class="w"> </span><span class="kp">LINE</span><span class="err">[</span><span class="nv">S</span><span class="err">]</span>
+<span class="c">      </span><span class="w">  </span><span class="err">[</span><span class="kp">HEADING</span><span class="w"> </span><span class="nv">integer-2</span><span class="err">]</span>
+<span class="c">      </span><span class="w">  </span><span class="err">[</span><span class="kp">FIRST</span><span class="w"> </span><span class="kp">DETAIL</span><span class="w"> </span><span class="nv">integer-3</span><span class="err">]</span>
+<span class="c">      </span><span class="w">  </span><span class="err">[</span><span class="kp">LAST</span><span class="w"> </span><span class="kp">DETAIL</span><span class="w"> </span><span class="nv">integer-4</span><span class="err">]</span>
+<span class="c">      </span><span class="w">  </span><span class="err">[</span><span class="kp">FOOTING</span><span class="w"> </span><span class="nv">integer-5</span><span class="err">]]</span><span class="p">.</span>
+
+<span class="c">{repor</span><span class="nv">t-group-description-entry</span><span class="err">}</span><span class="w"> </span><span class="p">...</span>
+</code></pre></div>
+<h3 id="report-group-description-entry">Report Group Description Entry<a class="headerlink" href="#report-group-description-entry" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">level-</span><span class="nv">number</span><span class="w">  </span><span class="err">[</span><span class="nv">data-name</span><span class="err">]</span>
+<span class="c">    [T</span><span class="nv">YPE</span><span class="w"> </span><span class="kp">IS </span><span class="err">{</span><span class="w"> </span><span class="kp">REPORT</span><span class="w"> </span><span class="kp">HEADING </span><span class="err">|</span><span class="w"> </span><span class="err">RH }]</span>
+<span class="c">    [ </span><span class="w">       </span><span class="err">{</span><span class="w"> </span><span class="kp">PAGE</span><span class="w"> </span><span class="kp">HEADING   </span><span class="err">|</span><span class="w"> </span><span class="err">PH }]</span>
+<span class="c">    [ </span><span class="w">       </span><span class="err">{</span><span class="w"> </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">HEADING </span><span class="err">|</span><span class="w"> </span><span class="err">CH }</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="nv">data-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">FINAL </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">       </span><span class="err">{</span><span class="w"> </span><span class="kp">DETAIL          </span><span class="err">|</span><span class="w"> </span><span class="kp">DE </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">       </span><span class="err">{</span><span class="w"> </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">FOOTING </span><span class="err">|</span><span class="w"> </span><span class="err">CF }</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="nv">data-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">FINAL </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">       </span><span class="err">{</span><span class="w"> </span><span class="kp">PAGE</span><span class="w"> </span><span class="kp">FOOTING    </span><span class="err">|</span><span class="w"> </span><span class="err">PF }]</span>
+<span class="c">    [ </span><span class="w">       </span><span class="err">{</span><span class="w"> </span><span class="kp">REPORT</span><span class="w"> </span><span class="kp">FOOTING  </span><span class="err">|</span><span class="w"> </span><span class="err">RF }]</span>
+<span class="c">    [L</span><span class="nv">INE</span><span class="w"> </span><span class="kp">NUMBER</span><span class="w"> </span><span class="kp">IS </span><span class="err">{</span><span class="w"> </span><span class="nf">integer </span><span class="err">[</span><span class="kp">ON</span><span class="w"> </span><span class="kp">NEXT</span><span class="w"> </span><span class="kp">PAGE</span><span class="err">]</span><span class="w"> </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">              </span><span class="err">{</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="nf">integer </span><span class="err">}</span><span class="w">           </span><span class="err">]</span>
+<span class="c">    [C</span><span class="nv">OLUMN</span><span class="w"> </span><span class="kp">NUMBER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nf">integer</span><span class="err">]</span>
+<span class="c">    [S</span><span class="nv">OURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">identifier</span><span class="err">]</span>
+<span class="c">    [S</span><span class="nv">UM</span><span class="w"> </span><span class="nv">identifier-1</span><span class="w"> </span><span class="err">[</span><span class="nv">identifier-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="w"> </span><span class="err">[</span><span class="kp">UPON</span><span class="w"> </span><span class="nv">detail-name</span><span class="w"> </span><span class="err">[</span><span class="nv">detail-name</span><span class="w"> </span><span class="p">...</span><span class="err">]]</span>
+<span class="c">      </span><span class="w">  </span><span class="err">[RESET</span><span class="w"> </span><span class="kp">ON </span><span class="err">{</span><span class="w"> </span><span class="nv">data-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">FINAL </span><span class="err">}]]</span>
+<span class="c">    [V</span><span class="nv">ALUE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">literal</span><span class="err">]</span>
+<span class="c">    [G</span><span class="nv">ROUP</span><span class="w"> </span><span class="kp">INDICATE</span><span class="err">]</span>
+<span class="c">    [N</span><span class="nv">EXT</span><span class="w"> </span><span class="kp">GROUP</span><span class="w"> </span><span class="kp">IS </span><span class="err">{</span><span class="w"> </span><span class="nf">integer </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">             </span><span class="err">{</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="nf">integer </span><span class="err">}]</span>
+<span class="c">    [ </span><span class="w">             </span><span class="err">{</span><span class="w"> </span><span class="kp">NEXT</span><span class="w"> </span><span class="kp">PAGE </span><span class="err">}]</span>
+<span class="c">    [p</span><span class="nv">icture-and-other-clauses</span><span class="err">]</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="procedure-division-statements">Procedure Division Statements<a class="headerlink" href="#procedure-division-statements" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">INITIA</span><span class="nv">TE</span><span class="w"> </span><span class="nv">report-name-1</span><span class="w"> </span><span class="err">[</span><span class="nv">report-name-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="p">.</span>
+
+<span class="c">GENERA</span><span class="nv">TE</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="nv">report-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="nv">detail-report-group-name</span><span class="w"> </span><span class="err">}</span><span class="p">.</span>
+
+<span class="c">TERMIN</span><span class="nv">ATE</span><span class="w"> </span><span class="nv">report-name-1</span><span class="w"> </span><span class="err">[</span><span class="nv">report-name-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="use-before-reporting-declarative">USE BEFORE REPORTING Declarative<a class="headerlink" href="#use-before-reporting-declarative" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">DECLAR</span><span class="nv">ATIVES</span><span class="p">.</span>
+<span class="c">sectio</span><span class="nv">n-name</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">    US</span><span class="nv">E</span><span class="w"> </span><span class="kp">BEFORE</span><span class="w"> </span><span class="kp">REPORTING</span><span class="w"> </span><span class="nv">report-group-name</span><span class="p">.</span>
+<span class="c">    [p</span><span class="nv">rocedure-body</span><span class="err">]</span>
+<span class="c">END DE</span><span class="nv">CLARATIVES</span><span class="p">.</span>
+</code></pre></div>
+<hr />
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>The Report Writer is a declarative facility that automates the production of formatted reports. The programmer defines the layout of the report in the Report Section, and the Report Writer runtime generates page headings, control-break headings and footings, subtotals, and page breaks automatically. The three Procedure Division statements -- <code>INITIATE</code>, <code>GENERATE</code>, and <code>TERMINATE</code> -- drive the entire report cycle.</p>
+<div class="admonition note">
+<p class="admonition-title">Optional Module</p>
+<p>The Report Writer is classified as an optional module in COBOL 2014 and COBOL 2023. Not all compilers provide it. GnuCOBOL and Micro Focus COBOL support the Report Writer; IBM Enterprise COBOL does not.</p>
+</div>
+<hr />
+<h2 id="rd-report-description-entry">RD (Report Description) Entry<a class="headerlink" href="#rd-report-description-entry" title="Permanent link">&para;</a></h2>
+<p>The RD entry names the report and specifies its page layout and control hierarchy. The report name must match a report name specified in a file's FD entry via the <code>REPORT IS</code> clause (in the FILE SECTION).</p>
+<h3 id="page-limit-clause">PAGE LIMIT Clause<a class="headerlink" href="#page-limit-clause" title="Permanent link">&para;</a></h3>
+<p>The PAGE LIMIT clause defines the vertical structure of the report page.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PAGE LIMIT IS integer-1</code></td>
+<td>Total number of lines per page</td>
+</tr>
+<tr>
+<td><code>HEADING integer-2</code></td>
+<td>First line on which a heading may appear (default: 1)</td>
+</tr>
+<tr>
+<td><code>FIRST DETAIL integer-3</code></td>
+<td>First line on which a detail or control heading may appear</td>
+</tr>
+<tr>
+<td><code>LAST DETAIL integer-4</code></td>
+<td>Last line on which a detail or control heading may appear</td>
+</tr>
+<tr>
+<td><code>FOOTING integer-5</code></td>
+<td>Last line on which a control footing may appear</td>
+</tr>
+</tbody>
+</table>
+<p>The relationship <code>integer-2 &lt;= integer-3 &lt;= integer-4 &lt;= integer-5 &lt;= integer-1</code> must hold.</p>
+<h3 id="control-clause">CONTROL Clause<a class="headerlink" href="#control-clause" title="Permanent link">&para;</a></h3>
+<p>The CONTROL clause names the data items that define the control hierarchy for control breaks. Data items are listed from major to minor. The keyword <code>FINAL</code> designates the highest-level control break, which occurs only at the beginning and end of the report.</p>
+<div class="highlight"><pre><span></span><code><span class="c">RD  SA</span><span class="nv">LES-REPORT</span>
+<span class="c">    CO</span><span class="nv">NTROL</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">FINAL</span><span class="w"> </span><span class="nv">REGION-CODE</span><span class="w"> </span><span class="nv">BRANCH-CODE</span>
+<span class="c">    PA</span><span class="nv">GE</span><span class="w"> </span><span class="kp">LIMIT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="mi">60</span>
+<span class="mi">        </span><span class="kp">HEADING</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">        </span><span class="kp">FIRST</span><span class="w"> </span><span class="kp">DETAIL</span><span class="w"> </span><span class="mi">5</span>
+<span class="mi">        </span><span class="kp">LAST</span><span class="w"> </span><span class="kp">DETAIL</span><span class="w"> </span><span class="mi">55</span>
+<span class="mi">        </span><span class="kp">FOOTING</span><span class="w"> </span><span class="mi">58</span><span class="p">.</span>
+</code></pre></div>
+<p>When the value of a control data item changes between successive <code>GENERATE</code> statements, the Report Writer automatically produces the appropriate control footings (from minor to major) and control headings (from major to minor).</p>
+<hr />
+<h2 id="report-group-types">Report Group Types<a class="headerlink" href="#report-group-types" title="Permanent link">&para;</a></h2>
+<p>Each report group description entry specifies a TYPE clause that determines when the Report Writer presents the group.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Abbreviation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REPORT HEADING</td>
+<td>RH</td>
+<td>Produced once, at the beginning of the report</td>
+</tr>
+<tr>
+<td>PAGE HEADING</td>
+<td>PH</td>
+<td>Produced at the top of each page</td>
+</tr>
+<tr>
+<td>CONTROL HEADING</td>
+<td>CH</td>
+<td>Produced when a control break occurs, before detail lines</td>
+</tr>
+<tr>
+<td>DETAIL</td>
+<td>DE</td>
+<td>Produced by each <code>GENERATE</code> statement (the main data line)</td>
+</tr>
+<tr>
+<td>CONTROL FOOTING</td>
+<td>CF</td>
+<td>Produced when a control break occurs, after detail lines</td>
+</tr>
+<tr>
+<td>PAGE FOOTING</td>
+<td>PF</td>
+<td>Produced at the bottom of each page</td>
+</tr>
+<tr>
+<td>REPORT FOOTING</td>
+<td>RF</td>
+<td>Produced once, at the end of the report</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li>A report may contain at most one RH, one RF, one PH, and one PF group.</li>
+<li>A report may contain multiple DE groups, multiple CH groups, and multiple CF groups.</li>
+<li>Each CH and CF group is associated with a control data item or FINAL. A report may have at most one CH and one CF for each control data item and for FINAL.</li>
+<li>If a report has no DETAIL groups, the <code>GENERATE</code> statement specifies the report name, producing a <strong>summary report</strong>.</li>
+</ol>
+<hr />
+<h2 id="line-clause">LINE Clause<a class="headerlink" href="#line-clause" title="Permanent link">&para;</a></h2>
+<p>The LINE clause specifies the vertical position of a report group or a line within a report group.</p>
+<div class="highlight"><pre><span></span><code><span class="c">LINE N</span><span class="nv">UMBER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nf">integer</span><span class="p">.</span>
+<span class="c">LINE N</span><span class="nv">UMBER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="nf">integer</span><span class="p">.</span>
+<span class="c">LINE N</span><span class="nv">UMBER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nf">integer</span><span class="w"> </span><span class="kp">ON</span><span class="w"> </span><span class="kp">NEXT</span><span class="w"> </span><span class="kp">PAGE</span><span class="p">.</span>
+</code></pre></div>
+<ul>
+<li>An absolute line number positions the line at the specified line on the page.</li>
+<li><code>PLUS integer</code> positions the line relative to the previous line.</li>
+<li><code>ON NEXT PAGE</code> forces a page break before printing the line.</li>
+</ul>
+<h3 id="rules_1">Rules<a class="headerlink" href="#rules_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>The first entry in a report group that specifies LINE determines the starting line of the group.</li>
+<li>Within a group, absolute line numbers must be in ascending order.</li>
+<li>Subordinate items without a LINE clause appear on the same line as the preceding item that has a LINE clause.</li>
+</ol>
+<hr />
+<h2 id="column-clause">COLUMN Clause<a class="headerlink" href="#column-clause" title="Permanent link">&para;</a></h2>
+<p>The COLUMN clause specifies the horizontal position of a report item.</p>
+<div class="highlight"><pre><span></span><code><span class="c">COLUMN</span><span class="w"> </span><span class="kp">NUMBER</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nf">integer</span><span class="p">.</span>
+</code></pre></div>
+<p>The integer specifies the leftmost character position (1-based) for the item on the print line. If the COLUMN clause is omitted, the item is not presented (it may still participate in SUM operations).</p>
+<hr />
+<h2 id="source-clause">SOURCE Clause<a class="headerlink" href="#source-clause" title="Permanent link">&para;</a></h2>
+<p>The SOURCE clause specifies a data item or expression whose value is moved into the report item at presentation time.</p>
+<div class="highlight"><pre><span></span><code><span class="c">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">identifier</span><span class="p">.</span>
+</code></pre></div>
+<p>The source identifier is evaluated each time the Report Writer presents the group containing this item. The value is moved according to the <a href="../picture/">PICTURE clause</a> of the report item.</p>
+<hr />
+<h2 id="sum-clause">SUM Clause<a class="headerlink" href="#sum-clause" title="Permanent link">&para;</a></h2>
+<p>The SUM clause specifies automatic accumulation (summation) of values in a CONTROL FOOTING group.</p>
+<div class="highlight"><pre><span></span><code><span class="c">SUM id</span><span class="nv">entifier-1</span><span class="w"> </span><span class="err">[</span><span class="nv">identifier-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span>
+<span class="c">    [U</span><span class="nv">PON</span><span class="w"> </span><span class="nv">detail-name-1</span><span class="w"> </span><span class="err">[</span><span class="nv">detail-name-2</span><span class="w"> </span><span class="p">...</span><span class="err">]]</span>
+<span class="c">    [R</span><span class="nv">ESET</span><span class="w"> </span><span class="kp">ON </span><span class="err">{</span><span class="w"> </span><span class="nv">data-name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kp">FINAL </span><span class="err">}]</span><span class="p">.</span>
+</code></pre></div>
+<h3 id="rules_2">Rules<a class="headerlink" href="#rules_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>The SUM clause is permitted only in CONTROL FOOTING groups.</li>
+<li>Each identifier is typically a SOURCE item from a DETAIL group. The Report Writer adds the value of each identifier to the SUM counter each time the associated DETAIL group is generated.</li>
+<li>The <code>UPON</code> phrase restricts accumulation to specific DETAIL groups when multiple DETAIL groups exist.</li>
+<li>The SUM counter is automatically reset to zero after the control footing is presented, unless the <code>RESET ON</code> phrase specifies a higher-level control item.</li>
+<li>SUM counters in a higher-level CF group may reference SUM counters in a lower-level CF group, producing <strong>rolling totals</strong> (subtotals of subtotals).</li>
+</ol>
+<hr />
+<h2 id="value-clause-in-report-groups">VALUE Clause in Report Groups<a class="headerlink" href="#value-clause-in-report-groups" title="Permanent link">&para;</a></h2>
+<p>The VALUE clause in a report group specifies a literal to be presented. It serves a different purpose from the <a href="../value/">VALUE clause</a> in WORKING-STORAGE.</p>
+<div class="highlight"><pre><span></span><code><span class="c">05  LI</span><span class="nv">NE</span><span class="w"> </span><span class="mi">1  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">20  </span><span class="kt">PIC X(15) </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;SALES REPORT&quot;</span><span class="p">.</span>
+</code></pre></div>
+<p>The literal is presented each time the report group is produced. The VALUE clause and the SOURCE clause are mutually exclusive on the same item.</p>
+<hr />
+<h2 id="group-indicate-clause">GROUP INDICATE Clause<a class="headerlink" href="#group-indicate-clause" title="Permanent link">&para;</a></h2>
+<p>The GROUP INDICATE clause causes the report item to be presented only on the first detail line after a control break or page break.</p>
+<div class="highlight"><pre><span></span><code><span class="c">05  CO</span><span class="nv">LUMN</span><span class="w"> </span><span class="mi">1  </span><span class="kt">PIC X(20) </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">REGION-NAME</span>
+<span class="c">    GR</span><span class="nv">OUP</span><span class="w"> </span><span class="kp">INDICATE</span><span class="p">.</span>
+</code></pre></div>
+<p>On subsequent detail lines within the same control group and page, the item is suppressed (spaces are printed). This avoids repetitive printing of group identifiers.</p>
+<hr />
+<h2 id="next-group-clause">NEXT GROUP Clause<a class="headerlink" href="#next-group-clause" title="Permanent link">&para;</a></h2>
+<p>The NEXT GROUP clause specifies the vertical positioning after the last line of a report group.</p>
+<div class="highlight"><pre><span></span><code><span class="c">NEXT G</span><span class="nv">ROUP</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nf">integer</span><span class="p">.</span>
+<span class="c">NEXT G</span><span class="nv">ROUP</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="nf">integer</span><span class="p">.</span>
+<span class="c">NEXT G</span><span class="nv">ROUP</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">NEXT</span><span class="w"> </span><span class="kp">PAGE</span><span class="p">.</span>
+</code></pre></div>
+<ul>
+<li>An absolute value specifies the line number for the next group.</li>
+<li><code>PLUS integer</code> specifies the number of blank lines after the group.</li>
+<li><code>NEXT PAGE</code> forces a page break after the group.</li>
+</ul>
+<hr />
+<h2 id="procedure-division-statements_1">Procedure Division Statements<a class="headerlink" href="#procedure-division-statements_1" title="Permanent link">&para;</a></h2>
+<h3 id="initiate-statement">INITIATE Statement<a class="headerlink" href="#initiate-statement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">INITIA</span><span class="nv">TE</span><span class="w"> </span><span class="nv">report-name-1</span><span class="w"> </span><span class="err">[</span><span class="nv">report-name-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="p">.</span>
+</code></pre></div>
+<p>The INITIATE statement initializes the Report Writer control logic for the named report. It resets all SUM counters to zero and prepares internal line and page counters. The associated file must be opened with <a href="../../procedure-division/io/open/">OPEN</a> before INITIATE is executed.</p>
+<h3 id="generate-statement">GENERATE Statement<a class="headerlink" href="#generate-statement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">GENERA</span><span class="nv">TE</span><span class="w"> </span><span class="nv">detail-report-group-name</span><span class="p">.</span>
+<span class="c">GENERA</span><span class="nv">TE</span><span class="w"> </span><span class="nv">report-name</span><span class="p">.</span>
+</code></pre></div>
+<p>The GENERATE statement is the primary driver of report production. Each execution causes the Report Writer to:</p>
+<ol>
+<li>Evaluate control data items for control breaks.</li>
+<li>Produce any required control footings (minor to major).</li>
+<li>Produce any required control headings (major to minor).</li>
+<li>Present the specified DETAIL group (or, for a summary report with <code>GENERATE report-name</code>, accumulate SUM counters without presenting detail lines).</li>
+<li>Handle page overflow automatically, producing page footings and page headings as needed.</li>
+</ol>
+<p>On the first execution of GENERATE, the Report Writer also produces the REPORT HEADING and the first PAGE HEADING.</p>
+<h3 id="terminate-statement">TERMINATE Statement<a class="headerlink" href="#terminate-statement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">TERMIN</span><span class="nv">ATE</span><span class="w"> </span><span class="nv">report-name-1</span><span class="w"> </span><span class="err">[</span><span class="nv">report-name-2</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="p">.</span>
+</code></pre></div>
+<p>The TERMINATE statement finalizes the report. It produces all remaining control footings (from minor to FINAL), the REPORT FOOTING, and the final PAGE FOOTING. The associated file must be closed with <a href="../../procedure-division/io/close/">CLOSE</a> after TERMINATE is executed.</p>
+<hr />
+<h2 id="use-before-reporting-declarative_1">USE BEFORE REPORTING Declarative<a class="headerlink" href="#use-before-reporting-declarative_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c">DECLAR</span><span class="nv">ATIVES</span><span class="p">.</span>
+<span class="c">SUPPRE</span><span class="nv">SS-SECTION</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">    US</span><span class="nv">E</span><span class="w"> </span><span class="kp">BEFORE</span><span class="w"> </span><span class="kp">REPORTING</span><span class="w"> </span><span class="nv">report-group-name</span><span class="p">.</span>
+<span class="c">    IF</span><span class="w"> </span><span class="nv">SUPPRESS-FLAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">MOVE</span><span class="w"> </span><span class="no">ZERO</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nv">PRINT-LINE-COUNT</span>
+<span class="c">      </span><span class="w">  </span><span class="kr">SUPPRESS</span><span class="w"> </span><span class="kp">PRINTING</span>
+<span class="kp">   </span><span class="w"> </span><span class="kr">END-IF</span><span class="p">.</span>
+<span class="c">END DE</span><span class="nv">CLARATIVES</span><span class="p">.</span>
+</code></pre></div>
+<p>The USE BEFORE REPORTING declarative is invoked automatically by the Report Writer just before the named report group is presented. It permits the program to inspect or modify report data items, or to suppress the printing of a group with the <code>SUPPRESS PRINTING</code> statement.</p>
+<hr />
+<h2 id="rules-summary">Rules Summary<a class="headerlink" href="#rules-summary" title="Permanent link">&para;</a></h2>
+<ol>
+<li>The Report Section must appear after the FILE SECTION, WORKING-STORAGE SECTION, and LOCAL-STORAGE SECTION in the Data Division.</li>
+<li>Each RD entry must correspond to a <code>REPORT IS</code> clause in an FD entry in the FILE SECTION.</li>
+<li>Report group entries use level numbers 01 through 49. Level 01 entries define report groups; subordinate entries define lines and items within a group.</li>
+<li>A report group entry at level 01 must contain a TYPE clause.</li>
+<li>The <a href="../picture/">PICTURE clause</a> is required on elementary items that have a SOURCE, SUM, or VALUE clause. Non-presentable items (those without COLUMN) do not require PICTURE.</li>
+<li>The SUM clause is permitted only in CONTROL FOOTING groups.</li>
+<li>GROUP INDICATE is permitted only in DETAIL groups.</li>
+<li>INITIATE must be executed before GENERATE; TERMINATE must be executed after the last GENERATE.</li>
+<li>The file must be opened before INITIATE and closed after TERMINATE.</li>
+</ol>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="sales-report-with-control-breaks-and-subtotals">Sales Report with Control Breaks and Subtotals<a class="headerlink" href="#sales-report-with-control-breaks-and-subtotals" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">      </span><span class="w"> </span><span class="kr">IDENTIFICATION</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">PROGRAM-ID</span><span class="p">.</span><span class="w"> </span><span class="nv">SALES-RPT</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">ENVIRONMENT</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">INPUT-OUTPUT</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">FILE-CONTROL</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">SELECT</span><span class="w"> </span><span class="nv">SALES-FILE</span><span class="w">  </span><span class="kp">ASSIGN</span><span class="w"> </span><span class="kp">TO </span><span class="s2">&quot;sales.dat&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">ORGANIZATION</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">SEQUENTIAL</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">SELECT</span><span class="w"> </span><span class="nv">REPORT-FILE</span><span class="w"> </span><span class="kp">ASSIGN</span><span class="w"> </span><span class="kp">TO </span><span class="s2">&quot;report.out&quot;</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">ORGANIZATION</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">SEQUENTIAL</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">DATA</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">FILE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kr">FD </span><span class="w"> </span><span class="nv">SALES-FILE</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">SALES-RECORD</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">SR-REGION</span><span class="w">       </span><span class="kt">PIC X(10)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">SR-BRANCH</span><span class="w">       </span><span class="kt">PIC X(15)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">SR-SALESPERSON</span><span class="w">  </span><span class="kt">PIC X(20)</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="nv">SR-AMOUNT</span><span class="w">       </span><span class="kt">PIC S9(7)V99</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">FD </span><span class="w"> </span><span class="nv">REPORT-FILE</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">REPORT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">SALES-REPORT</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">WORKING-STORAGE</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">WS-EOF</span><span class="w">              </span><span class="kt">PIC X</span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;N&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">88  </span><span class="nv">END-OF-FILE</span><span class="w">     </span><span class="kp">VALUE </span><span class="s2">&quot;Y&quot;</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kp">REPORT</span><span class="w"> </span><span class="kr">SECTION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="kp">RD </span><span class="w"> </span><span class="nv">SALES-REPORT</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">FINAL</span><span class="w"> </span><span class="nv">SR-REGION</span><span class="w"> </span><span class="nv">SR-BRANCH</span>
+<span class="c">      </span><span class="w">     </span><span class="kp">PAGE</span><span class="w"> </span><span class="kp">LIMIT</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="mi">60 </span><span class="kp">LINES</span>
+<span class="kp">              </span><span class="w"> </span><span class="kp">HEADING</span><span class="w"> </span><span class="mi">1</span>
+<span class="mi">               </span><span class="kp">FIRST</span><span class="w"> </span><span class="kp">DETAIL</span><span class="w"> </span><span class="mi">6</span>
+<span class="mi">               </span><span class="kp">LAST</span><span class="w"> </span><span class="kp">DETAIL</span><span class="w"> </span><span class="mi">54</span>
+<span class="mi">               </span><span class="kp">FOOTING</span><span class="w"> </span><span class="mi">58</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Report Heading (printed once) ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">REPORT</span><span class="w"> </span><span class="kp">HEADING</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">20  </span><span class="kt">PIC X(30)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;ANNUAL SALES REPORT&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="mi">2</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">20  </span><span class="kt">PIC X(30)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;==============================&quot;</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Page Heading (top of each page) ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">PAGE</span><span class="w"> </span><span class="kp">HEADING</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">1   </span><span class="kt">PIC X(10) </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;REGION&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">12  </span><span class="kt">PIC X(15) </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;BRANCH&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">28  </span><span class="kt">PIC X(20) </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;SALESPERSON&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">52  </span><span class="kt">PIC X(12) </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;AMOUNT&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">1   </span><span class="kt">PIC X(63) </span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="kp">ALL </span><span class="s2">&quot;-&quot;</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Control Heading for Region ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">HEADING</span><span class="w"> </span><span class="nv">SR-REGION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">1   </span><span class="kt">PIC X(10)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">SR-REGION</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Detail Line ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="nv">SALES-DETAIL</span><span class="w"> </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">DETAIL</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">1   </span><span class="kt">PIC X(10)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">SR-REGION</span>
+<span class="c">      </span><span class="w">             </span><span class="kp">GROUP</span><span class="w"> </span><span class="kp">INDICATE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">12  </span><span class="kt">PIC X(15)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">SR-BRANCH</span>
+<span class="c">      </span><span class="w">             </span><span class="kp">GROUP</span><span class="w"> </span><span class="kp">INDICATE</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">28  </span><span class="kt">PIC X(20)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">SR-SALESPERSON</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">49  </span><span class="kt">PIC $$$,$$$,$$9.99</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="nv">SR-AMOUNT</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Control Footing for Branch (subtotal) ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">FOOTING</span><span class="w"> </span><span class="nv">SR-BRANCH</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">28  </span><span class="kt">PIC X(20)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;BRANCH TOTAL:&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">49  </span><span class="kt">PIC $$$,$$$,$$9.99</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SUM</span><span class="w"> </span><span class="nv">SR-AMOUNT</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Control Footing for Region (subtotal) ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">FOOTING</span><span class="w"> </span><span class="nv">SR-REGION</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">28  </span><span class="kt">PIC X(20)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;REGION TOTAL:&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">49  </span><span class="kt">PIC $$$,$$$,$$9.99</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SUM</span><span class="w"> </span><span class="nv">SR-AMOUNT</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">1   </span><span class="kt">PIC X(63)</span><span class="w"> </span><span class="kp">VALUE</span><span class="w"> </span><span class="kp">ALL </span><span class="s2">&quot;=&quot;</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Control Footing FINAL (grand total) ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">CONTROL</span><span class="w"> </span><span class="kp">FOOTING</span><span class="w"> </span><span class="kp">FINAL</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">2</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">28  </span><span class="kt">PIC X(20)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;GRAND TOTAL:&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">49  </span><span class="kt">PIC $$$,$$$,$$9.99</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SUM</span><span class="w"> </span><span class="nv">SR-AMOUNT</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Page Footing ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">PAGE</span><span class="w"> </span><span class="kp">FOOTING</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="mi">59</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">50  </span><span class="kt">PIC X(10) </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;Page:&quot;</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">61  </span><span class="kt">PIC Z9</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">SOURCE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="err">PAGE-COUNTER</span><span class="p">.</span>
+
+<span class="c">      *&gt; --- Report Footing (printed once at end) ---</span>
+<span class="c">      </span><span class="w"> </span><span class="mi">01  </span><span class="kp">TYPE</span><span class="w"> </span><span class="kp">IS</span><span class="w"> </span><span class="kp">REPORT</span><span class="w"> </span><span class="kp">FOOTING</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="mi">05  </span><span class="kp">LINE</span><span class="w"> </span><span class="kp">PLUS</span><span class="w"> </span><span class="mi">2</span><span class="p">.</span>
+<span class="c">      </span><span class="w">         </span><span class="mi">10  </span><span class="kp">COLUMN</span><span class="w"> </span><span class="mi">20  </span><span class="kt">PIC X(18)</span>
+<span class="kt">                  </span><span class="w"> </span><span class="kp">VALUE </span><span class="s2">&quot;*** END OF REPORT&quot;</span><span class="p">.</span>
+
+<span class="c">      </span><span class="w"> </span><span class="kr">PROCEDURE</span><span class="w"> </span><span class="kr">DIVISION</span><span class="p">.</span>
+<span class="c">      </span><span class="w"> </span><span class="nv">MAIN-LOGIC</span><span class="p">.</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">OPEN</span><span class="w"> </span><span class="kp">INPUT</span><span class="w"> </span><span class="nv">SALES-FILE</span>
+<span class="c">      </span><span class="w">          </span><span class="kp">OUTPUT</span><span class="w"> </span><span class="nv">REPORT-FILE</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">INITIATE</span><span class="w"> </span><span class="nv">SALES-REPORT</span>
+
+<span class="c">      </span><span class="w">     </span><span class="kr">READ</span><span class="w"> </span><span class="nv">SALES-FILE</span>
+<span class="c">      </span><span class="w">         </span><span class="kp">AT</span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kr">SET</span><span class="w"> </span><span class="nv">END-OF-FILE</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nb">TRUE</span>
+<span class="nb">          </span><span class="w"> </span><span class="kr">END-READ</span>
+
+<span class="kr">          </span><span class="w"> </span><span class="kr">PERFORM</span><span class="w"> </span><span class="kp">UNTIL</span><span class="w"> </span><span class="nv">END-OF-FILE</span>
+<span class="c">      </span><span class="w">         </span><span class="kr">GENERATE</span><span class="w"> </span><span class="nv">SALES-DETAIL</span>
+<span class="c">      </span><span class="w">         </span><span class="kr">READ</span><span class="w"> </span><span class="nv">SALES-FILE</span>
+<span class="c">      </span><span class="w">             </span><span class="kp">AT</span><span class="w"> </span><span class="kr">END</span><span class="w"> </span><span class="kr">SET</span><span class="w"> </span><span class="nv">END-OF-FILE</span><span class="w"> </span><span class="kp">TO</span><span class="w"> </span><span class="nb">TRUE</span>
+<span class="nb">              </span><span class="w"> </span><span class="kr">END-READ</span>
+<span class="kr">          </span><span class="w"> </span><span class="kr">END-PERFORM</span>
+
+<span class="kr">          </span><span class="w"> </span><span class="kr">TERMINATE</span><span class="w"> </span><span class="nv">SALES-REPORT</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">CLOSE</span><span class="w"> </span><span class="nv">SALES-FILE</span>
+<span class="c">      </span><span class="w">           </span><span class="nv">REPORT-FILE</span>
+<span class="c">      </span><span class="w">     </span><span class="kr">STOP</span><span class="w"> </span><span class="kp">RUN</span><span class="p">.</span>
+</code></pre></div>
+<p>This report produces:</p>
+<ul>
+<li>A report heading on the first page.</li>
+<li>Page headings with column titles on each page.</li>
+<li>Detail lines for each sales record, with region and branch names suppressed after the first occurrence (GROUP INDICATE).</li>
+<li>Branch subtotals at each branch control break.</li>
+<li>Region subtotals at each region control break.</li>
+<li>A grand total at the end of the report (CONTROL FOOTING FINAL).</li>
+<li>Page footings with page numbers.</li>
+<li>A report footing on the last page.</li>
+</ul>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../">Data Division</a></li>
+<li><a href="../level-numbers/">Level Numbers</a></li>
+<li><a href="../picture/">PICTURE Clause</a></li>
+<li><a href="../value/">VALUE Clause</a></li>
+<li><a href="../../procedure-division/io/open/">OPEN Statement</a></li>
+<li><a href="../../procedure-division/io/close/">CLOSE Statement</a></li>
+<li><a href="../../procedure-division/io/read/">READ Statement</a></li>
+<li><a href="../../procedure-division/io/write/">WRITE Statement</a></li>
+<li><a href="../../procedure-division/control-flow/perform/">PERFORM Statement</a></li>
+<li><a href="../../environment-division/select/">SELECT Clause</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
